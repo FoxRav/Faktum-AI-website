@@ -1,0 +1,29 @@
+<p
+  class="visit-counter text-center text-xs tracking-wide text-[var(--color-text-muted)]"
+  aria-live="polite"
+>
+  Luettu …
+</p>
+
+<script is:inline>
+  async function updateVisitCounter() {
+    var el = document.querySelector('.visit-counter');
+    if (!el) return;
+
+    try {
+      var response = await fetch('/api/visit', { method: 'POST' });
+      if (!response.ok) throw new Error('visit_counter_unavailable');
+
+      var data = await response.json();
+      if (typeof data.visits !== 'number' || !Number.isFinite(data.visits)) {
+        throw new Error('visit_counter_invalid');
+      }
+
+      el.textContent = 'Luettu ' + data.visits.toLocaleString('fi-FI') + ' kertaa';
+    } catch (err) {
+      el.textContent = 'Luettu useita kertoja';
+    }
+  }
+
+  updateVisitCounter();
+</script>

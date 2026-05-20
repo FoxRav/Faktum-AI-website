@@ -25,6 +25,22 @@ npm run preview
 - **Node version:** 22+
 - **Custom domain:** www.faktum-ai.com
 
+### Kävijälaskuri (KV)
+
+1. Cloudflare Dashboard → **Workers KV** → **Create namespace** → nimi `FAKTUM_VISITS`
+2. Kopioi namespace ID → `wrangler.toml` (`id` ja `preview_id`)
+3. Pages-projekti → **Settings** → **Functions** → **KV namespace bindings**:
+   - Variable name: `FAKTUM_VISITS`
+   - KV namespace: `FAKTUM_VISITS`
+4. Deploy uudelleen
+
+Endpointit:
+
+- `POST /api/visit` — kasvattaa globaalia laskuria
+- `GET /api/visit` — palauttaa nykyisen luvun
+
+Ei evästeitä, IP:itä eikä user agent -tietoja. Vain etusivu kutsuu API:a.
+
 ## Sisältörakenne
 
 | Kansio | Sivu |
