@@ -1,4 +1,5 @@
 ---
+import VisitCounter from '../VisitCounter.astro';
 import { getLocaleFromPath, categoryPath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
@@ -71,7 +72,10 @@ const locale = getLocaleFromPath(Astro.url.pathname);
       </ul>
     </div>
   </div>
-  <div class="container-site mt-10 border-t border-[var(--color-border)] pt-6 text-center text-xs text-[var(--color-text-muted)]">
-    © {year} Faktum AI · www.faktum-ai.com
+  <div class="container-site mt-10 border-t border-[var(--color-border)] pt-6 text-center">
+    <VisitCounter locale={locale} />
+    <p class="mt-3 text-xs text-[var(--color-text-muted)]">
+      © {year} Faktum AI · www.faktum-ai.com
+    </p>
   </div>
 </footer>

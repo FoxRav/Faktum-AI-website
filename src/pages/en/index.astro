@@ -4,7 +4,6 @@ import HeroSection from '../../components/sections/HeroSection.astro';
 import FeaturedArticleCard from '../../components/cards/FeaturedArticleCard.astro';
 import ArticleFeed from '../../components/sections/ArticleFeed.astro';
 import CategoryTabs from '../../components/sections/CategoryTabs.astro';
-import VisitCounter from '../../components/VisitCounter.astro';
 import { getAllArticles } from '../../utils/content';
 import { organizationJsonLd, websiteJsonLd } from '../../utils/seo';
 import { getFeedTabs, t } from '../../i18n/ui';
@@ -25,9 +24,6 @@ const feedTabs = getFeedTabs(locale);
   jsonLd={[organizationJsonLd(), websiteJsonLd()]}
 >
   <HeroSection locale={locale} />
-  <section class="container-site -mt-6 pb-2">
-    <VisitCounter />
-  </section>
   {featured && (
     <section class="container-site pb-4">
       <FeaturedArticleCard article={featured} />

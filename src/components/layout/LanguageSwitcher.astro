@@ -17,7 +17,7 @@ const enHref = translatePath(pathname, 'en');
     href={fiHref}
     hreflang="fi"
     class:list={[
-      'flex h-8 w-8 items-center justify-center rounded-md text-base transition',
+      'flex h-8 min-w-[2.25rem] items-center justify-center rounded-md px-1 text-[10px] font-semibold tracking-wide transition',
       currentLocale === 'fi'
         ? 'bg-cyan-500/15 ring-1 ring-cyan-500/40'
         : 'opacity-70 hover:opacity-100',
@@ -26,13 +26,13 @@ const enHref = translatePath(pathname, 'en');
     aria-current={currentLocale === 'fi' ? 'page' : undefined}
     title={t('fi', 'langFi')}
   >
-    <span aria-hidden="true">🇫🇮</span>
+    FI
   </a>
   <a
     href={enHref}
     hreflang="en"
     class:list={[
-      'flex h-8 w-8 items-center justify-center rounded-md text-base transition',
+      'flex h-8 min-w-[2.25rem] items-center justify-center rounded-md px-1 text-[10px] font-semibold tracking-wide transition',
       currentLocale === 'en'
         ? 'bg-cyan-500/15 ring-1 ring-cyan-500/40'
         : 'opacity-70 hover:opacity-100',
@@ -41,6 +41,6 @@ const enHref = translatePath(pathname, 'en');
     aria-current={currentLocale === 'en' ? 'page' : undefined}
     title={t('en', 'langEn')}
   >
-    <span aria-hidden="true">🇬🇧</span>
+    ENG
   </a>
 </div>

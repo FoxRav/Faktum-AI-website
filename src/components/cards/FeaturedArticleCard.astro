@@ -3,6 +3,7 @@ import CategoryBadge from '../ui/CategoryBadge.astro';
 import { formatDateTime } from '../../utils/formatDate';
 import type { ArticleEntry } from '../../utils/content';
 import { getArticleUrl, getCategoryHref, getCategoryLabel } from '../../utils/content';
+import { t } from '../../i18n/ui';
 
 interface Props {
   article: ArticleEntry;
@@ -29,7 +30,9 @@ const url = getArticleUrl(article);
   </div>
   <div class="flex flex-col justify-center p-6 lg:p-10">
     <div class="mb-4 flex flex-wrap items-center gap-2">
-      <span class="text-xs font-semibold uppercase tracking-widest text-cyan-400">Päänosto</span>
+      <span class="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+        {t(article.locale, 'featuredBadge')}
+      </span>
       <CategoryBadge label={getCategoryLabel(article)} href={getCategoryHref(article)} />
     </div>
     <h2 class="font-sans text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
@@ -40,6 +43,6 @@ const url = getArticleUrl(article);
       <time datetime={article.data.date.toISOString()}>{formatDateTime(article.data.date)}</time>
       {article.data.readingTime && <span>{article.data.readingTime}</span>}
     </div>
-    <a href={url} class="btn-primary mt-6 w-fit">Lue artikkeli</a>
+    <a href={url} class="btn-primary mt-6 w-fit">{t(article.locale, 'readArticle')}</a>
   </div>
 </article>

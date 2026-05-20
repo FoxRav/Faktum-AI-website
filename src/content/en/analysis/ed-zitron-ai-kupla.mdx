@@ -1,0 +1,206 @@
+---
+title: "The AI bubble does not survive this question"
+description: "The question the entire interview revolves around: where do all those GPUs and data centers actually go? Analysis of Ed Zitron's Tech Report interview — hyperscaler circular financing and data center deployment."
+date: 2026-05-20T12:46:37
+updated: 2026-05-20T14:29:19
+author: "Faktum AI"
+category: "Analysis"
+tags:
+  - AI bubble
+  - NVIDIA
+  - OpenAI
+  - Anthropic
+  - infrastructure
+status: published
+readingTime: "18 min"
+heroImage: "/images/articles/2026/05/ed-zitron-ai-kupla/hero.webp"
+heroAlt: "AI infrastructure and data centers — illustration for Ed Zitron analysis"
+heroCaption: "Illustration · Faktum AI"
+featured: false
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "The AI bubble won't survive this question — Ed Zitron"
+    publisher: "Tech Report / Better Offline podcast"
+    date: "2025"
+keyClaims:
+  - "According to Zitron, the AI business is an illusion of demand held together by circular flows between hyperscalers."
+  - "Most hyperscaler AI revenue is OpenAI or Anthropic."
+  - "Data center project deployment is weak compared to announced gigawatts, according to Zitron."
+  - "Bubble rupture requires, in his estimate, a narrative shock or one driven by inability to pay."
+keyMetrics:
+  - label: "OpenAI + Anthropic servers (estimate)"
+    value: "≈ $300 bn"
+    description: "Zitron's calculation from the interview"
+  - label: "Goldman Sachs AI build-out 2031"
+    value: "$7.6 trillion"
+    description: "Tracking Trillions report"
+  - label: "Hyperscaler capex 2026"
+    value: "$1 trillion"
+    description: "Meta, Google, Amazon, Microsoft"
+  - label: "NVIDIA GPUs / year"
+    value: "6 million"
+    description: "Last year's shipments per the interview"
+chartData:
+  - label: "Microsoft"
+    value: 37
+  - label: "Amazon"
+    value: 15
+---
+
+import SimpleBarChart from '../../../components/charts/SimpleBarChart.astro';
+
+## What happened?
+
+Ed Zitron (Where's Your Ed At?, Better Offline podcast) argues that the AI bubble does not survive one question: **where do all those GPUs and data centers actually go?** According to the Tech Report interview, the current AI boom is structurally **NVIDIA's revenue model**, funded by hyperscalers, labs, and investors extending arranged credit to one another — not by real, broadly distributed compute demand.
+
+> **Faktum AI note:** This article is an editorial summary and analysis of the interview. All claims and figures are drawn from the provided source material; nothing has been added from outside the interview. Readers should evaluate the claims independently and verify critical figures from original sources.
+
+## Why this matters for the Finnish reader
+
+In Finland, AI investment targets cloud services, data centers, and corporate experimentation. If Zitron's claim holds even partly, **capacity pricing, availability, and capital market risk** directly affect:
+
+- IT professionals' cloud and GPU budgets
+- startup and scale-up funding rounds
+- public sector procurement (cloud vs. local compute)
+- students' and builders' access to cheap inference
+
+## Main claim in one sentence
+
+According to Zitron, the AI bubble does not survive a simple question: **where do all those GPUs and data centers actually go?**
+
+> "Every time you look for the supposed gold mine, you find only someone handing money to someone else — not gold." — Ed Zitron
+
+He says he spent days searching for real compute capacity customers without success. The market has, in his view, moved away from reality.
+
+## Structure of the bubble
+
+- **OpenAI** and **Anthropic** have been treated like "rich kids" — efficiency or profitability has not been demanded the way it is from normal companies.
+- **Microsoft** effectively built OpenAI's infrastructure; **Amazon** and **Google** backed Anthropic. Hyperscalers are, according to Zitron, in practice a large part of demand.
+- OpenAI received **A100 GPUs at cost** in its early years (The Information, summer 2024).
+
+**DeepSeek warning (January 2025):** Zitron interprets the message not as "China can do more with less," but as **no one needs as many GPUs** as OpenAI and Anthropic use. Example: **Perplexity** — at most a few hundred or a thousand GPUs.
+
+## Who actually rents compute?
+
+Zitron searched for a week for customers of large GPU capacity. Recurring players found:
+
+| Customer | Where compute comes from |
+| --- | --- |
+| OpenAI | Microsoft, Google |
+| Anthropic | Amazon, Google, Microsoft, XAI Colossus One |
+| Jane Street | Hedge fund — invested in CoreWeave |
+| Meta | For itself — Zuckerberg's "AI psychosis" |
+
+**XAI's Colossus One** (300 MW) was leased entirely to Anthropic — a signal that Amazon, Google, and Microsoft are not bringing new capacity online in the near term.
+
+## AI revenues are OpenAI and Anthropic
+
+One of the interview's strongest numbers concerns hyperscaler AI revenue (annualized, per the interview):
+
+<SimpleBarChart
+  data={[
+    { label: 'MSFT', value: 37 },
+    { label: 'AMZN', value: 15 },
+  ]}
+  title="Hyperscaler AI revenue ($ bn, annualized — interview figures)"
+/>
+
+- **Microsoft** $37 bn — OpenAI's share **70–80%** (remainder M365 + GitHub Copilot before token billing)
+- **Amazon** $15 bn — Anthropic **≥ 80%**
+- **CoreWeave** — OpenAI **over 70%** of revenue
+- **Microsoft × Nebius** — effectively OpenAI compute
+
+> "If OpenAI falls, everything falls" — Zitron's interpretation of the market not yet understanding the dependency.
+
+## Big numbers — commitments and collateral reserves
+
+- Goldman Sachs *Tracking Trillions*: AI build-out cost **$7.6 trillion** by 2031
+- Hyperscaler capex **$800–900 bn** (2025) and **$1 trillion** (2026) — Meta, Google, Amazon, Microsoft
+- OpenAI compute cost **$50 bn** (2025) — not profitable per the interview
+- **$748 bn** of Microsoft + Google + Amazon order book is future revenue from OpenAI and Anthropic
+- Additional funding need for OpenAI + Anthropic: **$400 bn** (Zitron's estimate)
+
+Goldman Sachs notes in the interview that **AI costs most companies more than it saves**. OpenAI and Anthropic are losing tens of billions per year.
+
+### Anthropic financing (per the interview)
+
+- Ongoing round **$50 bn**, prior valuation **$380 bn**
+- **37 investors** in the previous round
+- **$108 bn** in committed funding over the last five months
+- Anthropic claims **$45 bn** annualized revenue; Zitron suspects pre-sale of API credits
+
+### OpenAI (per the interview)
+
+- Needs **over $800 bn** by 2030
+- **Broadcom chip deal** (10 GW, 2029) has not progressed
+- SoftBank marginal loan to OpenAI: **$15 bn → $6 bn**
+- Google **$10 bn** + option **$30 bn**; Amazon **$5 bn** + option **$20 bn**
+
+## Data centers — the bubble's hard question
+
+> "Go try to find a finished data center that was announced in 2023. Just try. I tried." — Ed Zitron
+
+- Microsoft claimed to have built **1 GW** of capacity per quarter; according to Zitron's mapping, **not a single announced project is complete**
+- **Sightline Climate** claims 5 GW built last year; Zitron believes the reality is **hundreds of megawatts**, not gigawatts
+- **Colossus One** (300 MW) leased to Anthropic — with older H100/H200/GB200 GPUs
+- Microsoft did not respond to a comment request within three days
+
+**Fate of the GPUs:** NVIDIA expects **$1 trillion in GPU sales** by end of 2027. Zitron's question: where are the rest if they are not installed in data centers?
+
+**Obsolescence risk:** Blackwell GPUs that cannot be installed before the **Vera Rubin** generation may go unprovisioned.
+
+## Banks and private credit
+
+- Financial Times: banks selling AI debt at a discount
+- No debt → no data centers → no GPU sales → NVIDIA numbers down
+- **113 GW** of committed capacity by 2030 — requires continuous leverage
+- **$1 trillion** in private credit (insurance, pensions, 401k) — Apollo, Blackstone, Vanguard
+
+## Circular financing
+
+Zitron proposes three rules in the interview:
+
+1. Circular financing should be prohibited
+2. Contract revenue that cannot be collected within 12 months should not be reported
+3. Principal counterparties (e.g. NVIDIA) should not invest in their customers (Iron, Nebius, CoreWeave, Lambda)
+
+NVIDIA is deploying **$27 bn** in cloud compute through 2032 — renting its own GPUs back.
+
+## Comparison to past bubbles
+
+| Comparison | Zitron's point |
+| --- | --- |
+| AWS | 2002–2017, **$52 bn** for the entire period, profitable in the end; equivalent burned in AI compute **in one year** |
+| Dot-com | "Big free cash flow" does not hold — FT: **$20–30 bn → $4 bn** in the near term |
+
+## What pops the bubble?
+
+Zitron believes a small signal is no longer enough. Likely triggers:
+
+1. Payment fails from OpenAI or Anthropic
+2. A funding round does not close
+3. NVIDIA misses its forecasts
+4. "Three data center horsemen": construction canceled, plan canceled, **operating data center dies**
+5. A report shows only **gigawatt-scale** deployment vs. tens of gigawatts committed
+
+> "If it turns out data centers are not being built, the question becomes: why did we buy all these GPUs?" — Ed Zitron
+
+## Technical assessment
+
+From an AI builder's perspective, the interview emphasizes **capacity price and availability risk**: if demand is concentrated in a few players, smaller teams still benefit from efficient models (DeepSeek-type message), but **cloud price dynamics** can swing sharply if financing or narrative shifts.
+
+In Finland this means: **do not tie your entire strategy to one cloud provider or one model provider** without an exit plan; follow capex and debt news as closely as model benchmarks.
+
+## Risks and uncertainties
+
+- All figures come **through the interview and Zitron's interpretations**; companies have not commented on all claims
+- Data center project deployment requires independent mapping
+- Anthropic and OpenAI revenue figures may include credit bookings not comparable to traditional SaaS
+- Regulatory and legal proposals are opinions, not facts
+
+## Conclusion
+
+According to Zitron, the AI boom is fundamentally **NVIDIA's revenue model**: hyperscalers and labs lose money but keep the machine running on one another's financing. When data centers do not finish, demand cannot be found and debt accumulates — **what is the final outcome of this structure?**
+
+For the Finnish reader, this is a signal to follow infrastructure and financing as seriously as model benchmarks.

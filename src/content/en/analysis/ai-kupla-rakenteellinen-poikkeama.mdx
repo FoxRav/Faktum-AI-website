@@ -1,0 +1,241 @@
+---
+title: "Structural anomaly: why the AI industry does not compare to any previous bubble"
+description: "Faktum AI analysis of the AI industry's exceptional structure — capex, physical build-out, circular financing, and time horizons that do not align in any prior technology cycle."
+date: 2026-05-20T16:28:18
+updated: 2026-05-20T16:28:18
+featured: false
+author: "Faktum AI"
+category: "Analysis"
+tags:
+  - AI bubble
+  - infrastructure
+  - data centers
+  - capital markets
+  - OpenAI
+  - Anthropic
+  - NVIDIA
+status: published
+readingTime: "12 min"
+heroImage: "/images/articles/2026/05/ai-kupla-rakenteellinen-poikkeama/hero.webp"
+heroAlt: "Half-built data centers, GPU rows, and capital flows — illustration for structural analysis of the AI industry"
+heroCaption: "Illustration · Faktum AI"
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI Bubble: Everyone is aggressively avoiding reality"
+    publisher: "Tech Report / Better Offline (Ed Zitron interview)"
+    date: "2026"
+  - title: "Anthropic $30 Billion Funding Round (Business Today)"
+    publisher: "BBC World News"
+    date: "2026"
+keyClaims:
+  - "The AI industry is structurally anomalous: capex, demand, financing, and physical build-out do not fit any prior technology cycle."
+  - "There is a gap of hundreds of billions between hyperscaler capex and its actual deployment."
+  - "Two labs — OpenAI and Anthropic — account for the majority of hyperscaler AI revenue and venture capital flows."
+  - "GPU generation cycles and data center construction timelines are incompatible as time horizons."
+keyMetrics:
+  - label: "Hyperscaler capex 2025"
+    value: "≈ $800 bn"
+    description: "Microsoft, Google, Amazon, Meta combined"
+  - label: "Total AWS build-out 2002–2017"
+    value: "≈ $52 bn"
+    description: "benchmark — birth of the entire cloud industry"
+  - label: "OpenAI + Anthropic, 2025–2026"
+    value: "≥ $220 bn"
+    description: "capital raised in 18 months"
+  - label: "Anthropic's new round"
+    value: "$30 bn"
+    description: "valuation $900 bn — market expectation"
+  - label: "Data center construction time"
+    value: "18–36 mo"
+    description: "GPU generation turns over every 18–24 mo"
+  - label: "NVIDIA 2027 target"
+    value: "≈ $1 trillion"
+    description: "GPU sales — requires realizable demand"
+chartData:
+  - label: "Capex (committed)"
+    value: 800
+  - label: "Deployed (estimate)"
+    value: 200
+---
+
+import SimpleBarChart from '../../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../../components/charts/MetricCards.astro';
+
+## What happened?
+
+AI industry financing, capex, and physical build-out drifted during 2025–2026 into a scale with no precedent in prior technology cycles. Hyperscalers have committed to investment levels approaching a trillion dollars, two labs — OpenAI and Anthropic — are raising over $220 bn in funding in less than two years, and at the same time **the physical data center base is growing clearly slower** than the public narrative suggests.
+
+This analysis examines the situation from the perspective of **structural anomaly**: why the AI industry does not behave like the dot-com era, like cloud build-out in the 2010s, or like any other large technology capex cycle. Source material includes BBC World News's Anthropic interview and the Tech Report podcast's broader data center survey — both public journalistic material.
+
+> **Faktum AI perspective:** We do not treat this as a forecast or investment advice. We examine structural scale and its consequences for the Finnish IT, data center, and cloud landscape.
+
+## Key figures at a glance
+
+<MetricCards
+  items={[
+    { label: 'Hyperscaler capex 2025', value: '≈ $800 bn', description: 'Microsoft, Google, Amazon, Meta' },
+    { label: 'AWS 2002–2017 total', value: '≈ $52 bn', description: 'birth of the entire cloud industry' },
+    { label: 'OpenAI + Anthropic, 2025–2026', value: '≥ $220 bn', description: 'funding in 18 months' },
+    { label: 'Anthropic, latest round', value: '$30 bn', description: 'valuation $900 bn' },
+    { label: 'Data center construction time', value: '18–36 mo', description: 'GPU generation 18–24 mo' },
+    { label: 'NVIDIA 2027 target', value: '≈ $1 trillion', description: 'GPU sales' },
+  ]}
+/>
+
+## Five structural anomalies
+
+The surface-level question "is AI a bubble?" is the wrong question at this point. What matters is that the industry's **structure** clearly diverges from what markets know how to price based on prior data. We identify five recurring contradictions in the source material.
+
+### 1. Capex has detached from both revenue and deployment
+
+The combined 2025 capex of the four largest hyperscalers is roughly **$800 bn**. For comparison, all of Amazon Web Services was built between 2002 and 2017 for about **$52 bn**. A single year of AI capex thus exceeds the total cost of creating the modern cloud by nearly twelvefold.
+
+<SimpleBarChart
+  data={[
+    { label: 'AWS 02–17', value: 52 },
+    { label: 'Hyperscaler 2025', value: 800 },
+    { label: 'Hyperscaler 2026e', value: 1000 },
+  ]}
+  title="Capex scale ($ bn) — AWS build-out vs. AI era"
+/>
+
+This alone does not make the situation a bubble. Cloud was once suspect too. The distinguishing factor is that **physical capacity does not follow financing**: the "gigawatt data center" familiar from public discussion remains, for now, a concept without a completed counterpart. In hyperscaler communications, construction phase and operational phase blur together, and "operational" can mean either a single building or dozens of buildings within the same project.
+
+<SimpleBarChart
+  data={[
+    { label: 'Capex committed', value: 800 },
+    { label: 'Deployed (estimate)', value: 200 },
+  ]}
+  title="Hyperscaler capex 2025 ($ bn) — committed vs. actual deployment"
+/>
+
+Based on editorial mapping, the deployed share falls clearly below half of what is announced. This is an estimate emerging from the source material, not an audited figure — but its magnitude explains why NVIDIA shipments and data center completions do not tell the same story.
+
+### 2. Time horizons do not align
+
+The core contradiction in the AI industry is temporal:
+
+- **GPU generations turn over** roughly every 18–24 months (H100 → Blackwell → Vera Rubin → next).
+- **Building a hyperscale-class data center** takes 18–36 months once permits, power, water, cooling, and networking are included.
+
+<SimpleBarChart
+  data={[
+    { label: 'GPU generation (mo)', value: 21 },
+    { label: 'Data center (mo)', value: 30 },
+  ]}
+  title="Average time horizons (months) — GPU vs. data center"
+/>
+
+In practice, this means that when a data center is completed, **the GPU generation planned for it is already the previous one**. This is a structural difference from dot-com-era fiber networks: dark fiber aged slowly and activation was relatively inexpensive. An AI-class GPU, by contrast, is effective for only a few years, after which its resale value collapses because use cases for parallel processing outside generative AI are limited.
+
+### 3. Demand is concentrated in two players
+
+A large share of hyperscaler AI revenue comes from two end customers:
+
+- **Most of Microsoft's AI revenue** is OpenAI compute plus Microsoft 365 Copilot revenue on top.
+- **The dominant share of Amazon's AI revenue** is Anthropic compute.
+- **Over 70% of CoreWeave's revenue** sits with OpenAI.
+
+This is an exceptional market configuration. In a normal cloud business, the customer base is fragmented across thousands of companies; in AI cloud, **two labs** carry the majority of the order book. If either faces a binding capacity or financing constraint, the effect shows up immediately in the quarterly results of the hyperscaler funding it.
+
+### 4. Funding rounds are structurally circular
+
+Capital flows within the ecosystem are partly internal:
+
+- **NVIDIA** invests in AI labs and their cloud partners (CoreWeave, Lambda, Nebius).
+- **Microsoft, Google, and Amazon** fund OpenAI and Anthropic while those labs buy compute from them.
+- **Anthropic's latest round** ($30 bn) is largely routed back into compute purchases.
+
+This is not necessarily illegal in accounting terms, but it makes traditional metrics — revenue, margin, ARR — difficult to interpret. When **the same dollar passes through two or three company balance sheets**, "growth" can appear before end demand has materialized.
+
+### 5. Market scrutiny is voluntarily deferred
+
+The most structurally anomalous trait of the AI industry is what **does not happen**: leading AI companies do not go public even though market conditions would be exceptionally favorable.
+
+- Anthropic's secondary-market valuation has swung between **$1.2–1.4 trillion**.
+- OpenAI's primary financing has continued through private rounds.
+- Both companies' CFOs have publicly stated that the company is "not ready for public market scrutiny."
+
+When a company valued at a trillion dollars **openly signals that it is avoiding the transparency an S-1 filing would bring**, this is not a normal growth-company situation. Private markets allow higher valuations with less reporting obligation, which lets the narrative continue longer than it could on a public exchange.
+
+## Data centers — the physical tip of the bubble
+
+The most detailed section of the source material concerns data center completion. Several frequently cited "flag-raising projects" are only partially operational:
+
+| Project | Public description | Deployment observation |
+| --- | --- | --- |
+| Project Rainier (Amazon × Anthropic, Indiana) | "fully operational" | 7 / 30 buildings active |
+| Stargate Abilene (Oracle × OpenAI) | "operational" | 1 → 2 buildings over ~6 months |
+| Microsoft Fairwater (Atlanta, Wisconsin) | in operation | first phase in use |
+| Anthropic × Colossus 1 | new capacity | 300 MW of older H100/H200 hardware |
+
+Anthropic's **Colossus 1 lease** is a structural signal: if new capacity had been available from hyperscaler partners, the lab would not have moved quickly to a built-out data center based on an older GPU generation. **300 MW** is globally significant only because completion of other hyperscaler projects has been delayed.
+
+> Individual project build-out stages are editorial readings of third-party source material. Final figures require verification against official financial statements and local permits.
+
+## The scale of financing
+
+Combined funding for OpenAI and Anthropic since the start of 2025 has exceeded **$220 bn**. This is a magnitude not seen in venture and growth financing history.
+
+<SimpleBarChart
+  data={[
+    { label: 'AWS (15 yr)', value: 52 },
+    { label: 'OpenAI+Anthropic (18 mo)', value: 220 },
+  ]}
+  title="Capital concentration ($ bn) — AWS full build-out vs. AI labs' 18 months"
+/>
+
+This should be set in context: Anthropic raised **$75 bn in six months**. The company's working capital is consumed essentially by compute purchases — in other words, a large share of funding **returns to hyperscaler partners' revenue**. This is part of the structural circularity discussed earlier.
+
+### The tension between revenue and "lifetime" figures
+
+Anthropic communicates roughly **$50 bn ARR** and a **$4 bn monthly figure** publicly. At the same time, the CFO's **sworn statement on March 6, 2026** in the Department of War litigation referred to roughly **$5 bn in cumulative revenue** over the company's entire history.
+
+These figures are not automatically contradictory — annualized run rate and cumulative deployment are different metrics — but reconciling them requires explanation that public communications have not yet provided. **This is precisely the metric an S-1 filing would require**, and one reason listing is being deferred.
+
+## What distinguishes this from prior bubbles?
+
+The dot-com comparison is partly misleading. We consider the structurally significant differences to be:
+
+| Feature | Dot-com 1999–2001 | AI cycle 2025–2026 |
+| --- | --- | --- |
+| Capex target | Fiber networks, server rooms | GPUs, gigawatt campuses |
+| Depreciation pace | Slow (fiber 25+ years) | Fast (GPU useful 3–5 years) |
+| Activation cost | Relatively inexpensive | High — requires a new data center |
+| Customer concentration | Fragmented | 2 labs dominate demand |
+| Funding source | Public markets, IPO boom | Private credit, hyperscalers, NVIDIA |
+| Scrutiny | Public markets | S-1 deferred, secondary market |
+
+The conclusion is not "the same bubble, bigger." It is a **different structure**, whose unwinding may happen through different mechanisms and on a different timeline than in the dot-com era. This is why analytical tools from the 2000s produce contradictory signals.
+
+## Technical assessment for the Finnish builder
+
+The situation does not put Finnish IT teams into panic mode, but it shifts **infrastructure strategy priorities**:
+
+- **Model-provider portability** is worth building into architecture from the start. If OpenAI or Anthropic faces a capacity constraint, the effect shows up in API latency and pricing before public news.
+- **Cloud-provider portability** follows the same logic: at the hyperscaler level, AI revenue does not resemble a traditional cloud customer base.
+- **Local inference** should be kept as a realistic option — the role of Nordic data centers and domestic GPU renters grows as hyperscaler capacity is steered toward the largest customers.
+- **Capex and depreciation reporting** should be read from hyperscaler financial statements as carefully as model benchmarks. Depreciation at the quarterly level will move significantly over the next 18 months.
+- **Long API commitments** should be priced with risk in mind. Prepaid credits are currently a structurally popular way to inflate reported demand.
+
+## Risks and uncertainties
+
+- Actual capex deployment (under $200 bn) is an estimate emerging from the source material, not an audited figure. Its magnitude is nonetheless consistent with hyperscaler GPU delivery data.
+- Build-out stages of individual data center projects require verification against official financial statements and local permit records before final conclusions.
+- Anthropic revenue figures may include different revenue recognition practices (including pre-sale of API credits) that are not directly comparable to SaaS MRR.
+- This article does not take a position on individual companies' bankruptcy risk or stock direction. The focus is on structural imbalances.
+
+## Conclusion
+
+The AI industry is not the new internet, and it is not the new cloud. It is structurally a **new form of business** in which:
+
+- capital runs ahead of physical capacity,
+- demand is concentrated in two end customers,
+- financing circulates within the same ecosystem,
+- time horizons do not align, and
+- public scrutiny is deferred indefinitely.
+
+Any single one of these five traits does not make a bubble inevitable. Their **simultaneous presence** does. A market where all five appear at once behaves historically differently from a healthy growth cycle — both in the upswing and when it ends.
+
+From the perspective of the Finnish builder, buyer, and investor, this means **infrastructure and financing must be read together**. Model benchmark lists and API price sheets are the surface. Beneath them lies the question of who pays for the next gigawatt — and when that gigawatt actually comes online.

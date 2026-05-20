@@ -1,0 +1,239 @@
+---
+title: "OpenAI's growth wedge: revenue, compute, and ecosystem dependency"
+description: "Faktum AI analysis of the contradiction between OpenAI's growth targets and compute commitments — hyperscaler circular financing, subscription model, and the approach of token austerity."
+date: 2026-05-20T16:54:33
+updated: 2026-05-20T16:54:33
+author: "Faktum AI"
+category: "Analysis"
+tags:
+  - OpenAI
+  - AI bubble
+  - business model
+  - Microsoft
+  - CoreWeave
+  - Oracle
+  - cloud services
+status: published
+readingTime: "14 min"
+heroImage: "/images/articles/2026/05/openai-kasvukiila-liiketoiminta-ja-riippuvuus/hero.webp"
+heroAlt: "Compute meters and growth targets in conflict — illustration for OpenAI business model analysis"
+heroCaption: "Illustration · Faktum AI"
+featured: true
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI bubble: OpenAI's business model is falling apart"
+    publisher: "Tech Report / Better Offline (journalistic interview)"
+    date: "2026"
+  - title: "OpenAI missed 2025 user and revenue targets"
+    publisher: "The Wall Street Journal (Berber Zhang)"
+    date: "2026"
+keyClaims:
+  - "OpenAI's slowing growth contradicts multi-gigawatt compute commitments and hyperscaler RPO backlogs."
+  - "A large share of hyperscaler and compute-provider AI revenue is concentrated in two labs — demand has not expanded as fast as capex."
+  - "Circular financing (hyperscaler → lab → hyperscaler compute) makes traditional revenue and growth metrics difficult to interpret."
+  - "Expansion of token-based billing (including GitHub Copilot June 2026) marks the end of the subsidized AI usage era."
+keyMetrics:
+  - label: "OpenAI revenue (estimate)"
+    value: "≈ $2 bn/mo"
+    description: "claimed current pace"
+  - label: "2030 target vs. burn"
+    value: "$673 / $852 bn"
+    description: "OpenAI plan figures"
+  - label: "Growth needed from current"
+    value: "> 10×"
+    description: "2030 profitability target"
+  - label: "Microsoft AI — OpenAI share"
+    value: "≈ 70%"
+    description: "≈ $24 bn / $37 bn annualized"
+  - label: "ChatGPT Plus churn"
+    value: "80%"
+    description: "OpenAI internal projection (leak)"
+  - label: "Compute commitments"
+    value: "10 GW"
+    description: "≈ $100–140 bn/yr to providers"
+chartData:
+  - label: "Revenue 2030e"
+    value: 673
+  - label: "Burn 2030e"
+    value: 852
+---
+
+import SimpleBarChart from '../../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../../components/charts/MetricCards.astro';
+
+## What happened?
+
+OpenAI missed user and revenue targets at the end of 2025, according to the Wall Street Journal. At the same time, CFO Sarah Fry has expressed concern in multiple sources that revenue growth is insufficient to cover **compute commitments** made to hyperscalers and compute providers decades into the future.
+
+Market reaction was swift: NVIDIA, Microsoft, Broadcom, CoreWeave, Oracle, and SoftBank fell. The reaction says more about **ecosystem dependency** than about one company — OpenAI is not an isolated player but a node to which tens of billions in order books are tied.
+
+This analysis complements the earlier [structural anomaly coverage](/en/analysis/ai-kupla-rakenteellinen-poikkeama/): that piece focused on capex and data centers. Here we examine **the business model, demand concentration, and financing chain durability**.
+
+> **Faktum AI perspective:** The analysis is based on public reports, leaked information, and journalistic source material. We do not take a position on OpenAI's bankruptcy risk or stock price — we examine scale and its impact on the Finnish IT landscape.
+
+## Key figures
+
+<MetricCards
+  items={[
+    { label: 'Revenue (estimate)', value: '≈ $2 bn/mo', description: 'high, but insufficient for commitments' },
+    { label: '2030 revenue / burn', value: '$673 / $852 bn', description: 'OpenAI plan' },
+    { label: 'Growth required', value: '> 10×', description: 'from current to 2030 target' },
+    { label: 'MSFT AI — OpenAI', value: '≈ 70%', description: '≈ $24 bn / $37 bn' },
+    { label: 'Plus churn (proj.)', value: '80%', description: '$20/mo subscribers' },
+    { label: 'Compute commitments', value: '10 GW', description: '≈ $100–140 bn/yr' },
+  ]}
+/>
+
+## Growth wedge: slowdown vs. commitments
+
+OpenAI's own long-term plan figures set the scale clearly:
+
+<SimpleBarChart
+  data={[
+    { label: 'Revenue 2030', value: 673 },
+    { label: 'Burn 2030', value: 852 },
+  ]}
+  title="OpenAI 2030 — planned revenue vs. burn ($ bn)"
+/>
+
+The 2026 revenue target is roughly **$25 bn**, while the 2030 target is **$284 bn** at profitability. This effectively requires **more than tenfold growth** from the current pace — at the same time growth has already slowed below target.
+
+On the compute side, the situation is even more rigid. OpenAI has committed to roughly **10 gigawatts** of capacity. For providers this means an estimated **$100–140 bn in annual** payments — more than most hyperscalers' entire operating cost structure as a single line item.
+
+| Metric | Current state / target | Problem |
+| --- | --- | --- |
+| Revenue | ~$2 bn/mo (claimed) | High in absolute terms, weak relative to commitments |
+| Loss per $ | est. $5–10 cost / $1 revenue | Does not scale without massive growth |
+| 2030 revenue | $284 bn (profitability) | Requires >10× growth |
+| Compute | 10 GW committed | Physically and financially unrealizable on a short timeline |
+
+## Subscription model in transition
+
+One of the most concrete signals comes from OpenAI's own internal projections (The Information leak):
+
+- **80%** of current **ChatGPT Plus** subscribers ($20/mo) are projected to churn in 2026.
+- Replacement: **109 million** new **ChatGPT Go** users ($5–8/mo, with ads) by year end.
+
+<SimpleBarChart
+  data={[
+    { label: 'Plus $20/mo', value: 20 },
+    { label: 'Go $5–8/mo', value: 7 },
+  ]}
+  title="Subscription price tiers ($/mo) — Plus vs. Go"
+/>
+
+Media often focused on Go user numbers, not the fact that **the largest business line is weakening**. 109 million new users in one year is an exceptionally ambitious target — especially when user growth has already fallen below target.
+
+This connects to a broader shift: **from subsidized monthly fee to token-based billing**. Microsoft announced GitHub Copilot will move to token-based pricing from **June 2026**. When users pay their actual inference cost, AI pricing becomes transparent — and often high.
+
+NVIDIA's applied deep learning vice president stated publicly that **AI costs more than a human** for the same task — even at subsidized pricing. This is a direct challenge to the industry's sales pitch: automation is not cheaper, but more expensive and less predictable.
+
+## Demand has concentrated — not expanded
+
+A central misconception in the AI industry is conflating **GPU availability problems** with **broad market demand**. When two labs reserve most of global capacity, other players have little room — but that does not mean thousands of companies have the same scale of need.
+
+Mapping does not find significant players spending over **$50 million per year** on AI compute unless they are OpenAI, Anthropic, or hyperscalers themselves. The largest independent dev-tools company (Cursor) planned roughly **10,000 GPU** rental — about **$40 million** annually.
+
+Hyperscaler AI revenue concentration:
+
+<SimpleBarChart
+  data={[
+    { label: 'MSFT AI total', value: 37 },
+    { label: 'OpenAI share', value: 24 },
+    { label: 'AMZN AI total', value: 15 },
+    { label: 'Anthropic share', value: 12 },
+  ]}
+  title="Hyperscaler AI revenue ($ bn, annualized — estimates)"
+/>
+
+- **Microsoft:** ~$37 bn AI revenue — estimated **70%** (~$24 bn) OpenAI compute
+- **Amazon:** ~$15 bn — estimated **≥ 80%** Anthropic
+- **CoreWeave:** **67%** of revenue from Microsoft, effectively for OpenAI
+- **Oracle:** most of remaining performance obligations backlog is OpenAI-dependent
+
+Analogy: if one passenger takes four seats on a bus, the bus looks full — but demand has not quadrupled.
+
+## Circular financing and RPO backlogs
+
+Capital flows circulate within the ecosystem:
+
+```text
+Hyperscaler (MSFT, AMZN, GOOG)
+    → investment in OpenAI / Anthropic
+        → purchase of compute from the same hyperscaler
+            → revenue booked to the hyperscaler
+                → part returns to NVIDIA and build-out projects
+```
+
+Amazon has invested in both Anthropic and OpenAI. Google added **$10 bn** to Anthropic with an option for **$30 bn**. Microsoft has invested **$13+ bn** in OpenAI. NVIDIA invests in compute partners that rent GPUs back.
+
+**Remaining performance obligations (RPO)** — future order books — have grown to hundreds of billions at hyperscalers. A significant share is tied to data centers **not yet built**. If the 12-month reporting horizon is not constrained, the market sees revenue that has not yet been delivered and may never be.
+
+This is the same structure covered in the [data center analysis](/en/analysis/ai-kupla-rakenteellinen-poikkeama/): capex ahead, deployment behind, narrative ahead of both.
+
+## Chain reaction: when one node weakens
+
+OpenAI missing targets is not an isolated event. The dependency chain:
+
+| Player | Dependency on OpenAI |
+| --- | --- |
+| Microsoft | ~70% of AI revenue, Azure commitments $250+ bn |
+| Oracle | Stargate backlog, most RPO OpenAI-dependent |
+| CoreWeave | 67% of revenue from MSFT→OpenAI chain |
+| Broadcom | 10 GW deal, order not yet placed |
+| SoftBank | complex financing for OpenAI |
+| NVIDIA | demand through the chain |
+
+Market reaction to missing targets was **swift but moderate** — players interpret it as an early warning, not yet as inability to pay. When payments or funding rounds fail, the reaction may be sharper.
+
+## Listing and transparency
+
+OpenAI has signaled desire for a public listing, but the CFO has stated the company is **not ready for public market scrutiny**. The same message repeats from Anthropic, which raises private funding instead of publishing an S-1.
+
+When a trillion-dollar company's CFO says reporting cannot withstand public scrutiny, this is a **transparency gap**, not a normal growth-company phase. Listing would force GAAP figures, auditor review, and compute cost breakdown — precisely what the market does not currently see.
+
+Additional note: reports indicate the CFO has been **excluded from data center investment decisions**. In an organization that needs to manage **$852 bn burn-level spending by 2030**, sidelining the CFO on compute decisions is an exceptional governance structure.
+
+## Token austerity: the end of subsidized AI
+
+From June 2026, GitHub Copilot moves to token-based pricing. Anthropic and OpenAI will likely follow as subsidy is no longer sustainable.
+
+For users this means:
+
+- **$20/mo unlimited usage** is not an economically sustainable model for the provider.
+- When the same task costs **$2–50 per session**, behavior changes.
+- Enterprise customers are already on token-based contracts; the consumer market follows.
+
+Faktum AI assessment: **token austerity** is the most likely trigger that reveals the true price to a broad user base — before data centers finish or the bubble ruptures through financing channels.
+
+## Technical assessment for the Finnish team
+
+**For developers and IT decision-makers:**
+
+1. **Do not build strategy on subsidized pricing.** Copilot, Claude, and ChatGPT prices can rise quickly as models shift to token billing.
+2. **Follow the supplier chain.** If OpenAI weakens, Azure OpenAI pricing, API availability, and enterprise contracts can change quickly.
+3. **Keep alternative models ready** (open source, local inference, DeepSeek-type efficient models).
+4. **Token budgets now** — companies should set usage caps before the provider forces them.
+5. **Contract exit clauses** — long API commitments and prepaid credits are risky in this environment.
+
+**For leadership:**
+
+- AI efficiency claims about workforce reduction conflict with NVIDIA's and vendors' own pricing data.
+- Cloud and AI budgets should be separated from traditional IT and reported separately.
+- RPO and backlog figures from provider financial statements say more than API marketing.
+
+## Risks and uncertainties
+
+- Plus churn at 80% and Go 109M target are leaked information / projections, not official financial statement figures.
+- Microsoft and Amazon AI revenue breakdowns are estimates — the companies do not publish full breakdowns.
+- 2030 figures ($673 / $852 bn) are OpenAI plan rhetoric, not realized history.
+- This article does not predict OpenAI bankruptcy or IPO timing.
+
+## Conclusion
+
+OpenAI's business model is **structurally tense**: high absolute revenue meets exponential compute commitments, slowing growth, and subscription model transition. The company is not an isolated player but a **node** to which hyperscalers, compute providers, and chip vendors have tied their futures.
+
+The AI industry is not collapsing tomorrow — but **the growth wedge is visible**: targets missed, CFO expressing concern, markets reacting, token billing approaching. For the Finnish landscape the message is clear: **plan infrastructure and budgets assuming subsidy ends and chain weakening does not catch you off guard**.
+
+Read also: [Structural anomaly — capex, data centers, and time horizons](/en/analysis/ai-kupla-rakenteellinen-poikkeama/).

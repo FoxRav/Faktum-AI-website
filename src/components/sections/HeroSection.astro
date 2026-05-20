@@ -37,12 +37,6 @@ const landingAlt =
         <a href={categoryPath(locale, 'news')} class="btn-primary">{t(locale, 'heroCtaNews')}</a>
         <a href={categoryPath(locale, 'analysis')} class="btn-ghost">{t(locale, 'heroCtaAnalysis')}</a>
       </div>
-      {locale === 'en' && (
-        <p class="mt-6 text-sm text-[var(--color-text-muted)]">
-          {t(locale, 'enNoArticles')}
-          <a href="/analyysit/" class="text-cyan-400 hover:underline"> Finnish analysis</a>.
-        </p>
-      )}
     </div>
 
     <figure class="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-[0_0_60px_rgba(34,211,238,0.08)]">

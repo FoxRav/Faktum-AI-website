@@ -1,14 +1,35 @@
+---
+import type { Locale } from '../i18n/config';
+import { getLocaleFromPath } from '../i18n/paths';
+import { t } from '../i18n/ui';
+
+interface Props {
+  locale?: Locale;
+}
+
+const locale = Astro.props.locale ?? getLocaleFromPath(Astro.url.pathname);
+---
+
 <p
   class="visit-counter text-center text-xs tracking-wide text-[var(--color-text-muted)]"
   aria-live="polite"
+  data-locale={locale}
+  data-loading={t(locale, 'visitCounterLoading')}
+  data-template={t(locale, 'visitCounterRead')}
+  data-fallback={t(locale, 'visitCounterFallback')}
 >
-  Luettu …
+  {t(locale, 'visitCounterLoading')}
 </p>
 
 <script is:inline>
   async function updateVisitCounter() {
     var el = document.querySelector('.visit-counter');
     if (!el) return;
+
+    var locale = el.getAttribute('data-locale') || 'fi';
+    var template = el.getAttribute('data-template') || 'Read {count} times';
+    var fallback = el.getAttribute('data-fallback') || 'Read many times';
+    var localeTag = locale === 'en' ? 'en-US' : 'fi-FI';
 
     try {
       var response = await fetch('/api/visit', { method: 'POST' });
@@ -19,9 +40,9 @@
         throw new Error('visit_counter_invalid');
       }
 
-      el.textContent = 'Luettu ' + data.visits.toLocaleString('fi-FI') + ' kertaa';
+      el.textContent = template.replace('{count}', data.visits.toLocaleString(localeTag));
     } catch (err) {
-      el.textContent = 'Luettu useita kertoja';
+      el.textContent = fallback;
     }
   }
 
