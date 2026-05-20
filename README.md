@@ -1,59 +1,27 @@
-# Faktum AI — www.faktum-ai.com
+# Faktum AI
 
-Suomenkielinen AI-uutis- ja analyysisivusto. Astro + TypeScript + Tailwind + MDX.
+Suomenkielinen tekoälyuutis- ja analyysisivusto: [www.faktum-ai.com](https://www.faktum-ai.com)
+
+Stack: Astro, TypeScript, Tailwind CSS, MDX.
 
 ## Kehitys
 
 ```bash
 npm install
-npm run dev
-```
-
-Avaa http://localhost:4321
-
-## Build
-
-```bash
+npm run dev      # http://localhost:4321
 npm run build
 npm run preview
 ```
 
-## Cloudflare Pages
+## Sisältö
 
-- **Build command:** `npm run build`
-- **Output directory:** `dist`
-- **Node version:** 22+
-- **Custom domain:** www.faktum-ai.com
+Julkaistavat artikkelit: `src/content/{news,analysis,interviews,tools}/`.
 
-### Kävijälaskuri (KV)
+Vain `status: published` näkyy sivustolla. Uusin julkaisu on aina ylimpänä (järjestys: `updated`, tai `date`).
 
-1. Cloudflare → **Workers KV** → luo namespace `FAKTUM_VISITS` (jos ei ole)
-2. **Workers & Pages** → **faktum-ai-website** → **Settings** → **Bindings**
-3. **+ Add** → **KV namespace**
-   - Variable name: `FAKTUM_VISITS`
-   - KV namespace: `FAKTUM_VISITS`
-4. **Deployments** → **Retry deployment**
+## Dokumentaatio
 
-Huom: älä lisää `wrangler.toml`-tiedostoa repoon — se lukitsee bindingit pois dashboardista.
+- [docs/CONTENT.md](docs/CONTENT.md) — artikkelit, frontmatter, kuvat
+- [editorial/README.md](editorial/README.md) — toimituksellinen pipeline (sisäinen)
 
-Endpointit:
-
-- `POST /api/visit` — kasvattaa globaalia laskuria
-- `GET /api/visit` — palauttaa nykyisen luvun
-
-Ei evästeitä, IP:itä eikä user agent -tietoja. Vain etusivu kutsuu API:a.
-
-## Sisältörakenne
-
-| Kansio | Sivu |
-| --- | --- |
-| `src/content/news` | `/uutiset/` |
-| `src/content/analysis` | `/analyysit/` |
-| `src/content/interviews` | `/haastattelut/` |
-| `src/content/tools` | `/tyokalut/` |
-
-Etusivun feed näyttää kaikki `status: published` -artikkelit uusimmasta vanhimpaan. Kategoriasivut suodattavat saman listan.
-
-## Editorial pipeline
-
-Katso `editorial/README.md`.
+Ylläpito ja deploy: [docs/DEPLOY.md](docs/DEPLOY.md) (sisäinen).
