@@ -27,12 +27,14 @@ npm run preview
 
 ### Kävijälaskuri (KV)
 
-1. Cloudflare Dashboard → **Workers KV** → **Create namespace** → nimi `FAKTUM_VISITS`
-2. Kopioi namespace ID → `wrangler.toml` (`id` ja `preview_id`)
-3. Pages-projekti → **Settings** → **Functions** → **KV namespace bindings**:
+1. Cloudflare → **Workers KV** → luo namespace `FAKTUM_VISITS` (jos ei ole)
+2. **Workers & Pages** → **faktum-ai-website** → **Settings** → **Bindings**
+3. **+ Add** → **KV namespace**
    - Variable name: `FAKTUM_VISITS`
    - KV namespace: `FAKTUM_VISITS`
-4. Deploy uudelleen
+4. **Deployments** → **Retry deployment**
+
+Huom: älä lisää `wrangler.toml`-tiedostoa repoon — se lukitsee bindingit pois dashboardista.
 
 Endpointit:
 
