@@ -8,8 +8,9 @@ import VisitCounter from '../components/VisitCounter.astro';
 import { getAllArticles } from '../utils/content';
 
 const articles = await getAllArticles();
-const featured = articles.find((a) => a.data.featured) ?? articles[0];
-const feed = featured ? articles.filter((a) => a.id !== featured.id) : articles;
+/** Päänosto = aina uusin julkaisu (sama järjestys kuin feedissä). */
+const featured = articles[0];
+const feed = articles.slice(1);
 
 const feedTabs = [
   { href: '/', label: 'Kaikki' },

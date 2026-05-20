@@ -19,6 +19,14 @@ export const COLLECTION_PATHS: Record<ArticleCollection, string> = {
   tools: '/tyokalut',
 };
 
+/** Newest first: `updated` if set, else `date`; tie-break by slug descending. */
+export function compareArticlesByRecency(a: ArticleEntry, b: ArticleEntry): number {
+  const aTime = (a.data.updated ?? a.data.date).getTime();
+  const bTime = (b.data.updated ?? b.data.date).getTime();
+  if (bTime !== aTime) return bTime - aTime;
+  return b.id.localeCompare(a.id);
+}
+
 export async function getAllArticles(): Promise<ArticleEntry[]> {
   const [news, analysis, interviews, tools] = await Promise.all([
     getCollection('news'),
@@ -36,7 +44,7 @@ export async function getAllArticles(): Promise<ArticleEntry[]> {
 
   return all
     .filter((a) => a.data.status === 'published')
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+    .sort(compareArticlesByRecency);
 }
 
 export async function getArticlesByCollection(

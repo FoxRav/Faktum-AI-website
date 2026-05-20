@@ -11,6 +11,10 @@ Tämä kansio ei julkaista sivustolle. Se on Cursor-orchestration -tuotantotila.
 5. Hyväksytty MDX → `04_ready_to_publish/` → kopioi `src/content/<kategoria>/`
 6. Arkisto → `99_archive/`
 
+## Julkaisujärjestys
+
+Etusivun **päänosto** ja listaukset käyttävät aina uusinta julkaisua ensin (`updated`, tai `date` jos `updated` puuttuu). Uutta artikkelia julkaistaessa aseta `date` ja `updated` julkaisupäivään.
+
 ## Mallit
 
 - `templates/raw-analysis-template.md`
