@@ -1,0 +1,239 @@
+---
+title: "OpenAI:n kasvukiila: liikevaihto, laskenta ja ekosysteemin riippuvuus"
+description: "Faktum AI:n analyysi OpenAI:n kasvutavoitteiden ja laskentasitoumusten ristiriidasta — hyperscalerien kierrätysrahoitus, tilaajamalli ja token-austerityn lähestyminen."
+date: 2026-05-20
+updated: 2026-05-20
+author: "Faktum AI"
+category: "Analyysit"
+tags:
+  - OpenAI
+  - AI-kupla
+  - liiketoimintamalli
+  - Microsoft
+  - CoreWeave
+  - Oracle
+  - pilvipalvelut
+status: published
+readingTime: "14 min"
+heroImage: "/images/articles/2026/05/openai-kasvukiila-liiketoiminta-ja-riippuvuus/hero.webp"
+heroAlt: "Laskentamittarit ja kasvutavoitteet ristiriidassa — kuvitus OpenAI:n liiketoimintamalli-analyysiin"
+heroCaption: "Kuvitus · Faktum AI"
+featured: true
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI bubble: OpenAI's business model is falling apart"
+    publisher: "Tech Report / Better Offline (journalistinen haastattelu)"
+    date: "2026"
+  - title: "OpenAI missed 2025 user and revenue targets"
+    publisher: "The Wall Street Journal (Berber Zhang)"
+    date: "2026"
+keyClaims:
+  - "OpenAI:n kasvun hidastuminen on ristiriidassa kymmenien gigawattien laskentasitoumusten ja hyperscalerien RPO-backlogien kanssa."
+  - "Suuri osa hyperscalerien ja laskentatoimittajien AI-liikevaihdosta on keskittynyt kahteen laboratorioon — kysyntä ei ole laajentunut yhtä nopeasti kuin capex."
+  - "Kierrätysrahoitus (hyperscaler → laboratorio → hyperscaler-laskenta) tekee perinteisistä liikevaihto- ja kasvumittareista vaikeasti tulkittavia."
+  - "Token-pohjaisen laskutuksen laajentuminen (mm. GitHub Copilot kesäkuu 2026) merkitsee subsidoidun AI-käytön aikakauden päättymistä."
+keyMetrics:
+  - label: "OpenAI liikevaihto (arvio)"
+    value: "≈ 2 mrd $/kk"
+    description: "väitetty nykytahti"
+  - label: "2030 tavoite vs. burn"
+    value: "673 / 852 mrd $"
+    description: "OpenAI-suunnitelman luvut"
+  - label: "Kasvutarve nykyisestä"
+    value: "> 10×"
+    description: "2030 kannattavuustavoite"
+  - label: "Microsoft AI — OpenAI-osuus"
+    value: "≈ 70 %"
+    description: "≈ 24 mrd $ / 37 mrd $ annualisoitu"
+  - label: "ChatGPT Plus -poistuma"
+    value: "80 %"
+    description: "OpenAI:n sisäinen projektio (vuoto)"
+  - label: "Laskentasitoumukset"
+    value: "10 GW"
+    description: "≈ 100–140 mrd $/v tarjoajille"
+chartData:
+  - label: "Liikevaihto 2030e"
+    value: 673
+  - label: "Burn 2030e"
+    value: 852
+---
+
+import SimpleBarChart from '../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../components/charts/MetricCards.astro';
+
+## Mikä tapahtui?
+
+OpenAI jäi vuoden 2025 lopussa alle käyttäjä- ja liikevaihtotavoitteistaan, Wall Street Journalin mukaan. Samaan aikaan yhtiön talousjohtaja Sarah Fry on useissa lähteissä ilmaissut huolen siitä, ettei liikevaihdon kasvu riitä kattamaan **laskentasitoumuksia**, joita on tehty hyperscalereille ja laskentatoimittajille vuosikymmeniksi eteenpäin.
+
+Markkinareaktio oli nopea: NVIDIA, Microsoft, Broadcom, CoreWeave, Oracle ja SoftBank laskivat. Reaktio kertoo enemmän **ekosysteemiriippuvuudesta** kuin yhdestä yhtiöstä — OpenAI ei ole eristetty toimija, vaan solmu, johon kymmenien miljardien dollarien tilauskannat on sidottu.
+
+Tämä analyysi täydentää aiempaa [rakenteellisen poikkeaman käsittelyä](/analyysit/ai-kupla-rakenteellinen-poikkeama/): siinä keskityttiin capexiin ja datakeskuksiin. Tässä tarkastellaan **liiketoimintamallia, kysynnän keskittymistä ja rahoitusketjun kestävyyttä**.
+
+> **Faktum AI:n näkökulma:** Analyysi perustuu julkisiin raportteihin, vuototietoihin ja journalistiseen aineistoon. Emme ota kantaa OpenAI:n konkurssiriskiin tai osakekurssiin — tarkastelemme mittasuhteita ja niiden vaikutusta suomalaiseen IT-kenttään.
+
+## Avainluvut
+
+<MetricCards
+  items={[
+    { label: 'Liikevaihto (arvio)', value: '≈ 2 mrd $/kk', description: 'korkea, mutta riittämätön sitoumuksiin' },
+    { label: '2030 liikevaihto / burn', value: '673 / 852 mrd $', description: 'OpenAI-suunnitelma' },
+    { label: 'Kasvu tarvitaan', value: '> 10×', description: 'nykyisestä 2030-tavoitteeseen' },
+    { label: 'MSFT AI — OpenAI', value: '≈ 70 %', description: '≈ 24 mrd $ / 37 mrd $' },
+    { label: 'Plus-poistuma (proj.)', value: '80 %', description: '20 $/kk -tilaajat' },
+    { label: 'Laskentasitoumukset', value: '10 GW', description: '≈ 100–140 mrd $/v' },
+  ]}
+/>
+
+## Kasvukiila: hidastuminen vs. sitoumukset
+
+OpenAI:n omat pitkän aikavälin suunnitelmaluvut asettavat mittasuhteet selvästi:
+
+<SimpleBarChart
+  data={[
+    { label: 'Liikevaihto 2030', value: 673 },
+    { label: 'Burn 2030', value: 852 },
+  ]}
+  title="OpenAI 2030 — suunniteltu liikevaihto vs. burn (mrd $)"
+/>
+
+Vuoden 2026 liikevaihtotavoite on noin **25 mrd $**, kun vuoden 2030 tavoite on **284 mrd $** kannattavuudella. Tämä edellyttää käytännössä **yli kymmenkertaista kasvua** nykyisestä tahdista — samaan aikaan kun kasvu on jo hidastunut tavoitteiden alapuolelle.
+
+Laskentapuolella tilanne on vielä jäykempi. OpenAI on sitoutunut noin **10 gigawatin** kapasiteettiin. Tarjoajille tämä tarkoittaa arviolta **100–140 mrd $ vuosittaisia** maksuja — enemmän kuin useimpien hyperscalerien koko operatiivinen kulurakenne yksittäisenä eränä.
+
+| Mittari | Nykytila / tavoite | Ongelma |
+| --- | --- | --- |
+| Liikevaihto | ~2 mrd $/kk (väitetty) | Korkea absoluuttisesti, heikko suhteessa sitoumuksiin |
+| Tappio per $ | arvio 5–10 $ kulua / 1 $ tuloa | Ei skaalaudu ilman massiivista kasvua |
+| 2030 liikevaihto | 284 mrd $ (kannattavuus) | Vaatii >10× kasvua |
+| Laskenta | 10 GW sitottu | Fyysisesti ja taloudellisesti toteutumaton lyhyellä aikajänteellä |
+
+## Tilaajamalli murroksessa
+
+Yksi konkreettisimmista signaaleista tulee OpenAI:n omista sisäisistä projektioista (The Information -vuoto):
+
+- **80 %** nykyisistä **ChatGPT Plus** -tilaajista (20 $/kk) arvioidaan poistuvan vuonna 2026.
+- Korvaavuus: **109 miljoonaa** uutta **ChatGPT Go** -käyttäjää (5–8 $/kk, mainoksilla) vuoden loppuun mennessä.
+
+<SimpleBarChart
+  data={[
+    { label: 'Plus 20 $/kk', value: 20 },
+    { label: 'Go 5–8 $/kk', value: 7 },
+  ]}
+  title="Tilausmallien hintataso ($/kk) — Plus vs. Go"
+/>
+
+Media keskittyi usein Go-käyttäjämäärään, ei siihen, että **suurin liiketoimintalinja heikkenee**. 109 miljoonaa uutta käyttäjää vuoden aikana on poikkeuksellisen kunnianhimoinen tavoite — erityisesti tilanteessa, jossa käyttäjäkasvu on jo jäänyt alle tavoitteen.
+
+Tämä kytkeytyy laajempaan siirtymään: **subsidoidusta kuukausimaksusta token-pohjaiseen laskutukseen**. Microsoft ilmoitti GitHub Copilotin siirtyvän token-pohjaiseksi **kesäkuusta 2026**. Kun käyttäjät maksavat todellisen inferenssikulunsa, AI:n hinta nousee läpinäkyväksi — ja usein korkeaksi.
+
+NVIDIAn sovelletun syväoppimisen varapuheenjohtaja totesi julkisesti, että **tekoäly maksaa enemmän kuin ihminen** samassa tehtävässä — myös subsidoidulla hinnalla. Tämä on suora haaste koko teollisuuden myyntiväitteelle: automaatio ei ole halvempaa, vaan kalliimpaa ja epävarmempaa.
+
+## Kysyntä on keskittynyt — ei laajentunut
+
+Tekoälyteollisuuden keskeinen harha on sekoittaa **GPU:n saatavuusongelma** ja **laaja markkinakysyntä**. Kun kaksi laboratoriota varaa suurimman osan globaalista kapasiteetista, muilla toimijoilla jää vähän tilaa — mutta se ei tarkoita, että tuhansilla yrityksillä olisi sama skaala tarpeita.
+
+Kartoituksessa ei löydy merkittäviä toimijoita, jotka käyttäisivät yli **50 miljoonaa dollaria vuodessa** AI-laskentaan ilman, että kyse on OpenAI:sta, Anthropiclta tai hyperscalerista itsestään. Suurin itsenäinen kehitystyökaluyhtiö (Cursor) suunnitteli noin **10 000 GPU:n** vuokrausta — noin **40 miljoonaa dollaria** vuositasolla.
+
+Hyperscalerien AI-liikevaihdon keskittyminen:
+
+<SimpleBarChart
+  data={[
+    { label: 'MSFT AI yhteensä', value: 37 },
+    { label: 'OpenAI-osuus', value: 24 },
+    { label: 'AMZN AI yhteensä', value: 15 },
+    { label: 'Anthropic-osuus', value: 12 },
+  ]}
+  title="Hyperscalerien AI-liikevaihto (mrd $, annualisoitu — arviot)"
+/>
+
+- **Microsoft:** ~37 mrd $ AI-liikevaihtoa — arviolta **70 %** (~24 mrd $) OpenAI:n laskentaa
+- **Amazon:** ~15 mrd $ — arviolta **≥ 80 %** Anthropic
+- **CoreWeave:** **67 %** liikevaihdosta Microsoftilta, käytännössä OpenAI:lle
+- **Oracle:** suurin osa remaining performance obligations -backlogista OpenAI-sidonnaista
+
+Vertaus: jos bussissa yksi matkustaja vie neljä paikkaa, bussi näyttää täydeltä — mutta kysyntä ei ole nelinkertaistunut.
+
+## Kierrätysrahoitus ja RPO-backlogit
+
+Rahoitusvirta kiertää ekosysteemin sisällä:
+
+```text
+Hyperscaler (MSFT, AMZN, GOOG)
+    → sijoitus OpenAI / Anthropic
+        → osto laskentaa samalta hyperscalerilta
+            → liikevaihto kirjautuu hyperscalerille
+                → osa palaa NVIDIA:lle ja rakennusprojekteihin
+```
+
+Amazon on sijoittanut sekä Anthropicille että OpenAI:lle. Google lisäsi Anthropicille **10 mrd $** ja optiolla **30 mrd $**. Microsoft on sijoittanut OpenAI:hin **13+ mrd $**. NVIDIA sijoittaa laskentakumppaneihin, jotka vuokraavat GPU:ita takaisin.
+
+**Remaining performance obligations (RPO)** — tulevaisuuden tilauskannat — ovat kasvaneet satojen miljardien dollarien tasolle hyperscalereilla. Merkittävä osa on sidottu datakeskuksiin, joita **ei ole vielä rakennettu**. Jos 12 kuukauden raportointihorisonttia ei rajoiteta, markkina näkee liikevaihtoa, jota ei ole vielä toteutettu eikä välttämättä toteuteta.
+
+Tämä on sama rakenne, jota käsittelimme [datakeskusanalyysissä](/analyysit/ai-kupla-rakenteellinen-poikkeama/): capex edellä, toteuma jäljessä, tarina edellä molempia.
+
+## Ketjureaktio: kun yksi solmu heikkenee
+
+OpenAI:n tavoitteiden alitus ei ole eristetty tapahtuma. Sidonnaisuusketju:
+
+| Toimija | Sidonnaisuus OpenAI:hin |
+| --- | --- |
+| Microsoft | ~70 % AI-liikevaihdosta, Azure-sitoumukset 250+ mrd $ |
+| Oracle | Stargate-backlog, suurin osa RPO:sta OpenAI |
+| CoreWeave | 67 % liikevaihdosta MSFT→OpenAI -ketjusta |
+| Broadcom | 10 GW -sopimus, tilausta ei vielä tehty |
+| SoftBank | monimutkainen rahoitus OpenAI:lle |
+| NVIDIA | kysyntä ketjun kautta |
+
+Markkinoiden reaktio tavoitteiden alitukseen oli **nopea mutta maltillinen** — toimijat tulkitsevat sen ennakkovaroituksena, ei vielä maksukyvyttömyytenä. Kun maksut tai rahoituskierrokset epäonnistuvat, reaktio voi olla rajumpi.
+
+## Listautuminen ja läpinäkyvyys
+
+OpenAI on viestinyt haluavansa pörssilistautumista, mutta talousjohtaja on todennut yhtiön **olevan valmis julkisten markkinoiden tarkasteluun**. Sama viesti toistuu Anthropiclta, joka kerää yksityistä rahoitusta sen sijaan että julkaisisi S-1-dokumentin.
+
+Kun biljoonan dollarin arvostuksen yhtiön CFO sanoo, ettei raportointi kestä julkista tarkastelua, kyse on **läpinäkyvyysaukosta**, ei tavanomaisesta kasvuyrityksen vaiheesta. Listautuminen pakottaisi GAAP-luvut, auditorin ja compute-kulujen erittelyn — juuri sen, mitä markkina ei tällä hetkellä näe.
+
+Lisähuomio: raporttien mukaan CFO on jäänyt **pois datakeskusinvestointipäätöksistä**. Organisaatiossa, joka tarvitsee **852 mrd $ burn-tason hallintaa vuoteen 2030**, talousjohtajan sivuuttaminen laskentapäätöksissä on poikkeuksellinen hallintorakenne.
+
+## Token-austerity: subsidoidun AI:n loppu
+
+Kesäkuusta 2026 GitHub Copilot siirtyy token-pohjaiseen hinnoitteluun. Anthropic ja OpenAI seuraavat todennäköisesti perässä, kun subsidio ei enää ole kestävä.
+
+Käyttäjille tämä tarkoittaa:
+
+- **20 $/kk -rajaton käyttö** ei ole taloudellisesti kestävä malli tuottajalle.
+- Kun sama työ maksaa **2–50 $ per sessio**, käyttäytyminen muuttuu.
+- Enterprise-asiakkaat ovat jo token-pohjaisilla sopimuksilla; kuluttajamarkkina seuraa.
+
+Faktum AI:n arvio: **token-austerity** on todennäköisin laukaisin, joka paljastaa todellisen hinnan laajalle käyttäjäkunnalle — ennen kuin datakeskukset valmistuvat tai kupla puhkeaa rahoituskanavasta.
+
+## Tekninen arvio suomalaiselle tiimille
+
+**Kehittäjille ja IT-päättäjille:**
+
+1. **Älä rakenna strategiaa subsidoidulle hinnoittelulle.** Copilot-, Claude- ja ChatGPT-hinnat voivat nousta nopeasti token-malliin siirtyessä.
+2. **Seuraa toimittajaketjua.** Jos OpenAI heikkenee, Azure OpenAI -hinnoittelu, API-saatavuus ja enterprise-sopimukset voivat muuttua nopeasti.
+3. **Pidä vaihtoehtoiset mallit valmiina** (avoimen lähdekoodin, paikallinen inferenssi, DeepSeek-tyyppiset tehokkaat mallit).
+4. **Token-budjetit nyt** — yritysten pitäisi asettaa käyttökatot ennen kuin toimittaja pakottaa ne.
+5. **Sopimusten exit-ehdot** — pitkät API-sitoumukset ja prepaid-krediitit ovat riskialttiita tässä ympäristössä.
+
+**Johtoryhmälle:**
+
+- AI-tehokkuusväitteet työvoiman vähentämisessä ovat ristiriidassa NVIDIAn ja toimittajien omien hintatietojen kanssa.
+- Pilvi- ja AI-budjetit kannattaa erottaa perinteisestä IT:stä ja raportoida erikseen.
+- RPO- ja backlog-luvut toimittajien tilinpäätöksistä kertovat enemmän kuin API-markkinointi.
+
+## Riskit ja epävarmuudet
+
+- Plus-poistuma 80 % ja Go 109M -tavoite ovat vuototietoja / projektioita, eivät virallisia tilinpäätöslukuja.
+- Microsoftin ja Amazonin AI-liikevaihdon erittelyt ovat arvioita — yhtiöt eivät jaa täyttä breakdownia.
+- 2030-luvut (673 / 852 mrd $) ovat OpenAI:n suunnitelmapuhetta, ei toteutunutta historiaa.
+- Tämä artikkeli ei ennusta OpenAI:n konkurssia tai IPO-aikataulua.
+
+## Johtopäätös
+
+OpenAI:n liiketoimintamalli on **rakenteellisesti jännitteinen**: korkea absoluuttinen liikevaihto kohtaa eksponentiaaliset laskentasitoumukset, hidastunut kasvu ja tilaajamallin murros. Yhtiö ei ole eristetty toimija vaan **solmu**, johon hyperscalerit, laskentatoimittajat ja chip-toimittajat ovat sitoneet tulevaisuutensa.
+
+Tekoälyteollisuus ei ole romahtamassa huomenna — mutta **kasvukiila on näkyvissä**: tavoitteet alitetaan, CFO ilmaisee huolta, markkinat reagoivat, token-laskutus lähestyy. Suomalaiselle kentälle viesti on selvä: **suunnittele infrastruktuuria ja budjetteja niin, että subsidio päättyy eikä ketjun heikentyminen yllätä**.
+
+Lue myös: [Rakenteellinen poikkeama — capex, datakeskukset ja aikahorisontit](/analyysit/ai-kupla-rakenteellinen-poikkeama/).
