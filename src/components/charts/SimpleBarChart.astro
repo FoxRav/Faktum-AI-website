@@ -12,13 +12,17 @@ interface Props {
 const { data, title } = Astro.props;
 const max = Math.max(...data.map((d) => d.value), 1);
 const barHeight = 160;
+const topPadding = 28;
+const bottomPadding = 36;
+const chartWidth = data.length * 80;
+const totalHeight = topPadding + barHeight + bottomPadding;
 ---
 
 {data.length > 0 && (
   <figure class="my-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
     {title && <figcaption class="mb-4 font-sans text-sm font-semibold text-[var(--color-text)]">{title}</figcaption>}
     <svg
-      viewBox={`0 0 ${data.length * 80} ${barHeight + 40}`}
+      viewBox={`0 0 ${chartWidth} ${totalHeight}`}
       class="w-full max-w-lg text-cyan-400"
       role="img"
       aria-label={title ?? 'Pylväskaavio'}
@@ -26,12 +30,14 @@ const barHeight = 160;
       {data.map((point, i) => {
         const h = (point.value / max) * barHeight;
         const x = i * 80 + 20;
-        const y = barHeight - h + 10;
+        const barTop = topPadding + barHeight - h;
+        const labelY = barTop - 8;
+        const axisLabelY = topPadding + barHeight + 22;
         return (
           <g>
             <rect
               x={x}
-              y={y}
+              y={barTop}
               width="40"
               height={h}
               rx="4"
@@ -40,7 +46,7 @@ const barHeight = 160;
             />
             <text
               x={x + 20}
-              y={barHeight + 28}
+              y={axisLabelY}
               text-anchor="middle"
               class="fill-[var(--color-text-muted)] text-[10px]"
               font-family="system-ui, sans-serif"
@@ -49,9 +55,10 @@ const barHeight = 160;
             </text>
             <text
               x={x + 20}
-              y={y - 6}
+              y={labelY}
               text-anchor="middle"
-              class="fill-[var(--color-text-dim)] text-[10px]"
+              dominant-baseline="auto"
+              class="fill-[var(--color-text-dim)] text-[11px] font-semibold"
               font-family="system-ui, sans-serif"
             >
               {point.value}
