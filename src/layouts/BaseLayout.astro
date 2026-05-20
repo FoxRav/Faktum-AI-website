@@ -9,6 +9,7 @@ interface Props {
   description: string;
   path?: string;
   ogType?: 'website' | 'article';
+  ogImage?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -17,11 +18,14 @@ const {
   description,
   path = Astro.url.pathname,
   ogType = 'website',
+  ogImage,
   jsonLd,
 } = Astro.props;
 
 const fullTitle = title.includes('Faktum AI') ? title : `${title} · Faktum AI`;
 const canonical = canonicalUrl(path);
+const site = Astro.site ?? 'https://www.faktum-ai.com';
+const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site}${ogImage}`) : undefined;
 ---
 
 <!doctype html>
@@ -38,7 +42,9 @@ const canonical = canonicalUrl(path);
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="fi_FI" />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
     <meta name="twitter:card" content="summary_large_image" />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <link rel="alternate" type="application/rss+xml" title="Faktum AI RSS" href="/rss.xml" />
