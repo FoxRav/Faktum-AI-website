@@ -1,0 +1,27 @@
+# Faktum AI
+
+> Bilingual AI news and analysis site from Finland. This index describes the English edition. Finnish (default): https://www.faktum-ai.com/llms.txt
+
+## Site (English)
+
+- URL: https://www.faktum-ai.com/en/
+- Language: English (en)
+- Sitemap: https://www.faktum-ai.com/sitemap-index.xml
+- Topics: https://www.faktum-ai.com/en/topics/
+- Finnish edition: https://www.faktum-ai.com/
+
+## Content types
+
+- /en/news/ — AI news and regulatory updates
+- /en/analysis/ — In-depth analysis (markets, infrastructure, business models)
+- /en/interviews/ — Interview summaries
+- /en/tools/ — Tool reviews for builders
+
+## Editorial line
+
+Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis. Articles share the same slug as the Finnish edition where both exist.
+
+## Contact
+
+- marko@faktum-ai.com
+- About: https://www.faktum-ai.com/en/about/

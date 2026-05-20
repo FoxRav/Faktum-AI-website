@@ -1,27 +1,42 @@
 # Faktum AI
 
-> Suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille, AI-rakentajille ja päätöksentekijöille.
+> Kaksikielinen tekoälyuutis- ja analyysisivusto (suomi oletus, englanti /en/). IT-ammattilaisille, AI-rakentajille ja päätöksentekijöille.
 
-## Site
+## Languages
+
+- Finnish (default): https://www.faktum-ai.com/
+- English: https://www.faktum-ai.com/en/
+- English LLM index: https://www.faktum-ai.com/en/llms.txt
+
+## Site (Finnish)
 
 - URL: https://www.faktum-ai.com
 - Language: Finnish (fi-FI)
 - RSS: https://www.faktum-ai.com/rss.xml
 - Sitemap: https://www.faktum-ai.com/sitemap-index.xml
-- Topics index: https://www.faktum-ai.com/aiheet/
+- Topics: https://www.faktum-ai.com/aiheet/
 
-## Content types
+## Content types (Finnish)
 
-- /uutiset/ — AI news and regulatory updates (Finnish context)
-- /analyysit/ — In-depth analysis (markets, infrastructure, business models)
-- /haastattelut/ — Interview summaries
-- /tyokalut/ — Tool reviews for builders
+- /uutiset/ — AI-uutiset ja sääntely (suomalainen konteksti)
+- /analyysit/ — Syvälliset analyysit (markkinat, infrastruktuuri, liiketoimintamallit)
+- /haastattelut/ — Haastattelutiivistelmät
+- /tyokalut/ — Työkaluarviot rakentajille
+
+## Content types (English)
+
+- /en/news/ — AI news and regulatory updates
+- /en/analysis/ — In-depth analysis (markets, infrastructure, business models)
+- /en/interviews/ — Interview summaries
+- /en/tools/ — Tool reviews for builders
+- /en/topics/ — Topic index
 
 ## Editorial line
 
-Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis.
+Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis. Same slugs in FI and EN where both exist.
 
 ## Contact
 
 - marko@faktum-ai.com
-- About: https://www.faktum-ai.com/tietoa/
+- About (FI): https://www.faktum-ai.com/tietoa/
+- About (EN): https://www.faktum-ai.com/en/about/
