@@ -1,0 +1,16 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import ArticleFeed from '../../components/sections/ArticleFeed.astro';
+import { getArticlesByCollection } from '../../utils/content';
+
+const articles = await getArticlesByCollection('interviews');
+---
+
+<ListingLayout
+  title="Haastattelut"
+  description="Haastattelutiivistelmiä suomalaisesta ja kansainvälisestä AI-kentästä."
+  path="/haastattelut/"
+  activeTab="/haastattelut/"
+>
+  <ArticleFeed articles={articles} title="" emptyMessage="Ei haastatteluja vielä julkaistu." />
+</ListingLayout>

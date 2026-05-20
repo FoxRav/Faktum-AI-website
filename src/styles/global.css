@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+  --color-bg: #0a0e17;
+  --color-bg-elevated: #111827;
+  --color-bg-soft: #1a2332;
+  --color-border: #283044;
+  --color-text: #e8ecf4;
+  --color-text-dim: #aab1c4;
+  --color-text-muted: #7b8299;
+  --color-accent: #22d3ee;
+  --color-accent-dim: #0891b2;
+  --color-accent-glow: #38bdf8;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-success: #4ade80;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(34, 211, 238, 0.08) 0%, transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, rgba(56, 189, 248, 0.05) 0%, transparent 55%);
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.25);
+    color: #fff;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-cyan-400;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] transition-colors;
+  }
+
+  .card:hover {
+    @apply border-cyan-500/30 bg-[var(--color-bg-soft)];
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-soft)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-dim)];
+  }
+
+  .badge-accent {
+    @apply border-cyan-500/30 bg-cyan-500/10 text-cyan-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-[var(--color-bg)] transition hover:bg-cyan-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-dim)] transition hover:border-cyan-500/40 hover:text-[var(--color-text)];
+  }
+
+  .prose-faktum {
+    @apply font-serif text-lg leading-relaxed text-[var(--color-text-dim)];
+
+    & h2 {
+      @apply mt-10 mb-4 font-sans text-2xl font-bold tracking-tight text-[var(--color-text)];
+    }
+
+    & h3 {
+      @apply mt-8 mb-3 font-sans text-sm font-semibold uppercase tracking-wider text-[var(--color-text-dim)];
+    }
+
+    & p {
+      @apply mb-4;
+    }
+
+    & strong {
+      @apply font-semibold text-[var(--color-text)];
+    }
+
+    & ul,
+    & ol {
+      @apply mb-4 ml-5 list-outside;
+    }
+
+    & li {
+      @apply mb-2;
+    }
+
+    & li::marker {
+      color: var(--color-accent);
+    }
+
+    & blockquote {
+      @apply my-6 border-l-2 border-cyan-500/60 bg-[var(--color-bg-elevated)] py-4 pl-5 italic text-[var(--color-text)];
+    }
+
+    & table {
+      @apply my-6 w-full overflow-hidden rounded-xl border border-[var(--color-border)] text-sm;
+    }
+
+    & th {
+      @apply bg-[var(--color-bg-soft)] px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-[var(--color-text-dim)];
+    }
+
+    & td {
+      @apply border-t border-[var(--color-border)] px-4 py-3 align-top;
+    }
+
+    & a {
+      @apply text-cyan-400 underline decoration-cyan-500/30 underline-offset-2 hover:text-cyan-300;
+    }
+  }
+
+  .section-num {
+    @apply mr-3 font-sans text-sm font-bold text-cyan-400 tabular-nums;
+  }
+}

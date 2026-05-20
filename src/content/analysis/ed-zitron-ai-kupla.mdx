@@ -1,0 +1,206 @@
+---
+title: "AI-kupla ei selviä tästä kysymyksestä"
+description: "Analyysi Ed Zitronin Tech Report -haastattelusta: hyperscalerien kierrätysrahoitus, datakeskusten toteuma ja kysymys siitä, mihin GPU-kapasiteetti oikeasti menee."
+date: 2026-05-20
+updated: 2026-05-20
+author: "Faktum AI"
+category: "Analyysit"
+tags:
+  - AI-kupla
+  - NVIDIA
+  - OpenAI
+  - Anthropic
+  - infrastruktuuri
+status: published
+readingTime: "18 min"
+heroImage: "/images/articles/2026/05/ed-zitron-ai-kupla/hero.webp"
+heroAlt: "AI-infrastruktuuri ja datakeskukset — kuvitus Ed Zitron -analyysiin"
+heroCaption: "Kuvitus · Faktum AI"
+featured: true
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "The AI bubble won't survive this question — Ed Zitron"
+    publisher: "Tech Report / Better Offline -podcast"
+    date: "2025"
+keyClaims:
+  - "Zitronin mukaan AI-bisnes on illuusio kysynnästä, jota pitää koossa hyperscalerien välinen kierrätys."
+  - "Suurin osa hyperscalerien AI-liikevaihdosta on OpenAI:ta tai Anthropicia."
+  - "Datakeskusprojektien toteuma on Zitronin mukaan heikko verrattuna ilmoitettuihin gigawatteihin."
+  - "Kuplan puhkeaminen vaatii hänen arvionsa mukaan narratiivisen tai maksukyvyttömyydestä johtuvan iskun."
+keyMetrics:
+  - label: "OpenAI + Anthropic -palvelimiin (arvio)"
+    value: "≈ 300 mrd $"
+    description: "Zitronin laskelma haastattelusta"
+  - label: "Goldman Sachs AI-rakennus 2031"
+    value: "7,6 biljoonaa $"
+    description: "Tracking Trillions -raportti"
+  - label: "Hyperscaler capex 2026"
+    value: "1 biljoona $"
+    description: "Meta, Google, Amazon, Microsoft"
+  - label: "NVIDIA GPU:t / vuosi"
+    value: "6 milj."
+    description: "Viime vuoden toimitukset haastattelun mukaan"
+chartData:
+  - label: "Microsoft"
+    value: 37
+  - label: "Amazon"
+    value: 15
+---
+
+import SimpleBarChart from '../../components/charts/SimpleBarChart.astro';
+
+## Mikä tapahtui?
+
+Ed Zitron (Where's Your Ed At?, Better Offline -podcast) väittää Tech Report -haastattelussa, että nykyinen AI-buumi on rakenteellisesti **NVIDIAn liikevaihtomalli**, jota hyperscalerit, laboratoriot ja sijoittajat rahoittavat toisilleen järjestetyillä krediiteillä — ei todellisella, laajalle levinneellä laskentakysynnällä.
+
+> **Faktum AI huomio:** Tämä artikkeli on toimituksellinen tiivistelmä ja analyysi haastattelusta. Kaikki väitteet ja luvut on poimittu annetusta aineistosta; mitään ei ole lisätty haastattelun ulkopuolelta. Lukijan tulee arvioida väitteet itsenäisesti ja tarkistaa kriittiset luvut alkuperäisistä lähteistä.
+
+## Miksi tämä on merkittävää suomalaiselle lukijalle?
+
+Suomessa AI-investoinnit kohdistuvat pilvipalveluihin, datakeskuksiin ja yritysten kokeiluihin. Jos Zitronin väite pitää osittain paikkansa, **kapasiteetin hinta, saatavuus ja rahoitusmarkkinoiden riskit** vaikuttavat suoraan:
+
+- IT-ammattilaisten pilvi- ja GPU-budjetteihin
+- startup- ja scale-up-yritysten rahoituskierroksiin
+- julkisen sektorin hankintoihin (pilvi vs. paikallinen laskenta)
+- opiskelijoiden ja rakentajien pääsyyn halpaan inferenssiin
+
+## Pääväite yhdessä lauseessa
+
+Zitronin mukaan AI-kupla ei selviä yksinkertaisesta kysymyksestä: **mihin kaikki nuo GPU:t ja datakeskukset oikeasti menevät?**
+
+> "Joka kerta kun etsit oletettua kultakaivosta, löydät vain jonkun ojentamassa jollekulle toiselle rahaa — et kultaa." — Ed Zitron
+
+Hän kertoo viettäneensä päiviä etsien todellisia laskentakapasiteetin asiakkaita ilman tulosta. Markkina on hänen mukaansa siirtynyt pois todellisuudesta.
+
+## Kuplan rakenne
+
+- **OpenAI** ja **Anthropic** on käsitelty kuin "rikkaita lapsia" — tehokkuutta tai kannattavuutta ei ole vaadittu samalla tavalla kuin tavanomaisilta yrityksiltä.
+- **Microsoft** rakensi käytännössä OpenAI:n infran; **Amazon** ja **Google** tukivat Anthropicia. Hyperscalerit ovat Zitronin mukaan käytännössä suuri osa kysynnästä.
+- OpenAI sai alkuvuosinaan **A100-GPU:t omakustannehintaan** (The Information, kesä 2024).
+
+**DeepSeek-varoitus (tammikuu 2025):** Zitron tulkitsee, ettei viesti ollut "Kiina osaa vähemmällä", vaan **kukaan ei tarvitse niin paljon GPU:ta** kuin OpenAI ja Anthropic käyttävät. Esimerkkinä **Perplexity**: korkeintaan muutama sata tai tuhat GPU:ta.
+
+## Kuka oikeasti vuokraa laskentaa?
+
+Zitron etsi viikon ajan asiakkaita isolle GPU-kapasiteetille. Löydetyt toistuvat toimijat:
+
+| Asiakas | Mistä laskentaa |
+| --- | --- |
+| OpenAI | Microsoft, Google |
+| Anthropic | Amazon, Google, Microsoft, XAI Colossus One |
+| Jane Street | Hedge fund — sijoittanut CoreWeaveen |
+| Meta | Itselleen — Zuckerbergin "AI-psykoosi" |
+
+**XAI:n Colossus One** (300 MW) on annettu kokonaisuudessaan vuokralle Anthropicille — signaali siitä, ettei Amazonilta, Googlelta ja Microsoftilta ole tulossa uutta kapasiteettia lähitulevaisuudessa.
+
+## AI-liikevaihdot ovat OpenAI:ta ja Anthropicia
+
+Yksi haastattelun voimakkaimmista numeroista koskee hyperscalerien AI-liikevaihtoa (annualisoitu, haastattelun mukaan):
+
+<SimpleBarChart
+  data={[
+    { label: 'MSFT', value: 37 },
+    { label: 'AMZN', value: 15 },
+  ]}
+  title="Hyperscalerien AI-liikevaihto (mrd $, annualisoitu — haastattelun luvut)"
+/>
+
+- **Microsoft** 37 mrd $ — OpenAI:n osuus **70–80 %** (loput M365 + GitHub Copilot ennen token-laskutusta)
+- **Amazon** 15 mrd $ — Anthropic **≥ 80 %**
+- **CoreWeave** — OpenAI **yli 70 %** liikevaihdosta
+- **Microsoft × Nebius** — käytännössä OpenAI:n laskentaa
+
+> "Jos OpenAI kaatuu, kaikki kaatuu" — Zitronin tulkinta siitä, ettei markkina ole vielä ymmärtänyt riippuvuutta.
+
+## Suuret luvut — panostukset ja takausvarannot
+
+- Goldman Sachs *Tracking Trillions*: AI-rakennuksen kustannus **7,6 biljoonaa $** vuoteen 2031
+- Hyperscaler capex **800–900 mrd $** (2025) ja **1 biljoona $** (2026) — Meta, Google, Amazon, Microsoft
+- OpenAI:n laskentakulu **50 mrd $** (2025) — ei kannattavaa haastattelun mukaan
+- **748 mrd $** Microsoft + Google + Amazon -tilauskannasta on OpenAI:n ja Anthropicin tulevaa liikevaihtoa
+- Lisärahoitustarve OpenAI + Anthropic: **400 mrd $** (Zitronin arvio)
+
+Goldman Sachs huomauttaa haastattelun mukaan, että **AI maksaa useimmille yrityksille enemmän kuin säästää**. OpenAI ja Anthropic tekevät kymmenien miljardien tappioita vuodessa.
+
+### Anthropicin rahoitus (haastattelun mukaan)
+
+- Käynnissä oleva kierros **50 mrd $**, edellinen arvostus **380 mrd $**
+- **37 sijoittajaa** edellisessä kierroksessa
+- **108 mrd $** luvattua rahoitusta viiden viime kuukauden aikana
+- Anthropic väittää **45 mrd $** annualisoitua liikevaihtoa; Zitron epäilee API-krediittien esimyyntiä
+
+### OpenAI (haastattelun mukaan)
+
+- Tarvitsee **yli 800 mrd $** vuoteen 2030 mennessä
+- **Broadcom-piirisopimus** (10 GW, 2029) ei ole edennyt
+- SoftBankin marginaalilaina OpenAI:lle: **15 mrd $ → 6 mrd $**
+- Google **10 mrd $** + optio **30 mrd $**; Amazon **5 mrd $** + optio **20 mrd $**
+
+## Datakeskukset — kuplan kovin kysymys
+
+> "Mene yrittämään löytää valmis datakeskus, joka on ilmoitettu vuonna 2023. Yritä vain. Minä yritin." — Ed Zitron
+
+- Microsoft väitti rakentaneensa **1 GW** kapasiteettia per kvartaali; Zitronin kartoituksen mukaan **yksikään ilmoitettu projekti ei ole valmis**
+- **Sightline Climate** väittää 5 GW rakennetun viime vuonna; Zitron uskoo todellisuuden olevan **satoja megawatteja**, ei gigawatteja
+- **Colossus One** (300 MW) vuokrattu Anthropicille — vanhemmilla H100/H200/GB200-GPU:illa
+- Microsoft ei vastannut kommenttipyyntöön kolmen päivän aikana
+
+**GPU:iden kohtalo:** NVIDIA odottaa **biljoonan $ GPU-myyntiä** vuoden 2027 loppuun. Zitronin kysymys: missä loput ovat, jos eivät asennettuna datakeskuksiin?
+
+**Vanhentumisriski:** Blackwell-GPU:t, joita ei ehdi asentaa ennen **Vera Rubin** -sukupolvea, voivat jäädä järjestämättä.
+
+## Pankit ja yksityinen luotto
+
+- Financial Times: pankit myyvät AI-velkaa alennuksella
+- Ilman velkaa ei datakeskuksia → ei GPU-myyntiä → NVIDIA-luvut alas
+- **113 GW** luvattua kapasiteettia vuoteen 2030 — vaatii jatkuvaa velkaantumista
+- **1 biljoona $** yksityistä luottoa (vakuutus, eläke, 401k) — Apollo, Blackstone, Vanguard
+
+## Sirkulaarinen rahoitus
+
+Zitron ehdottaa kolmea sääntelyä haastattelussa:
+
+1. Sirkulaarinen rahoitus kiellettävä
+2. Sopimusliikevaihtoa, jota ei voi periä 12 kk sisällä, ei saa raportoida
+3. Päämiesvastapuolet (esim. NVIDIA) eivät saa sijoittaa asiakkaisiinsa (Iron, Nebius, CoreWeave, Lambda)
+
+NVIDIA käyttää **27 mrd $** pilvilaskentaan vuoteen 2032 — vuokraa takaisin omia GPU:itaan.
+
+## Vertailu menneisiin kupliin
+
+| Vertailu | Zitronin pointti |
+| --- | --- |
+| AWS | 2002–2017, **52 mrd $** koko ajalta, kannattava lopussa; AI-laskennassa vastaava poltettu **yhdessä vuodessa** |
+| Dot-com | "Iso vapaa kassavirta" ei pidä — FT: **20–30 mrd $ → 4 mrd $** lähitulevaisuudessa |
+
+## Mikä puhkaisee kuplan?
+
+Zitron uskoo, ettei pieni signaali enää riitä. Todennäköisiä laukaisijoita:
+
+1. Maksu epäonnistuu OpenAI:lta tai Anthropiclta
+2. Rahoituskierros ei sulkeudu
+3. NVIDIA jää ennusteistaan
+4. "Kolme datakeskusratsastajaa": rakennus perutaan, suunnitelma perutaan, **toimiva datakeskus kuolee**
+5. Raportti osoittaa vain **gigawatin** toteuman vs. luvatut kymmenet
+
+> "Jos kerrotaan, että datakeskuksia ei rakenneta, kysymys muuttuu: miksi me sitten ostimme kaikki nämä GPU:t?" — Ed Zitron
+
+## Tekninen arvio
+
+AI-rakentajan näkökulmasta haastattelu korostaa **kapasiteetin hinta- ja saatavuusriskiä**: jos kysyntä on keskittynyt muutamaan toimijaan, pienemmät tiimit hyötyvät edelleen tehokkaista malleista (DeepSeek-tyyppinen viesti), mutta **pilven hintadynamiikka** voi heilahtaa äkillisesti, jos rahoitus tai narratiivi muuttuu.
+
+Suomessa tämä tarkoittaa: **älä sido koko strategiaa yhteen pilvitoimittajaan tai yhteen mallitoimittajaan** ilman exit-suunnitelmaa; seuraa capex- ja velkauutisia yhtä tarkasti kuin mallibenchmarkkeja.
+
+## Riskit ja epävarmuudet
+
+- Kaikki luvut ovat **haastattelun ja Zitronin tulkintojen** kautta; yritykset eivät ole kommentoineet kaikkia väitteitä
+- Datakeskusprojektien toteuma vaatii riippumattoman kartoituksen
+- Anthropicin ja OpenAI:n liikevaihtoluvut voivat sisältää krediittikirjauksia, joita ei voi verrata perinteiseen SaaS:iin
+- Sääntely- ja oikeudelliset ehdotukset ovat mielipiteitä, eivät faktoja
+
+## Johtopäätös
+
+Zitronin mukaan AI-buumi on pohjimmiltaan **NVIDIAn liikevaihtomalli**: hyperscalerit ja laboratoriot häviävät rahaa, mutta pitävät koneiston käynnissä toistensa rahoituksella. Kun datakeskukset eivät valmistu, kysyntää ei löydy ja velka kasaantuu — **mikä on rakenteen lopullinen lopputulos?**
+
+Suomalaiselle lukijalle tämä on signaali seurata infrastruktuuria ja rahoitusta yhtä vakavasti kuin mallien benchmarkkeja.

@@ -1,0 +1,91 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CategoryBadge from '../components/ui/CategoryBadge.astro';
+import TagList from '../components/ui/TagList.astro';
+import KeyTakeaways from '../components/article/KeyTakeaways.astro';
+import SourceList from '../components/article/SourceList.astro';
+import MetricCards from '../components/charts/MetricCards.astro';
+import RelatedArticles from '../components/article/RelatedArticles.astro';
+import { formatDate } from '../utils/formatDate';
+import type { ArticleEntry } from '../utils/content';
+import { getCategoryLabel, COLLECTION_PATHS } from '../utils/content';
+import { articleJsonLd } from '../utils/seo';
+
+interface Props {
+  article: ArticleEntry;
+  relatedArticles: ArticleEntry[];
+}
+
+const { article, relatedArticles } = Astro.props;
+const { data } = article;
+const categoryLabel = getCategoryLabel(article);
+const categoryHref = COLLECTION_PATHS[article.collection];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  path={Astro.url.pathname}
+  ogType="article"
+  jsonLd={articleJsonLd(article)}
+>
+  <article class="container-site py-10 lg:py-14">
+    <header class="max-w-3xl">
+      <div class="mb-4 flex flex-wrap items-center gap-2">
+        <CategoryBadge label={categoryLabel} href={categoryHref} />
+        {data.status === 'draft' && <span class="badge text-amber-400">Luonnos</span>}
+      </div>
+      <h1 class="font-sans text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+        {data.title}
+      </h1>
+      <p class="mt-4 text-xl text-[var(--color-text-dim)]">{data.description}</p>
+      <div class="mt-6 flex flex-wrap gap-4 border-y border-[var(--color-border)] py-4 text-sm text-[var(--color-text-muted)]">
+        <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+        <span>{data.author}</span>
+        {data.readingTime && <span>{data.readingTime}</span>}
+      </div>
+      {data.tags.length > 0 && (
+        <div class="mt-4">
+          <TagList tags={data.tags} />
+        </div>
+      )}
+    </header>
+
+    {data.heroImage && (
+      <figure class="my-10 overflow-hidden rounded-xl border border-[var(--color-border)]">
+        <img
+          src={data.heroImage}
+          alt={data.heroAlt ?? data.title}
+          class="w-full object-cover"
+          width="1200"
+          height="675"
+        />
+        {data.heroCaption && (
+          <figcaption class="px-4 py-2 text-xs text-[var(--color-text-muted)]">
+            {data.heroCaption}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    {data.keyClaims.length > 0 && <KeyTakeaways items={data.keyClaims} title="Keskeiset väitteet" />}
+    {data.keyMetrics.length > 0 && <MetricCards items={data.keyMetrics} />}
+
+    <div class="prose-faktum mx-auto max-w-3xl">
+      <slot />
+    </div>
+
+    <SourceList sources={data.sources} />
+
+    {data.needsFactCheck && (
+      <p class="mx-auto mt-8 max-w-3xl text-xs text-[var(--color-text-muted)]">
+        Faktum AI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu
+        vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.
+      </p>
+    )}
+  </article>
+
+  <div class="container-site pb-16">
+    <RelatedArticles articles={relatedArticles} currentId={article.id} />
+  </div>
+</BaseLayout>

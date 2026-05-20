@@ -1,0 +1,23 @@
+---
+import ArticleCard from '../cards/ArticleCard.astro';
+import type { ArticleEntry } from '../../utils/content';
+
+interface Props {
+  articles: ArticleEntry[];
+  currentId: string;
+}
+
+const { articles, currentId } = Astro.props;
+const related = articles.filter((a) => a.id !== currentId).slice(0, 3);
+---
+
+{related.length > 0 && (
+  <section class="mt-16 border-t border-[var(--color-border)] pt-12">
+    <h2 class="mb-6 font-sans text-xl font-bold">Liittyvät artikkelit</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {related.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+  </section>
+)}

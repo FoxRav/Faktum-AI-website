@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CategoryTabs from '../components/sections/CategoryTabs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  activeTab: string;
+}
+
+const { title, description, path, activeTab } = Astro.props;
+
+const feedTabs = [
+  { href: '/', label: 'Kaikki' },
+  { href: '/uutiset/', label: 'Uutiset' },
+  { href: '/analyysit/', label: 'Analyysit' },
+  { href: '/haastattelut/', label: 'Haastattelut' },
+  { href: '/tyokalut/', label: 'Työkalut' },
+];
+---
+
+<BaseLayout title={title} description={description} path={path}>
+  <section class="container-site py-12">
+    <h1 class="font-sans text-3xl font-bold sm:text-4xl">{title}</h1>
+    <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">{description}</p>
+  </section>
+  <CategoryTabs tabs={feedTabs} activeHref={activeTab} />
+  <slot />
+</BaseLayout>

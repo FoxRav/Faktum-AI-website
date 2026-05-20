@@ -1,0 +1,16 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import ArticleFeed from '../../components/sections/ArticleFeed.astro';
+import { getArticlesByCollection } from '../../utils/content';
+
+const articles = await getArticlesByCollection('news');
+---
+
+<ListingLayout
+  title="Uutiset"
+  description="Suomenkieliset AI-uutiset ja tulkinnat kansainvälisistä kehityksistä."
+  path="/uutiset/"
+  activeTab="/uutiset/"
+>
+  <ArticleFeed articles={articles} title="" emptyMessage="Ei uutisia vielä julkaistu." />
+</ListingLayout>

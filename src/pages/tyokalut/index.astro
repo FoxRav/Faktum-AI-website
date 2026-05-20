@@ -1,0 +1,16 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import ArticleFeed from '../../components/sections/ArticleFeed.astro';
+import { getArticlesByCollection } from '../../utils/content';
+
+const articles = await getArticlesByCollection('tools');
+---
+
+<ListingLayout
+  title="Työkalut"
+  description="AI-työkalujen arvioita ja käytännön näkökulmia rakentajille."
+  path="/tyokalut/"
+  activeTab="/tyokalut/"
+>
+  <ArticleFeed articles={articles} title="" emptyMessage="Ei työkaluarvioita vielä julkaistu." />
+</ListingLayout>

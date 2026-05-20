@@ -1,0 +1,51 @@
+---
+import CategoryBadge from '../ui/CategoryBadge.astro';
+import ReadingTime from '../ui/ReadingTime.astro';
+import { formatDate } from '../../utils/formatDate';
+import type { ArticleEntry } from '../../utils/content';
+import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
+
+interface Props {
+  article: ArticleEntry;
+}
+
+const { article } = Astro.props;
+const url = getArticleUrl(article);
+const categoryLabel = getCategoryLabel(article);
+const categoryHref = COLLECTION_PATHS[article.collection];
+---
+
+<article class="card group flex flex-col overflow-hidden">
+  {article.data.heroImage && (
+    <a href={url} class="block aspect-video overflow-hidden bg-[var(--color-bg-soft)]">
+      <img
+        src={article.data.heroImage}
+        alt={article.data.heroAlt ?? article.data.title}
+        class="h-full w-full object-cover transition group-hover:scale-[1.02]"
+        loading="lazy"
+        width="640"
+        height="360"
+      />
+    </a>
+  )}
+  <div class="flex flex-1 flex-col p-5">
+    <div class="mb-3 flex flex-wrap items-center gap-2">
+      <CategoryBadge label={categoryLabel} href={categoryHref} />
+      <time datetime={article.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
+        {formatDate(article.data.date)}
+      </time>
+      {article.data.readingTime && <ReadingTime time={article.data.readingTime} />}
+    </div>
+    <h3 class="font-sans text-lg font-semibold leading-snug">
+      <a href={url} class="text-[var(--color-text)] hover:text-cyan-300">
+        {article.data.title}
+      </a>
+    </h3>
+    <p class="mt-2 flex-1 text-sm text-[var(--color-text-dim)] line-clamp-3">
+      {article.data.description}
+    </p>
+    {article.data.status === 'draft' && (
+      <span class="mt-3 badge text-amber-400/90 border-amber-500/30">Luonnos</span>
+    )}
+  </div>
+</article>

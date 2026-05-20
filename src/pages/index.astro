@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import FeaturedArticleCard from '../components/cards/FeaturedArticleCard.astro';
+import ArticleFeed from '../components/sections/ArticleFeed.astro';
+import CategoryTabs from '../components/sections/CategoryTabs.astro';
+import { getAllArticles } from '../utils/content';
+
+const articles = await getAllArticles();
+const featured = articles.find((a) => a.data.featured) ?? articles[0];
+const feed = featured ? articles.filter((a) => a.id !== featured.id) : articles;
+
+const feedTabs = [
+  { href: '/', label: 'Kaikki' },
+  { href: '/uutiset/', label: 'Uutiset' },
+  { href: '/analyysit/', label: 'Analyysit' },
+  { href: '/haastattelut/', label: 'Haastattelut' },
+  { href: '/tyokalut/', label: 'Työkalut' },
+];
+---
+
+<BaseLayout
+  title="Faktum AI — Suomenkielistä tekoälyuutisointia ja analyysia"
+  description="Faktum AI tuottaa suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita IT-ammattilaisille ja AI-rakentajille."
+  path="/"
+>
+  <HeroSection />
+  {featured && (
+    <section class="container-site pb-4">
+      <FeaturedArticleCard article={featured} />
+    </section>
+  )}
+  <CategoryTabs tabs={feedTabs} activeHref="/" />
+  <ArticleFeed articles={feed} title="Uusimmat julkaisut" />
+  <section class="container-site py-16">
+    <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 lg:p-12">
+      <h2 class="font-sans text-2xl font-bold">Miksi Faktum AI?</h2>
+      <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">
+        Emme kopioi uutisia sellaisenaan. Puramme aineiston, poimimme olennaiset väitteet ja numerot,
+        visualisoimme datan ja annamme suomalaiselle lukijalle teknisen merkityksen — lähteitä
+        kunnioittaen ja hypeä välttäen.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

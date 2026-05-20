@@ -1,0 +1,24 @@
+---
+interface Props {
+  items: string[];
+  title?: string;
+}
+
+const { items, title = 'Tärkeimmät nostot' } = Astro.props;
+---
+
+{items.length > 0 && (
+  <aside class="my-8 rounded-xl border border-cyan-500/20 bg-cyan-500/5 p-6">
+    <h3 class="font-sans text-sm font-semibold uppercase tracking-wider text-cyan-400">
+      {title}
+    </h3>
+    <ul class="mt-4 space-y-2 text-[var(--color-text-dim)]">
+      {items.map((item) => (
+        <li class="flex gap-2">
+          <span class="text-cyan-400" aria-hidden="true">→</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

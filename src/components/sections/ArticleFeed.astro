@@ -1,0 +1,31 @@
+---
+import ArticleCard from '../cards/ArticleCard.astro';
+import type { ArticleEntry } from '../../utils/content';
+
+interface Props {
+  articles: ArticleEntry[];
+  title?: string;
+  emptyMessage?: string;
+}
+
+const {
+  articles,
+  title = 'Julkaisut',
+  emptyMessage = 'Ei julkaisuja tässä kategoriassa.',
+} = Astro.props;
+---
+
+<section class="container-site py-12">
+  {title && (
+    <h2 class="mb-8 font-sans text-2xl font-bold text-[var(--color-text)]">{title}</h2>
+  )}
+  {articles.length > 0 ? (
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {articles.map((article) => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+  ) : (
+    <p class="text-[var(--color-text-muted)]">{emptyMessage}</p>
+  )}
+</section>

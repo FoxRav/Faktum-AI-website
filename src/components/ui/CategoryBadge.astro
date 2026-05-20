@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+}
+
+const { label, href } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class="badge badge-accent hover:bg-cyan-500/20">
+    {label}
+  </a>
+) : (
+  <span class="badge badge-accent">{label}</span>
+)}

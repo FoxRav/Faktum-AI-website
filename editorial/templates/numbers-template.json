@@ -1,0 +1,13 @@
+[
+  {
+    "id": "num-001",
+    "value": "42 %",
+    "unit": "percent",
+    "label": "Kasvu edelliseen vuoteen verrattuna",
+    "context": "Mihin luku liittyy",
+    "source_excerpt": "Kohta, josta luku löytyi",
+    "chart_candidate": true,
+    "chart_type": "bar",
+    "needs_verification": true
+  }
+]

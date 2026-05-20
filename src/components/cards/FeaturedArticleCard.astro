@@ -1,0 +1,45 @@
+---
+import CategoryBadge from '../ui/CategoryBadge.astro';
+import { formatDate } from '../../utils/formatDate';
+import type { ArticleEntry } from '../../utils/content';
+import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
+
+interface Props {
+  article: ArticleEntry;
+}
+
+const { article } = Astro.props;
+const url = getArticleUrl(article);
+---
+
+<article class="card overflow-hidden lg:grid lg:grid-cols-2">
+  <div class="relative aspect-[16/10] bg-[var(--color-bg-soft)] lg:aspect-auto lg:min-h-[320px]">
+    {article.data.heroImage ? (
+      <img
+        src={article.data.heroImage}
+        alt={article.data.heroAlt ?? article.data.title}
+        class="absolute inset-0 h-full w-full object-cover"
+        width="800"
+        height="500"
+      />
+    ) : (
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent" />
+    )}
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent lg:bg-gradient-to-r" />
+  </div>
+  <div class="flex flex-col justify-center p-6 lg:p-10">
+    <div class="mb-4 flex flex-wrap items-center gap-2">
+      <span class="text-xs font-semibold uppercase tracking-widest text-cyan-400">Päänosto</span>
+      <CategoryBadge label={getCategoryLabel(article)} href={COLLECTION_PATHS[article.collection]} />
+    </div>
+    <h2 class="font-sans text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+      <a href={url} class="hover:text-cyan-300">{article.data.title}</a>
+    </h2>
+    <p class="mt-4 text-[var(--color-text-dim)]">{article.data.description}</p>
+    <div class="mt-6 flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
+      <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date)}</time>
+      {article.data.readingTime && <span>{article.data.readingTime}</span>}
+    </div>
+    <a href={url} class="btn-primary mt-6 w-fit">Lue artikkeli</a>
+  </div>
+</article>

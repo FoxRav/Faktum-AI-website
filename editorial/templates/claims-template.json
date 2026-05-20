@@ -1,0 +1,12 @@
+[
+  {
+    "id": "claim-001",
+    "type": "CLAIM",
+    "text": "Väitteen lyhyt kuvaus",
+    "source_excerpt": "Lyhyt kohta raakatekstista",
+    "confidence": "medium",
+    "needs_external_source": true,
+    "publication_risk": "low",
+    "suggested_use": "background"
+  }
+]
