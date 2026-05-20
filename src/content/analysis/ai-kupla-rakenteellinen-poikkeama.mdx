@@ -1,0 +1,241 @@
+---
+title: "Rakenteellinen poikkeama: miksi tekoälyteollisuus ei vertaudu mihinkään aiempaan kuplaan"
+description: "Faktum AI:n analyysi tekoälyteollisuuden poikkeuksellisesta rakenteesta — capex, fyysinen toteuma, kierrätysrahoitus ja aikahorisontit, jotka eivät kohtaa missään aiemmassa teknologiasyklissä."
+date: 2026-05-20
+updated: 2026-05-20
+author: "Faktum AI"
+category: "Analyysit"
+tags:
+  - AI-kupla
+  - infrastruktuuri
+  - datakeskukset
+  - rahoitusmarkkinat
+  - OpenAI
+  - Anthropic
+  - NVIDIA
+status: published
+readingTime: "12 min"
+heroImage: "/images/articles/2026/05/ai-kupla-rakenteellinen-poikkeama/hero.webp"
+heroAlt: "Puolivalmiit datakeskukset, GPU-rivistöt ja rahoitusvirrat — kuvitus tekoälyteollisuuden rakenteelliseen analyysiin"
+heroCaption: "Kuvitus · Faktum AI"
+featured: true
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI Bubble: Everyone is aggressively avoiding reality"
+    publisher: "Tech Report / Better Offline (Ed Zitron -haastattelu)"
+    date: "2026"
+  - title: "Anthropic $30 Billion Funding Round (Business Today)"
+    publisher: "BBC World News"
+    date: "2026"
+keyClaims:
+  - "Tekoälyteollisuus on rakenteellisesti poikkeava: capex, kysyntä, rahoitus ja fyysinen toteuma eivät istu mihinkään aiempaan teknologiasykliin."
+  - "Hyperscalerien capexin ja sen tosiasiallisen käytön välillä on satojen miljardien kuilu."
+  - "Kaksi laboratoriota — OpenAI ja Anthropic — vastaavat suurimmasta osasta hyperscalerien AI-liikevaihtoa ja venture-rahoituksen virtaa."
+  - "GPU-sukupolvi ja datakeskuksen rakentamisaika ovat aikahorisontteina yhteensopimattomat."
+keyMetrics:
+  - label: "Hyperscaler capex 2025"
+    value: "≈ 800 mrd $"
+    description: "Microsoft, Google, Amazon, Meta yhteensä"
+  - label: "AWS:n koko rakentaminen 2002–2017"
+    value: "≈ 52 mrd $"
+    description: "vertailupiste — koko pilvitoimialan synty"
+  - label: "OpenAI + Anthropic, 2025–2026"
+    value: "≥ 220 mrd $"
+    description: "kerätty rahoitus 18 kuukauden aikana"
+  - label: "Anthropicin uusi kierros"
+    value: "30 mrd $"
+    description: "valuaatio 900 mrd $ — markkinaodotus"
+  - label: "Datakeskuksen rakennusaika"
+    value: "18–36 kk"
+    description: "GPU-sukupolvi vaihtuu 18–24 kk välein"
+  - label: "NVIDIAn 2027-tavoite"
+    value: "≈ 1 biljoona $"
+    description: "GPU-myyntiä — vaatii toteutuvan kysynnän"
+chartData:
+  - label: "Capex (luvattu)"
+    value: 800
+  - label: "Käytetty (arvio)"
+    value: 200
+---
+
+import SimpleBarChart from '../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../components/charts/MetricCards.astro';
+
+## Mikä tapahtui?
+
+Tekoälyteollisuuden rahoitus, capex ja fyysinen toteuma ovat ajautuneet 2025–2026 aikana mittakaavaan, jolle ei ole vertailukohtaa aiemmissa teknologiasykleissä. Hyperscalerit ovat sitoneet lähes biljoonan dollarin investointitason, kaksi laboratoriota — OpenAI ja Anthropic — keräävät yli 220 mrd $ rahoituksen alle kahdessa vuodessa, ja samalla **fyysinen datakeskuskanta kasvaa selvästi hitaammin** kuin julkinen tarina antaa ymmärtää.
+
+Tämä analyysi tarkastelee tilannetta **rakenteellisen poikkeavuuden** näkökulmasta: miksi tekoälyteollisuus ei toimi kuten dot-com-aika, kuten pilvirakennus 2010-luvulla tai kuten mikään muu suuri teknologinen capex-sykli. Lähdeaineistona on käytetty BBC World Newsin Anthropic-haastattelua ja Tech Report -podcastin laajempaa datakeskuskartoitusta, joista molemmat ovat julkista journalistista materiaalia.
+
+> **Faktum AI:n näkökulma:** Emme käsittele tätä ennustuksena tai sijoitusneuvona. Tarkastelemme rakenteellisia mittasuhteita ja niiden seurauksia suomalaiselle IT-, datakeskus- ja pilvikenttälle.
+
+## Avainluvut yhdellä silmäyksellä
+
+<MetricCards
+  items={[
+    { label: 'Hyperscaler capex 2025', value: '≈ 800 mrd $', description: 'Microsoft, Google, Amazon, Meta' },
+    { label: 'AWS 2002–2017 yhteensä', value: '≈ 52 mrd $', description: 'koko pilvitoimialan synty' },
+    { label: 'OpenAI + Anthropic, 2025–2026', value: '≥ 220 mrd $', description: 'rahoitusta 18 kuukaudessa' },
+    { label: 'Anthropic, uusin kierros', value: '30 mrd $', description: 'valuaatio 900 mrd $' },
+    { label: 'Datakeskuksen rakennusaika', value: '18–36 kk', description: 'GPU-sukupolvi 18–24 kk' },
+    { label: 'NVIDIA 2027 tavoite', value: '≈ 1 biljoona $', description: 'GPU-myyntiä' },
+  ]}
+/>
+
+## Viisi rakenteellista poikkeamaa
+
+Pintatason kysymys "onko AI kupla?" on tässä kohtaa väärä kysymys. Olennaisempaa on, että teollisuuden **rakenne** poikkeaa selvästi siitä, mitä markkinat osaavat aiemman datan perusteella hinnoitella. Tunnistamme aineistosta viisi toistuvaa ristiriitaa.
+
+### 1. Capex on irrottautunut sekä liikevaihdosta että toteumasta
+
+Neljän suurimman hyperscalerin yhteinen 2025-capex on noin **800 mrd $**. Vertailukohtana koko Amazon Web Services rakennettiin vuosina 2002–2017 noin **52 mrd $:lla**. Yhden vuoden AI-capex ylittää siten koko nykypilven syntymäkustannuksen lähes kaksitoistakertaisesti.
+
+<SimpleBarChart
+  data={[
+    { label: 'AWS 02–17', value: 52 },
+    { label: 'Hyperscaler 2025', value: 800 },
+    { label: 'Hyperscaler 2026e', value: 1000 },
+  ]}
+  title="Capexin mittakaava (mrd $) — AWS:n rakennusaika vs. AI-aika"
+/>
+
+Tämä yksin ei vielä tee tilanteesta kuplaa. Pilvikin oli aikanaan epäilty. Erottava tekijä on, että **fyysinen kapasiteetti ei seuraa rahoitusta**: julkisesta keskustelusta tuttu "gigawatin datakeskus" on yhä toistaiseksi käsite, jolle ei löydy valmistunutta vastinetta. Hyperscalerien viestinnässä rakennusvaihe ja operatiivinen vaihe sekoittuvat, ja "operational" voi tarkoittaa joko yhtä yksittäistä rakennusta tai kymmeniä rakennuksia samasta projektista.
+
+<SimpleBarChart
+  data={[
+    { label: 'Capex luvattu', value: 800 },
+    { label: 'Käytetty (arvio)', value: 200 },
+  ]}
+  title="Hyperscaler capex 2025 (mrd $) — luvattu vs. tosiasiallinen toteuma"
+/>
+
+Toimituksellisen kartoituksen perusteella käytössä oleva osuus jää selvästi alle puoleen ilmoitetusta. Tämä on aineistosta nouseva arvio, ei tilintarkastettu luku — mutta sen mittaluokka selittää, miksi NVIDIAn toimitukset ja datakeskusten valmistumiset eivät kerro samaa tarinaa.
+
+### 2. Aikahorisontit eivät kohtaa
+
+Tekoälyteollisuuden ydinristiriita on aikahorisontti:
+
+- **GPU-sukupolvi vaihtuu** noin 18–24 kuukauden välein (H100 → Blackwell → Vera Rubin → seuraava).
+- **Hyperscale-luokan datakeskuksen rakentamiseen** kuluu 18–36 kuukautta, kun mukaan lasketaan luvat, sähkö, vesi, jäähdytys ja verkko.
+
+<SimpleBarChart
+  data={[
+    { label: 'GPU-sukupolvi (kk)', value: 21 },
+    { label: 'Datakeskus (kk)', value: 30 },
+  ]}
+  title="Aikahorisonttien keskiarvo (kk) — GPU vs. datakeskus"
+/>
+
+Käytännössä tämä tarkoittaa, että kun datakeskus valmistuu, **sinne suunniteltu GPU-sukupolvi on jo edellinen**. Tämä on rakenteellinen ero esimerkiksi dot-com-ajan kuituverkkoihin: pimeä kuitu vanheni hitaasti ja sen aktivointi oli verrattain edullista. AI-luokan GPU on sen sijaan tehokas vain muutaman vuoden, ja sen jälkeen sen jälleenmyyntiarvo romahtaa, koska parallel-prosessoinnin käyttötapaukset ulkopuolella generatiivisen AI:n ovat rajoittuneet.
+
+### 3. Kysyntä on keskittynyt kahteen toimijaan
+
+Suuri osa hyperscalerien AI-liikevaihdosta tulee kahdesta loppuasiakkaasta:
+
+- **Microsoftin AI-liikevaihdosta** valtaosa on OpenAI:n laskentaa ja päälle Microsoft 365 Copilot -tuloja.
+- **Amazonin AI-liikevaihdosta** dominoiva osuus on Anthropicin laskentaa.
+- **CoreWeaven** liikevaihdosta yli 70 % on OpenAI:n päässä.
+
+Tämä on poikkeuksellinen markkina-asetelma. Tavanomaisessa pilvibisneksessä asiakaskunta on pirstaloitunut tuhansiksi yrityksiksi; AI-pilvessä **kaksi laboratoriota** kantaa enemmistöä tilauskannasta. Jos toinen niistä joutuu pakottavaan kapasiteetti- tai rahoitusrajoitteeseen, vaikutus näkyy välittömästi sen taustaa rahoittavan hyperscalerin kvartaalissa.
+
+### 4. Rahoituskierrokset ovat rakenteellisesti sirkulaarisia
+
+Ekosysteemin rahavirrat ovat osin sisäisiä:
+
+- **NVIDIA** sijoittaa AI-laboratorioihin ja niiden pilvikumppaneihin (CoreWeave, Lambda, Nebius).
+- **Microsoft, Google ja Amazon** rahoittavat OpenAI:ta ja Anthropicia samalla, kun nämä laboratoriot ostavat heidän laskentaansa.
+- **Anthropicin viime kierros** (30 mrd $) viedään suurelta osin takaisin laskentaostoihin.
+
+Tämä ei välttämättä ole kirjanpidollisesti laitonta, mutta se tekee perinteisistä mittareista — liikevaihto, marginaali, ARR — vaikeasti tulkittavia. Kun **sama dollari kiertää kahden tai kolmen yhtiön taseen läpi**, "kasvu" voi syntyä ennen kuin loppukysyntä on syntynyt.
+
+### 5. Markkinoiden tarkastelu on vapaaehtoisesti lykätty
+
+Tekoälyteollisuuden rakenteellisesti poikkeavin piirre on se, **mitä ei tapahdu**: johtavat AI-yhtiöt eivät listaudu, vaikka markkinaolosuhteet olisivat poikkeuksellisen suotuisat.
+
+- Anthropicin sekundäärimarkkinan arvostus on heilunut **1,2–1,4 biljoonan $** välillä.
+- OpenAI:n primäärirahoitus on jatkunut yksityisillä kierroksilla.
+- Molempien yhtiöiden talousjohto on julkisesti maininnut, ettei yhtiö ole "valmis julkisten markkinoiden tarkasteluun".
+
+Kun yhtiö, jonka arvostus on biljoona dollaria, **viestii avoimesti välttävänsä S-1-dokumentin tuomaa läpinäkyvyyttä**, kyseessä ei ole tavanomainen kasvuyhtiötilanne. Yksityisillä markkinoilla sallitaan korkeammat valuaatiot pienemmällä raportointivelvollisuudella, mikä mahdollistaa tarinan jatkumisen pidempään kuin pörssilistauksessa.
+
+## Datakeskukset — kuplan fyysinen kärki
+
+Aineiston yksityiskohtaisin osio koskee datakeskusten valmistumista. Useat usein siteeratut "lipunnostohankkeet" ovat operationaalisia vain osittain:
+
+| Projekti | Julkinen kuvaus | Toteumahavainto |
+| --- | --- | --- |
+| Project Rainier (Amazon × Anthropic, Indiana) | "fully operational" | 7 / 30 rakennusta aktiivisina |
+| Stargate Abilene (Oracle × OpenAI) | "operational" | 1 → 2 rakennusta ~6 kk aikana |
+| Microsoft Fairwater (Atlanta, Wisconsin) | toiminnassa | ensimmäinen vaihe käytössä |
+| Anthropic × Colossus 1 | uusi kapasiteetti | 300 MW vanhempaa H100/H200-rautaa |
+
+Anthropicin **Colossus 1 -vuokraus** on rakenteellinen signaali: jos hyperscaler-kumppaneilta olisi ollut saatavilla uutta kapasiteettia, laboratorio ei olisi siirtynyt nopeasti rakennettuun, vanhempiin GPU-sukupolviin perustuvaan datakeskukseen. **300 MW** on globaalisti merkittävä lisäys vain siksi, että muiden hyperscaler-projektien valmistuminen on viivästynyt.
+
+> Yksittäisten projektien rakennusvaiheet ovat toimituksellisia luentoja kolmannen osapuolen aineistosta. Lopulliset luvut vaativat virallisten tilinpäätösten ja paikallisten lupien tarkistuksen.
+
+## Rahoituksen mittakaava
+
+OpenAI:n ja Anthropicin yhteenlaskettu rahoitus vuoden 2025 alusta on ylittänyt **220 mrd $**. Tämä on mittaluokka, jota ei ole nähty venture- ja kasvurahoituksen historiassa.
+
+<SimpleBarChart
+  data={[
+    { label: 'AWS (15v)', value: 52 },
+    { label: 'OpenAI+Anthropic (18kk)', value: 220 },
+  ]}
+  title="Pääoman keskittymä (mrd $) — AWS:n koko rakennusvaihe vs. AI-laboratorioiden 18 kk"
+/>
+
+Tämän rinnalle on syytä asettaa konteksti: Anthropic on kerännyt **75 mrd $ kuudessa kuukaudessa**. Yhtiön käyttöpääoma kuluu olennaisesti laskennan ostoon — toisin sanoen suuri osa rahoituksesta **palaa hyperscaler-kumppaneiden liikevaihtoon**. Tämä on osa rakenteellista sirkulaarisuutta, jota käsittelimme aiemmin.
+
+### Liikevaihdon ja "lifetime"-luvun jännite
+
+Anthropic kommunikoi noin **50 mrd $ ARR** -tasoa ja **4 mrd $ kuukausilukua** julkisuudessa. Samanaikaisesti yhtiön talousjohtajan **6.3.2026 antama valaehtoinen lausunto** Department of War -oikeudenkäynnissä viittasi noin **5 mrd $ kumulatiiviseen liikevaihtoon** yhtiön koko historian aikana.
+
+Nämä luvut eivät automaattisesti ole ristiriidassa — annualisoitu run-rate ja kumulatiivinen toteuma ovat eri mittareita — mutta niiden yhteensovittaminen vaatii selitystä, jota julkinen viestintä ei toistaiseksi tarjoa. **Tämä on tarkasti se mittari, jota S-1-dokumentti edellyttäisi**, ja samalla yksi syy siihen, miksi listautumista lykätään.
+
+## Mikä erottaa tämän aiemmista kuplista?
+
+Dot-com-vertaus on osittain harhaanjohtava. Pidämme rakenteellisesti merkittävinä eroina:
+
+| Ominaisuus | Dot-com 1999–2001 | Tekoälysykli 2025–2026 |
+| --- | --- | --- |
+| Capex-kohde | Kuituverkot, palvelinsalit | GPU:t, gigawattikampukset |
+| Vanhentumistahti | Hidas (kuitu 25+ vuotta) | Nopea (GPU 3–5 vuotta käyttökelpoisena) |
+| Aktivointikustannus | Suhteellisen edullinen | Korkea — vaatii uuden datakeskuksen |
+| Asiakaskeskittymä | Pirstaloitunut | 2 laboratoriota dominoivat kysyntää |
+| Rahoituslähde | Pörssi, IPO-buumi | Yksityinen luotto, hyperscalerit, NVIDIA |
+| Tarkastelu | Julkiset markkinat | S-1 lykätty, sekundäärimarkkina |
+
+Lopputulema ei ole "sama kupla isompana". Se on **eri rakenne**, jonka purkaminen voi tapahtua eri mekanismeilla ja eri aikajänteellä kuin dot-com-aikana. Tämä on syy siihen, miksi 2000-luvun analyysityökalut antavat ristiriitaisia signaaleja.
+
+## Tekninen arvio suomalaiselle rakentajalle
+
+Tilanne ei aja suomalaisia IT-tiimejä paniikkimoodiin, mutta se muuttaa **infrastruktuuristrategian painopisteitä**:
+
+- **Mallitoimittajan vaihdettavuus** kannattaa rakentaa arkkitehtuuriin alusta lähtien. Jos OpenAI tai Anthropic joutuu kapasiteettirajoitteeseen, vaikutus näkyy API-vasteissa ja hinnoittelussa ennen julkista uutista.
+- **Pilvitoimittajan vaihdettavuus** seuraa samaa logiikkaa: hyperscaler-tasolla AI-liikevaihto ei vastaa perinteistä pilviasiakaskuntaa.
+- **Paikallinen inferenssi** on syytä pitää realistisena vaihtoehtona — pohjoismaisten datakeskusten ja kotimaisten GPU-vuokraajien rooli kasvaa, kun hyperscalerien kapasiteetti ohjautuu suurimmille asiakkaille.
+- **Capex- ja poistoraportointi** kannattaa lukea hyperscalerien tilinpäätöksistä yhtä huolellisesti kuin mallibenchmarkeja. Poistojen kvartaalitaso liikkuu seuraavien 18 kuukauden aikana merkittävästi.
+- **Pitkät API-sitoumukset** kannattaa hinnoitella riskillä. Etukäteismaksetut krediitit ovat tällä hetkellä rakenteellisesti suosittu tapa kasvattaa raportoitua kysyntää.
+
+## Riskit ja epävarmuudet
+
+- Capexin tosiasiallinen toteuma (alle 200 mrd $) on aineistosta nouseva arvio, ei tilintarkastettu luku. Sen mittaluokka on kuitenkin linjassa hyperscalerien GPU-toimitustietojen kanssa.
+- Yksittäisten datakeskusprojektien rakennusvaiheet vaativat virallisten tilinpäätösten ja paikallisten lupatietojen tarkistuksen ennen lopullisia päätelmiä.
+- Anthropicin liikevaihtoluvut voivat sisältää erilaisia tulonkirjauskäytäntöjä (mm. API-krediittien ennakkomyynti), jotka eivät ole suoraan verrannollisia SaaS-MRR:ään.
+- Tämä artikkeli ei ota kantaa yksittäisten yhtiöiden konkurssiriskiin tai osakkeen suuntaan. Tarkastelu kohdistuu rakenteellisiin epätasapainoihin.
+
+## Johtopäätös
+
+Tekoälyteollisuus ei ole uusi internet, eikä se ole uusi pilvi. Se on rakenteellisesti **uudenlainen liiketoimintamuoto**, jossa:
+
+- pääoma juoksee fyysisen kapasiteetin edellä,
+- kysyntä keskittyy kahteen loppuasiakkaaseen,
+- rahoitus kiertää saman ekosysteemin sisällä,
+- aikahorisontit eivät kohtaa, ja
+- julkinen tarkastelu on lykätty määräämättömäksi ajaksi.
+
+Yksittäinen ominaisuus näistä viidestä ei tee kuplasta välttämätöntä. Niiden **yhtäaikainen esiintyminen** tekee. Markkina, jossa nämä viisi piirrettä esiintyvät yhtaikaa, käyttäytyy historiallisesti eri tavalla kuin terve kasvusykli — sekä noususuhdanteessa että sen päättyessä.
+
+Suomalaisen rakentajan, hankkijan ja sijoittajan näkökulmasta tämä tarkoittaa, että **infrastruktuuria ja rahoitusta on luettava yhdessä**. Mallibenchmark-listat ja API-hinnastot ovat pinta. Sen alla liikkuu kysymys siitä, kuka maksaa seuraavan gigawatin — ja milloin se gigawatti tosiasiallisesti tulee verkkoon.
