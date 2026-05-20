@@ -28,9 +28,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         julkaisut näkyvät etusivun feedissä ja omissa kategorioissaan.
       </p>
       <h2>Yhteystiedot</h2>
-      <p>
-        Sivusto: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
-      </p>
+      <dl class="mt-4 space-y-3 text-[var(--color-text-dim)]">
+        <div>
+          <dt class="font-sans text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            Sivusto
+          </dt>
+          <dd class="mt-1">
+            <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-sans text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            Yhteistyö ja yhteydenotot
+          </dt>
+          <dd class="mt-1">
+            <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 </BaseLayout>
