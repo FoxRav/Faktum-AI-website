@@ -34,12 +34,8 @@ const feedTabs = getFeedTabs(locale);
   <ArticleFeed articles={feed} title={t(locale, 'latestFeed')} />
   <section class="container-site py-16">
     <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 lg:p-12">
-      <h2 class="font-sans text-2xl font-bold">Miksi Faktum AI?</h2>
-      <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">
-        Emme kopioi uutisia sellaisenaan. Puramme aineiston, poimimme olennaiset väitteet ja numerot,
-        visualisoimme datan ja annamme suomalaiselle lukijalle teknisen merkityksen — lähteitä
-        kunnioittaen ja hypeä välttäen.
-      </p>
+      <h2 class="font-sans text-2xl font-bold">{t(locale, 'whyTitle')}</h2>
+      <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">{t(locale, 'whyBody')}</p>
     </div>
   </section>
 </BaseLayout>

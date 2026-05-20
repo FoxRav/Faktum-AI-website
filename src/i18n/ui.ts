@@ -24,7 +24,7 @@ export const ui = {
     readArticle: 'Lue artikkeli',
     whyTitle: 'Miksi Faktum AI?',
     whyBody:
-      'Emme kopioi uutisia sellaisenaan. Puramme aineiston, poimimme olennaiset väitteet ja numerot, visualisoimme datan ja annamme suomalaiselle lukijalle teknisen merkityksen — lähteitä kunnioittaen ja hypeä välttäen.',
+      'Jokainen artikkeli lähtee lähteestä — raportista, haastattelusta tai uutisesta. Puramme siitä väitteet ja numerot, visualisoimme olennaisen ja kirjoitamme, mitä kehitys merkitsee suomalaiselle IT- ja AI-ammattilaiselle. Lähteet aina näkyvillä, ilman hypea.',
     footerTagline: 'Suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamista.',
     footerContent: 'Sisältö',
     footerServices: 'Palvelut',
@@ -79,7 +79,7 @@ export const ui = {
     readArticle: 'Read article',
     whyTitle: 'Why Faktum AI?',
     whyBody:
-      'We do not copy press releases verbatim. We extract claims and numbers, visualize data, and explain technical meaning for readers — respecting sources and avoiding hype.',
+      'Every article starts from a source — a report, interview, or news story. We extract claims and numbers, visualize what matters, and explain what it means for IT and AI professionals. Sources always visible; no hype.',
     footerTagline: 'AI news, analysis, and practical builder insight from Finland.',
     footerContent: 'Content',
     footerServices: 'Services',
