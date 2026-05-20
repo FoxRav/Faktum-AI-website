@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const article: ArticleEntry = { ...entry, collection: 'analysis' };
+const article: ArticleEntry = { ...entry, collection: 'analysis', locale: 'fi' };
 const allArticles = await getAllArticles();
 ---
 

@@ -1,26 +1,48 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
 const landingImage = '/images/brand/landing-hero.webp';
 const landingAlt =
-  'Faktum AI — suomenkielinen tekoälyuutisointi, analyysi ja käytännön AI-rakentaminen';
+  locale === 'fi'
+    ? 'Faktum AI — suomenkielinen tekoälyuutisointi, analyysi ja käytännön AI-rakentaminen'
+    : 'Faktum AI — AI news, analysis, and builder-focused insight';
 ---
 
 <section class="container-site py-12 sm:py-16 lg:py-20">
   <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
     <div>
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">
-        Suomenkielinen AI-media
+        {t(locale, 'siteTagline')}
       </p>
       <h1 class="mt-4 font-sans text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.25rem]">
-        Tekoälyuutisointia, <span class="text-cyan-400">analyysia</span> ja käytännön rakentamista
+        {locale === 'fi' ? (
+          <>
+            Tekoälyuutisointia, <span class="text-cyan-400">analyysia</span> ja käytännön rakentamista
+          </>
+        ) : (
+          <>
+            AI news, <span class="text-cyan-400">analysis</span>, and builder-focused insight
+          </>
+        )}
       </h1>
-      <p class="mt-6 text-lg text-[var(--color-text-dim)]">
-        Faktum AI purkaa kansainväliset AI-kehitykset, raportit ja haastattelut suomalaiselle
-        lukijalle — lähteitä kunnioittaen, hypeä välttäen.
-      </p>
+      <p class="mt-6 text-lg text-[var(--color-text-dim)]">{t(locale, 'heroLead')}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="/uutiset/" class="btn-primary">Uusimmat uutiset</a>
-        <a href="/analyysit/" class="btn-ghost">Analyysit</a>
+        <a href={categoryPath(locale, 'news')} class="btn-primary">{t(locale, 'heroCtaNews')}</a>
+        <a href={categoryPath(locale, 'analysis')} class="btn-ghost">{t(locale, 'heroCtaAnalysis')}</a>
       </div>
+      {locale === 'en' && (
+        <p class="mt-6 text-sm text-[var(--color-text-muted)]">
+          {t(locale, 'enNoArticles')}
+          <a href="/analyysit/" class="text-cyan-400 hover:underline"> Finnish analysis</a>.
+        </p>
+      )}
     </div>
 
     <figure class="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-[0_0_60px_rgba(34,211,238,0.08)]">

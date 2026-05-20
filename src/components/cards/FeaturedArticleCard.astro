@@ -2,7 +2,7 @@
 import CategoryBadge from '../ui/CategoryBadge.astro';
 import { formatDateTime } from '../../utils/formatDate';
 import type { ArticleEntry } from '../../utils/content';
-import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
+import { getArticleUrl, getCategoryHref, getCategoryLabel } from '../../utils/content';
 
 interface Props {
   article: ArticleEntry;
@@ -30,7 +30,7 @@ const url = getArticleUrl(article);
   <div class="flex flex-col justify-center p-6 lg:p-10">
     <div class="mb-4 flex flex-wrap items-center gap-2">
       <span class="text-xs font-semibold uppercase tracking-widest text-cyan-400">Päänosto</span>
-      <CategoryBadge label={getCategoryLabel(article)} href={COLLECTION_PATHS[article.collection]} />
+      <CategoryBadge label={getCategoryLabel(article)} href={getCategoryHref(article)} />
     </div>
     <h2 class="font-sans text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
       <a href={url} class="hover:text-cyan-300">{article.data.title}</a>

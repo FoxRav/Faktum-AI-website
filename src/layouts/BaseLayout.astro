@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { getLocaleFromPath, translatePath } from '../i18n/paths';
+import { htmlLang } from '../i18n/config';
 import { canonicalUrl, DEFAULT_OG_IMAGE, absoluteAssetUrl } from '../utils/seo';
 
 interface Props {
@@ -28,9 +30,13 @@ const {
   jsonLd,
 } = Astro.props;
 
+const locale = getLocaleFromPath(path);
 const fullTitle = title.includes('Faktum AI') ? title : `${title} · Faktum AI`;
 const canonical = canonicalUrl(path);
+const alternateFi = canonicalUrl(translatePath(path, 'fi'));
+const alternateEn = canonicalUrl(translatePath(path, 'en'));
 const site = Astro.site ?? 'https://www.faktum-ai.com';
+const ogLocale = locale === 'fi' ? 'fi_FI' : 'en_US';
 const ogImageUrl = absoluteAssetUrl(ogImage ?? DEFAULT_OG_IMAGE, String(site));
 const jsonLdItems = jsonLd
   ? Array.isArray(jsonLd)
@@ -40,19 +46,22 @@ const jsonLdItems = jsonLd
 ---
 
 <!doctype html>
-<html lang="fi">
+<html lang={htmlLang[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fi" href={alternateFi} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateFi} />
     <meta property="og:site_name" content="Faktum AI" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:alt" content={title} />
     {ogType === 'article' && publishedTime && (

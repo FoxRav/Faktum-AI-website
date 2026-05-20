@@ -1,10 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { getAllArticles, type ArticleEntry } from '../../utils/content';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import { getAllArticles, type ArticleEntry } from '../../../utils/content';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('interviews', ({ data }) => data.status === 'published');
+  const entries = await getCollection('newsEn', ({ data }) => data.status === 'published');
   return entries.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -13,8 +13,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const article: ArticleEntry = { ...entry, collection: 'interviews', locale: 'fi' };
-const allArticles = await getAllArticles();
+const article: ArticleEntry = { ...entry, collection: 'news', locale: 'en' };
+const allArticles = await getAllArticles('en');
 ---
 
 <ArticleLayout article={article} allArticles={allArticles}>

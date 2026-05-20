@@ -1,5 +1,9 @@
 ---
+import { getLocaleFromPath, categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
 const year = new Date().getFullYear();
+const locale = getLocaleFromPath(Astro.url.pathname);
 ---
 
 <footer class="mt-20 border-t border-[var(--color-border)] py-12">
@@ -9,29 +13,61 @@ const year = new Date().getFullYear();
         <span class="text-cyan-400">Faktum</span> AI
       </p>
       <p class="mt-2 text-sm text-[var(--color-text-muted)]">
-        Suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamista.
+        {t(locale, 'footerTagline')}
       </p>
     </div>
     <div>
       <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
-        Sisältö
+        {t(locale, 'footerContent')}
       </p>
       <ul class="mt-3 space-y-2 text-sm">
-        <li><a href="/uutiset/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Uutiset</a></li>
-        <li><a href="/analyysit/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Analyysit</a></li>
-        <li><a href="/haastattelut/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Haastattelut</a></li>
-        <li><a href="/tyokalut/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Työkalut</a></li>
-        <li><a href="/aiheet/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Aiheet</a></li>
+        <li>
+          <a href={categoryPath(locale, 'news')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navNews')}
+          </a>
+        </li>
+        <li>
+          <a href={categoryPath(locale, 'analysis')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navAnalysis')}
+          </a>
+        </li>
+        <li>
+          <a href={categoryPath(locale, 'interviews')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navInterviews')}
+          </a>
+        </li>
+        <li>
+          <a href={categoryPath(locale, 'tools')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navTools')}
+          </a>
+        </li>
+        <li>
+          <a href={categoryPath(locale, 'topics')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navTopics')}
+          </a>
+        </li>
       </ul>
     </div>
     <div>
       <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
-        Palvelut
+        {t(locale, 'footerServices')}
       </p>
       <ul class="mt-3 space-y-2 text-sm">
-        <li><a href="/rss.xml" class="text-[var(--color-text-dim)] hover:text-cyan-400">RSS-syöte</a></li>
-        <li><a href="/llms.txt" class="text-[var(--color-text-dim)] hover:text-cyan-400">LLM-indeksi</a></li>
-        <li><a href="/tietoa/" class="text-[var(--color-text-dim)] hover:text-cyan-400">Tietoa Faktum AI:sta</a></li>
+        <li>
+          <a href="/rss.xml" class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerRss')}
+          </a>
+        </li>
+        <li>
+          <a href="/llms.txt" class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerLlm')}
+          </a>
+        </li>
+        <li>
+          <a href={categoryPath(locale, 'about')} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'navAbout')}
+          </a>
+        </li>
       </ul>
     </div>
   </div>

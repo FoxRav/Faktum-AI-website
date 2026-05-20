@@ -11,6 +11,7 @@ const articles = await getArticlesByCollection('news');
   description="Suomenkieliset AI-uutiset ja tulkinnat kansainvälisistä kehityksistä."
   path="/uutiset/"
   activeTab="/uutiset/"
+  locale="fi"
 >
   <ArticleFeed articles={articles} title="" emptyMessage="Ei uutisia vielä julkaistu." />
 </ListingLayout>

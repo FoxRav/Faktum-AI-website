@@ -7,19 +7,15 @@ import CategoryTabs from '../components/sections/CategoryTabs.astro';
 import VisitCounter from '../components/VisitCounter.astro';
 import { getAllArticles } from '../utils/content';
 import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
+import { getFeedTabs, t } from '../i18n/ui';
+import { homePath } from '../i18n/paths';
 
-const articles = await getAllArticles();
+const locale = 'fi' as const;
+const articles = await getAllArticles(locale);
 /** Päänosto = aina uusin julkaisu (sama järjestys kuin feedissä). */
 const featured = articles[0];
 const feed = articles.slice(1);
-
-const feedTabs = [
-  { href: '/', label: 'Kaikki' },
-  { href: '/uutiset/', label: 'Uutiset' },
-  { href: '/analyysit/', label: 'Analyysit' },
-  { href: '/haastattelut/', label: 'Haastattelut' },
-  { href: '/tyokalut/', label: 'Työkalut' },
-];
+const feedTabs = getFeedTabs(locale);
 ---
 
 <BaseLayout
@@ -29,7 +25,7 @@ const feedTabs = [
   ogImage="/images/brand/landing-hero.webp"
   jsonLd={[organizationJsonLd(), websiteJsonLd()]}
 >
-  <HeroSection />
+  <HeroSection locale="fi" />
   <section class="container-site -mt-6 pb-2">
     <VisitCounter />
   </section>
@@ -38,8 +34,8 @@ const feedTabs = [
       <FeaturedArticleCard article={featured} />
     </section>
   )}
-  <CategoryTabs tabs={feedTabs} activeHref="/" />
-  <ArticleFeed articles={feed} title="Uusimmat julkaisut" />
+  <CategoryTabs tabs={feedTabs} activeHref={homePath(locale)} />
+  <ArticleFeed articles={feed} title={t(locale, 'latestFeed')} />
   <section class="container-site py-16">
     <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 lg:p-12">
       <h2 class="font-sans text-2xl font-bold">Miksi Faktum AI?</h2>

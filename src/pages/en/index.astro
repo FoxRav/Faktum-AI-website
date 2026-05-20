@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import FeaturedArticleCard from '../../components/cards/FeaturedArticleCard.astro';
+import ArticleFeed from '../../components/sections/ArticleFeed.astro';
+import CategoryTabs from '../../components/sections/CategoryTabs.astro';
+import VisitCounter from '../../components/VisitCounter.astro';
+import { getAllArticles } from '../../utils/content';
+import { organizationJsonLd, websiteJsonLd } from '../../utils/seo';
+import { getFeedTabs, t } from '../../i18n/ui';
+import { homePath } from '../../i18n/paths';
+
+const locale = 'en' as const;
+const articles = await getAllArticles(locale);
+const featured = articles[0];
+const feed = articles.slice(1);
+const feedTabs = getFeedTabs(locale);
+---
+
+<BaseLayout
+  title={t(locale, 'homeMetaTitle')}
+  description={t(locale, 'homeMetaDescription')}
+  path="/en/"
+  ogImage="/images/brand/landing-hero.webp"
+  jsonLd={[organizationJsonLd(), websiteJsonLd()]}
+>
+  <HeroSection locale={locale} />
+  <section class="container-site -mt-6 pb-2">
+    <VisitCounter />
+  </section>
+  {featured && (
+    <section class="container-site pb-4">
+      <FeaturedArticleCard article={featured} />
+    </section>
+  )}
+  <CategoryTabs tabs={feedTabs} activeHref={homePath(locale)} />
+  <ArticleFeed articles={feed} title={t(locale, 'latestFeed')} />
+  <section class="container-site py-16">
+    <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 lg:p-12">
+      <h2 class="font-sans text-2xl font-bold">{t(locale, 'whyTitle')}</h2>
+      <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">{t(locale, 'whyBody')}</p>
+    </div>
+  </section>
+</BaseLayout>

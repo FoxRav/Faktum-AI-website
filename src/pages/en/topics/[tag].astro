@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleFeed from '../../../components/sections/ArticleFeed.astro';
+import { getAllArticles } from '../../../utils/content';
+import {
+  findTagLabelBySlug,
+  getAllTagSummaries,
+  getArticlesByTagSlug,
+} from '../../../utils/tags';
+import { breadcrumbJsonLd, tagPageJsonLd } from '../../../utils/seo';
+import { categoryPath } from '../../../i18n/paths';
+import { t } from '../../../i18n/ui';
+
+export async function getStaticPaths() {
+  const articles = await getAllArticles('en');
+  const tags = getAllTagSummaries(articles);
+  return tags.map((tag) => ({
+    params: { tag: tag.slug },
+    props: { tagLabel: tag.label, tagSlug: tag.slug },
+  }));
+}
+
+interface Props {
+  tagLabel: string;
+  tagSlug: string;
+}
+
+const locale = 'en' as const;
+const { tagLabel, tagSlug } = Astro.props;
+const articles = await getAllArticles(locale);
+const tagged = getArticlesByTagSlug(articles, tagSlug);
+const label = findTagLabelBySlug(articles, tagSlug) ?? tagLabel;
+const description = `Faktum AI articles about ${label}.`;
+---
+
+<BaseLayout
+  title={`${label} — articles`}
+  description={description}
+  path={`/en/topics/${tagSlug}/`}
+  jsonLd={[
+    tagPageJsonLd(label, tagSlug),
+    breadcrumbJsonLd([
+      { name: 'Home', path: '/en/' },
+      { name: t(locale, 'topicsTitle'), path: '/en/topics/' },
+      { name: label, path: `/en/topics/${tagSlug}/` },
+    ]),
+  ]}
+>
+  <section class="container-site py-12">
+    <p class="text-sm text-[var(--color-text-muted)]">
+      <a href={categoryPath(locale, 'topics')} class="hover:text-cyan-400">
+        {t(locale, 'topicsBack')}
+      </a>
+    </p>
+    <h1 class="mt-4 font-sans text-3xl font-bold sm:text-4xl">Topic: {label}</h1>
+    <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">{description}</p>
+  </section>
+  <ArticleFeed articles={tagged} title="" emptyMessage={t(locale, 'emptyArticles')} />
+</BaseLayout>

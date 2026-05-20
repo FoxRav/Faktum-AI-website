@@ -8,7 +8,7 @@ import MetricCards from '../components/charts/MetricCards.astro';
 import RelatedArticles from '../components/article/RelatedArticles.astro';
 import { formatDateTime } from '../utils/formatDate';
 import type { ArticleEntry } from '../utils/content';
-import { getCategoryLabel, COLLECTION_PATHS } from '../utils/content';
+import { getCategoryHref, getCategoryLabel } from '../utils/content';
 import { articlePageJsonLd, DEFAULT_OG_IMAGE } from '../utils/seo';
 import { formatDateTimeISO } from '../utils/formatDate';
 import { getRelatedArticles } from '../utils/tags';
@@ -22,7 +22,7 @@ const { article, allArticles } = Astro.props;
 const relatedArticles = getRelatedArticles(article, allArticles, 3);
 const { data } = article;
 const categoryLabel = getCategoryLabel(article);
-const categoryHref = COLLECTION_PATHS[article.collection];
+const categoryHref = getCategoryHref(article);
 ---
 
 <BaseLayout

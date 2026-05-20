@@ -104,25 +104,28 @@ export function breadcrumbJsonLd(
 }
 
 export function articlePageJsonLd(article: ArticleEntry, site = DEFAULT_SITE) {
-  const collectionPaths: Record<ArticleEntry['collection'], string> = {
-    news: '/uutiset/',
-    analysis: '/analyysit/',
-    interviews: '/haastattelut/',
-    tools: '/tyokalut/',
-  };
-  const collectionLabels: Record<ArticleEntry['collection'], string> = {
-    news: 'Uutiset',
-    analysis: 'Analyysit',
-    interviews: 'Haastattelut',
-    tools: 'Työkalut',
+  const locale = article.locale;
+  const home = locale === 'en' ? '/en/' : '/';
+  const collectionLabels =
+    locale === 'en'
+      ? { news: 'News', analysis: 'Analysis', interviews: 'Interviews', tools: 'Tools' }
+      : { news: 'Uutiset', analysis: 'Analyysit', interviews: 'Haastattelut', tools: 'Työkalut' };
+  const collectionPaths = {
+    news: locale === 'en' ? '/en/news/' : '/uutiset/',
+    analysis: locale === 'en' ? '/en/analysis/' : '/analyysit/',
+    interviews: locale === 'en' ? '/en/interviews/' : '/haastattelut/',
+    tools: locale === 'en' ? '/en/tools/' : '/tyokalut/',
   };
 
   return [
     articleJsonLd(article, site),
     breadcrumbJsonLd(
       [
-        { name: 'Etusivu', path: '/' },
-        { name: collectionLabels[article.collection], path: collectionPaths[article.collection] },
+        { name: locale === 'en' ? 'Home' : 'Etusivu', path: home },
+        {
+          name: collectionLabels[article.collection],
+          path: collectionPaths[article.collection],
+        },
         { name: article.data.title, path: getArticleUrl(article) },
       ],
       site,

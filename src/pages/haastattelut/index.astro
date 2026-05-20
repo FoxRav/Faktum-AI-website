@@ -11,6 +11,7 @@ const articles = await getArticlesByCollection('interviews');
   description="Haastattelutiivistelmiä suomalaisesta ja kansainvälisestä AI-kentästä."
   path="/haastattelut/"
   activeTab="/haastattelut/"
+  locale="fi"
 >
   <ArticleFeed articles={articles} title="" emptyMessage="Ei haastatteluja vielä julkaistu." />
 </ListingLayout>

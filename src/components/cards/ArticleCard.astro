@@ -3,7 +3,7 @@ import CategoryBadge from '../ui/CategoryBadge.astro';
 import ReadingTime from '../ui/ReadingTime.astro';
 import { formatDateTime } from '../../utils/formatDate';
 import type { ArticleEntry } from '../../utils/content';
-import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
+import { getArticleUrl, getCategoryHref, getCategoryLabel } from '../../utils/content';
 
 interface Props {
   article: ArticleEntry;
@@ -12,7 +12,7 @@ interface Props {
 const { article } = Astro.props;
 const url = getArticleUrl(article);
 const categoryLabel = getCategoryLabel(article);
-const categoryHref = COLLECTION_PATHS[article.collection];
+const categoryHref = getCategoryHref(article);
 ---
 
 <article class="card group flex flex-col overflow-hidden">

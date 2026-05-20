@@ -1,0 +1,46 @@
+---
+import { getLocaleFromPath, translatePath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+const pathname = Astro.url.pathname;
+const currentLocale = getLocaleFromPath(pathname);
+const fiHref = translatePath(pathname, 'fi');
+const enHref = translatePath(pathname, 'en');
+---
+
+<div
+  class="flex items-center gap-1 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-0.5"
+  role="navigation"
+  aria-label="Language"
+>
+  <a
+    href={fiHref}
+    hreflang="fi"
+    class:list={[
+      'flex h-8 w-8 items-center justify-center rounded-md text-base transition',
+      currentLocale === 'fi'
+        ? 'bg-cyan-500/15 ring-1 ring-cyan-500/40'
+        : 'opacity-70 hover:opacity-100',
+    ]}
+    aria-label={t('fi', 'langFi')}
+    aria-current={currentLocale === 'fi' ? 'page' : undefined}
+    title={t('fi', 'langFi')}
+  >
+    <span aria-hidden="true">🇫🇮</span>
+  </a>
+  <a
+    href={enHref}
+    hreflang="en"
+    class:list={[
+      'flex h-8 w-8 items-center justify-center rounded-md text-base transition',
+      currentLocale === 'en'
+        ? 'bg-cyan-500/15 ring-1 ring-cyan-500/40'
+        : 'opacity-70 hover:opacity-100',
+    ]}
+    aria-label={t('en', 'langEn')}
+    aria-current={currentLocale === 'en' ? 'page' : undefined}
+    title={t('en', 'langEn')}
+  >
+    <span aria-hidden="true">🇬🇧</span>
+  </a>
+</div>

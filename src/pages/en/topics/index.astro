@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAllArticles } from '../../../utils/content';
+import { getAllTagSummaries, getTagUrl } from '../../../utils/tags';
+import { breadcrumbJsonLd, organizationJsonLd } from '../../../utils/seo';
+import { categoryPath } from '../../../i18n/paths';
+import { t } from '../../../i18n/ui';
+
+const locale = 'en' as const;
+const articles = await getAllArticles(locale);
+const tags = getAllTagSummaries(articles);
+---
+
+<BaseLayout
+  title={t(locale, 'topicsTitle')}
+  description="Browse Faktum AI articles by topic: AI, infrastructure, business models, and tools."
+  path="/en/topics/"
+  jsonLd={[
+    organizationJsonLd(),
+    breadcrumbJsonLd([
+      { name: 'Home', path: '/en/' },
+      { name: t(locale, 'topicsTitle'), path: '/en/topics/' },
+    ]),
+  ]}
+>
+  <section class="container-site py-12 lg:py-16">
+    <h1 class="font-sans text-3xl font-bold sm:text-4xl">{t(locale, 'topicsTitle')}</h1>
+    <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">{t(locale, 'topicsLead')}</p>
+    {tags.length > 0 ? (
+      <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {tags.map((tag) => (
+          <li>
+            <a
+              href={getTagUrl(tag.label, locale)}
+              class="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 transition hover:border-cyan-500/40"
+            >
+              <span class="font-medium">{tag.label}</span>
+              <span class="text-sm text-[var(--color-text-muted)]">
+                {tag.count} {t(locale, 'topicArticles')}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="mt-8 text-[var(--color-text-muted)]">
+        {t(locale, 'emptyArticles')}
+        <a href={categoryPath('fi', 'analysis')} class="text-cyan-400 hover:underline">
+          Finnish analysis
+        </a>
+      </p>
+    )}
+  </section>
+</BaseLayout>

@@ -1,31 +1,29 @@
 ---
 import MobileMenu from './MobileMenu.astro';
-
-const nav = [
-  { href: '/', label: 'Etusivu' },
-  { href: '/uutiset/', label: 'Uutiset' },
-  { href: '/analyysit/', label: 'Analyysit' },
-  { href: '/tyokalut/', label: 'Työkalut' },
-  { href: '/haastattelut/', label: 'Haastattelut' },
-  { href: '/projektit/', label: 'Projektit' },
-  { href: '/tietoa/', label: 'Tietoa' },
-];
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { getLocaleFromPath } from '../../i18n/paths';
+import { getNavItems } from '../../i18n/ui';
 
 const currentPath = Astro.url.pathname;
+const locale = getLocaleFromPath(currentPath);
+const nav = getNavItems(locale);
 ---
 
 <header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 backdrop-blur-md">
   <div class="container-site flex h-16 items-center justify-between gap-4">
-    <a href="/" class="flex items-center gap-2 font-semibold tracking-tight text-[var(--color-text)]">
+    <a
+      href={locale === 'fi' ? '/' : '/en/'}
+      class="flex items-center gap-2 font-semibold tracking-tight text-[var(--color-text)]"
+    >
       <span class="text-cyan-400">Faktum</span>
       <span class="text-[var(--color-text-dim)]">AI</span>
     </a>
 
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Päänavigaatio">
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
       {nav.map((item) => {
         const active =
-          item.href === '/'
-            ? currentPath === '/'
+          item.href === '/' || item.href === '/en/'
+            ? currentPath === item.href
             : currentPath.startsWith(item.href);
         return (
           <a
@@ -43,6 +41,9 @@ const currentPath = Astro.url.pathname;
       })}
     </nav>
 
-    <MobileMenu nav={nav} currentPath={currentPath} />
+    <div class="flex items-center gap-2">
+      <LanguageSwitcher />
+      <MobileMenu nav={nav} currentPath={currentPath} />
+    </div>
   </div>
 </header>

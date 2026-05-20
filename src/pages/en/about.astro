@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/ui';
+
+const locale = 'en' as const;
+---
+
+<BaseLayout
+  title={t(locale, 'aboutTitle')}
+  description={t(locale, 'aboutMetaDescription')}
+  path="/en/about/"
+>
+  <section class="container-site py-12 lg:py-16">
+    <h1 class="font-sans text-3xl font-bold sm:text-4xl">{t(locale, 'aboutTitle')}</h1>
+    <div class="prose-faktum mt-8 max-w-3xl">
+      <p>
+        Faktum AI publishes AI news, analysis, and practical perspectives for IT professionals,
+        builders, and decision-makers. The editorial line is journalistic and technical — no hype.
+      </p>
+      <h2>Content</h2>
+      <p>
+        News, in-depth analysis, interview summaries, and tool reviews. English articles are added
+        over time; the main archive is also available in Finnish.
+      </p>
+      <h2>Contact</h2>
+      <dl class="mt-4 space-y-3 text-[var(--color-text-dim)]">
+        <div>
+          <dt class="font-sans text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            Website
+          </dt>
+          <dd class="mt-1">
+            <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="font-sans text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            Enquiries
+          </dt>
+          <dd class="mt-1">
+            <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</BaseLayout>

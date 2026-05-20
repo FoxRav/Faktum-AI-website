@@ -1,7 +1,9 @@
+import type { Locale } from '../i18n/config';
+import { categoryPath } from '../i18n/paths';
 import type { ArticleEntry } from './content';
 import { compareArticlesByRecency } from './content';
 
-/** URL-safe tag slug for /aiheet/<slug>/ */
+/** URL-safe tag slug for topic archive pages. */
 export function slugifyTag(tag: string): string {
   return tag
     .toLowerCase()
@@ -11,8 +13,8 @@ export function slugifyTag(tag: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-export function getTagUrl(tag: string): string {
-  return `/aiheet/${slugifyTag(tag)}/`;
+export function getTagUrl(tag: string, locale: Locale = 'fi'): string {
+  return `${categoryPath(locale, 'topics')}${slugifyTag(tag)}/`;
 }
 
 export interface TagSummary {

@@ -67,6 +67,35 @@ const tools = defineCollection({
   schema: articleSchema,
 });
 
-export const collections = { news, analysis, interviews, tools };
+const newsEn = defineCollection({
+  loader: glob({ base: './src/content/en/news', pattern: '**/*.{md,mdx}' }),
+  schema: articleSchema,
+});
 
-export type ArticleCollection = keyof typeof collections;
+const analysisEn = defineCollection({
+  loader: glob({ base: './src/content/en/analysis', pattern: '**/*.{md,mdx}' }),
+  schema: articleSchema,
+});
+
+const interviewsEn = defineCollection({
+  loader: glob({ base: './src/content/en/interviews', pattern: '**/*.{md,mdx}' }),
+  schema: articleSchema,
+});
+
+const toolsEn = defineCollection({
+  loader: glob({ base: './src/content/en/tools', pattern: '**/*.{md,mdx}' }),
+  schema: articleSchema,
+});
+
+export const collections = {
+  news,
+  analysis,
+  interviews,
+  tools,
+  newsEn,
+  analysisEn,
+  interviewsEn,
+  toolsEn,
+};
+
+export type ArticleCollection = 'news' | 'analysis' | 'interviews' | 'tools';

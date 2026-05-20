@@ -1,4 +1,5 @@
 ---
+import { getLocaleFromPath } from '../../i18n/paths';
 import { getTagUrl } from '../../utils/tags';
 
 interface Props {
@@ -6,13 +7,14 @@ interface Props {
 }
 
 const { tags } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
 ---
 
 {tags.length > 0 && (
   <ul class="flex flex-wrap gap-2" aria-label="Aiheet">
     {tags.map((tag) => (
       <li>
-        <a href={getTagUrl(tag)} class="badge transition hover:border-cyan-500/50 hover:text-cyan-300">
+        <a href={getTagUrl(tag, locale)} class="badge transition hover:border-cyan-500/50 hover:text-cyan-300">
           {tag}
         </a>
       </li>
