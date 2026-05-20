@@ -1,0 +1,27 @@
+# Faktum AI
+
+> Suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille, AI-rakentajille ja päätöksentekijöille.
+
+## Site
+
+- URL: https://www.faktum-ai.com
+- Language: Finnish (fi-FI)
+- RSS: https://www.faktum-ai.com/rss.xml
+- Sitemap: https://www.faktum-ai.com/sitemap-index.xml
+- Topics index: https://www.faktum-ai.com/aiheet/
+
+## Content types
+
+- /uutiset/ — AI news and regulatory updates (Finnish context)
+- /analyysit/ — In-depth analysis (markets, infrastructure, business models)
+- /haastattelut/ — Interview summaries
+- /tyokalut/ — Tool reviews for builders
+
+## Editorial line
+
+Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis.
+
+## Contact
+
+- marko@faktum-ai.com
+- About: https://www.faktum-ai.com/tietoa/

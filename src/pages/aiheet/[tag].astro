@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleFeed from '../../components/sections/ArticleFeed.astro';
+import { getAllArticles } from '../../utils/content';
+import {
+  findTagLabelBySlug,
+  getAllTagSummaries,
+  getArticlesByTagSlug,
+} from '../../utils/tags';
+import { breadcrumbJsonLd, tagPageJsonLd } from '../../utils/seo';
+
+export async function getStaticPaths() {
+  const articles = await getAllArticles();
+  const tags = getAllTagSummaries(articles);
+  return tags.map((tag) => ({
+    params: { tag: tag.slug },
+    props: { tagLabel: tag.label, tagSlug: tag.slug },
+  }));
+}
+
+interface Props {
+  tagLabel: string;
+  tagSlug: string;
+}
+
+const { tagLabel, tagSlug } = Astro.props;
+const articles = await getAllArticles();
+const tagged = getArticlesByTagSlug(articles, tagSlug);
+const label = findTagLabelBySlug(articles, tagSlug) ?? tagLabel;
+const description = `Faktum AI -artikkelit aiheesta ${label}: analyysit, uutiset ja työkaluarviot suomeksi.`;
+---
+
+<BaseLayout
+  title={`${label} — artikkelit`}
+  description={description}
+  path={`/aiheet/${tagSlug}/`}
+  jsonLd={[
+    tagPageJsonLd(label, tagSlug),
+    breadcrumbJsonLd([
+      { name: 'Etusivu', path: '/' },
+      { name: 'Aiheet', path: '/aiheet/' },
+      { name: label, path: `/aiheet/${tagSlug}/` },
+    ]),
+  ]}
+>
+  <section class="container-site py-12">
+    <p class="text-sm text-[var(--color-text-muted)]">
+      <a href="/aiheet/" class="hover:text-cyan-400">← Kaikki aiheet</a>
+    </p>
+    <h1 class="mt-4 font-sans text-3xl font-bold sm:text-4xl">Aihe: {label}</h1>
+    <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">{description}</p>
+  </section>
+  <ArticleFeed
+    articles={tagged}
+    title=""
+    emptyMessage={`Ei julkaistuja artikkeleita aiheesta ${label}.`}
+  />
+</BaseLayout>

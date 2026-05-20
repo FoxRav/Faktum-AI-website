@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.faktum-ai.com/sitemap-index.xml
+
+# LLM site summary: https://www.faktum-ai.com/llms.txt

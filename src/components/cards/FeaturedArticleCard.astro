@@ -1,6 +1,6 @@
 ---
 import CategoryBadge from '../ui/CategoryBadge.astro';
-import { formatDate } from '../../utils/formatDate';
+import { formatDateTime } from '../../utils/formatDate';
 import type { ArticleEntry } from '../../utils/content';
 import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
 
@@ -37,7 +37,7 @@ const url = getArticleUrl(article);
     </h2>
     <p class="mt-4 text-[var(--color-text-dim)]">{article.data.description}</p>
     <div class="mt-6 flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
-      <time datetime={article.data.date.toISOString()}>{formatDate(article.data.date)}</time>
+      <time datetime={article.data.date.toISOString()}>{formatDateTime(article.data.date)}</time>
       {article.data.readingTime && <span>{article.data.readingTime}</span>}
     </div>
     <a href={url} class="btn-primary mt-6 w-fit">Lue artikkeli</a>

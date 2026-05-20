@@ -1,7 +1,7 @@
 ---
 import CategoryBadge from '../ui/CategoryBadge.astro';
 import ReadingTime from '../ui/ReadingTime.astro';
-import { formatDate } from '../../utils/formatDate';
+import { formatDateTime } from '../../utils/formatDate';
 import type { ArticleEntry } from '../../utils/content';
 import { getArticleUrl, getCategoryLabel, COLLECTION_PATHS } from '../../utils/content';
 
@@ -32,7 +32,7 @@ const categoryHref = COLLECTION_PATHS[article.collection];
     <div class="mb-3 flex flex-wrap items-center gap-2">
       <CategoryBadge label={categoryLabel} href={categoryHref} />
       <time datetime={article.data.date.toISOString()} class="text-xs text-[var(--color-text-muted)]">
-        {formatDate(article.data.date)}
+        {formatDateTime(article.data.date)}
       </time>
       {article.data.readingTime && <ReadingTime time={article.data.readingTime} />}
     </div>

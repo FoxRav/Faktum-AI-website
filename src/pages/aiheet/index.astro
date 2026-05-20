@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllArticles } from '../../utils/content';
+import { getAllTagSummaries, getTagUrl } from '../../utils/tags';
+import { breadcrumbJsonLd, organizationJsonLd } from '../../utils/seo';
+
+const articles = await getAllArticles();
+const tags = getAllTagSummaries(articles);
+---
+
+<BaseLayout
+  title="Aiheet ja hakusanat"
+  description="Selaa Faktum AI -artikkeleita aiheittain: tekoäly, infrastruktuuri, liiketoimintamallit ja työkalut."
+  path="/aiheet/"
+  jsonLd={[organizationJsonLd(), breadcrumbJsonLd([{ name: 'Etusivu', path: '/' }, { name: 'Aiheet', path: '/aiheet/' }])]}
+>
+  <section class="container-site py-12 lg:py-16">
+    <h1 class="font-sans text-3xl font-bold sm:text-4xl">Aiheet</h1>
+    <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">
+      Artikkelit ryhmiteltynä avainsanoihin. Hyödyllinen sekä lukijoille että hakukoneille.
+    </p>
+    {tags.length > 0 ? (
+      <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {tags.map((tag) => (
+          <li>
+            <a
+              href={getTagUrl(tag.label)}
+              class="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 transition hover:border-cyan-500/40"
+            >
+              <span class="font-medium">{tag.label}</span>
+              <span class="text-sm text-[var(--color-text-muted)]">{tag.count} artikkelia</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="mt-8 text-[var(--color-text-muted)]">Ei julkaistuja aiheita vielä.</p>
+    )}
+  </section>
+</BaseLayout>

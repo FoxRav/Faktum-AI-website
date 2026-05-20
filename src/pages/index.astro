@@ -6,6 +6,7 @@ import ArticleFeed from '../components/sections/ArticleFeed.astro';
 import CategoryTabs from '../components/sections/CategoryTabs.astro';
 import VisitCounter from '../components/VisitCounter.astro';
 import { getAllArticles } from '../utils/content';
+import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
 
 const articles = await getAllArticles();
 /** Päänosto = aina uusin julkaisu (sama järjestys kuin feedissä). */
@@ -26,6 +27,7 @@ const feedTabs = [
   description="Faktum AI tuottaa suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita IT-ammattilaisille ja AI-rakentajille."
   path="/"
   ogImage="/images/brand/landing-hero.webp"
+  jsonLd={[organizationJsonLd(), websiteJsonLd()]}
 >
   <HeroSection />
   <section class="container-site -mt-6 pb-2">

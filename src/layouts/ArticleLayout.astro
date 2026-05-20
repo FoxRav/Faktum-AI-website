@@ -6,17 +6,20 @@ import KeyTakeaways from '../components/article/KeyTakeaways.astro';
 import SourceList from '../components/article/SourceList.astro';
 import MetricCards from '../components/charts/MetricCards.astro';
 import RelatedArticles from '../components/article/RelatedArticles.astro';
-import { formatDate } from '../utils/formatDate';
+import { formatDateTime } from '../utils/formatDate';
 import type { ArticleEntry } from '../utils/content';
 import { getCategoryLabel, COLLECTION_PATHS } from '../utils/content';
-import { articleJsonLd } from '../utils/seo';
+import { articlePageJsonLd, DEFAULT_OG_IMAGE } from '../utils/seo';
+import { formatDateTimeISO } from '../utils/formatDate';
+import { getRelatedArticles } from '../utils/tags';
 
 interface Props {
   article: ArticleEntry;
-  relatedArticles: ArticleEntry[];
+  allArticles: ArticleEntry[];
 }
 
-const { article, relatedArticles } = Astro.props;
+const { article, allArticles } = Astro.props;
+const relatedArticles = getRelatedArticles(article, allArticles, 3);
 const { data } = article;
 const categoryLabel = getCategoryLabel(article);
 const categoryHref = COLLECTION_PATHS[article.collection];
@@ -27,7 +30,11 @@ const categoryHref = COLLECTION_PATHS[article.collection];
   description={data.description}
   path={Astro.url.pathname}
   ogType="article"
-  jsonLd={articleJsonLd(article)}
+  ogImage={data.heroImage ?? DEFAULT_OG_IMAGE}
+  publishedTime={formatDateTimeISO(data.date)}
+  modifiedTime={formatDateTimeISO(data.updated ?? data.date)}
+  articleTags={data.tags}
+  jsonLd={articlePageJsonLd(article)}
 >
   <article class="container-site py-10 lg:py-14">
     <header class="max-w-3xl">
@@ -40,7 +47,7 @@ const categoryHref = COLLECTION_PATHS[article.collection];
       </h1>
       <p class="mt-4 text-xl text-[var(--color-text-dim)]">{data.description}</p>
       <div class="mt-6 flex flex-wrap gap-4 border-y border-[var(--color-border)] py-4 text-sm text-[var(--color-text-muted)]">
-        <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+        <time datetime={data.date.toISOString()}>{formatDateTime(data.date)}</time>
         <span>{data.author}</span>
         {data.readingTime && <span>{data.readingTime}</span>}
       </div>

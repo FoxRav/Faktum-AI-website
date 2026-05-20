@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
-import { canonicalUrl } from '../utils/seo';
+import { canonicalUrl, DEFAULT_OG_IMAGE, absoluteAssetUrl } from '../utils/seo';
 
 interface Props {
   title: string;
@@ -10,6 +10,9 @@ interface Props {
   path?: string;
   ogType?: 'website' | 'article';
   ogImage?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleTags?: string[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -19,13 +22,21 @@ const {
   path = Astro.url.pathname,
   ogType = 'website',
   ogImage,
+  publishedTime,
+  modifiedTime,
+  articleTags = [],
   jsonLd,
 } = Astro.props;
 
 const fullTitle = title.includes('Faktum AI') ? title : `${title} · Faktum AI`;
 const canonical = canonicalUrl(path);
 const site = Astro.site ?? 'https://www.faktum-ai.com';
-const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site}${ogImage}`) : undefined;
+const ogImageUrl = absoluteAssetUrl(ogImage ?? DEFAULT_OG_IMAGE, String(site));
+const jsonLdItems = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [];
 ---
 
 <!doctype html>
@@ -42,9 +53,18 @@ const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site}${o
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="fi_FI" />
-    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={title} />
+    {ogType === 'article' && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    {ogType === 'article' && modifiedTime && (
+      <meta property="article:modified_time" content={modifiedTime} />
+    )}
+    {ogType === 'article' &&
+      articleTags.map((tag) => <meta property="article:tag" content={tag} />)}
     <meta name="twitter:card" content="summary_large_image" />
-    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+    <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <link rel="alternate" type="application/rss+xml" title="Faktum AI RSS" href="/rss.xml" />
@@ -54,9 +74,9 @@ const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site}${o
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    )}
+    {jsonLdItems.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
   </head>
   <body>
     <Header />

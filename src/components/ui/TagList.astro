@@ -1,4 +1,6 @@
 ---
+import { getTagUrl } from '../../utils/tags';
+
 interface Props {
   tags: string[];
 }
@@ -7,10 +9,12 @@ const { tags } = Astro.props;
 ---
 
 {tags.length > 0 && (
-  <ul class="flex flex-wrap gap-2">
+  <ul class="flex flex-wrap gap-2" aria-label="Aiheet">
     {tags.map((tag) => (
       <li>
-        <span class="badge">{tag}</span>
+        <a href={getTagUrl(tag)} class="badge transition hover:border-cyan-500/50 hover:text-cyan-300">
+          {tag}
+        </a>
       </li>
     ))}
   </ul>
