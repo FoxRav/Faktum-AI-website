@@ -49,12 +49,22 @@ chartData:
 ---
 
 import SimpleBarChart from '../../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../../components/charts/MetricCards.astro';
 
 ## What happened?
 
 Ed Zitron (Where's Your Ed At?, Better Offline podcast) argues that the AI bubble does not survive one question: **where do all those GPUs and data centers actually go?** According to the Tech Report interview, the current AI boom is structurally **NVIDIA's revenue model**, funded by hyperscalers, labs, and investors extending arranged credit to one another — not by real, broadly distributed compute demand.
 
 > **Faktum AI note:** This article is an editorial summary and analysis of the interview. All claims and figures are drawn from the provided source material; nothing has been added from outside the interview. Readers should evaluate the claims independently and verify critical figures from original sources.
+
+## Key figures
+
+<MetricCards items={[
+  { label: 'OpenAI + Anthropic servers (estimate)', value: '≈ $300 bn', description: 'Zitron\'s calculation from the interview' },
+  { label: 'Goldman Sachs AI build-out 2031', value: '$7.6 trillion', description: 'Tracking Trillions report' },
+  { label: 'Hyperscaler capex 2026', value: '$1 trillion', description: 'Meta, Google, Amazon, Microsoft' },
+  { label: 'NVIDIA GPUs / year', value: '6 million', description: 'Last year\'s shipments per the interview' },
+]} />
 
 ## Why this matters for the Finnish reader
 

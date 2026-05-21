@@ -49,12 +49,22 @@ chartData:
 ---
 
 import SimpleBarChart from '../../components/charts/SimpleBarChart.astro';
+import MetricCards from '../../components/charts/MetricCards.astro';
 
 ## Mikä tapahtui?
 
 Ed Zitron (Where's Your Ed At?, Better Offline -podcast) väittää, ettei AI-kupla selviä yhdestä kysymyksestä: **mihin kaikki nuo GPU:t ja datakeskukset oikeasti menevät?** Tech Report -haastattelun mukaan nykyinen AI-buumi on rakenteellisesti **NVIDIAn liikevaihtomalli**, jota hyperscalerit, laboratoriot ja sijoittajat rahoittavat toisilleen järjestetyillä krediiteillä — ei todellisella, laajalle levinneellä laskentakysynnällä.
 
 > **Faktum AI huomio:** Tämä artikkeli on toimituksellinen tiivistelmä ja analyysi haastattelusta. Kaikki väitteet ja luvut on poimittu annetusta aineistosta; mitään ei ole lisätty haastattelun ulkopuolelta. Lukijan tulee arvioida väitteet itsenäisesti ja tarkistaa kriittiset luvut alkuperäisistä lähteistä.
+
+## Avainluvut
+
+<MetricCards items={[
+  { label: 'OpenAI + Anthropic -palvelimiin (arvio)', value: '≈ 300 mrd $', description: 'Zitronin laskelma haastattelusta' },
+  { label: 'Goldman Sachs AI-rakennus 2031', value: '7,6 biljoonaa $', description: 'Tracking Trillions -raportti' },
+  { label: 'Hyperscaler capex 2026', value: '1 biljoona $', description: 'Meta, Google, Amazon, Microsoft' },
+  { label: 'NVIDIA GPU:t / vuosi', value: '6 milj.', description: 'Viime vuoden toimitukset haastattelun mukaan' },
+]} />
 
 ## Miksi tämä on merkittävää suomalaiselle lukijalle?
 

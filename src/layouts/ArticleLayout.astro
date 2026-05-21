@@ -4,7 +4,6 @@ import CategoryBadge from '../components/ui/CategoryBadge.astro';
 import TagList from '../components/ui/TagList.astro';
 import KeyTakeaways from '../components/article/KeyTakeaways.astro';
 import SourceList from '../components/article/SourceList.astro';
-import MetricCards from '../components/charts/MetricCards.astro';
 import RelatedArticles from '../components/article/RelatedArticles.astro';
 import { formatDateTime } from '../utils/formatDate';
 import type { ArticleEntry } from '../utils/content';
@@ -63,9 +62,9 @@ const categoryHref = getCategoryHref(article);
         <img
           src={data.heroImage}
           alt={data.heroAlt ?? data.title}
-          class="w-full object-cover"
-          width="1200"
-          height="675"
+          class="aspect-video w-full object-contain bg-[var(--color-bg-soft)]"
+          width="1600"
+          height="900"
         />
         {data.heroCaption && (
           <figcaption class="px-4 py-2 text-xs text-[var(--color-text-muted)]">
@@ -76,7 +75,6 @@ const categoryHref = getCategoryHref(article);
     )}
 
     {data.keyClaims.length > 0 && <KeyTakeaways items={data.keyClaims} title="Keskeiset väitteet" />}
-    {data.keyMetrics.length > 0 && <MetricCards items={data.keyMetrics} />}
 
     <div class="prose-faktum mx-auto max-w-3xl">
       <slot />

@@ -1,0 +1,164 @@
+---
+title: "Google I/O 2026: agenttien aikakausi — mitä kuunnella, mitä sivuuttaa"
+description: "Google ei julkistanut yhtä mullistusta — se julkaisi agenttialustan. Mitä keynotesta pitää tiimisi tietää nyt: mikä on jo käytössä, mikä odottaa ja mikä on hypeä."
+date: 2026-05-21T12:45:56
+updated: 2026-05-21T12:45:56
+author: "Faktum AI"
+category: "Analyysit"
+tags:
+  - Google
+  - Gemini
+  - AI-agentit
+  - haku
+  - yritysten AI
+  - Suomi
+status: published
+readingTime: "11 min"
+heroImage: "/images/articles/2026/05/2026-05-21-124556_google-io-2026-agenttien-aikakausi/hero-FI.webp"
+heroAlt: "Google I/O 2026 — siirtymä tekoälyagentteihin: haku, koodi ja kauppa yhdessä ekosysteemissä"
+heroCaption: "Kuvitus · Faktum AI"
+featured: false
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "Google I/O '26 Keynote (Sundar Pichai)"
+    publisher: "Google / keynote-transkripti"
+    date: "2026-05-19"
+  - title: "Google I/O 2026 keynote in 35 minutes"
+    publisher: "Tiivistelmätranskripti"
+    date: "2026-05-19"
+keyClaims:
+  - "Yhtä uutta tuotetta ei ollut — Google tuo saman tekoälyavustajan hakuun, Gemini-sovellukseen ja ohjelmointityökaluihin (Anti-Gravity). Tavoite on pinon mallit, työkalut ja palvelut yhdeksi alustaksi."
+  - "Gemini 3.5 Flash on nopeampi ja halvempi kuin aiemmat huippumallit. Yritysten tekoälyn käyttökulut voivat helpottua jo ennen vuoden loppua."
+  - "Google-haku ei enää vain vastaa kysymyksiin — se voi tehdä sinulle oman näkymän ja seurata aiheita taustalla puolestasi. Tämä muuttaa, miten nettisivut ja sisältö löytyvät."
+  - "Kuluttajille suunnatut agentit (Spark, ostoskori) tulevat ensin Yhdysvaltoihin. Suomessa muutos näkyy ensin kehittäjien työkaluissa ja yritysten Google Cloud -käytössä."
+  - "Voimaa siirtyy yhä enemmän isoille toimijoille, joilla on omat palvelimet, palvelut ja käyttäjät. OpenAI:n yhteistyö Googlelle SynthID-standardissa on kilpailua — ei sovintoa."
+keyMetrics:
+  - label: "Tekoälyn käyttö Googlen palveluissa"
+    value: "3,2 kvadriljoonaa/kk"
+    description: "Tokenit = tekstiyksiköitä, joita malli käsittelee. Määrä septinkertaistui vuodessa (I/O 2025: 0,48 kvadriljoonaa)."
+  - label: "Investoinnit laitteistoon ja datakeskuksiin (2026)"
+    value: "180–190 mrd $"
+    description: "CapEx = pääomakulut palvelimille ja piireihin. Kuusinkertaistui vuodesta 2022 (31 mrd $)."
+  - label: "Gemini-sovelluksen kuukausikäyttäjät"
+    value: "900 milj.+"
+    description: "Kuukausittain aktiiviset käyttäjät (MAU). Kasvoivat 400 miljoonasta yli 900 miljoonaan alle vuodessa."
+  - label: "Gemini 3.5 Flash — vastausnopeus"
+    value: "4× nopeampi"
+    description: "Neljä kertaa nopeampi kuin muut huippumallit; Anti-Gravity-kehitysympäristössä jopa 12×."
+  - label: "Kehittäjiä Google-tekoälymalleilla"
+    value: "8,5 milj./kk"
+    description: "Sovelluskehittäjiä, jotka käyttävät Googlen malleja kuukausittain API:n tai työkalujen kautta."
+  - label: "AI Mode -haun käyttäjät"
+    value: "1 miljard+/kk"
+    description: "Googlen tekoälyhaun kuukausikäyttäjiä — hakukoneen suurin AI-päivitys tähän asti."
+chartData: []
+---
+
+import MetricCards from '../../components/charts/MetricCards.astro';
+
+## Mitä tapahtui?
+
+**19. toukokuuta 2026** Sundar Pichai avasi Google I/O:n tutulla teesillä, joka nyt konkretisoituu: tekoäly siirtyy **vastaamisesta toimimiseen**. Keynotessa ei ollut yksi shokkijulkaisu vaan koordinoitu pino — **Gemini 3.5 Flash**, **Anti-Gravity 2.0**, **Gemini Spark**, **generatiivinen käyttöliittymä haussa** sekä **agenttikauppa** (Universal Cart, UCP, AP2).
+
+Demis Hassabis nosti esiin maailmamalleja (**Gemini Omni**, AGI “muutaman vuoden päässä”) ja tiedepipelinejä. Liiketoimintatarina on kuitenkin **alustalukittuminen agenttien kautta** — sama agenttikehys hakuun, kuluttajille ja kehittäjille.
+
+> **Faktum AI:n näkökulma:** Tämä on Googlen vastaus [OpenAI:n kasvukiilaan](/analyysit/openai-kasvukiila-liiketoiminta-ja-riippuvuus/) — ei voittamalla laboratoriossa hype-kilpailua, vaan agenttien toimittamisella siellä, missä Googlella jo on jakelua: Search, Android, Workspace ja Cloud.
+
+## Avainluvut
+
+<MetricCards items={[
+  { label: 'Tekoälyn käyttö Googlen palveluissa', value: '3,2 kvadriljoonaa/kk', description: 'Tokenit = tekstiyksiköitä, joita malli käsittelee. Määrä septinkertaistui vuodessa (I/O 2025: 0,48 kvadriljoonaa).' },
+  { label: 'Investoinnit laitteistoon ja datakeskuksiin (2026)', value: '180–190 mrd $', description: 'CapEx = pääomakulut palvelimille ja piireihin. Kuusinkertaistui vuodesta 2022 (31 mrd $).' },
+  { label: 'Gemini-sovelluksen kuukausikäyttäjät', value: '900 milj.+', description: 'Kuukausittain aktiiviset käyttäjät (MAU). Kasvoivat 400 miljoonasta yli 900 miljoonaan alle vuodessa.' },
+  { label: 'Gemini 3.5 Flash — vastausnopeus', value: '4× nopeampi', description: 'Neljä kertaa nopeampi kuin muut huippumallit; Anti-Gravity-kehitysympäristössä jopa 12×.' },
+  { label: 'Kehittäjiä Google-tekoälymalleilla', value: '8,5 milj./kk', description: 'Sovelluskehittäjiä, jotka käyttävät Googlen malleja kuukausittain API:n tai työkalujen kautta.' },
+  { label: 'AI Mode -haun käyttäjät', value: '1 miljard+/kk', description: 'Googlen tekoälyhaun kuukausikäyttäjiä — hakukoneen suurin AI-päivitys tähän asti.' },
+]} />
+
+## Mullistavaa vai inkrementaalista?
+
+**Ei tyhjää eikä paradigman vaihtoa.** Aidosti uusi kerros on **jatkuvat tausta-agentit työkaluilla**:
+
+| Kerros | Mitä julkaistiin | Uutuus |
+| --- | --- | --- |
+| **Mallit** | Gemini 3.5 Flash (nyt), 3.5 Pro (kuukauden päästä), Omni (video/maailma) | Flash = nopeus + hinta; Omni = mediaputki |
+| **Dev** | Anti-Gravity 2.0 desktop, CLI, SDK, sub-agentit | Agenttilähtöinen IDE globaalisti tänään |
+| **Kuluttaja** | Gemini Spark (24/7 VM-agentti), Daily Brief | US-beta ensin; MCP-integraatiot tulossa |
+| **Haku** | Hakuagentit, generatiivinen UI, yhtenäinen AI-hakulaatikko | Haku **suoritusympäristönä**, ei pelkkänä indeksinä |
+| **Kauppa** | Universal Cart, UCP, AP2-maksuvaltuudet | Avoin standardi Amazonin, Stripen yms. kanssa |
+| **Laitteet** | Project Aura -äänilasit (syksy 2026) | Gemini korvaan; iOS + Android |
+
+Rakenteellisesti merkittävää: Google upottaa **saman agenttikehyksen (Anti-Gravity)** hakuun, Sparkiin ja dev-työkaluihin. Kysymys voi synnyttää koodia, käyttöliittymän ja verkkoseurannan — OS-demo (Doom agenttien rakentamalla kernelillä) oli teatteria, mutta **kaava** on tuotestrategia.
+
+## Markkina ja voimasuhteet
+
+Kolme siirtoa muuttavat kenttää:
+
+1. **Full-stack-voittajat etenevät.** Omat TPU:t (8. sukupolvi, yli miljoonan laiteklusteri), mallit, Search, Wallet ja Cloud samassa investointitarinassa. Pelkkä mallikilpailu vaikeutuu.
+
+2. **Standardit suojakaavoina.** **SynthID**-yhteistyö **OpenAI:n**, NVIDIAn ja muiden kanssa on merkittävä — läpinäkyvyysinfrastruktuurista tulee koordinaatiopeli. Google haluaa omistaa varmennuskerroksen (Search + Chrome: “generoiko tekoäly tämän?”).
+
+3. **Agenttikaupan protokollat.** **UCP** (Universal Commerce Protocol) ja **AP2** (maksut digitaalisilla valtuuksilla) pyrkivät toimimaan kaupassa kuten HTTP verkossa. Perustajakumppaneita esimerkiksi Amazon, Meta, Microsoft, Salesforce ja Stripe. Jos UCP vakiintuu, **jakelu siirtyy verkkosivuilta agenttipinnoille** — huono uutinen pelkälle SEO:lle, hyvä API-valmiille kauppiaille.
+
+OpenAI ei katoa; Google **uudelleenmäärittää taistelukentän** omille pinnoilleen. Microsoftin yrityskiila (Copilot + Azure + M365) säilyy; Google painaa **kuluttajatottumusta, hakua ja Androidia**.
+
+## Mitä tämä tarkoittaa Suomelle?
+
+**Suora kuluttajavaikutus: rajallinen toistaiseksi.** Spark-beta, Universal Cart, Ask YouTube ja osa agenttikaupasta ovat **US-first tai Yhdysvalloissa kesällä 2026**. Suomalaiset käyttävät jo Geminiä ja AI Modea globaalisti, mutta **toimintaa tekevät agentit** tulevat myöhemmin.
+
+**Epäsuora vaikutus: konkreettinen rakentajille ja ostajille:**
+
+| Kohderyhmä | Vaikutus | Suositeltu reaktio |
+| --- | --- | --- |
+| **Kehittäjät** | Anti-Gravity 2.0 + 3.5 Flash API **globaalisti tänään** | Vertaa Flash nykyiseen pinoon; testaa sub-agenttikuvioita |
+| **GCP / Workspace -asiakkaat** | Nopeampi/halvempi inferenssi; agentit Google-palveluissa | Päivitä token-budjetit ja mallivalikoima ennen Q3-uusintoja |
+| **Julkinen sektori & säännellyt** | Spark pyörii **Google Cloud -VM:illä** Gmail/Calendar-käyttöoikeuksilla | Käsittele **korkean riskin käsittelynä** GDPR:n alla; DPIA ennen pilotteja |
+| **Vähittäiskauppa** | UCP/AP2 voi muuttaa löytymistä ja checkoutia | Seuraa pohjoismaista käyttöönottoa; älä rakenna checkoutia uudelleen vielä |
+| **Media / SEO** | Generatiivinen UI + hakuagentit vähentävät klikkejä ulos | Laajenna kanavia — pelkkä perinteinen hakukone-SEO ei riitä |
+
+Suomi ei tarvitse **kansallista hätätilaa**. Tarvitaan **arkkitehtuurihygieniaa**: agenttioikeudet, lokitus, ihminen mukana maksuissa, eikä hankintoja Yhdysvaltain demotason ominaisuuksille.
+
+## Tekninen arvio suomalaiselle tiimille
+
+**Mitä kuunnella:**
+
+- **Gemini 3.5 Flash** oletukseksi — Pichai väitti **4× nopeamman** tuoton kuin muut huippumallit ja **alle puolet hinnasta**, esimerkiksi **yli miljardin dollarin vuosisäästö**, jos suuret GCP-asiakkaat siirtävät 80 % token-määrästä Flashiin.
+- **Anti-Gravity 2.0** — sub-agentit, asynkroniset tehtävät, MCP; Googlen vastaus Cursor-tyylisiin agentti-IDE:ihin, nyt **erillinen desktop-sovellus**.
+- **MCP Sparkissa** — kolmannen osapuolen työkalut “lähiviikkoina”; linjassa agenttien yleisen johdotuksen kanssa.
+
+**Miten reagoida:**
+
+- **Kaksiviikkoinen arviointi**: Flash suuren volyymin tehtäviin, Pro-luokan mallit syvään päättelyyn.
+- **GCP-kustannukset:** Laske **hinta valmiille lopputulokselle** (esim. käsitellyt tiketit, generoidut raportit), älä vain yhden token-erän hintaa. Yksi agenttitehtävä voi tehdä **kymmeniä peräkkäisiä mallikutsuja** — Flash halventaa yksittäistä kutsua, mutta silmukka kasvattaa laskua silti. Koko ala siirtyy pois subsidioidusta hinnoittelusta kohti todellista käyttölaskutusta ([OpenAI:n kasvukiila-analyysi](/analyysit/openai-kasvukiila-liiketoiminta-ja-riippuvuus/) kuvaa samaa trendiä).
+- EU-asiakkaille dokumentoi **mikä pyörii kenen VM:llä**, kun agentit koskevat postia, kalenteria tai maksuja.
+
+**Mitä sivuuttaa (toistaiseksi):**
+
+- AGI/singulariteetti-retoriikka — ei toiminnallista.
+- Doom agentti-OS -demosta — markkinointia dev-mielikuville.
+- Älylasit ennen pohjoismaista saatavuutta ja tietosuojakatselua.
+
+## Riskit ja epävarmuudet
+
+- **Benchmarkit ja demot** ovat Google-kuratoituja; riippumattomat Flash-arviot suomalaisissa työkuormissa puuttuvat vielä.
+- **Agenttiturvallisuus** — Spark tulee ensin “trusted testers” -ryhmälle; autonominen posti, kalenteri ja tulevat maksut vaativat väärinkäyttötestejä.
+- **EU AI Act + GDPR** — personal intelligence yhdistää Gmailin, Photosin ja Calendarin; suomalaiset tietosuojavastaavat kysyvät, missä päättely pyörii ja mitä säilytetään.
+- **Julkaisijatalous** — hakuagentit, jotka syntetisoivat ja toimivat, voivat **vähentää referral-liikennettä**; Google väittää agenttien nostavan esiin “hyper-relevanttia” sisältöä — skaalassa todistamaton.
+- **US-keskeinen käyttöönotto** — suomalaiset voivat lukea otsikoita ja olettaa Sparkin olevan täällä; hallitse odotuksia sisäisesti.
+
+## Johtopäätös
+
+Google I/O 2026 vahvistaa alan suunnan: **agentit alustoilla, joilla on jo käyttäjiä**. Suomelle ei synny yksittäistä “Google-hetkeä”, mutta **hankinta- ja insinöörihetki** on olemassa — Flash-taloudellisuus, Anti-Gravity-työkalut ja tuleva hakuagenttien jakelun muutos ansaitsevat huomion tällä kvartaalilla.
+
+**Ei paniikkia. Ei sivuuttamista.** Päivitä mallivalikoima, agenttien hallinta ja SEO/kauppa-oletukset. Seuraa, muuttuuko **UCP** oikeaksi infrastruktuuriksi vai jääkö konsortion diaksi.
+
+### Yksittäisen insinöörin näkökulma
+
+**Hyvä:** **Gemini 3.5 Flash** ja **Anti-Gravity 2.0** ovat käytettävissä nyt — yksittäinen kehittäjä voi testata halvempaa inferenssiä ja agenttityökaluja ilman enterprise-sopimusta. **MCP**-tuki tulee Sparkiin; sama työkalujen kytkentämalli toimii muissakin agentti-IDE:issä. Agenttien ajattelu (silmukat, alitehtävät, työkalukutsut) on **siirrettävä taito**, ei pelkkä Google-ominaisuus.
+
+**Huono:** Kuluttaja-agentit (**Spark**, ostoskori, Ask YouTube) eivät ole Suomessa — älä rakenna side-projektia niiden varaan. Keynoten luvut (nopeus, säästö) ovat Googlen omia vertailuja; **oma vertailu omalla datalla** ennen kuin vaihdat tuotantopinoa. Halpa token-hinta ei auta, jos agentti pyörittää kymmeniä kutsuja — **lasku voi nousta** silti.
+
+**Opittavaa:** Aja **kaksiviikkoinen Flash-kokeilu** omilla tehtävillä (koodi, dokumentit, batch-käsittely). Mittaa **hinta valmiille lopputulokselle**, ei yksittäiselle API-kutsulle. Kokeile Anti-Gravityä tai MCP:tä yhdessä projektissa — opi rajat (missä agentti luotetaan, missä ei). Älä osta hypeä: AGI-retoriikka ja demo-OS eivät muuta arkea, mutta **halvempi malli + parempi agenttityökalu** voivat.
+
+Laajempaan AI-rahoituskuvaan yhdistä [rakenteellinen kuplaanalyysi](/analyysit/ai-kupla-rakenteellinen-poikkeama/) ja [OpenAI:n laskentakiila](/analyysit/openai-kasvukiila-liiketoiminta-ja-riippuvuus/).

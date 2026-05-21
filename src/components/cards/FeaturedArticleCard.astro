@@ -13,20 +13,23 @@ const { article } = Astro.props;
 const url = getArticleUrl(article);
 ---
 
-<article class="card overflow-hidden lg:grid lg:grid-cols-2">
-  <div class="relative aspect-[16/10] bg-[var(--color-bg-soft)] lg:aspect-auto lg:min-h-[320px]">
+<article class="card overflow-hidden lg:grid lg:grid-cols-2 lg:items-center">
+  <div class="relative aspect-video bg-[var(--color-bg-soft)]">
     {article.data.heroImage ? (
       <img
         src={article.data.heroImage}
         alt={article.data.heroAlt ?? article.data.title}
-        class="absolute inset-0 h-full w-full object-cover"
-        width="800"
-        height="500"
+        class="absolute inset-0 h-full w-full object-contain"
+        width="1600"
+        height="900"
       />
     ) : (
       <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent" />
     )}
-    <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent lg:bg-gradient-to-r" />
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/50 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[var(--color-bg)]/40 lg:via-transparent"
+      aria-hidden="true"
+    />
   </div>
   <div class="flex flex-col justify-center p-6 lg:p-10">
     <div class="mb-4 flex flex-wrap items-center gap-2">
