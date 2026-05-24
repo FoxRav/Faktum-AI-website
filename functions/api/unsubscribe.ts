@@ -2,6 +2,7 @@ import { hashIp, hashToken, truncateUserAgent } from '../lib/crypto';
 import {
   getSubscriberById,
   getValidToken,
+  invalidateSubscriberTokens,
   logConsentEvent,
   markTokenUsed,
   unsubscribeSubscriber,
@@ -48,6 +49,7 @@ async function processUnsubscribe(
   }
 
   await markTokenUsed(db, tokenHash);
+  await invalidateSubscriberTokens(db, subscriber.id, ['manage']);
   await unsubscribeSubscriber(db, subscriber.id);
   await auditUnsubscribe(db, subscriber.id, env, request);
 

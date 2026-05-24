@@ -281,6 +281,24 @@ export async function markTokenUsed(db: D1Database, tokenHash: string): Promise<
     .run();
 }
 
+export async function invalidateSubscriberTokens(
+  db: D1Database,
+  subscriberId: string,
+  purposes: TokenPurpose[],
+): Promise<void> {
+  if (purposes.length === 0) return;
+  const ts = nowMs();
+  const placeholders = purposes.map(() => '?').join(', ');
+  await db
+    .prepare(
+      `UPDATE confirmation_tokens
+       SET used_at = ?
+       WHERE subscriber_id = ? AND purpose IN (${placeholders}) AND used_at IS NULL`,
+    )
+    .bind(ts, subscriberId, ...purposes)
+    .run();
+}
+
 export async function createDataRequest(
   db: D1Database,
   row: {

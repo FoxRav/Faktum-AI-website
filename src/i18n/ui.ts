@@ -102,6 +102,10 @@ export const ui = {
     preferencesSaving: 'Tallennetaan…',
     preferencesSaved: 'Profiili tallennettu.',
     preferencesSaveFailed: 'Tallennus epäonnistui.',
+    preferencesInactive:
+      'Uutiskirjeen tilaus on peruttu. Profiilia voi muokata vain aktiivisen tilauksen aikana.',
+    preferencesInactiveHelp: 'Voit tilata uutiskirjeen uudelleen ja täydentää profiilisi sen jälkeen.',
+    preferencesLoadedNote: 'Näytetään aiemmin tallentamasi valinnat.',
     preferencesMissingToken:
       'Profiilin täydennys vaatii henkilökohtaisen linkin sähköpostistasi.',
     preferencesMissingTokenHelp:
@@ -232,6 +236,10 @@ export const ui = {
     preferencesSaving: 'Saving…',
     preferencesSaved: 'Profile saved.',
     preferencesSaveFailed: 'Save failed.',
+    preferencesInactive:
+      'Your newsletter subscription is cancelled. You can only edit your profile while subscribed.',
+    preferencesInactiveHelp: 'Subscribe again to update your profile.',
+    preferencesLoadedNote: 'Showing your previously saved choices.',
     preferencesMissingToken:
       'Completing your profile requires the personal link from your email.',
     preferencesMissingTokenHelp:

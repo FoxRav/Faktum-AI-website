@@ -39,8 +39,9 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   if (!tokenRow) return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
 
   const subscriber = await getSubscriberById(db, tokenRow.subscriber_id);
-  if (!subscriber || subscriber.status !== 'active') {
-    return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
+  if (!subscriber) return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
+  if (subscriber.status !== 'active') {
+    return jsonResponse({ ok: false, error: 'subscription_inactive' }, 403);
   }
 
   return jsonResponse({ ok: true, preferences: preferencesPayload(subscriber) });
@@ -73,8 +74,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!tokenRow) return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
 
   const subscriber = await getSubscriberById(db, tokenRow.subscriber_id);
-  if (!subscriber || subscriber.status !== 'active') {
-    return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
+  if (!subscriber) return jsonResponse({ ok: false, error: 'invalid_token' }, 403);
+  if (subscriber.status !== 'active') {
+    return jsonResponse({ ok: false, error: 'subscription_inactive' }, 403);
   }
 
   const primaryRole =
