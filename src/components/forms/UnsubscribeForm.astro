@@ -1,0 +1,99 @@
+---
+import type { Locale } from '../../i18n/config';
+import { subscribePath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/tilaa/peruutettu/';
+---
+
+<section
+  class="unsubscribe-form container-site max-w-lg py-16"
+  data-locale={locale}
+  data-unsubscribed-path={unsubscribedPath}
+  data-msg-invalid={t(locale, 'subscribeInvalidToken')}
+  data-msg-failed={t(locale, 'unsubscribeFailed')}
+>
+  <h1 class="font-sans text-3xl font-bold">{t(locale, 'unsubscribeTitle')}</h1>
+  <p class="mt-4 text-[var(--color-text-dim)]">{t(locale, 'unsubscribeLead')}</p>
+
+  <div class="unsubscribe-missing mt-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
+    <p class="text-[var(--color-text)]">{t(locale, 'unsubscribeMissingToken')}</p>
+    <p class="mt-3 text-sm text-[var(--color-text-dim)]">
+      {t(locale, 'unsubscribeMissingTokenHelp')}
+    </p>
+    <a href={subscribePath(locale)} class="btn-primary mt-5 inline-flex">
+      {t(locale, 'footerSubscribe')}
+    </a>
+  </div>
+
+  <div class="unsubscribe-with-token mt-8 hidden">
+    <p class="text-sm text-[var(--color-text-dim)]">{t(locale, 'unsubscribeConfirmHint')}</p>
+    <button
+      type="button"
+      class="unsubscribe-btn mt-6 rounded-lg border border-red-500/40 px-5 py-2.5 text-sm font-semibold text-red-300 hover:bg-red-500/10"
+    >
+      {t(locale, 'unsubscribeConfirm')}
+    </button>
+    <p class="unsubscribe-msg mt-4 text-sm" aria-live="polite"></p>
+  </div>
+
+  <p class="unsubscribe-invalid mt-8 hidden text-sm text-red-400" role="alert"></p>
+</section>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('.unsubscribe-form');
+    if (!root) return;
+
+    var token = new URLSearchParams(window.location.search).get('token') || '';
+    var missingEl = root.querySelector('.unsubscribe-missing');
+    var withTokenEl = root.querySelector('.unsubscribe-with-token');
+    var invalidEl = root.querySelector('.unsubscribe-invalid');
+    var btn = root.querySelector('.unsubscribe-btn');
+    var msgEl = root.querySelector('.unsubscribe-msg');
+    var unsubscribedPath = root.getAttribute('data-unsubscribed-path') || '/tilaa/peruutettu/';
+    var invalidMsg = root.getAttribute('data-msg-invalid') || '';
+    var failedMsg = root.getAttribute('data-msg-failed') || '';
+
+    if (!token) return;
+
+    if (missingEl) missingEl.classList.add('hidden');
+    if (withTokenEl) withTokenEl.classList.remove('hidden');
+
+    if (!btn) return;
+
+    btn.addEventListener('click', async function () {
+      if (msgEl) {
+        msgEl.textContent = '';
+        msgEl.classList.remove('text-red-400');
+      }
+      if ('disabled' in btn) btn.disabled = true;
+
+      try {
+        var response = await fetch('/api/unsubscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: token }),
+        });
+        var data = await response.json();
+        if (!response.ok || !data.ok) throw new Error('unsubscribe_failed');
+        window.location.href = unsubscribedPath;
+      } catch (e) {
+        if (withTokenEl) withTokenEl.classList.add('hidden');
+        if (invalidEl) {
+          invalidEl.textContent = invalidMsg || failedMsg;
+          invalidEl.classList.remove('hidden');
+        } else if (msgEl) {
+          msgEl.textContent = failedMsg;
+          msgEl.classList.add('text-red-400');
+        }
+        if ('disabled' in btn) btn.disabled = false;
+      }
+    });
+  })();
+</script>

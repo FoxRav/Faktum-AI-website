@@ -103,7 +103,16 @@ export const ui = {
     preferencesMissingTokenHelp:
       'Avaa linkki vahvistus- tai tervetuloviestistäsi. Jos et löydä viestiä, tarkista roskapostikansio tai tilaa uutiskirje uudelleen — uusi linkki lähetetään vahvistuksen jälkeen.',
     unsubscribeTitle: 'Peru tilaus',
+    unsubscribeLead:
+      'Voit perua uutiskirjeen tilauksen sähköpostiviestin linkillä tai alla olevalla painikkeella, jos avasit tämän sivun viestistä.',
+    unsubscribeConfirmHint:
+      'Paina alla olevaa painiketta vahvistaaksesi peruutuksen. Tämä koskee sähköpostiosoitetta, jolle vahvistusviesti on lähetetty.',
     unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
+    unsubscribeMissingToken:
+      'Peruutus vaatii henkilökohtaisen linkin sähköpostistasi.',
+    unsubscribeMissingTokenHelp:
+      'Avaa viimeisimmästä uutiskirjeestä tai tervetuloviestistä linkki ”Peru tilaus”. Jos viestiä ei löydy, tarkista roskapostikansio. Voit myös pyytää apua osoitteesta marko@faktum-ai.com.',
+    unsubscribeFailed: 'Peruutus epäonnistui.',
     sourcesTitle: 'Lähteet',
     keyClaimsTitle: 'Keskeiset väitteet',
     keyTakeawaysDefault: 'Tärkeimmät nostot',
@@ -215,7 +224,16 @@ export const ui = {
     preferencesMissingTokenHelp:
       'Open the link from your confirmation or welcome message. If you cannot find it, check your spam folder or subscribe again — a new link is sent after confirmation.',
     unsubscribeTitle: 'Unsubscribe',
+    unsubscribeLead:
+      'You can unsubscribe using the link in your email or the button below if you opened this page from a message.',
+    unsubscribeConfirmHint:
+      'Press the button below to confirm. This applies to the email address that received our messages.',
     unsubscribeConfirm: 'Unsubscribe from the newsletter',
+    unsubscribeMissingToken:
+      'Unsubscribing requires the personal link from your email.',
+    unsubscribeMissingTokenHelp:
+      'Open the “Unsubscribe” link from your latest newsletter or welcome message. If you cannot find it, check your spam folder. You can also email marko@faktum-ai.com for help.',
+    unsubscribeFailed: 'Unsubscribe failed.',
     sourcesTitle: 'Sources',
     keyClaimsTitle: 'Key claims',
     keyTakeawaysDefault: 'Key takeaways',

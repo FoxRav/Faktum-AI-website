@@ -4,7 +4,6 @@ import PreferenceForm from '../../../components/forms/PreferenceForm.astro';
 import { subscribePath } from '../../../i18n/paths';
 
 const locale = 'en' as const;
-const token = Astro.url.searchParams.get('token') ?? '';
 ---
 
 <BaseLayout
@@ -12,5 +11,5 @@ const token = Astro.url.searchParams.get('token') ?? '';
   description="Manage your Faktum AI newsletter role and interests."
   path={subscribePath(locale, 'preferences')}
 >
-  <PreferenceForm locale={locale} token={token} />
+  <PreferenceForm locale={locale} />
 </BaseLayout>
