@@ -51,10 +51,14 @@ import { dataRequestPath } from '../../i18n/paths';
   </ul>
 
   <h2>Processors</h2>
+  <p>
+    Only the providers listed below process subscriber data (email, profile, consent log).
+    <strong>We do not store subscriber data on GitHub</strong> — GitHub is used for website source
+    code version control only and is not a personal-data processor.
+  </p>
   <ul>
-    <li>Cloudflare, Inc. — hosting, D1, KV, Pages Functions</li>
-    <li>GitHub, Inc. — source control</li>
-    <li>Email provider (Resend or Postmark) — confirmation and management emails</li>
+    <li>Cloudflare, Inc. — hosting, D1 subscriber registry, KV, Pages Functions</li>
+    <li>Resend, Inc. — confirmation and management emails</li>
     <li>Possible future ESP (Buttondown / MailerLite) — downstream copy only</li>
   </ul>
 
