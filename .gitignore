@@ -37,3 +37,4 @@ Thumbs.db
 
 # --- Article assets not needed on GitHub (ship WebP only) ---
 public/images/articles/**/*.png
+public/images/articles/**/Git-IGNORE_Vanhat_kuvat/

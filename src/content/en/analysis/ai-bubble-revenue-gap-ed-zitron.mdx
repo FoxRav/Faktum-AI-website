@@ -1,0 +1,220 @@
+---
+title: "There isn't enough revenue to pay for the AI being built"
+description: "Faktum AI analysis of Ed Zitron's May 2026 Tech Report interview — why hyperscaler revenue math, hidden AI numbers, and OpenAI's IPO rush point to the same structural gap."
+date: 2026-05-24T09:41:41
+updated: 2026-05-24T09:41:41
+author: "Faktum AI"
+category: "Analysis"
+tags:
+  - AI bubble
+  - OpenAI
+  - NVIDIA
+  - capital markets
+  - enterprise AI
+status: published
+readingTime: "14 min"
+heroImage: "/images/articles/2026/05/2026-05-24-094141_ai-bubble-revenue-gap-ed-zitron/hero-ENG.webp"
+heroAlt: "Gap between AI capital spending and recurring revenue — illustration for Faktum AI analysis"
+heroCaption: "Illustration · Faktum AI"
+featured: false
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI Bubble: There isn't enough to pay for the amount of AI being built — Ed Zitron"
+    publisher: "The Tech Report — Ed Zitron"
+    date: "2026-05-22"
+  - title: "Impossible maths behind the AI boom (FT piece cited in interview)"
+    publisher: "Financial Times"
+    date: "2026"
+keyClaims:
+  - "Zitron argues hyperscalers would need roughly $200 billion in new AI revenue each — about $600 billion combined — while reported AI run rates remain a fraction of that."
+  - "Public companies report traditional business units precisely but stay vague on AI revenue, which Zitron treats as a signal that the numbers are weak."
+  - "Even optimistic AI believers face a GPU obsolescence problem: A100 and Blackwell generations may not pay back before the next chip cycle."
+  - "OpenAI's rush toward a September 2026 IPO at a hoped-for $1 trillion valuation fits a 'maxed out on private money' exit, not strength, in Zitron's reading."
+  - "Enterprises spend on AI tokens without a stable ROI story — Salesforce's planned $300M Anthropic budget and its statement that the spend won't be needed later are cited as an example."
+keyMetrics:
+  - label: "New AI revenue needed (each, approx.)"
+    value: "~$200 bn"
+    description: "Zitron cites the Financial Times — a new AI business as large as Google Search or Azure"
+  - label: "Combined new AI revenue"
+    value: "~$600 bn"
+    description: "Rough total across Google, Microsoft, Amazon in the interview"
+  - label: "Microsoft AI run rate"
+    value: "~$37 bn"
+    description: "Annualized figure cited — month not disclosed"
+  - label: "Hyperscaler CapEx (2026 est.)"
+    value: "$800–900 bn"
+    description: "Zitron; ~$1T cited for 2027"
+  - label: "OpenAI IPO (hoped)"
+    value: "Sep 2026 / $1T"
+    description: "Altman target cited in interview"
+  - label: "Salesforce Anthropic tokens (2026)"
+    value: "$300M"
+    description: "Benioff quote — 'won't need to in the future'"
+chartData: []
+---
+
+import MetricCards from '../../../components/charts/MetricCards.astro';
+import SimpleBarChart from '../../../components/charts/SimpleBarChart.astro';
+
+## What happened?
+
+In a **22 May 2026** Tech Report episode, **Ed Zitron** (Where's Your Ed At, Better Offline) tells host **Isaac Pound** that the AI build-out has an arithmetic problem: **spending is real, recurring revenue is not.** The conversation opens on **Sam Altman's** push toward an **OpenAI IPO as soon as September 2026** with a hoped-for **$1 trillion** valuation — then pivots to what Zitron calls the **impossible maths** behind the boom, including an **FT piece by an investment banker** that, in his view, finally states what he had been arguing for months: **Microsoft, Meta, Amazon, and Google would need to roughly triple AI-era revenue growth or the bubble breaks.**
+
+Zitron's core claim is not that AI is useless. It is that **even AI optimists** cannot explain where **hundreds of billions in new, reliable software revenue** comes from — on top of existing cloud and workspace businesses — while hyperscalers simultaneously hide AI numbers and race to spend **$800–900 billion in CapEx in 2026**, with **~$1 trillion** cited for **2027**.
+
+> **Faktum AI view:** This is a **second lens** on the same capital cycle we covered in [the earlier Zitron data-center interview](/en/analysis/ed-zitron-ai-kupla/) and [structural bubble analysis](/en/analysis/ai-kupla-rakenteellinen-poikkeama/). Where the first piece asked **where GPUs go**, this one asks **who pays for them twice**. Treat interview figures as **signals for scrutiny**, not filing-ready facts.
+
+## Key figures
+
+<MetricCards items={[
+  { label: 'New AI revenue needed (each, approx.)', value: '~$200 bn', description: 'Zitron cites the Financial Times — a new AI business as large as Google Search or Azure' },
+  { label: 'Combined new AI revenue', value: '~$600 bn', description: 'Rough total across Google, Microsoft, Amazon in the interview' },
+  { label: 'Microsoft AI run rate', value: '~$37 bn', description: 'Annualized figure cited — month not disclosed' },
+  { label: 'Hyperscaler CapEx (2026 est.)', value: '$800–900 bn', description: 'Zitron; ~$1T cited for 2027' },
+  { label: 'OpenAI IPO (hoped)', value: 'Sep 2026 / $1T', description: 'Altman target cited in interview' },
+  { label: 'Salesforce Anthropic tokens (2026)', value: '$300M', description: 'Benioff quote — won\'t need to in the future' },
+]} />
+
+<SimpleBarChart
+  data={[
+    { label: 'MS need (~)', value: 200 },
+    { label: 'MS AI today', value: 37 },
+    { label: 'AMZN need (~)', value: 128 },
+    { label: 'AMZN AI today', value: 15 },
+  ]}
+  title="Required new AI scale vs reported AI run rates ($ bn — interview figures)"
+  unit="$ bn"
+  scaleMax={220}
+/>
+
+## Why this matters for the Finnish reader
+
+Finnish teams usually operate at the **edge** of this cycle: Copilot pilots, cloud bills, vendor roadmaps — not trillion-dollar CapEx programs. That distance is useful. If global AI revenue math is weaker than hyperscaler earnings calls imply:
+
+- **Cloud and API pricing** may stay subsidized longer, then snap — affecting Finnish SaaS and enterprise budgets.
+- **Vendor "AI transformation" sales** can outrun customer ROI; procurement needs **outcome metrics**, not token dashboards.
+- **EU AI Act** employment and transparency rules matter more when vendors push **performative usage** to justify spend ([see our Gartner/Bernal productivity analysis](/en/analysis/ai-tuottavuuskriisi-tyontekijat-gartner/)).
+- Public-sector and mid-market buyers should not treat **US hyperscaler narratives** as proof that local AI spend will pay back on the same timeline.
+
+## The revenue gap: what the FT framing adds
+
+Zitron walks through a **scale comparison**, not a precise forecast:
+
+| Company | What "success" would look like (interview) | Reported AI scale cited |
+| --- | --- | --- |
+| **Google** | Another **Google Search** — ~**$200 bn**/year in new AI-specific revenue | Not disclosed with same precision as Search |
+| **Microsoft** | **One or two Azures** — ~**$70–140 bn** | ~**$37 bn** AI run rate (month unclear) |
+| **Amazon** | **Another AWS** — ~**$128 bn**/year | Mostly **Anthropic**-linked; ~**$15 bn** AI revenue in prior Zitron math |
+
+He rounds to **~$200 bn each** and **~$600 bn combined** in new AI revenue — **on top of** existing businesses. Microsoft, he estimates, already makes ~**$300 bn**/year; the boom still assumes **another $200 bn**, not a replacement of current lines. His point: customers would still pay for all existing software and cloud spend **and** find new money for AI — e.g. office suites, AWS, and Azure.
+
+Global **software industry revenue** is only ~**$700–800 bn**/year in his estimate. The boom therefore requires **inventing a new industry inside software**, not reallocating existing spend — unless every buyer simultaneously increases budgets with new money from somewhere else.
+
+## "Watch the hands, not the mouth"
+
+A recurring theme: **traditional units are reported precisely; AI is a riddle.**
+
+- Intelligent Cloud, Google Search, AWS — **specific figures**.
+- AI revenue — **run rates**, **narratives**, **shy trillion-dollar market caps**.
+
+Zitron's read: when public companies have good news, they **shout**. AI's vagueness is evidence that **the gold mine is not visible yet** — consistent with his [circular financing picture](/en/analysis/ed-zitron-ai-kupla/) (OpenAI ↔ Microsoft ↔ NVIDIA ↔ labs).
+
+**Growth rate check:** he argues you'd need roughly **50% year-over-year growth every quarter for several years** to begin closing the gap. That pattern is **not showing up** in disclosed AI lines — even before skepticism about margins or GPU depreciation.
+
+## CapEx now, revenue later, chips obsolete sooner
+
+Hyperscalers are **cramming CapEx** because:
+
+1. **Wall Street may curdle** — spend while markets still believe.
+2. **Data centers take 18–24 months minimum** — if you believe AI is big in two years, you must build **now**.
+
+But Zitron adds a **hardware cycle problem**: even if magical new AI businesses appeared overnight, **A100s** and **Blackwell** GPUs may not pay back before **Vera Rubin** (or the next generation) replaces them. **Optimistic and pessimistic cases converge on a wash** — unless revenue arrives **fast and at scale**, which he says is absent.
+
+**Amazon-specific constraint:** AWS is **infrastructure-first** with **Anthropic** as the dominant AI customer story. If Amazon cannot **build capacity**, it cannot **grow revenue** at the required rate — software upsell is not Amazon's play in this framing.
+
+## Enterprise spend: token burn without a budget story
+
+Cloud computing matured with **clear line items**: ERP, storage, design tools — measurable **ROI** narratives. Zitron contrasts that with **Anthropic-style enterprise use**:
+
+- Hard to attribute cost **per user** (granularity limits cited).
+- **No standard SLA** in the story he tells — unusual for enterprise software.
+- CFO quotes in press stories: **"still working this out"**, **"can't last"**, budgets **blown in a quarter**.
+
+**Salesforce** example: **Mark Benioff** reportedly plans **$300 million** on Anthropic tokens in **2026** but says the company **"won't need to do this in the future."** Zitron's read: that is not the setup for a **stable, growing industry** — it is **experimentation at scale**.
+
+This connects to [Natasha Bernal's productivity interviews](/en/analysis/ai-tuottavuuskriisi-tyontekijat-gartner/): the **goal of work** shifts from business outcomes to **proving the AI budget was worthwhile**.
+
+## Management theater and the "business idiot thesis"
+
+Zitron names a provocative frame — **the economy caters to people disconnected from production** (executives, some managers, VCs). For people whose work is **email, meetings, and posts**, LLMs feel like **work itself**. That produces:
+
+- **Performative AI adoption** to please bosses (metaverse parallels: Horizon Worlds meetings nobody wanted).
+- Pressure on builders below to **simulate AI value** rather than ship outcomes.
+
+Faktum AI strips the insult but keeps the **mechanism**: when evaluation rewards **AI theater**, teams optimize **visibility**, not software. Finnish readers with strong **union and privacy culture** may push back earlier — but vendor sales decks still import US narratives.
+
+## OpenAI IPO: exit before scrutiny
+
+Pound asks the obvious follow-up: if Altman rushes **IPO in 2026**, does he know the **math is impossible**?
+
+Zitron's answer:
+
+- Stay **private** while you can maximize IPO pop; **rush the door** when private markets are **tapped out**.
+- **WSJ (26 April)** cited in the interview: OpenAI **CFO Sarah Friar** did not think the company ready for **public-market scrutiny** — yet **September** IPO talk continues. He calls that **desperation**, not confidence.
+- **SpaceX IPO** competition and **SoftBank** exposure (Bloomberg stories referenced) add **investor pressure** to **dump risk onto public markets**.
+
+Once public, **real economics** matter more; raising on story alone gets harder — see also [OpenAI's compute wedge](/en/analysis/openai-kasvukiila-liiketoiminta-ja-riippuvuus/).
+
+## NVIDIA: concentration and circular money
+
+**~$81 bn** quarterly revenue (figure cited) with **>60% from three customers**, per Zitron: if any hyperscaler pauses, **NVIDIA drops**. For NVIDIA to keep growing, others must keep buying **GPUs that are not fully deployed yet**.
+
+He points to **NVIDIA's 10-Q**: cash up even while **investing in AI companies** — the **circular financing** loop continues ([detailed in the prior Zitron piece](/en/analysis/ed-zitron-ai-kupla/)). **Meta** spending heavily **without a clear AI software story** is another stress point in the interview.
+
+## Macro trap: growth tied to CapEx
+
+Zitron cites a statistic — **AI/tech investment over ~90% of US economic growth in FY2025** — without pinning a primary source in the interview. **If true even directionally**, hyperscalers **cutting CapEx** could hit **enterprise software demand** via recession — a **feedback loop** that makes **slowing spend dangerous**, not easy.
+
+He still expects **CapEx cuts eventually** when **data centers are started but not finished** and **regulators** (Google antitrust example) might have changed behavior if they had acted earlier.
+
+## Technical assessment for builders
+
+**For engineering and product leaders:**
+
+- **Demand proof, not run rates.** Ask vendors for **customer-level ROI**, not annualized AI lines with missing months.
+- **Separate pilot spend from platform bets.** A **$300M token line** that leadership says is **temporary** is a **feature experiment**, not a **P&L strategy**.
+- **Model CapEx exposure in vendor risk.** Concentrated GPU supply chains affect **latency, price, and roadmap slips** for Finnish teams on US clouds.
+- **Document outcomes before AI quotas.** If finance cannot explain Anthropic bills **per team**, your org is in **irrational exuberance** territory.
+
+**For individual contributors:**
+
+- When leadership asks for **AI visibility**, ask what **outcome** replaces last year's metric.
+- Treat **IPO narratives** as **capital events**, not **product maturity** signals.
+- Prefer employers who measure **merged work and incidents resolved**, not **Copilot hours**.
+
+## Risks and uncertainties
+
+- **FT, WSJ, Bloomberg, 10-Q references** — verify originals before citing in business cases; this article follows Tech Report commentary.
+- **Run-rate definitions** — Microsoft **$37 bn** depends on undisclosed month; Amazon **$15 bn** comes from prior Zitron interview cross-talk.
+- **$90% US growth** — source not named in episode; treat as **directional** only.
+- **Overlap with `ed-zitron-ai-kupla`** — same guest, different emphasis; read both for deployment vs revenue angles.
+- **Bubble timing** — Zitron guesses **6–12+ months** of narrative inflation; not a forecast.
+
+## Conclusion
+
+Zitron's May 2026 interview compresses the AI boom into one line: **the tech industry is being asked to double revenue in four years, and nobody shows where the new money comes from.** Hidden AI numbers, **Salesforce-style temporary token budgets**, **NVIDIA customer concentration**, and **OpenAI's IPO hurry** are different faces of the same gap — **capital deployed faster than honest revenue**.
+
+**For executives:** if your AI strategy assumes **hyperscaler economics** will "figure themselves out," build **local ROI proof** anyway. **Watch the hands** — customer churn, margin, and payback — not keynote adjectives.
+
+**For builders:** the next skill is not **prompt theater**; it is **translating AI spend into durable product metrics** your CFO can defend without a vision quest.
+
+### Solo developer perspective
+
+**Good:** Clear **scale comparisons** ($200 bn vs $37 bn) help you push back in architecture reviews when someone says "everyone is making money on AI." **Performative adoption** now has a name — easier to ask for **outcome KPIs**.
+
+**Bad:** **Token pricing** and **API bills** can explode without per-feature attribution; **junior roles** shrink while **AI theater** grows in job postings.
+
+**Worth learning:** Run **private before/after benchmarks** on real tasks; read **EU AI Act** employment guidance before accepting scoring tools; keep a **paper trail of shipped work** if promotion criteria shift to AI usage stats.
+
+Pair with [data-center deployment analysis](/en/analysis/ed-zitron-ai-kupla/), [OpenAI compute wedge](/en/analysis/openai-kasvukiila-liiketoiminta-ja-riippuvuus/), and [workplace productivity crisis](/en/analysis/ai-tuottavuuskriisi-tyontekijat-gartner/).

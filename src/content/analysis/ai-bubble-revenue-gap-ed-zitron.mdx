@@ -1,0 +1,234 @@
+---
+title: "AI-investoinnit vs. tuotto: matemaattinen kuilu"
+description: "Faktum AI:n analyysi Ed Zitronin toukokuun 2026 Tech Report -haastattelusta — miksi pilvipalvelujättiläisten tuottomatematiikka, piilotetut AI-luvut ja OpenAI:n pörssilistautumiskiire viittaavat samaan rakenteelliseen kuiluun."
+date: 2026-05-24T09:41:41
+updated: 2026-05-24T09:41:41
+author: "Faktum AI"
+category: "Analyysit"
+tags:
+  - AI-kupla
+  - OpenAI
+  - NVIDIA
+  - rahoitusmarkkinat
+  - yritysten AI
+status: published
+readingTime: "14 min"
+heroImage: "/images/articles/2026/05/2026-05-24-094141_ai-bubble-revenue-gap-ed-zitron/hero-FI.webp"
+heroAlt: "Kuilu AI-pääomasijoitusten ja toistuvan tuoton välillä — Faktum AI -analyysin kuvitus"
+heroCaption: "Kuvitus · Faktum AI"
+featured: false
+needsFactCheck: true
+imageRequestsCompleted: true
+sources:
+  - title: "AI Bubble: There isn't enough to pay for the amount of AI being built — Ed Zitron"
+    publisher: "The Tech Report — Ed Zitron"
+    date: "2026-05-22"
+  - title: "Impossible maths behind the AI boom (Financial Times -artikkeli, siteerattu haastattelussa)"
+    publisher: "Financial Times"
+    date: "2026"
+keyClaims:
+  - "AI-alalle virtaa paljon rahaa, mutta Zitronin mukaan pilvipalvelujättiläiset tarvitsevat karkeasti 200 miljardia dollaria uutta AI-tuottoa kukin — yhteensä noin 600 miljardia dollaria — kun raportoidut AI-luvut jäävät murto-osaan."
+  - "Julkiset yhtiöt raportoivat perinteisiä liiketoimintayksiköitä tarkasti mutta pysyvät epäselvinä AI-tuotosta; Zitron tulkitsee sen merkiksi heikoista luvuista."
+  - "Myös AI-optimistit kohtaavat piirisirujen vanhentumisen: A100- ja Blackwell-sukupolvet eivät välttämättä maksa itseään ennen seuraavaa piirisukupolvea."
+  - "OpenAI:n kiire syyskuun 2026 pörssilistautumiseen ja biljoonan dollarin arvostustoive sopii Zitronin mukaan yksityisen rahoituksen loppumiseen, ei vahvuuteen."
+  - "Yritykset kuluttavat AI-tokeneita ilman vakaata tuottotarinaa — esimerkkinä Salesforcen suunniteltu 300 miljoonan dollarin Anthropic-kulutus ja lausunto, ettei sitä tarvita jatkossa."
+keyMetrics:
+  - label: "Investoinnit vaativat uutta tuottoa (n. / yritys)"
+    value: "~200 miljardia $"
+    description: "AI:ssa on rahaa — mutta investoinnit olettavat, että jokainen jättiläinen saa ~200 miljardia dollaria lisää vuosituottoa pelkästään AI:sta; raportoidut luvut ovat murto-osa"
+  - label: "Uutta AI-tuottoa yhteensä (3 yhtiötä)"
+    value: "~600 miljardia $"
+    description: "Google + Microsoft + Amazon yhteensä — lähes koko maailman ohjelmistoteollisuuden vuosiliikevaihdon verran lisää"
+  - label: "Microsoftin raportoitu AI-tuotto"
+    value: "~37 miljardia $"
+    description: "Yhtiön ilmoituksen mukaan — vertaa ~200 miljardin tarpeeseen"
+  - label: "Pilvipalvelujättiläisten pääomasijoitukset (2026 arvio)"
+    value: "800–900 miljardia $"
+    description: "Zitron; vuodelle 2027 siteerattu noin biljoona dollaria"
+  - label: "OpenAI pörssilistautuminen (toive)"
+    value: "syys. 2026 / 1 biljoonaa $"
+    description: "Sam Altmanin tavoite haastattelussa"
+  - label: "Salesforce Anthropic-kulutus (2026)"
+    value: "300 miljoonaa $"
+    description: "Mark Benioff — ei tarvita jatkossa"
+chartData: []
+---
+
+import MetricCards from '../../components/charts/MetricCards.astro';
+
+## Mitä tapahtui?
+
+**22. toukokuuta 2026** Tech Report -podcastin jaksossa **Ed Zitron** (Where's Your Ed At, Better Offline) kertoo juontaja **Isaac Poundille**, että AI-rakennusbuumissa on matemaattinen ongelma: **menot ovat todellisia, toistuva tuotto ei.** Keskustelu alkaa **Sam Altmanin** pyrkimyksestä viedä **OpenAI pörssiin syyskuussa 2026** toivottuun **biljoonan dollarin** arvostukseen — ja siirtyy siihen, mitä Zitron kutsuu buumin **mahdottomaksi matematiikaksi**, mukaan lukien **Financial Times -lehden teksti sijoituspankkiirilta**, joka Zitronin mukaan vihdoin sanoo ääneen sen, mitä hän oli väittänyt kuukausia: **Microsoftin, Metan, Amazonin ja Googlen pitäisi karkeasti kolminkertaistaa tuottokasvunsa AI-aikakaudella, tai kupla puhkeaa.**
+
+Zitronin ydinväite ei ole, että AI on hyödytön. Väite on, etteivät **edes AI-optimistit** selitä, mistä tulee **satoja miljardeja uutta, luotettavaa ohjelmistotuottoa** — olemassa olevien pilvi- ja työkaluliiketoimintojen päälle — samalla kun **pilvipalvelujättiläiset** (Microsoft, Google, Amazon, Meta) piilottavat AI-lukujaan ja kiirehtivät käyttämään **800–900 miljardia dollaria pääomasijoituksiin vuonna 2026** ja **noin biljoonaa vuonna 2027**.
+
+> **Faktum AI -näkökulma:** Tämä on **toinen linssi** samaan pääomasykliin, jonka käsittelimme [aiemmassa Zitronin datakeskus-haastattelussa](/analyysit/ed-zitron-ai-kupla/) ja [rakenteellisessa kupla-analyysissä](/analyysit/ai-kupla-rakenteellinen-poikkeama/). Ensimmäinen kysyi, **minne piirisirut menevät**; tämä, **kuka maksaa ne kahdesti**. Käsittele haastatteluluvut **tarkistettavina signaaleina**, ei virallisina faktoina.
+
+## Avainluvut
+
+**Tärkeää:** Zitron **ei väitä**, ettei AI-alalla olisi rahaa. Päinvastoin — siihen pumpataan satoja miljardeja pääomasijoituksia. Ongelma on **kuilu**: investoinnit olettavat **uutta, toistuvaa tuottoa** mittakaavassa, jota raportoidut AI-luvut eivät vielä näytä.
+
+<MetricCards items={[
+  { label: 'Investoinnit vaativat uutta tuottoa (n. / yritys)', value: '~200 miljardia $', description: 'AI:ssa on rahaa — mutta investoinnit olettavat, että jokainen jättiläinen saa ~200 miljardia dollaria lisää vuosituottoa pelkästään AI:sta; raportoidut luvut ovat murto-osa' },
+  { label: 'Uutta AI-tuottoa yhteensä (3 yhtiötä)', value: '~600 miljardia $', description: 'Google + Microsoft + Amazon yhteensä — lähes koko maailman ohjelmistoteollisuuden vuosiliikevaihdon verran lisää' },
+  { label: 'Microsoftin raportoitu AI-tuotto', value: '~37 miljardia $', description: 'Yhtiön ilmoituksen mukaan — vertaa ~200 miljardin tarpeeseen' },
+  { label: 'Pilvipalvelujättiläisten pääomasijoitukset (2026 arvio)', value: '800–900 miljardia $', description: 'Zitron; vuodelle 2027 siteerattu noin biljoona dollaria' },
+  { label: 'OpenAI pörssilistautuminen (toive)', value: 'syys. 2026 / 1 biljoonaa $', description: 'Sam Altmanin tavoite haastattelussa' },
+  { label: 'Salesforce Anthropic-kulutus (2026)', value: '300 miljoonaa $', description: 'Mark Benioff — ei tarvita jatkossa' },
+]} />
+
+### Kuilu kahdella esimerkillä (miljardia dollaria / vuosi)
+
+| | **Microsoft** | **Amazon** |
+| --- | --- | --- |
+| **Investoinnit olettavat näin paljon AI-tuottoa** | noin 200 | noin 128 |
+| **Yhtiö raportoi näin paljon AI-tuottoa** | noin 37 | noin 15 |
+| **Puuttuu (karkeasti)** | noin 163 | noin 113 |
+
+**Mitä tämä tarkoittaa käytännössä:** datakeskuksia ja piirisiruja rakennetaan kuin AI tuottaisi jo **toisen Azure-pilvipalvelun** tai **toisen AWS-pilvipalvelun** verran rahaa — mutta julkiset luvut ovat **murto-osa** siitä. Sama kuvio koskee myös Googlea (taulukko alempana).
+
+**Ei tarkoita**, ettei AI:ssa olisi rahaa. Tarkoittaa, että **sisään menevä raha** ja **ulos tuleva todistettu tuotto** eivät vielä täsmää.
+
+## Miksi tämä on merkittävää suomalaiselle lukijalle
+
+Suomalaiset tiimit toimivat yleensä syklin **reunalla**: Copilot-kokeilut, pilvilaskut, toimittajien tiekartat — eivät biljoonan pääomasijoitusohjelmia. Tämä etäisyys on hyödyllinen. Jos globaali AI-tuottomatematiikka on heikompaa kuin pilvipalvelujättiläisten tulospuhelut antavat ymmärtää:
+
+- **Pilvi- ja ohjelmointirajapinta-hinnoittelu** voi pysyä pitkään subventoituina ja nousta sitten — vaikuttaa suomalaisiin pilvipalvelu- ja suuryritysbudjetteihin.
+- **Toimittajien "AI-muutos" -myynti** voi edetä nopeammin kuin asiakas saa tuottoa investoinneista; hankinnassa tarvitaan **tulosmittareita**, ei token-seurantapaneelia.
+- **EU AI Act** korostuu, kun toimittajat painavat **näyttelevää käyttöä** menojen perustelemiseksi ([Gartner/Bernal-tuottavuusanalyysi](/analyysit/ai-tuottavuuskriisi-tyontekijat-gartner/)).
+- Julkinen sektori ja pk-yritykset eivät saa pitää **Yhdysvaltain pilvipalvelujättiläisten tarinoita** todisteena, että paikallinen AI-investointi maksaa itsensä samassa aikataulussa.
+
+### Datakeskushankkeisiin varauksella
+
+Suomessa on liikkumassa useita suuria datakeskushankkeita. Kun globaali AI-tuotto ei vielä täsmää investointitarinaan, **samanaikaisten jättihankkeiden kasaaminen yhdelle alueelle on paikallinen riski** — sähkö, maa ja verotuotot sidotaan hankkeeseen, jota markkinat eivät välttämättä täytä, jos tuottokuilu pahenee.
+
+Paikallisessa päätöksenteossa painavat usein **työpaikat, verotulot ja sähkön hinta**. Hankkeet voivat olla järkeviä, jos sopimuksissa on selkeät asiakkaat, veroehdot ja riittävä sähköverkko. Ilman niitä päätös nojaa oletukseen, että “AI-buumi jatkuu” — samaan tarinaan, jota yllä olevat tuottoluvut eivät vielä tue.
+
+[Zitronin datakeskusanalyysi](/analyysit/ed-zitron-ai-kupla/) kuvaa globaalia puolta: kapasiteettia julkistetaan enemmän kuin käyttöön asti menee. Hankkeita perutaan, siirretään tai ne jäävät vajaalle käytölle. Suomessa kannattaa tarkistaa ennen hyväksyntää:
+
+- **Kuka maksaa**, kun alueelliset tuet loppuvat?
+- **Onko kapasiteetti jo myyty**, vai vasta paperilla?
+- **Selviääkö alue**, jos samalle alueelle tulee kaksi tai kolme samanlaista laitosta?
+
+Datakeskus ei ole automaattinen ei. Se on **hankintapäätös**, jota ei kannata tehdä pelkän Yhdysvaltain investointikiiman varassa ilman omia lukuja.
+
+## Tuottokuilu: mitä Financial Times -artikkeli lisää
+
+Zitron siteeraa **Financial Times -lehteä** vertaillakseen **kahta eri asiaa**: paljonko rahaa **menee sisään** (datakeskukset, piirisirut) ja paljonko **todistettua tuottoa** tulee ulos.
+
+**Miltä “onnistuminen” näyttäisi** Zitronin mukaan — eli mitä investoinnit käytännössä olettavat:
+
+| Yritys | Mitä investoinnit olettavat | Mitä yhtiö raportoi AI:sta |
+| --- | --- | --- |
+| **Google** | Toinen **Google-haku** — noin **200 miljardia dollaria/v** lisää AI-tuottoa | Ei samalla tarkkuudella kuin hakuliiketoiminta |
+| **Microsoft** | **Yksi–kaksi Azure-pilvipalvelua** — noin **70–140 miljardia dollaria** | Noin **37 miljardia dollaria** AI-tuottoa vuodessa |
+| **Amazon** | Toinen **AWS-pilvipalvelu** — noin **128 miljardia dollaria/v** | Pääosin Anthropic-yhteistyö; noin **15 miljardia dollaria** aiemmassa Zitron-matematiikassa |
+
+Hän pyöristää **~200 miljardia dollaria kukin** ja **~600 miljardia dollaria yhteensä** uuteen AI-tuottoon — **olemassa olevien liiketoimintojen päälle**. Microsoft tuottaa Zitronin arvion mukaan jo noin **300 miljardia dollaria** vuodessa; buumi olettaa silti **200 miljardia dollaria lisää**, ei vanhan liiketoiminnan tilalle. Zitronin pointti: yritysten nykyiset ohjelmisto- ja pilvimaksut pitäisi jatkua entisellään **ja** päälle pitäisi ilmestyä uutta rahaa — esimerkkinä toimistosovellukset, Amazon Web Services ja Azure.
+
+Koko **ohjelmistoteollisuuden liikevaihto** on vain ~**700–800 miljardia dollaria**/v hänen arvionsa mukaan. Buumi vaatii siis **kokonaan uuden ohjelmistotoimialan**, ei pelkkää uudelleenallokointia — ellei jokainen ostaja nosta budjetteja samanaikaisesti jostakin uudesta rahasta.
+
+## "Katso kädet, älä suuta"
+
+Zitronin neuvo on yksinkertainen: **älä kuuntele puhetta, katso lukuja.** Kun Microsoft kertoo pilvipalvelun, Google hakuliiketoiminnan tai Amazon Web Servicesin tuotosta, luvut ovat **tarkkoja ja toistettavia**. AI-tuotosta ei kerrota samalla tavalla — usein saat yhden kuukausiluvun kerrottuna vuodeksi tai tarinan, josta on vaikea päätellä, mistä raha oikeasti tulee.
+
+Zitronin tulkinta: kun julkisilla yhtiöillä on hyviä uutisia, ne **huutavat ne ääneen**. AI-lukujen hämäryys viittaa siihen, ettei **todistettua tuottoa vielä näy** — sama kuvio kuin [kiertorahoituksessa](/analyysit/ed-zitron-ai-kupla/) (OpenAI ↔ Microsoft ↔ NVIDIA ↔ laboratoriot).
+
+Hän arvioi, että kuilun umpeen kurominen vaatisi karkeasti **50 prosentin vuosikasvua kvartaaleittain usean vuoden ajan**. Tätä ei näy raportoiduissa AI-luvuissa — edes ennen kuin otetaan huomioon marginaalit tai piirisirujen nopea vanhentuminen.
+
+## Investoidaan nyt, tuotto myöhemmin — piirisirut vanhenevat nopeasti
+
+Microsoft, Google, Amazon ja Meta **investoivat nyt ennätysmäärin datakeskuksiin ja piirisiruihin**, koska:
+
+1. **Sijoittajien luottamus voi loppua** — yhtiöt käyttävät rahaa nyt niin kauan kuin markkinat hyväksyvät massiiviset investoinnit.
+2. **Rakentaminen kestää puolitoista–kaksi vuotta.** Siksi investoinnit aloitetaan jo nyt — odottaminen olisi liian myöhäistä, jos AI-kysynnän odotetaan kasvavan nopeasti.
+
+Zitron nostaa esiin toisen ongelman: **piirisirut vanhenevat nopeammin kuin ne ehtivät maksaa itsensä takaisin.** Vaikka uutta AI-liiketoimintaa syntyisi nopeasti, tänään ostetut **A100-** ja **Blackwell-piirisirut** eivät välttämättä tuota takaisin investointiaan ennen kuin seuraava sukupolvi (esim. Vera Rubin) on jo korvaamassa niitä. Ilman nopeaa ja suurta tuottoa sekä optimistinen että pessimistinen lasku johtavat samaan lopputulokseen — laitteet eivät ehdi maksaa itseään.
+
+**Amazonin rajoite:** AWS on **infrastruktuuriyhtiö**, jossa **Anthropic** on dominoiva AI-asiakastarina. Jos Amazon ei **rakenna kapasiteettia**, se ei **kasvata tuottoa** vaaditulla vauhdilla — ohjelmistomyynnin lisämyynti ei ole tässä kehyksessä Amazonin tarina.
+
+## Yritysten AI-kulutus ilman selvää budjettia
+
+Perinteiset pilvipalvelut ovat **selkeitä budjetin rivejä**: tiedät, mitä ostat ja miksi — hallintaohjelmistot, tallennus, suunnittelutyökalut. Zitronin mukaan Anthropicin kaltaisessa yrityskäytössä **sama selkeys puuttuu**:
+
+- Kustannusta on vaikea jakaa **käyttäjittäin**.
+- **Ei selvää sopimusta** palvelun laadusta ja hinnoista — epätavallista suuryritysohjelmistolle.
+- Talousjohtajien lainaukset lehdissä: **"vielä selvittelyssä"**, **"ei voi jatkua"**, budjetit **ylitetty yhdessä kvartaalissa**.
+
+**Salesforce-esimerkki:** **Mark Benioff** suunnittelee **300 miljoonaa dollaria** Anthropic-kulutukseen **2026**, mutta sanoo ettei yrityksen **"tarvitse tehdä näin jatkossa."** Zitronin tulkinta: tämä ei ole **vakaan, kasvavan toimialan** merkki vaan **kokeilu valtavassa mittakaavassa**.
+
+Yhteys [Natasha Bernalin tuottavuus-haastatteluihin](/analyysit/ai-tuottavuuskriisi-tyontekijat-gartner/): työn tavoite siirtyy liiketuloksista **AI-budjetin perustelemiseen**.
+
+## Johtamisteatteri ja business idiot -teoria
+
+Zitronin **business idiot -teoria** väittää, että **talous palvelee tuotannosta irrottautuneita** — johtajia, osa keskijohtoa, pääomasijoittajia. Sähköposteihin, palavereihin ja someen eläville kielimallit tuntuvat **työltä itseltään**. Se tuottaa:
+
+- **Näyttelevää AI-käyttöä** esimiehen mieliksi (metaverse-vertaus: Horizon Worlds -palaverit).
+- Painetta alempana oleville **simuloida AI-arvoa** tulosten sijaan.
+
+Seurauksena arviointi palkitsee usein **näkyvyyttä enemmän kuin tulosta**. Suomessa **työehto- ja tietosuojakulttuuri** voi hidastaa ilmiötä, mutta toimittajien myyntipuheet tuovat silti saman paineen.
+
+## OpenAI kiirehtii pörssilistautumista
+
+Pound esittää seurantakysymyksen: jos Altman kiirehtii **pörssilistautumista vuonna 2026**, tietääkö hän **matematiikan olevan mahdotonta**?
+
+Zitronin vastaus:
+
+- Pysy **yksityisenä** niin kauan kuin pörssilistautumisen hyppy maksimoidaan; **juokse ovesta ulos**, kun yksityinen rahoitus on **loppu**.
+- **Wall Street Journal -lehti (26.4.)** haastattelussa: OpenAI:n **talousjohtaja Sarah Friar** ei pitänyt yhtiötä valmiina **julkisten markkinoiden tarkasteluun** — silti **syyskuun** pörssilistautumispuhe jatkuu. Hän kutsuu tätä **epätoivoksi**, ei luottamukseksi.
+- **SpaceX-pörssilistautumiskilpailu** ja **SoftBankin** sitoutuminen lisäävät **sijoittajapainetta** siirtää riski julkisille markkinoille.
+
+Kun yhtiö on julkinen, **todelliset talousluvut** painavat enemmän; pelkkä tarina riittää huonommin — ks. [OpenAI:n laskentakiila](/analyysit/openai-kasvukiila-liiketoiminta-ja-riippuvuus/).
+
+## NVIDIA: keskittyminen ja kiertoraha
+
+**~81 miljardia dollaria** kvartaalituotto (siteerattu) ja **yli 60 % kolmelta asiakkaalta** Zitronin mukaan: jos yksi pilvipalvelujättiläinen pysähtyy, **NVIDIA putoaa**. NVIDIA:n kasvu vaatii, että muut ostavat **piirisiruja, joita ei ole vielä täysin käyttöönotettu**.
+
+Zitron siteeraa NVIDIA:n neljännesvuosiraporttia: piirisiruja myydään ennätysmäärin, mutta käteinen kasvaa hitaasti, koska yhtiö sijoittaa samalla takaisin AI-yhtiöihin. **Raha kierrättyy samassa piirissä** — sama kuvio kuin [aiemmassa Zitron-analyysissä](/analyysit/ed-zitron-ai-kupla/). **Meta** on toinen painepiste: se investoi paljon datakeskuksiin, vaikka AI-tuotostaan ei selitetä yhtä selvästi kuin kilpailijat.
+
+## Makrotelakka: kasvu sidottu pääomasijoituksiin
+
+Zitron siteeraa tilastoa — **teknologia-investoinnit yli ~90 % Yhdysvaltain talouden kasvusta tilivuonna 2025** — ilman ensisijaisen lähteen nimeä jaksossa. **Jos edes suunta on oikea**, pilvipalvelujättiläisten **pääomasijoitusten leikkaus** voisi iskeä **suuryritysohjelmistokysyntään** taantuman kautta — **palautesilmukka**, joka tekee hidastamisesta vaarallista, ei helppoa.
+
+Hän odottaa silti **pääomasijoitusten leikkauksia lopulta**, kun **datakeskuksia rakennetaan aluksi mutta ei saada valmiiksi**, ja **sääntelijät** (Googlen kilpailuoikeusesimerkki) olisivat voineet muuttaa käytöstä aiemmin.
+
+## Tekninen arvio suomalaiselle tiimille
+
+**Insinööri- ja tuotejohtajille:**
+
+- **Vaadi todisteita, älä arvioita joissa yksi kuukausi on kerrottu vuodeksi.** Pyydä toimittajilta **asiakaskohtaista tuottoa investoinneista**.
+- **Erota kokeilut ja oikeat investoinnit toisistaan.** Esimerkki: 300 miljoonan dollarin AI-kulurivi, josta johto sanoo ettei sitä tarvita jatkossa, on **kokeilu** — ei pitkän aikavälin strategia.
+- **Mallinna toimittajariski.** Keskittynyt piirisiruketju vaikuttaa **viiveeseen, hintaan ja tiekarttoihin** suomalaisilla Yhdysvaltain pilvipalveluilla.
+- **Dokumentoi tulokset ennen AI-kiintiöitä.** Jos talous ei selitä Anthropic-laskuja **tiimeittäin**, olette **mahdottoman optimismin** vaiheessa.
+
+**Yksittäisille tekijöille:**
+
+- Kun johto pyytää **AI-näkyvyyttä**, kysy mikä **tulos** korvaa viime vuoden mittarin.
+- Kohtele **pörssilistautumistarinoita** **pääomatapahtumina**, ei **tuotekypsyyden** signaaleina.
+- Valitse työnantajia, jotka mittaavat **valmiita muutoksia ja ratkaistuja ongelmia**, ei **Copilot-tunteja**.
+
+## Riskit ja epävarmuudet
+
+- **Suuret luvut ovat arvioita**, ei yhtiöiden virallisia AI-erittelyjä. Zitron pyöristää esimerkiksi ~200 miljardia dollaria per yhtiö ja ~600 miljardia dollaria yhteensä.
+- **Microsoftin 37 miljardia** ja **Amazonin 15 miljardia** perustuvat Zitronin siteeraamiin yhtiöpuheisiin; tarkat määritelmät voivat poiketa.
+- **90 prosentin osuus** Yhdysvaltain kasvusta teknologia-investoinneista mainittiin ilman nimettyä lähdettä — suunta on tärkeämpi kuin tarkka prosentti.
+- **Sama haastattelija, eri kulma** kuin [edellisessä datakeskusanalyysissä](/analyysit/ed-zitron-ai-kupla/) — kannattaa lukea molemmat tuoton ja infrastruktuurin osalta.
+- **Kuplan ajoitus** on Zitronin arvio (6–12+ kuukautta), ei ennuste.
+
+## Johtopäätös
+
+Zitronin toukokuun 2026 haastattelu tiivistää buumin yhteen lauseeseen: **teknologia-alalta odotetaan tuoton kaksinkertaistumista neljässä vuodessa, eikä kukaan näytä, mistä uusi raha tulee.** Piilotetut AI-luvut, **Salesforce-tyyppiset väliaikaiset token-budjetit**, **NVIDIA:n asiakaskeskittyminen** ja **OpenAI:n pörssilistautumiskiire** ovat saman kuilun eri kasvoja — **pääoma liikkuu nopeammin kuin rehellinen tuotto**.
+
+**Johdolle:** jos AI-strategiasi olettaa pilvipalvelujättiläisten talouden **"järjestyvän itsestään"**, rakenna silti **paikallinen tuotto-todiste**. **Katso kädet** — asiakaspoistuma, marginaali, takaisinmaksu — et puheiden adjektiiveja.
+
+**Rakentajille:** seuraava taito ei ole **prompt-teatteri** vaan **AI-menojen kääntäminen kestäviksi tuotemittareiksi**, jotka talousjohtaja voi perustella ilman arvoitusleikkiä.
+
+### Yksittäisen insinöörin näkökulma
+
+**Hyvä asia:** Selkeät **mittakaavavertailut** (200 vs. 37 miljardia dollaria) auttavat vastustamaan väitettä "kaikki tekevät rahaa AI:lla" arkkitehtuuripalavereissa. **Näyttelevälle käytölle** on nyt nimi — helpompi vaatia **tulosmittaria**.
+
+**Huono asia:** **Token-hinnoittelu** ja **ohjelmointirajapintalaskut** voivat räjähtää ilman ominaisuuskohtaista kustannusjakoa; **junior-paikat** katoavat samalla kun työpaikkailmoituksissa kasvaa **AI-teatteria**.
+
+**Opittavaa:** Aja **omat ennen/jälkeen-testit** oikeilla tehtävillä — älä osta tarinaa ilman mittausta. **Kirjaa valmiit toimitukset**, jos arviointi painottaa AI-käytön näyttämistä tulosten sijaan. **Seuraa omia AI-kustannuksia** tiimi- ja ominaisuustasolla, ennen kuin budjetit sidotaan pysyvästi.
+
+Yhdistä [datakeskus-analyysiin](/analyysit/ed-zitron-ai-kupla/), [OpenAI:n laskentakiilaan](/analyysit/openai-kasvukiila-liiketoiminta-ja-riippuvuus/) ja [työpaikan tuottavuuskriisiin](/analyysit/ai-tuottavuuskriisi-tyontekijat-gartner/).
