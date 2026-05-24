@@ -14,8 +14,6 @@ const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/til
   class="unsubscribe-form container-site max-w-lg py-16"
   data-locale={locale}
   data-unsubscribed-path={unsubscribedPath}
-  data-lead-default={t(locale, 'unsubscribeLead')}
-  data-lead-with-token={t(locale, 'unsubscribeLeadWithToken')}
   data-msg-invalid={t(locale, 'subscribeInvalidToken')}
   data-msg-failed={t(locale, 'unsubscribeFailed')}
   data-msg-request-success={t(locale, 'unsubscribeRequestSuccess')}
@@ -66,10 +64,10 @@ const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/til
   </div>
 
   <div class="unsubscribe-with-token mt-8 hidden">
-    <p class="text-sm text-[var(--color-text-dim)]">{t(locale, 'unsubscribeConfirmHint')}</p>
+    <p class="text-[var(--color-text-dim)]">{t(locale, 'unsubscribeLeadWithToken')}</p>
     <button
       type="button"
-      class="unsubscribe-btn mt-6 rounded-lg border border-red-500/40 px-5 py-2.5 text-sm font-semibold text-red-300 hover:bg-red-500/10"
+      class="unsubscribe-btn mt-4 rounded-lg border border-red-500/40 px-5 py-2.5 text-sm font-semibold text-red-300 hover:bg-red-500/10"
     >
       {t(locale, 'unsubscribeConfirm')}
     </button>
@@ -99,7 +97,7 @@ const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/til
     var locale = root.getAttribute('data-locale') || 'fi';
 
     if (token) {
-      if (leadEl) leadEl.textContent = root.getAttribute('data-lead-with-token') || leadEl.textContent;
+      if (leadEl) leadEl.classList.add('hidden');
       if (missingEl) missingEl.classList.add('hidden');
       if (withTokenEl) withTokenEl.classList.remove('hidden');
     }

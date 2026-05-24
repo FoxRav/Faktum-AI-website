@@ -108,10 +108,7 @@ export const ui = {
     unsubscribeTitle: 'Peru tilaus',
     unsubscribeLead:
       'Peruutus vahvistetaan henkilökohtaisella linkillä — turvallisuussyistä emme peru tilauksia pelkällä sähköpostiosoitteella.',
-    unsubscribeLeadWithToken:
-      'Avasit tämän sivun sähköpostilinkistä. Vahvista peruutus alla olevalla painikkeella.',
-    unsubscribeConfirmHint:
-      'Paina alla olevaa painiketta vahvistaaksesi peruutuksen. Tämä koskee sähköpostiosoitetta, jolle vahvistusviesti on lähetetty.',
+    unsubscribeLeadWithToken: 'Vahvista painikkeella.',
     unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
     unsubscribeMissingToken:
       'Eikö sinulla ole linkkiä? Syötä sähköpostiosoitteesi — lähetämme uuden peruutuslinkin.',
@@ -240,10 +237,7 @@ export const ui = {
     unsubscribeTitle: 'Unsubscribe',
     unsubscribeLead:
       'Unsubscribe requires a personal link for security — we cannot cancel a subscription from an email address alone.',
-    unsubscribeLeadWithToken:
-      'You opened this page from an email link. Confirm unsubscribe with the button below.',
-    unsubscribeConfirmHint:
-      'Press the button below to confirm. This applies to the email address that received our messages.',
+    unsubscribeLeadWithToken: 'Press the button to confirm.',
     unsubscribeConfirm: 'Unsubscribe from the newsletter',
     unsubscribeMissingToken:
       'No link handy? Enter your email and we will send a new unsubscribe link.',
