@@ -97,6 +97,11 @@ export const ui = {
     preferencesInterests: 'Kiinnostuksen kohteet',
     preferencesSave: 'Tallenna',
     preferencesSaved: 'Profiili tallennettu.',
+    preferencesSaveFailed: 'Tallennus epäonnistui.',
+    preferencesMissingToken:
+      'Profiilin täydennys vaatii henkilökohtaisen linkin sähköpostistasi.',
+    preferencesMissingTokenHelp:
+      'Avaa linkki vahvistus- tai tervetuloviestistäsi. Jos et löydä viestiä, tarkista roskapostikansio tai tilaa uutiskirje uudelleen — uusi linkki lähetetään vahvistuksen jälkeen.',
     unsubscribeTitle: 'Peru tilaus',
     unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
     sourcesTitle: 'Lähteet',
@@ -204,6 +209,11 @@ export const ui = {
     preferencesInterests: 'Interests',
     preferencesSave: 'Save',
     preferencesSaved: 'Profile saved.',
+    preferencesSaveFailed: 'Save failed.',
+    preferencesMissingToken:
+      'Completing your profile requires the personal link from your email.',
+    preferencesMissingTokenHelp:
+      'Open the link from your confirmation or welcome message. If you cannot find it, check your spam folder or subscribe again — a new link is sent after confirmation.',
     unsubscribeTitle: 'Unsubscribe',
     unsubscribeConfirm: 'Unsubscribe from the newsletter',
     sourcesTitle: 'Sources',
