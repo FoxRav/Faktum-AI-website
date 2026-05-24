@@ -105,84 +105,93 @@ const formId = `newsletter-${variant}-${locale}`;
 </section>
 
 <script is:inline>
-  document.querySelectorAll('.newsletter-form').forEach(function (form) {
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
-      var section = form.closest('.newsletter-signup');
-      if (!section) return;
+  (function () {
+    document.querySelectorAll('.newsletter-signup:not([data-newsletter-init])').forEach(function (section) {
+      section.setAttribute('data-newsletter-init', 'true');
+      var form = section.querySelector('.newsletter-form');
+      if (!form) return;
 
-      var locale = section.getAttribute('data-locale') || 'fi';
-      var messageEl = section.querySelector('.newsletter-message');
-      var submitBtn = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (form.getAttribute('data-submitting') === 'true') return;
+        form.setAttribute('data-submitting', 'true');
 
-      var msg = {
-        success: section.getAttribute('data-msg-success') || '',
-        emailSend: section.getAttribute('data-msg-email-send') || '',
-        generic: section.getAttribute('data-msg-generic') || '',
-        email: section.getAttribute('data-msg-email') || '',
-        consent: section.getAttribute('data-msg-consent') || '',
-        alreadyActive: section.getAttribute('data-msg-already-active') || '',
-      };
+        var locale = section.getAttribute('data-locale') || 'fi';
+        var messageEl = section.querySelector('.newsletter-message');
+        var submitBtn = form.querySelector('button[type="submit"]');
 
-      function showMessage(text, isError) {
-        if (!messageEl) return;
-        messageEl.textContent = text;
-        messageEl.classList.remove('hidden', 'text-cyan-400', 'text-red-400');
-        messageEl.classList.add(isError ? 'text-red-400' : 'text-cyan-400');
-      }
+        var msg = {
+          success: section.getAttribute('data-msg-success') || '',
+          emailSend: section.getAttribute('data-msg-email-send') || '',
+          generic: section.getAttribute('data-msg-generic') || '',
+          email: section.getAttribute('data-msg-email') || '',
+          consent: section.getAttribute('data-msg-consent') || '',
+          alreadyActive: section.getAttribute('data-msg-already-active') || '',
+        };
 
-      var emailInput = form.querySelector('input[name="email"]');
-      var consentInput = form.querySelector('input[name="consentMarketing"]');
-      var langSelect = form.querySelector('select[name="preferredLanguage"]');
-      var honeypot = form.querySelector('input[name="website"]');
-      var email = emailInput && 'value' in emailInput ? String(emailInput.value).trim() : '';
+        function showMessage(text, isError) {
+          if (!messageEl) return;
+          messageEl.textContent = text;
+          messageEl.classList.remove('hidden', 'text-cyan-400', 'text-red-400');
+          messageEl.classList.add(isError ? 'text-red-400' : 'text-cyan-400');
+        }
 
-      if (!email || email.indexOf('@') < 1) {
-        showMessage(msg.email, true);
-        return;
-      }
-      if (!consentInput || !('checked' in consentInput) || !consentInput.checked) {
-        showMessage(msg.consent, true);
-        return;
-      }
+        var emailInput = form.querySelector('input[name="email"]');
+        var consentInput = form.querySelector('input[name="consentMarketing"]');
+        var langSelect = form.querySelector('select[name="preferredLanguage"]');
+        var honeypot = form.querySelector('input[name="website"]');
+        var email = emailInput && 'value' in emailInput ? String(emailInput.value).trim() : '';
 
-      if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = true;
-
-      try {
-        var response = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email,
-            locale: locale,
-            preferredLanguage: langSelect && 'value' in langSelect ? langSelect.value : locale,
-            consentMarketing: true,
-            sourceUrl: form.getAttribute('data-source-url') || window.location.pathname,
-            honeypot: honeypot && 'value' in honeypot ? honeypot.value : '',
-          }),
-        });
-
-        var data = await response.json();
-        if (!response.ok) {
-          var code = data && data.error ? data.error : 'generic';
-          if (code === 'invalid_email') showMessage(msg.email, true);
-          else if (code === 'consent_required') showMessage(msg.consent, true);
-          else if (code === 'email_send_failed') showMessage(msg.emailSend, true);
-          else showMessage(msg.generic, true);
+        if (!email || email.indexOf('@') < 1) {
+          form.removeAttribute('data-submitting');
+          showMessage(msg.email, true);
+          return;
+        }
+        if (!consentInput || !('checked' in consentInput) || !consentInput.checked) {
+          form.removeAttribute('data-submitting');
+          showMessage(msg.consent, true);
           return;
         }
 
-        if (data && data.message === 'already_subscribed') {
-          showMessage(msg.alreadyActive, false);
-        } else {
-          showMessage(msg.success, false);
+        if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = true;
+
+        try {
+          var response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: email,
+              locale: locale,
+              preferredLanguage: langSelect && 'value' in langSelect ? langSelect.value : locale,
+              consentMarketing: true,
+              sourceUrl: form.getAttribute('data-source-url') || window.location.pathname,
+              honeypot: honeypot && 'value' in honeypot ? honeypot.value : '',
+            }),
+          });
+
+          var data = await response.json();
+          if (!response.ok) {
+            var code = data && data.error ? data.error : 'generic';
+            if (code === 'invalid_email') showMessage(msg.email, true);
+            else if (code === 'consent_required') showMessage(msg.consent, true);
+            else if (code === 'email_send_failed') showMessage(msg.emailSend, true);
+            else showMessage(msg.generic, true);
+            return;
+          }
+
+          if (data && data.message === 'already_subscribed') {
+            showMessage(msg.alreadyActive, false);
+          } else {
+            showMessage(msg.success, false);
+          }
+          form.reset();
+        } catch (err) {
+          showMessage(msg.generic, true);
+        } finally {
+          form.removeAttribute('data-submitting');
+          if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = false;
         }
-        form.reset();
-      } catch (err) {
-        showMessage(msg.generic, true);
-      } finally {
-        if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = false;
-      }
+      });
     });
-  });
+  })();
 </script>
