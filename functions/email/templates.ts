@@ -1,4 +1,4 @@
-import { siteUrl } from '../send';
+import { siteUrl } from './send';
 
 interface ConfirmTemplateInput {
   confirmUrl: string;
