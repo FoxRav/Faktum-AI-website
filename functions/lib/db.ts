@@ -142,22 +142,18 @@ export async function activateSubscriber(db: D1Database, subscriberId: string): 
     .run();
 }
 
-export async function unsubscribeSubscriber(db: D1Database, subscriberId: string): Promise<void> {
-  const ts = nowMs();
+export async function deleteSubscriberCompletely(
+  db: D1Database,
+  subscriberId: string,
+  emailNormalized: string,
+): Promise<void> {
+  await db.prepare('DELETE FROM confirmation_tokens WHERE subscriber_id = ?').bind(subscriberId).run();
+  await db.prepare('DELETE FROM consent_events WHERE subscriber_id = ?').bind(subscriberId).run();
   await db
-    .prepare(
-      `UPDATE subscribers SET
-        status = 'unsubscribed',
-        marketing_consent = 0,
-        primary_role = NULL,
-        secondary_roles_json = NULL,
-        interests_json = NULL,
-        unsubscribed_at = ?,
-        updated_at = ?
-      WHERE id = ?`,
-    )
-    .bind(ts, ts, subscriberId)
+    .prepare('DELETE FROM data_requests WHERE subscriber_id = ? OR email_normalized = ?')
+    .bind(subscriberId, emailNormalized)
     .run();
+  await db.prepare('DELETE FROM subscribers WHERE id = ?').bind(subscriberId).run();
 }
 
 export async function clearSubscriberPreferences(db: D1Database, subscriberId: string): Promise<void> {
@@ -172,25 +168,6 @@ export async function clearSubscriberPreferences(db: D1Database, subscriberId: s
       WHERE id = ?`,
     )
     .bind(ts, subscriberId)
-    .run();
-}
-
-export async function softDeleteSubscriber(db: D1Database, subscriberId: string): Promise<void> {
-  const ts = nowMs();
-  await db
-    .prepare(
-      `UPDATE subscribers SET
-        status = 'deleted',
-        marketing_consent = 0,
-        email = ?,
-        primary_role = NULL,
-        secondary_roles_json = NULL,
-        interests_json = NULL,
-        deleted_at = ?,
-        updated_at = ?
-      WHERE id = ?`,
-    )
-    .bind(`deleted+${subscriberId}@faktum-ai.invalid`, ts, ts, subscriberId)
     .run();
 }
 

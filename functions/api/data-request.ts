@@ -3,11 +3,11 @@ import {
   completeDataRequest,
   createConfirmationToken,
   createDataRequest,
+  deleteSubscriberCompletely,
   getPendingDataRequest,
   getSubscriberByEmail,
   logConsentEvent,
   markTokenUsed,
-  softDeleteSubscriber,
   subscriberExportPayload,
 } from '../lib/db';
 import { getClientIp, jsonResponse, redirectResponse } from '../lib/http';
@@ -46,7 +46,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const locale = body.locale === 'en' ? 'en' : 'fi';
 
   const subscriber = await getSubscriberByEmail(db, emailNormalized);
-  if (!subscriber || subscriber.status === 'deleted') {
+  if (!subscriber) {
     return jsonResponse({ ok: true, message: 'request_received' });
   }
 
@@ -121,14 +121,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   await markTokenUsed(db, tokenHash);
   await completeDataRequest(db, pending.id);
 
-  if (pending.request_type === 'delete' && pending.subscriber_id) {
-    await softDeleteSubscriber(db, pending.subscriber_id);
-    await logConsentEvent(db, {
-      id: crypto.randomUUID(),
-      subscriberId: pending.subscriber_id,
-      eventType: 'deleted',
-      legalBasis: 'legal_obligation',
-    });
+  if (pending.request_type === 'delete' && pending.subscriber_id && subscriber) {
+    await deleteSubscriberCompletely(db, pending.subscriber_id, subscriber.email_normalized);
     return redirectResponse(`${baseSite}${donePath}?result=deleted`);
   }
 

@@ -1,34 +1,12 @@
-import { hashIp, hashToken, truncateUserAgent } from '../lib/crypto';
+import { hashToken } from '../lib/crypto';
 import {
+  deleteSubscriberCompletely,
   getSubscriberById,
   getValidToken,
-  invalidateSubscriberTokens,
-  logConsentEvent,
   markTokenUsed,
-  unsubscribeSubscriber,
 } from '../lib/db';
-import { getClientIp, jsonResponse, redirectResponse } from '../lib/http';
+import { jsonResponse, redirectResponse } from '../lib/http';
 import { siteUrl } from '../email/send';
-
-async function auditUnsubscribe(
-  db: D1Database,
-  subscriberId: string,
-  env: Env,
-  request: Request,
-): Promise<void> {
-  const ip = getClientIp(request);
-  const ipHash = ip ? await hashIp(ip, env.TOKEN_SECRET) : null;
-  const userAgent = truncateUserAgent(request.headers.get('user-agent'));
-
-  await logConsentEvent(db, {
-    id: crypto.randomUUID(),
-    subscriberId,
-    eventType: 'unsubscribe',
-    legalBasis: 'consent_withdrawal',
-    ipHash,
-    userAgent,
-  });
-}
 
 async function processUnsubscribe(
   db: D1Database,
@@ -48,12 +26,12 @@ async function processUnsubscribe(
     return jsonResponse({ ok: false, error: 'invalid_token' }, 400);
   }
 
-  await markTokenUsed(db, tokenHash);
-  await invalidateSubscriberTokens(db, subscriber.id, ['manage']);
-  await unsubscribeSubscriber(db, subscriber.id);
-  await auditUnsubscribe(db, subscriber.id, env, request);
-
   const locale = subscriber.locale === 'en' ? 'en' : 'fi';
+  const emailNormalized = subscriber.email_normalized;
+
+  await markTokenUsed(db, tokenHash);
+  await deleteSubscriberCompletely(db, subscriber.id, emailNormalized);
+
   const base = siteUrl(env);
   const path = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/tilaa/peruutettu/';
 

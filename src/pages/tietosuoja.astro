@@ -47,8 +47,8 @@ import { dataRequestPath } from '../i18n/paths';
   <h2>Säilytysajat</h2>
   <ul>
     <li>Aktiiviset tilaajat: kunnes tilaus perutaan</li>
-    <li>Passiiviset / peruutetut: suositus 24–36 kk audit-lokia varten (TODO: vahvista)</li>
-    <li>Poistopyynnön jälkeen: henkilötiedot anonymisoidaan tai poistetaan; lakisääteinen loki säilytetään minimaalisena</li>
+    <li>Vahvistettu peruutus: tilaajan rivi ja siihen liittyvät tiedot poistetaan D1-rekisteristä viipymättä</li>
+    <li>Erillinen poistopyyntö: <a href={dataRequestPath('fi')}>oma tieto -sivulta</a> tarvittaessa</li>
   </ul>
 
   <h2>Käsittelijät</h2>
@@ -81,7 +81,8 @@ import { dataRequestPath } from '../i18n/paths';
   <p>
     Voit perua uutiskirjeen tilauksen milloin tahansa. Peruutus tehdään
     <a href="/tilaa/peru/">tilauksen peruutussivulla</a>. Vahvistus edellyttää henkilökohtaista linkkiä, jonka saat sähköpostiviestissä — tämä estää
-    ulkopuolisia peruuttamasta tilaustasi.
+    ulkopuolisia peruuttamasta tilaustasi. Vahvistetun peruutuksen jälkeen sähköpostiosoitteesi ja profiilitietosi
+    poistetaan automaattisesti tilaajarekisteristä.
   </p>
   <p>
     Helpoin tapa: avaa viimeisimmästä uutiskirjeestä tai tervetuloviestistä linkki
