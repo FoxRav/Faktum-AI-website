@@ -38,7 +38,7 @@ const description = `Faktum AI articles about ${label}.`;
   description={description}
   path={`/en/topics/${tagSlug}/`}
   jsonLd={[
-    tagPageJsonLd(label, tagSlug),
+    tagPageJsonLd(label, tagSlug, locale),
     breadcrumbJsonLd([
       { name: 'Home', path: '/en/' },
       { name: t(locale, 'topicsTitle'), path: '/en/topics/' },

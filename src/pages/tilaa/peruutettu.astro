@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { subscribePath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+const locale = 'fi' as const;
+---
+
+<BaseLayout
+  title="Tilaus peruutettu"
+  description="Faktum AI -uutiskirjeen tilaus on peruutettu."
+  path={subscribePath(locale, 'unsubscribed')}
+>
+  <section class="container-site py-16 text-center">
+    <h1 class="font-sans text-3xl font-bold">{t(locale, 'subscribeUnsubscribed')}</h1>
+  </section>
+</BaseLayout>

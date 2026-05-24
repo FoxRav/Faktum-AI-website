@@ -5,12 +5,15 @@ import TagList from '../components/ui/TagList.astro';
 import KeyTakeaways from '../components/article/KeyTakeaways.astro';
 import SourceList from '../components/article/SourceList.astro';
 import RelatedArticles from '../components/article/RelatedArticles.astro';
+import ArticleAiBadge from '../components/article/ArticleAiBadge.astro';
+import NewsletterSignup from '../components/forms/NewsletterSignup.astro';
 import { formatDateTime } from '../utils/formatDate';
 import type { ArticleEntry } from '../utils/content';
 import { getCategoryHref, getCategoryLabel } from '../utils/content';
 import { articlePageJsonLd, DEFAULT_OG_IMAGE } from '../utils/seo';
 import { formatDateTimeISO } from '../utils/formatDate';
 import { getRelatedArticles } from '../utils/tags';
+import { t } from '../i18n/ui';
 
 interface Props {
   article: ArticleEntry;
@@ -20,6 +23,7 @@ interface Props {
 const { article, allArticles } = Astro.props;
 const relatedArticles = getRelatedArticles(article, allArticles, 3);
 const { data } = article;
+const locale = article.locale;
 const categoryLabel = getCategoryLabel(article);
 const categoryHref = getCategoryHref(article);
 ---
@@ -39,14 +43,19 @@ const categoryHref = getCategoryHref(article);
     <header class="max-w-3xl">
       <div class="mb-4 flex flex-wrap items-center gap-2">
         <CategoryBadge label={categoryLabel} href={categoryHref} />
-        {data.status === 'draft' && <span class="badge text-amber-400">Luonnos</span>}
+        {data.status === 'draft' && <span class="badge text-amber-400">{t(locale, 'draftBadge')}</span>}
       </div>
+      <ArticleAiBadge
+        locale={locale}
+        aiAssistance={data.aiAssistance}
+        commercialDisclosure={data.commercialDisclosure}
+      />
       <h1 class="font-sans text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
         {data.title}
       </h1>
       <p class="mt-4 text-xl text-[var(--color-text-dim)]">{data.description}</p>
       <div class="mt-6 flex flex-wrap gap-4 border-y border-[var(--color-border)] py-4 text-sm text-[var(--color-text-muted)]">
-        <time datetime={data.date.toISOString()}>{formatDateTime(data.date)}</time>
+        <time datetime={data.date.toISOString()}>{formatDateTime(data.date, locale)}</time>
         <span>{data.author}</span>
         {data.readingTime && <span>{data.readingTime}</span>}
       </div>
@@ -74,20 +83,23 @@ const categoryHref = getCategoryHref(article);
       </figure>
     )}
 
-    {data.keyClaims.length > 0 && <KeyTakeaways items={data.keyClaims} title="Keskeiset väitteet" />}
+    {data.keyClaims.length > 0 && (
+      <KeyTakeaways items={data.keyClaims} title={t(locale, 'keyClaimsTitle')} />
+    )}
 
     <div class="prose-faktum mx-auto max-w-3xl">
       <slot />
     </div>
 
-    <SourceList sources={data.sources} />
+    <SourceList sources={data.sources} locale={locale} />
 
     {data.needsFactCheck && (
       <p class="mx-auto mt-8 max-w-3xl text-xs text-[var(--color-text-muted)]">
-        Faktum AI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu
-        vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.
+        {t(locale, 'factCheckNote')}
       </p>
     )}
+
+    <NewsletterSignup locale={locale} variant="articleEnd" sourceUrl={Astro.url.pathname} />
   </article>
 
   <div class="container-site pb-16">

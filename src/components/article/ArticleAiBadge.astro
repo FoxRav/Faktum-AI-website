@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../../i18n/config';
+import { AI_ASSISTANCE_LABELS, COMMERCIAL_LABELS } from '../../i18n/subscriber';
+
+interface Props {
+  locale: Locale;
+  aiAssistance?: 'none' | 'assisted' | 'substantial';
+  commercialDisclosure?: 'none' | 'sponsored' | 'affiliate' | 'partner' | 'advertisement';
+}
+
+const { locale, aiAssistance = 'assisted', commercialDisclosure = 'none' } = Astro.props;
+
+const aiLabel =
+  aiAssistance !== 'none' ? AI_ASSISTANCE_LABELS[locale][aiAssistance] : null;
+const commercialLabel =
+  commercialDisclosure !== 'none'
+    ? COMMERCIAL_LABELS[locale][commercialDisclosure]
+    : null;
+---
+
+{(aiLabel || commercialLabel) && (
+  <div class="mb-4 flex flex-wrap gap-2">
+    {aiLabel && <span class="badge border-cyan-500/30 text-cyan-300">{aiLabel}</span>}
+    {commercialLabel && (
+      <span class="badge border-amber-500/30 text-amber-300">{commercialLabel}</span>
+    )}
+  </div>
+)}

@@ -1,0 +1,76 @@
+---
+import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
+import { dataRequestPath } from '../../i18n/paths';
+---
+
+<LegalPageLayout
+  title="Privacy policy"
+  description="Faktum AI privacy policy and subscriber registry processing information."
+  path="/en/privacy/"
+>
+  <p><strong>Last updated:</strong> 2026-05-24 · version 2026-05-24-v1</p>
+
+  <h2>Controller</h2>
+  <p>
+    <strong>PLACEHOLDER_TODO_CONTROLLER_NAME</strong><br />
+    Email: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a><br />
+    Website: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+  </p>
+
+  <h2>Purposes</h2>
+  <ul>
+    <li>Sending the Faktum AI newsletter (once a week)</li>
+    <li>Managing subscriber profiles (role, interests, language)</li>
+    <li>Double opt-in confirmation and subscription management</li>
+    <li>Fulfilling data subject rights (export, deletion)</li>
+    <li>Aggregated audience statistics for sponsorship (no personal sales)</li>
+  </ul>
+
+  <h2>Legal bases</h2>
+  <ul>
+    <li><strong>Newsletter:</strong> consent (GDPR Art. 6(1)(a))</li>
+    <li><strong>Transactional emails:</strong> service delivery</li>
+    <li><strong>Consent audit log:</strong> legitimate interest / compliance evidence</li>
+  </ul>
+
+  <h2>Data collected</h2>
+  <ul>
+    <li>Email address</li>
+    <li>Language preference (fi / en / both)</li>
+    <li>Optional role and interest selections</li>
+    <li>Signup source URL</li>
+    <li>Consent version and timestamp</li>
+    <li>Technical audit metadata (hashed IP, truncated user agent)</li>
+  </ul>
+
+  <h2>Retention</h2>
+  <ul>
+    <li>Active subscribers: until unsubscribe</li>
+    <li>Inactive / unsubscribed: recommended 24–36 months for audit (TODO: confirm)</li>
+    <li>After deletion request: personal data removed or anonymised; minimal legal log retained</li>
+  </ul>
+
+  <h2>Processors</h2>
+  <ul>
+    <li>Cloudflare, Inc. — hosting, D1, KV, Pages Functions</li>
+    <li>GitHub, Inc. — source control</li>
+    <li>Email provider (Resend or Postmark) — confirmation and management emails</li>
+    <li>Possible future ESP (Buttondown / MailerLite) — downstream copy only</li>
+  </ul>
+
+  <h2>International transfers</h2>
+  <p>
+    Processors may handle data outside the EU/EEA under DPAs and standard contractual clauses where
+    required.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>You may access, rectify, erase, port, and withdraw consent for your data.</p>
+  <ul>
+    <li>Unsubscribe: link in every newsletter or <a href="/en/subscribe/unsubscribe/">unsubscribe page</a></li>
+    <li>Data requests: <a href={dataRequestPath('en')}>your data page</a></li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Privacy enquiries: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+</LegalPageLayout>

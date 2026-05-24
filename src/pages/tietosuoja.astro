@@ -1,0 +1,81 @@
+---
+import LegalPageLayout from '../layouts/LegalPageLayout.astro';
+import { dataRequestPath } from '../i18n/paths';
+---
+
+<LegalPageLayout
+  title="Tietosuojaseloste"
+  description="Faktum AI -sivuston tietosuojaseloste ja tilaajarekisterin käsittelyperusteet."
+  path="/tietosuoja/"
+>
+  <p><strong>Viimeksi päivitetty:</strong> 2026-05-24 · versio 2026-05-24-v1</p>
+
+  <h2>Rekisterinpitäjä</h2>
+  <p>
+    <strong>PLACEHOLDER_TODO_CONTROLLER_NAME</strong><br />
+    Sähköposti: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a><br />
+    Verkkosivusto: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+  </p>
+
+  <h2>Käsittelyn tarkoitukset</h2>
+  <ul>
+    <li>Faktum AI -uutiskirjeen lähetys (noin kerran viikossa) ja tilaajaviestintä</li>
+    <li>Tilaajaprofiilin hallinta (rooli, kiinnostukset, kielivalinta)</li>
+    <li>Sähköpostivahvistusten ja tilausten hallinnan toteutus (double opt-in)</li>
+    <li>Rekisteröidyn oikeuksien toteuttaminen (tietopyynnöt, poistopyynnöt)</li>
+    <li>Sponsorimyynnin tueksi aggregoidut yleisötiedot (ei henkilökohtaista myyntiä)</li>
+  </ul>
+
+  <h2>Oikeusperusteet</h2>
+  <ul>
+    <li><strong>Uutiskirje:</strong> suostumus (GDPR 6(1)(a))</li>
+    <li><strong>Transactional-viestit</strong> (vahvistus, hallintalinkit): palvelun toteuttaminen</li>
+    <li><strong>Suostumus- ja audit-loki:</strong> oikeutettu etu / compliance-velvoitteiden osoittaminen</li>
+  </ul>
+
+  <h2>Kerättävät tiedot</h2>
+  <ul>
+    <li>Sähköpostiosoite</li>
+    <li>Kielivalinta (fi / en / both)</li>
+    <li>Valinnaiset rooli- ja kiinnostustiedot</li>
+    <li>Tilauslähde (source URL)</li>
+    <li>Suostumuksen versio ja aikaleima</li>
+    <li>Tekninen audit-loki (hashattu IP, lyhennetty user agent) suostumustapahtumista</li>
+  </ul>
+  <p>Emme kerää erityisiä henkilötietoryhmiä, tarkkaa osoitetta tai poliittisia mielipiteitä.</p>
+
+  <h2>Säilytysajat</h2>
+  <ul>
+    <li>Aktiiviset tilaajat: kunnes tilaus perutaan</li>
+    <li>Passiiviset / peruutetut: suositus 24–36 kk audit-lokia varten (TODO: vahvista)</li>
+    <li>Poistopyynnön jälkeen: henkilötiedot anonymisoidaan tai poistetaan; lakisääteinen loki säilytetään minimaalisena</li>
+  </ul>
+
+  <h2>Käsittelijät</h2>
+  <ul>
+    <li>Cloudflare, Inc. — hosting, D1-tietokanta, Workers KV, Pages Functions</li>
+    <li>GitHub, Inc. — lähdekoodin versionhallinta</li>
+    <li>Sähköpostipalvelu (Resend tai Postmark) — vahvistus- ja hallintaviestit</li>
+    <li>Mahdollinen ESP myöhemmin (Buttondown / MailerLite) — vain downstream-kopio</li>
+  </ul>
+
+  <h2>Siirrot EU/ETA-alueen ulkopuolelle</h2>
+  <p>
+    Palveluntarjoajat voivat käsitellä tietoja EU/ETA-alueen ulkopuolella. Siirrot perustuvat
+    palveluntarjoajien DPA-sopimuksiin ja tarvittaessa standardisopimuslausekkeisiin (SCC).
+  </p>
+
+  <h2>Rekisteröidyn oikeudet</h2>
+  <p>Sinulla on oikeus tarkastaa, oikaista, poistaa ja siirtää tietojasi sekä peruuttaa suostumuksesi.</p>
+  <ul>
+    <li>Peru tilaus: linkki jokaisessa uutiskirjeessä tai <a href="/tilaa/peru/">tilauksen peruutus</a></li>
+    <li>
+      Tietopyyntö: <a href={dataRequestPath('fi')}>oma tieto -sivu</a>
+    </li>
+  </ul>
+
+  <h2>Yhteydenotot</h2>
+  <p>
+    Tietosuoja-asiat: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
+  </p>
+</LegalPageLayout>

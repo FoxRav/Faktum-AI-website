@@ -1,4 +1,7 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/ui';
+
 interface Source {
   title: string;
   url?: string;
@@ -8,14 +11,15 @@ interface Source {
 
 interface Props {
   sources: Source[];
+  locale?: Locale;
 }
 
-const { sources } = Astro.props;
+const { sources, locale = 'fi' } = Astro.props;
 ---
 
 {sources.length > 0 && (
   <section class="mt-12 border-t border-[var(--color-border)] pt-8">
-    <h2 class="font-sans text-xl font-bold text-[var(--color-text)]">Lähteet</h2>
+    <h2 class="font-sans text-xl font-bold text-[var(--color-text)]">{t(locale, 'sourcesTitle')}</h2>
     <ol class="mt-4 space-y-3">
       {sources.map((source, i) => (
         <li class="text-sm text-[var(--color-text-dim)]">

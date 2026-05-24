@@ -1,0 +1,29 @@
+---
+import type { Locale } from '../../i18n/config';
+import { privacyPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  id?: string;
+}
+
+const { locale, id = 'newsletter-consent' } = Astro.props;
+---
+
+<label class="flex cursor-pointer items-start gap-3 text-sm text-[var(--color-text-dim)]">
+  <input
+    type="checkbox"
+    name="consentMarketing"
+    id={id}
+    value="true"
+    required
+    class="mt-1 h-4 w-4 rounded border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-cyan-500 focus:ring-cyan-500/40"
+  />
+  <span>
+    {t(locale, 'subscribeConsentLabel')}
+    <a href={privacyPath(locale)} class="text-cyan-400 hover:underline">
+      {t(locale, 'footerPrivacy')}
+    </a>
+  </span>
+</label>

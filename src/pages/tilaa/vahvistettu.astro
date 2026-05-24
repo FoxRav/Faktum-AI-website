@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { subscribePath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+const locale = 'fi' as const;
+---
+
+<BaseLayout
+  title="Tilaus vahvistettu"
+  description="Faktum AI -uutiskirjeen tilaus on vahvistettu."
+  path={subscribePath(locale, 'confirmed')}
+>
+  <section class="container-site py-16 text-center">
+    <h1 class="font-sans text-3xl font-bold">{t(locale, 'subscribeConfirmed')}</h1>
+    <p class="mt-4 text-[var(--color-text-dim)]">
+      Tarkista sähköpostisi profiilin täydennystä varten.
+    </p>
+  </section>
+</BaseLayout>

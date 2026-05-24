@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PreferenceForm from '../../components/forms/PreferenceForm.astro';
+import { subscribePath } from '../../i18n/paths';
+
+const locale = 'fi' as const;
+const token = Astro.url.searchParams.get('token') ?? '';
+---
+
+<BaseLayout
+  title="Tilaajaprofiili"
+  description="Hallitse Faktum AI -uutiskirjeen tilauksen roolia ja kiinnostuksia."
+  path={subscribePath(locale, 'preferences')}
+>
+  <PreferenceForm locale={locale} token={token} />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+---
+
+<article class="container-site py-12 lg:py-16">
+  <header class="mx-auto max-w-3xl">
+    <h1 class="font-sans text-3xl font-bold sm:text-4xl">{title}</h1>
+    {description && <p class="mt-4 text-[var(--color-text-dim)]">{description}</p>}
+  </header>
+  <div class="prose-faktum mx-auto mt-8 max-w-3xl">
+    <slot />
+  </div>
+</article>

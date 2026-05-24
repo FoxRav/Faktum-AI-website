@@ -1,0 +1,81 @@
+---
+import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
+import { dataRequestPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+const locale = 'fi' as const;
+---
+
+<LegalPageLayout
+  title={t(locale, 'dataRequestTitle')}
+  description="Pyydä tilaajatietojesi kopio tai poisto Faktum AI -rekisteristä."
+  path={dataRequestPath(locale)}
+>
+  <p>Lähetämme vahvistuslinkin sähköpostiisi ennen kuin käsittelemme pyyntöä.</p>
+
+  <form id="data-request-form" class="mt-8 max-w-md space-y-4" data-locale={locale}>
+    <div>
+      <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'subscribeEmailLabel')}
+      </label>
+      <input
+        type="email"
+        name="email"
+        required
+        class="mt-2 w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2.5"
+      />
+    </div>
+    <div class="flex flex-col gap-2 sm:flex-row">
+      <button
+        type="submit"
+        data-type="export"
+        class="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-slate-950"
+      >
+        {t(locale, 'dataRequestExport')}
+      </button>
+      <button
+        type="submit"
+        data-type="delete"
+        class="rounded-lg border border-red-500/40 px-4 py-2 text-sm font-semibold text-red-300"
+      >
+        {t(locale, 'dataRequestDelete')}
+      </button>
+    </div>
+    <p id="data-request-msg" class="text-sm" aria-live="polite"></p>
+  </form>
+</LegalPageLayout>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('data-request-form');
+    if (!form) return;
+    var locale = form.getAttribute('data-locale') || 'fi';
+    var msg = document.getElementById('data-request-msg');
+
+    form.addEventListener('click', async function (event) {
+      var target = event.target;
+      if (!target || target.tagName !== 'BUTTON') return;
+      event.preventDefault();
+      var requestType = target.getAttribute('data-type') || 'export';
+      var emailInput = form.querySelector('input[name="email"]');
+      var email = emailInput && 'value' in emailInput ? String(emailInput.value).trim() : '';
+      if (!email) return;
+
+      try {
+        var res = await fetch('/api/data-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, requestType: requestType, locale: locale }),
+        });
+        if (msg) {
+          msg.textContent =
+            locale === 'en'
+              ? 'Check your email and confirm the request.'
+              : 'Tarkista sähköpostisi ja vahvista pyyntö.';
+        }
+      } catch (e) {
+        if (msg) msg.textContent = locale === 'en' ? 'Request failed.' : 'Pyyntö epäonnistui.';
+      }
+    });
+  })();
+</script>

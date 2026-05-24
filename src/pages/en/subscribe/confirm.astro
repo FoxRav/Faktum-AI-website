@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { subscribePath } from '../../../i18n/paths';
+import { t } from '../../../i18n/ui';
+
+const locale = 'en' as const;
+const error = Astro.url.searchParams.get('error');
+---
+
+<BaseLayout
+  title="Confirm subscription"
+  description="Confirm your Faktum AI newsletter subscription from your email link."
+  path={subscribePath(locale, 'confirm')}
+>
+  <section class="container-site py-16 text-center">
+    <h1 class="font-sans text-3xl font-bold">Confirm subscription</h1>
+    {error ? (
+      <p class="mt-4 text-red-400">{t(locale, 'subscribeInvalidToken')}</p>
+    ) : (
+      <p class="mt-4 text-[var(--color-text-dim)]">{t(locale, 'subscribeConfirmPending')}</p>
+    )}
+  </section>
+</BaseLayout>

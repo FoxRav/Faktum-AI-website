@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { t } from '../../../i18n/ui';
+
+const locale = 'fi' as const;
+const result = Astro.url.searchParams.get('result');
+const error = Astro.url.searchParams.get('error');
+---
+
+<BaseLayout title="Pyyntö käsitelty" description="Tietopyyntö käsitelty." path="/tietosuoja/oma-tieto/valmis/">
+  <section class="container-site py-16 text-center">
+    <h1 class="font-sans text-3xl font-bold">Pyyntö käsitelty</h1>
+    {error && <p class="mt-4 text-red-400">{t(locale, 'subscribeInvalidToken')}</p>}
+    {result === 'deleted' && <p class="mt-4 text-[var(--color-text-dim)]">Tietosi on poistettu rekisteristä.</p>}
+    {result === 'export_sent' && <p class="mt-4 text-[var(--color-text-dim)]">Vienti suoritettu.</p>}
+  </section>
+</BaseLayout>

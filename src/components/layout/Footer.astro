@@ -1,6 +1,14 @@
 ---
 import VisitCounter from '../VisitCounter.astro';
-import { getLocaleFromPath, categoryPath } from '../../i18n/paths';
+import NewsletterSignup from '../forms/NewsletterSignup.astro';
+import {
+  categoryPath,
+  cookiesPath,
+  editorialPath,
+  getLocaleFromPath,
+  privacyPath,
+  subscribePath,
+} from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
 const year = new Date().getFullYear();
@@ -8,7 +16,7 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 ---
 
 <footer class="mt-20 border-t border-[var(--color-border)] py-12">
-  <div class="container-site grid gap-8 md:grid-cols-3">
+  <div class="container-site grid gap-8 md:grid-cols-2 lg:grid-cols-4">
     <div>
       <p class="font-semibold text-[var(--color-text)]">
         <span class="text-cyan-400">Faktum</span> AI
@@ -51,6 +59,38 @@ const locale = getLocaleFromPath(Astro.url.pathname);
     </div>
     <div>
       <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'footerLegal')}
+      </p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href={privacyPath(locale)} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerPrivacy')}
+          </a>
+        </li>
+        <li>
+          <a href={cookiesPath(locale)} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerCookies')}
+          </a>
+        </li>
+        <li>
+          <a href={editorialPath(locale)} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerEditorial')}
+          </a>
+        </li>
+        <li>
+          <a href={subscribePath(locale)} class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerSubscribe')}
+          </a>
+        </li>
+        <li>
+          <a href="mailto:marko@faktum-ai.com" class="text-[var(--color-text-dim)] hover:text-cyan-400">
+            {t(locale, 'footerContact')}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
         {t(locale, 'footerServices')}
       </p>
       <ul class="mt-3 space-y-2 text-sm">
@@ -74,6 +114,9 @@ const locale = getLocaleFromPath(Astro.url.pathname);
         </li>
       </ul>
     </div>
+  </div>
+  <div class="container-site mt-10">
+    <NewsletterSignup locale={locale} variant="compact" sourceUrl={Astro.url.pathname} />
   </div>
   <div class="container-site mt-10 border-t border-[var(--color-border)] pt-6 text-center">
     <VisitCounter locale={locale} />

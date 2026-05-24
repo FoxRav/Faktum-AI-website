@@ -1,6 +1,7 @@
 import type { ArticleEntry } from './content';
 import { getArticleUrl } from './content';
 import { getTagUrl } from './tags';
+import { schemaLanguage } from './formatDate';
 
 const DEFAULT_SITE = 'https://www.faktum-ai.com';
 const DEFAULT_OG_IMAGE = '/images/brand/landing-hero.webp';
@@ -26,7 +27,7 @@ export function absoluteAssetUrl(
   return assetPath.startsWith('http') ? assetPath : `${site}${assetPath}`;
 }
 
-export function organizationJsonLd(site = DEFAULT_SITE) {
+export function organizationJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SITE) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -34,20 +35,24 @@ export function organizationJsonLd(site = DEFAULT_SITE) {
     url: site,
     logo: `${site}/favicon.svg`,
     description:
-      'Suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille ja AI-rakentajille.',
+      locale === 'en'
+        ? 'Finnish AI news and analysis for IT professionals and builders.'
+        : 'Suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille ja AI-rakentajille.',
     email: 'marko@faktum-ai.com',
   };
 }
 
-export function websiteJsonLd(site = DEFAULT_SITE) {
+export function websiteJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SITE) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Faktum AI',
     url: site,
     description:
-      'Suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita.',
-    inLanguage: 'fi-FI',
+      locale === 'en'
+        ? 'AI news, analysis, interview summaries and tool reviews.'
+        : 'Suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita.',
+    inLanguage: locale === 'en' ? 'en' : 'fi-FI',
     publisher: { '@type': 'Organization', name: 'Faktum AI', url: site },
   };
 }
@@ -81,7 +86,7 @@ export function articleJsonLd(article: ArticleEntry, site = DEFAULT_SITE) {
     image: image ? [image] : undefined,
     keywords: article.data.tags.join(', '),
     articleSection: article.data.category,
-    inLanguage: 'fi-FI',
+    inLanguage: schemaLanguage(article.locale),
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     url,
   };
@@ -133,15 +138,23 @@ export function articlePageJsonLd(article: ArticleEntry, site = DEFAULT_SITE) {
   ];
 }
 
-export function tagPageJsonLd(tagLabel: string, tagSlug: string, site = DEFAULT_SITE) {
-  const url = `${site}${getTagUrl(tagLabel)}`;
+export function tagPageJsonLd(
+  tagLabel: string,
+  tagSlug: string,
+  locale: 'fi' | 'en' = 'fi',
+  site = DEFAULT_SITE,
+) {
+  const url = `${site}${getTagUrl(tagLabel, locale)}`;
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${tagLabel} · Faktum AI`,
-    description: `Artikkelit aiheesta ${tagLabel} — Faktum AI.`,
+    description:
+      locale === 'en'
+        ? `Articles about ${tagLabel} — Faktum AI.`
+        : `Artikkelit aiheesta ${tagLabel} — Faktum AI.`,
     url,
-    inLanguage: 'fi-FI',
+    inLanguage: schemaLanguage(locale),
     isPartOf: { '@type': 'WebSite', name: 'Faktum AI', url: site },
   };
 }

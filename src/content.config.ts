@@ -45,6 +45,10 @@ const articleSchema = z.object({
   imageRequestsCompleted: z.boolean().default(false),
   needsFactCheck: z.boolean().default(true),
   featured: z.boolean().default(false),
+  aiAssistance: z.enum(['none', 'assisted', 'substantial']).default('assisted'),
+  commercialDisclosure: z
+    .enum(['none', 'sponsored', 'affiliate', 'partner', 'advertisement'])
+    .default('none'),
 });
 
 const news = defineCollection({

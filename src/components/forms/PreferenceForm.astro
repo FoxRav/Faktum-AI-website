@@ -1,0 +1,182 @@
+---
+import type { Locale } from '../../i18n/config';
+import {
+  INTEREST_LABELS,
+  ROLE_LABELS,
+  SUBSCRIBER_INTERESTS,
+  SUBSCRIBER_ROLES,
+} from '../../i18n/subscriber';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  token: string;
+}
+
+const { locale, token } = Astro.props;
+---
+
+<section
+  class="preference-form container-site max-w-2xl py-12"
+  data-locale={locale}
+  data-token={token}
+>
+  <h1 class="font-sans text-3xl font-bold">{t(locale, 'preferencesTitle')}</h1>
+  <p class="preference-status mt-4 text-sm text-[var(--color-text-muted)]" aria-live="polite"></p>
+
+  <form class="mt-8 space-y-6">
+    <div>
+      <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'preferencesPrimaryRole')}
+      </label>
+      <select
+        name="primaryRole"
+        class="mt-2 w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2.5"
+      >
+        <option value="">—</option>
+        {SUBSCRIBER_ROLES.map((role) => (
+          <option value={role}>{ROLE_LABELS[locale][role]}</option>
+        ))}
+      </select>
+    </div>
+
+    <fieldset>
+      <legend class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'preferencesSecondaryRoles')}
+      </legend>
+      <div class="mt-3 grid gap-2 sm:grid-cols-2">
+        {SUBSCRIBER_ROLES.map((role) => (
+          <label class="flex items-center gap-2 text-sm text-[var(--color-text-dim)]">
+            <input type="checkbox" name="secondaryRoles" value={role} class="rounded" />
+            {ROLE_LABELS[locale][role]}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'preferencesInterests')}
+      </legend>
+      <div class="mt-3 grid gap-2 sm:grid-cols-2">
+        {SUBSCRIBER_INTERESTS.map((interest) => (
+          <label class="flex items-center gap-2 text-sm text-[var(--color-text-dim)]">
+            <input type="checkbox" name="interests" value={interest} class="rounded" />
+            {INTEREST_LABELS[locale][interest]}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <div>
+      <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+        {t(locale, 'subscribeLanguageLabel')}
+      </label>
+      <select
+        name="preferredLanguage"
+        class="mt-2 w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2.5"
+      >
+        <option value="fi">{t(locale, 'subscribeLanguageFi')}</option>
+        <option value="en">{t(locale, 'subscribeLanguageEn')}</option>
+        <option value="both">{t(locale, 'subscribeLanguageBoth')}</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
+    >
+      {t(locale, 'preferencesSave')}
+    </button>
+  </form>
+</section>
+
+<script is:inline>
+  (async function () {
+    var root = document.querySelector('.preference-form');
+    if (!root) return;
+
+    var locale = root.getAttribute('data-locale') || 'fi';
+    var token = root.getAttribute('data-token') || '';
+    var form = root.querySelector('form');
+    var statusEl = root.querySelector('.preference-status');
+
+    if (!token) {
+      if (statusEl) statusEl.textContent = locale === 'en' ? 'Missing token.' : 'Puuttuva tunnus.';
+      return;
+    }
+
+    try {
+      var loadRes = await fetch('/api/preferences?token=' + encodeURIComponent(token));
+      var loadData = await loadRes.json();
+      if (!loadRes.ok || !loadData.preferences) throw new Error('load_failed');
+
+      var prefs = loadData.preferences;
+      if (statusEl) statusEl.textContent = prefs.email;
+
+      var primary = form.querySelector('select[name="primaryRole"]');
+      if (primary && 'value' in primary) primary.value = prefs.primaryRole || '';
+
+      var lang = form.querySelector('select[name="preferredLanguage"]');
+      if (lang && 'value' in lang) lang.value = prefs.preferredLanguage || 'fi';
+
+      form.querySelectorAll('input[name="secondaryRoles"]').forEach(function (input) {
+        if ('checked' in input && 'value' in input) {
+          input.checked = (prefs.secondaryRoles || []).indexOf(input.value) >= 0;
+        }
+      });
+
+      form.querySelectorAll('input[name="interests"]').forEach(function (input) {
+        if ('checked' in input && 'value' in input) {
+          input.checked = (prefs.interests || []).indexOf(input.value) >= 0;
+        }
+      });
+    } catch (e) {
+      if (statusEl) {
+        statusEl.textContent =
+          locale === 'en' ? 'This link has expired or is invalid.' : 'Linkki on vanhentunut tai virheellinen.';
+      }
+      if (form) form.classList.add('hidden');
+      return;
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var secondaryRoles = [];
+      form.querySelectorAll('input[name="secondaryRoles"]:checked').forEach(function (input) {
+        if ('value' in input) secondaryRoles.push(input.value);
+      });
+      var interests = [];
+      form.querySelectorAll('input[name="interests"]:checked').forEach(function (input) {
+        if ('value' in input) interests.push(input.value);
+      });
+      var primaryRoleEl = form.querySelector('select[name="primaryRole"]');
+      var preferredLanguageEl = form.querySelector('select[name="preferredLanguage"]');
+
+      try {
+        var saveRes = await fetch('/api/preferences', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            token: token,
+            primaryRole: primaryRoleEl && 'value' in primaryRoleEl ? primaryRoleEl.value || null : null,
+            secondaryRoles: secondaryRoles,
+            interests: interests,
+            preferredLanguage:
+              preferredLanguageEl && 'value' in preferredLanguageEl ? preferredLanguageEl.value : 'fi',
+          }),
+        });
+        var saveData = await saveRes.json();
+        if (!saveRes.ok) throw new Error('save_failed');
+        if (statusEl) {
+          statusEl.textContent =
+            locale === 'en' ? 'Profile saved.' : 'Profiili tallennettu.';
+        }
+      } catch (err) {
+        if (statusEl) {
+          statusEl.textContent = locale === 'en' ? 'Save failed.' : 'Tallennus epäonnistui.';
+        }
+      }
+    });
+  })();
+</script>

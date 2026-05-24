@@ -1,5 +1,10 @@
 interface Env {
   FAKTUM_VISITS: KVNamespace;
+  FAKTUM_DB: D1Database;
+  EMAIL_API_KEY: string;
+  EMAIL_FROM: string;
+  SITE_URL: string;
+  TOKEN_SECRET: string;
 }
 
 type PagesFunction<EnvBindings extends Env = Env> = (context: {

@@ -1,5 +1,5 @@
 import type { Locale } from './config';
-import { categoryPath, homePath } from './paths';
+import { categoryPath, homePath, subscribePath } from './paths';
 
 export const ui = {
   fi: {
@@ -17,6 +17,7 @@ export const ui = {
     navInterviews: 'Haastattelut',
     navProjects: 'Projektit',
     navAbout: 'Tietoa',
+    navSubscribe: 'Tilaa',
     navTopics: 'Aiheet',
     tabAll: 'Kaikki',
     latestFeed: 'Uusimmat julkaisut',
@@ -56,6 +57,56 @@ export const ui = {
     listingNews: 'Suomenkieliset AI-uutiset ja tulkinnat kansainvälisistä kehityksistä.',
     listingInterviews: 'Haastattelutiivistelmiä suomalaisesta ja kansainvälisestä AI-kentästä.',
     listingTools: 'AI-työkalujen arvioita ja käytännön näkökulmia rakentajille.',
+    footerLegal: 'Lakiasiat',
+    footerPrivacy: 'Tietosuoja',
+    footerCookies: 'Evästeet',
+    footerEditorial: 'Toimitus & AI',
+    footerSubscribe: 'Tilaa uutiskirje',
+    footerContact: 'Yhteystiedot',
+    subscribeTitle: 'Faktum AI -uutiskirje',
+    subscribeLead:
+      'Tilaa Faktum AI -uutiskirje — lähetetään kerran viikossa. Viikon tärkeimmät AI-uutiset, työkalut ja analyysit ilman hypeä.',
+    subscribeLeadProfessional:
+      'Seuraa AI-markkinaa, työkaluja, regulaatiota ja avoimia malleja yhdestä paikasta — yhteenveto kerran viikossa.',
+    subscribeLeadCitizen:
+      'Tekoäly muuttuu nopeasti. Faktum AI kokoaa tärkeimmät asiat ymmärrettävästi yhteen viikkouutiskirjeeseen.',
+    subscribeArticleCta:
+      'Seuraa AI-markkinaa selkokielisesti ja lähteisiin perustuen. Tilaa viikoittainen Faktum AI -uutiskirje.',
+    subscribeEmailLabel: 'Sähköposti',
+    subscribeLanguageLabel: 'Toivottu kieli',
+    subscribeLanguageFi: 'Suomi',
+    subscribeLanguageEn: 'English',
+    subscribeLanguageBoth: 'Molemmat',
+    subscribeConsentLabel:
+      'Haluan vastaanottaa Faktum AI -uutiskirjeen (kerran viikossa) ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.',
+    subscribeSubmit: 'Tilaa',
+    subscribeSuccess: 'Tarkista sähköpostisi ja vahvista tilaus.',
+    subscribeErrorGeneric: 'Tilaus epäonnistui. Yritä uudelleen.',
+    subscribeErrorEmail: 'Anna kelvollinen sähköpostiosoite.',
+    subscribeErrorConsent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
+    subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
+    subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa Faktum AI -uutiskirjeen tilaajaksi!',
+    subscribeConfirmedManage: 'Täydennä profiilisi',
+    subscribeInvalidToken: 'Linkki on vanhentunut tai virheellinen.',
+    subscribeUnsubscribed: 'Tilaus on peruutettu.',
+    preferencesTitle: 'Tilaajaprofiili',
+    preferencesPrimaryRole: 'Päärooli',
+    preferencesSecondaryRoles: 'Muut roolit (valinnainen)',
+    preferencesInterests: 'Kiinnostuksen kohteet',
+    preferencesSave: 'Tallenna',
+    preferencesSaved: 'Profiili tallennettu.',
+    unsubscribeTitle: 'Peru tilaus',
+    unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
+    sourcesTitle: 'Lähteet',
+    keyClaimsTitle: 'Keskeiset väitteet',
+    keyTakeawaysDefault: 'Tärkeimmät nostot',
+    draftBadge: 'Luonnos',
+    factCheckNote:
+      'Faktum AI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.',
+    dataRequestTitle: 'Omat tiedot',
+    dataRequestExport: 'Pyydä tietojen kopio',
+    dataRequestDelete: 'Pyydä tietojen poisto',
+    dataRequestSent: 'Tarkista sähköpostisi ja vahvista pyyntö.',
   },
   en: {
     siteTagline: 'Finnish AI media — in English',
@@ -72,6 +123,7 @@ export const ui = {
     navInterviews: 'Interviews',
     navProjects: 'Projects',
     navAbout: 'About',
+    navSubscribe: 'Subscribe',
     navTopics: 'Topics',
     tabAll: 'All',
     latestFeed: 'Latest publications',
@@ -110,6 +162,56 @@ export const ui = {
     listingNews: 'AI news and interpretation of international developments.',
     listingInterviews: 'Interview summaries from the Finnish and global AI field.',
     listingTools: 'AI tool reviews and practical perspectives for builders.',
+    footerLegal: 'Legal',
+    footerPrivacy: 'Privacy',
+    footerCookies: 'Cookies',
+    footerEditorial: 'Editorial & AI',
+    footerSubscribe: 'Newsletter',
+    footerContact: 'Contact',
+    subscribeTitle: 'Faktum AI newsletter',
+    subscribeLead:
+      'Subscribe to the Faktum AI newsletter — sent once a week. Key AI news, tools and analysis without hype.',
+    subscribeLeadProfessional:
+      'Follow AI markets, tools, regulation and open models in one place.',
+    subscribeLeadCitizen:
+      'AI moves fast. Faktum AI brings the essentials in plain language.',
+    subscribeArticleCta:
+      'Follow the AI market with source-backed clarity. Subscribe to the weekly Faktum AI newsletter.',
+    subscribeEmailLabel: 'Email',
+    subscribeLanguageLabel: 'Preferred language',
+    subscribeLanguageFi: 'Finnish',
+    subscribeLanguageEn: 'English',
+    subscribeLanguageBoth: 'Both',
+    subscribeConsentLabel:
+      'I want to receive the Faktum AI newsletter (once a week) and accept processing of my data as described in the privacy policy.',
+    subscribeSubmit: 'Subscribe',
+    subscribeSuccess: 'Check your email and confirm your subscription.',
+    subscribeErrorGeneric: 'Subscription failed. Please try again.',
+    subscribeErrorEmail: 'Enter a valid email address.',
+    subscribeErrorConsent: 'Newsletter subscription requires consent.',
+    subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
+    subscribeConfirmed: 'Subscription confirmed. Welcome to the Faktum AI newsletter!',
+    subscribeConfirmedManage: 'Complete your profile',
+    subscribeInvalidToken: 'This link has expired or is invalid.',
+    subscribeUnsubscribed: 'You have been unsubscribed.',
+    preferencesTitle: 'Subscriber profile',
+    preferencesPrimaryRole: 'Primary role',
+    preferencesSecondaryRoles: 'Other roles (optional)',
+    preferencesInterests: 'Interests',
+    preferencesSave: 'Save',
+    preferencesSaved: 'Profile saved.',
+    unsubscribeTitle: 'Unsubscribe',
+    unsubscribeConfirm: 'Unsubscribe from the newsletter',
+    sourcesTitle: 'Sources',
+    keyClaimsTitle: 'Key claims',
+    keyTakeawaysDefault: 'Key takeaways',
+    draftBadge: 'Draft',
+    factCheckNote:
+      'Faktum AI note: This article is based on the listed sources. Points that could not be verified from an independent source are marked as uncertain.',
+    dataRequestTitle: 'Your data',
+    dataRequestExport: 'Request a copy of my data',
+    dataRequestDelete: 'Request deletion of my data',
+    dataRequestSent: 'Check your email and confirm the request.',
   },
 } as const;
 
@@ -119,9 +221,14 @@ export function t(locale: Locale, key: UiKey): string {
   return ui[locale][key];
 }
 
-export function getNavItems(locale: Locale) {
+export interface NavItem {
+  href: string;
+  label: string;
+  highlight?: boolean;
+}
+
+export function getNavItems(locale: Locale): NavItem[] {
   return [
-    { href: homePath(locale), label: t(locale, 'navHome') },
     { href: categoryPath(locale, 'news'), label: t(locale, 'navNews') },
     { href: categoryPath(locale, 'analysis'), label: t(locale, 'navAnalysis') },
     { href: categoryPath(locale, 'tools'), label: t(locale, 'navTools') },
@@ -130,6 +237,11 @@ export function getNavItems(locale: Locale) {
       ? [{ href: categoryPath(locale, 'projects'), label: t(locale, 'navProjects') }]
       : []),
     { href: categoryPath(locale, 'about'), label: t(locale, 'navAbout') },
+    {
+      href: subscribePath(locale),
+      label: t(locale, 'navSubscribe'),
+      highlight: true,
+    },
   ];
 }
 

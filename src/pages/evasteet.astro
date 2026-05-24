@@ -1,0 +1,35 @@
+---
+import LegalPageLayout from '../layouts/LegalPageLayout.astro';
+---
+
+<LegalPageLayout
+  title="Evästekäytäntö"
+  description="Faktum AI -sivuston evästeet ja vastaavat teknologiat."
+  path="/evasteet/"
+>
+  <p><strong>Viimeksi päivitetty:</strong> 2026-05-24</p>
+
+  <h2>Evästeet tänään</h2>
+  <p>
+    Faktum AI ei aseta first-party-evästeitä tilaajalomakkeessa tai artikkelien lukemisessa.
+    Sivuston oma JavaScript ei tallenna analytiikkaevästeitä.
+  </p>
+
+  <h2>Kävijälaskuri</h2>
+  <p>
+    Footerissa näkyvä laskuri kasvattaa <strong>globaalia</strong> sivulatauslukua Cloudflare Workers KV
+    -tallennuksessa. Se ei seuraa yksittäisiä käyttäjiä, IP-osoitteita tai evästeitä.
+  </p>
+
+  <h2>Kolmannet osapuolet</h2>
+  <ul>
+    <li>
+      <strong>Google Fonts</strong> — fontit ladataan Googlen CDN:stä (IP voi siirtyä Googlelle).
+      Suositus: siirtyminen self-host-fontteihin (TODO).
+    </li>
+    <li><strong>Cloudflare</strong> — hosting ja CDN</li>
+  </ul>
+
+  <h2>Analytiikka</h2>
+  <p>Analytiikkapalvelua (Plausible, GA4 tms.) ei ole käytössä tällä hetkellä. Jos lisätään, tämä sivu päivitetään.</p>
+</LegalPageLayout>

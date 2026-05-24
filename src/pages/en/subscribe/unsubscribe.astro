@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { subscribePath } from '../../../i18n/paths';
+import { t } from '../../../i18n/ui';
+
+const locale = 'en' as const;
+const token = Astro.url.searchParams.get('token') ?? '';
+---
+
+<BaseLayout
+  title="Unsubscribe"
+  description="Unsubscribe from the Faktum AI newsletter."
+  path={subscribePath(locale, 'unsubscribe')}
+>
+  <section class="container-site max-w-lg py-16">
+    <h1 class="font-sans text-3xl font-bold">{t(locale, 'unsubscribeTitle')}</h1>
+    <p class="mt-4 text-[var(--color-text-dim)]">Use the button below or the link in your email.</p>
+    <button
+      type="button"
+      id="unsubscribe-btn"
+      data-token={token}
+      data-locale={locale}
+      class="mt-8 rounded-lg border border-red-500/40 px-5 py-2.5 text-sm font-semibold text-red-300 hover:bg-red-500/10"
+    >
+      {t(locale, 'unsubscribeConfirm')}
+    </button>
+    <p id="unsubscribe-msg" class="mt-4 text-sm" aria-live="polite"></p>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('unsubscribe-btn');
+    var msg = document.getElementById('unsubscribe-msg');
+    if (!btn) return;
+    var token = btn.getAttribute('data-token') || '';
+    var locale = btn.getAttribute('data-locale') || 'en';
+
+    if (token) {
+      fetch('/api/unsubscribe?token=' + encodeURIComponent(token), { method: 'GET' })
+        .then(function () {
+          window.location.href = '/en/subscribe/unsubscribed/';
+        })
+        .catch(function () {
+          if (msg) msg.textContent = 'Failed.';
+        });
+      return;
+    }
+
+    btn.addEventListener('click', function () {
+      if (msg) msg.textContent = 'Use the link in your email.';
+    });
+  })();
+</script>

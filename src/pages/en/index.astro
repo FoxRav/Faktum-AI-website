@@ -21,7 +21,7 @@ const feedTabs = getFeedTabs(locale);
   description={t(locale, 'homeMetaDescription')}
   path="/en/"
   ogImage="/images/brand/landing-hero.webp"
-  jsonLd={[organizationJsonLd(), websiteJsonLd()]}
+  jsonLd={[organizationJsonLd('en'), websiteJsonLd('en')]}
 >
   <HeroSection locale={locale} />
   {featured && (

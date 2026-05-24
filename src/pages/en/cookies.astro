@@ -1,0 +1,35 @@
+---
+import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
+---
+
+<LegalPageLayout
+  title="Cookie policy"
+  description="Cookies and similar technologies on Faktum AI."
+  path="/en/cookies/"
+>
+  <p><strong>Last updated:</strong> 2026-05-24</p>
+
+  <h2>Cookies today</h2>
+  <p>
+    Faktum AI does not set first-party cookies for the newsletter form or article reading. Site
+    JavaScript does not store analytics cookies.
+  </p>
+
+  <h2>Visit counter</h2>
+  <p>
+    The footer counter increments a <strong>global</strong> page-load total in Cloudflare Workers KV.
+    It does not track individual users, IP addresses, or cookies.
+  </p>
+
+  <h2>Third parties</h2>
+  <ul>
+    <li>
+      <strong>Google Fonts</strong> — fonts loaded from Google CDN (IP may be processed by Google).
+      Recommendation: move to self-hosted fonts (TODO).
+    </li>
+    <li><strong>Cloudflare</strong> — hosting and CDN</li>
+  </ul>
+
+  <h2>Analytics</h2>
+  <p>No analytics service is active today. This page will be updated if one is added.</p>
+</LegalPageLayout>
