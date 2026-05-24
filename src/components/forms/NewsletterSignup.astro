@@ -28,6 +28,7 @@ const formId = `newsletter-${variant}-${locale}`;
   data-msg-generic={t(locale, 'subscribeErrorGeneric')}
   data-msg-email={t(locale, 'subscribeErrorEmail')}
   data-msg-consent={t(locale, 'subscribeErrorConsent')}
+  data-msg-already-active={t(locale, 'subscribeAlreadyActive')}
 >
   <h2
     class:list={[
@@ -92,8 +93,8 @@ const formId = `newsletter-${variant}-${locale}`;
 
   {!isCompact && (
     <p class="mt-4 text-xs text-[var(--color-text-muted)]">
-      <a href={subscribePath(locale)} class="text-cyan-400 hover:underline">
-        {t(locale, 'footerSubscribe')}
+      <a href={subscribePath(locale, 'unsubscribe')} class="text-cyan-400 hover:underline">
+        {t(locale, 'footerUnsubscribe')}
       </a>
       ·
       <a href={privacyPath(locale)} class="text-cyan-400 hover:underline">
@@ -120,6 +121,7 @@ const formId = `newsletter-${variant}-${locale}`;
         generic: section.getAttribute('data-msg-generic') || '',
         email: section.getAttribute('data-msg-email') || '',
         consent: section.getAttribute('data-msg-consent') || '',
+        alreadyActive: section.getAttribute('data-msg-already-active') || '',
       };
 
       function showMessage(text, isError) {
@@ -170,7 +172,11 @@ const formId = `newsletter-${variant}-${locale}`;
           return;
         }
 
-        showMessage(msg.success, false);
+        if (data && data.message === 'already_subscribed') {
+          showMessage(msg.alreadyActive, false);
+        } else {
+          showMessage(msg.success, false);
+        }
         form.reset();
       } catch (err) {
         showMessage(msg.generic, true);

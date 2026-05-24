@@ -68,7 +68,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const existing = await getSubscriberByEmail(db, emailNormalized);
 
   if (existing?.status === 'active') {
-    return jsonResponse({ ok: true, message: 'check_email' });
+    return jsonResponse({ ok: true, message: 'already_subscribed' });
   }
 
   let subscriberId: string;

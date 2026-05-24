@@ -86,6 +86,9 @@ export const ui = {
     subscribeErrorEmail: 'Anna kelvollinen sähköpostiosoite.',
     subscribeErrorConsent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
     subscribeEmailSendFailed: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
+    subscribeAlreadyActive:
+      'Tämä sähköpostiosoite on jo uutiskirjeen tilaajana. Jos haluat lopettaa tilauksen, käytä peruutuslinkkiä.',
+    footerUnsubscribe: 'Peru tilaus',
     subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
     subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa Faktum AI -uutiskirjeen tilaajaksi!',
     subscribeConfirmedManage: 'Täydennä profiilisi',
@@ -207,6 +210,9 @@ export const ui = {
     subscribeErrorEmail: 'Enter a valid email address.',
     subscribeErrorConsent: 'Newsletter subscription requires consent.',
     subscribeEmailSendFailed: 'Could not send the confirmation email. Please try again shortly.',
+    subscribeAlreadyActive:
+      'This email address is already subscribed. To stop receiving the newsletter, use the unsubscribe link.',
+    footerUnsubscribe: 'Unsubscribe',
     subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
     subscribeConfirmed: 'Subscription confirmed. Welcome to the Faktum AI newsletter!',
     subscribeConfirmedManage: 'Complete your profile',
