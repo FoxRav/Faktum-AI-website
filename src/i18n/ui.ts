@@ -109,7 +109,7 @@ export const ui = {
     unsubscribeLead:
       'Peruutus vahvistetaan henkilökohtaisella linkillä — turvallisuussyistä emme peru tilauksia pelkällä sähköpostiosoitteella.',
     unsubscribeLeadWithToken:
-      'Avoit tämän sivun sähköpostilinkistä. Vahvista peruutus alla olevalla painikkeella.',
+      'Avasit tämän sivun sähköpostilinkistä. Vahvista peruutus alla olevalla painikkeella.',
     unsubscribeConfirmHint:
       'Paina alla olevaa painiketta vahvistaaksesi peruutuksen. Tämä koskee sähköpostiosoitetta, jolle vahvistusviesti on lähetetty.',
     unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
