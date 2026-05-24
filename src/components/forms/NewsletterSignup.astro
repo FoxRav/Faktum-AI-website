@@ -23,6 +23,11 @@ const formId = `newsletter-${variant}-${locale}`;
   ]}
   data-locale={locale}
   data-form-id={formId}
+  data-msg-success={t(locale, 'subscribeSuccess')}
+  data-msg-email-send={t(locale, 'subscribeEmailSendFailed')}
+  data-msg-generic={t(locale, 'subscribeErrorGeneric')}
+  data-msg-email={t(locale, 'subscribeErrorEmail')}
+  data-msg-consent={t(locale, 'subscribeErrorConsent')}
 >
   <h2
     class:list={[
@@ -109,23 +114,13 @@ const formId = `newsletter-${variant}-${locale}`;
       var messageEl = section.querySelector('.newsletter-message');
       var submitBtn = form.querySelector('button[type="submit"]');
 
-      var messages = {
-        fi: {
-          success: 'Tarkista sähköpostisi ja vahvista tilaus.',
-          generic: 'Tilaus epäonnistui. Yritä uudelleen.',
-          emailSend: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
-          email: 'Anna kelvollinen sähköpostiosoite.',
-          consent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
-        },
-        en: {
-          success: 'Check your email and confirm your subscription.',
-          generic: 'Subscription failed. Please try again.',
-          emailSend: 'Could not send the confirmation email. Please try again shortly.',
-          email: 'Enter a valid email address.',
-          consent: 'Newsletter subscription requires consent.',
-        },
+      var msg = {
+        success: section.getAttribute('data-msg-success') || '',
+        emailSend: section.getAttribute('data-msg-email-send') || '',
+        generic: section.getAttribute('data-msg-generic') || '',
+        email: section.getAttribute('data-msg-email') || '',
+        consent: section.getAttribute('data-msg-consent') || '',
       };
-      var msg = messages[locale] || messages.fi;
 
       function showMessage(text, isError) {
         if (!messageEl) return;

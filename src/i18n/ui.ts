@@ -80,10 +80,12 @@ export const ui = {
     subscribeConsentLabel:
       'Haluan vastaanottaa Faktum AI -uutiskirjeen (kerran viikossa) ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.',
     subscribeSubmit: 'Tilaa',
-    subscribeSuccess: 'Tarkista sähköpostisi ja vahvista tilaus.',
+    subscribeSuccess:
+      'Tarkista sähköpostisi ja vahvista tilaus. Jos viestiä ei näy muutaman minuutin kuluessa, katso myös roskapostikansio.',
     subscribeErrorGeneric: 'Tilaus epäonnistui. Yritä uudelleen.',
     subscribeErrorEmail: 'Anna kelvollinen sähköpostiosoite.',
     subscribeErrorConsent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
+    subscribeEmailSendFailed: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
     subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
     subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa Faktum AI -uutiskirjeen tilaajaksi!',
     subscribeConfirmedManage: 'Täydennä profiilisi',
@@ -185,10 +187,12 @@ export const ui = {
     subscribeConsentLabel:
       'I want to receive the Faktum AI newsletter (once a week) and accept processing of my data as described in the privacy policy.',
     subscribeSubmit: 'Subscribe',
-    subscribeSuccess: 'Check your email and confirm your subscription.',
+    subscribeSuccess:
+      'Check your email and confirm your subscription. If it does not arrive within a few minutes, check your spam or junk folder.',
     subscribeErrorGeneric: 'Subscription failed. Please try again.',
     subscribeErrorEmail: 'Enter a valid email address.',
     subscribeErrorConsent: 'Newsletter subscription requires consent.',
+    subscribeEmailSendFailed: 'Could not send the confirmation email. Please try again shortly.',
     subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
     subscribeConfirmed: 'Subscription confirmed. Welcome to the Faktum AI newsletter!',
     subscribeConfirmedManage: 'Complete your profile',
