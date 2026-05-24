@@ -71,14 +71,16 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     buildUnsubscribeUrl(context.env, emailLocale, unsubRaw),
   );
 
-  context.waitUntil(
-    sendEmail(context.env, {
-      to: subscriber.email_normalized,
-      subject: welcome.subject,
-      html: welcome.html,
-      text: welcome.text,
-    }),
-  );
+  const welcomeSent = await sendEmail(context.env, {
+    to: subscriber.email_normalized,
+    subject: welcome.subject,
+    html: welcome.html,
+    text: welcome.text,
+  });
+
+  if (!welcomeSent) {
+    console.error('welcome_email_send_failed', subscriber.id);
+  }
 
   return redirectResponse(`${baseSite}${confirmedPath(locale)}`);
 };

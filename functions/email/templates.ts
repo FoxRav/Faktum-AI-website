@@ -99,6 +99,29 @@ export function buildUnsubscribeUrl(env: Env, locale: 'fi' | 'en', token: string
   return `${siteUrl(env)}${base}?token=${encodeURIComponent(token)}`;
 }
 
+export function unsubscribeLinkEmail(input: {
+  unsubscribeUrl: string;
+  locale: 'fi' | 'en';
+}): { subject: string; html: string; text: string } {
+  if (input.locale === 'en') {
+    return {
+      subject: 'Unsubscribe from the Faktum AI newsletter',
+      html: `<p>You requested to unsubscribe from the <strong>Faktum AI newsletter</strong>.</p>
+<p><a href="${input.unsubscribeUrl}">Open the unsubscribe page</a> and confirm to stop receiving emails.</p>
+<p>If you did not request this, you can ignore this message. The link expires in 90 days.</p>`,
+      text: `Unsubscribe from the Faktum AI newsletter: ${input.unsubscribeUrl}`,
+    };
+  }
+
+  return {
+    subject: 'Peru Faktum AI -uutiskirjeen tilaus',
+    html: `<p>Olet pyytänyt Faktum AI -uutiskirjeen tilauksen perumista.</p>
+<p><a href="${input.unsubscribeUrl}">Avaa peruutussivu</a> ja vahvista, jotta lähetykset päättyvät.</p>
+<p>Jos et pyytänyt tätä, voit jättää viestin huomiotta. Linkki vanhenee 90 päivässä.</p>`,
+    text: `Peru Faktum AI -uutiskirjeen tilaus: ${input.unsubscribeUrl}`,
+  };
+}
+
 export function buildPrivacyUrl(env: Env, locale: 'fi' | 'en'): string {
   return locale === 'en' ? `${siteUrl(env)}/en/privacy/` : `${siteUrl(env)}/tietosuoja/`;
 }

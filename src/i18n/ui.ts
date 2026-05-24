@@ -87,7 +87,7 @@ export const ui = {
     subscribeErrorConsent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
     subscribeEmailSendFailed: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
     subscribeAlreadyActive:
-      'Tämä sähköpostiosoite on jo uutiskirjeen tilaajana. Jos haluat lopettaa tilauksen, käytä peruutuslinkkiä.',
+      'Tämä sähköpostiosoite on jo uutiskirjeen tilaajana. Peruutus: avaa viestin linkki tai pyydä uusi linkki peruutussivulta.',
     footerUnsubscribe: 'Peru tilaus',
     subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
     subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa Faktum AI -uutiskirjeen tilaajaksi!',
@@ -107,14 +107,22 @@ export const ui = {
       'Avaa linkki vahvistus- tai tervetuloviestistäsi. Jos et löydä viestiä, tarkista roskapostikansio tai tilaa uutiskirje uudelleen — uusi linkki lähetetään vahvistuksen jälkeen.',
     unsubscribeTitle: 'Peru tilaus',
     unsubscribeLead:
-      'Voit perua uutiskirjeen tilauksen sähköpostiviestin linkillä tai alla olevalla painikkeella, jos avasit tämän sivun viestistä.',
+      'Peruutus vahvistetaan henkilökohtaisella linkillä — turvallisuussyistä emme peru tilauksia pelkällä sähköpostiosoitteella.',
+    unsubscribeLeadWithToken:
+      'Avoit tämän sivun sähköpostilinkistä. Vahvista peruutus alla olevalla painikkeella.',
     unsubscribeConfirmHint:
       'Paina alla olevaa painiketta vahvistaaksesi peruutuksen. Tämä koskee sähköpostiosoitetta, jolle vahvistusviesti on lähetetty.',
     unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
     unsubscribeMissingToken:
-      'Peruutus vaatii henkilökohtaisen linkin sähköpostistasi.',
+      'Eikö sinulla ole linkkiä? Syötä sähköpostiosoitteesi — lähetämme uuden peruutuslinkin.',
     unsubscribeMissingTokenHelp:
-      'Avaa viimeisimmästä uutiskirjeestä tai tervetuloviestistä linkki ”Peru tilaus”. Jos viestiä ei löydy, tarkista roskapostikansio. Voit myös pyytää apua osoitteesta marko@faktum-ai.com.',
+      'Voit myös avata linkin ”Peru tilaus” viimeisimmästä uutiskirjeestä tai tervetuloviestistä. Tarkista roskapostikansio.',
+    unsubscribeRequestEmailLabel: 'Sähköposti',
+    unsubscribeRequestSubmit: 'Lähetä peruutuslinkki',
+    unsubscribeRequestSuccess:
+      'Jos osoitteella on aktiivinen tilaus, lähetimme peruutuslinkin. Tarkista myös roskapostikansio.',
+    unsubscribeRequestEmailFailed: 'Anna kelvollinen sähköpostiosoite.',
+    unsubscribeRequestFailed: 'Linkin lähetys epäonnistui. Yritä uudelleen.',
     unsubscribeFailed: 'Peruutus epäonnistui.',
     sourcesTitle: 'Lähteet',
     keyClaimsTitle: 'Keskeiset väitteet',
@@ -211,7 +219,7 @@ export const ui = {
     subscribeErrorConsent: 'Newsletter subscription requires consent.',
     subscribeEmailSendFailed: 'Could not send the confirmation email. Please try again shortly.',
     subscribeAlreadyActive:
-      'This email address is already subscribed. To stop receiving the newsletter, use the unsubscribe link.',
+      'This email address is already subscribed. To unsubscribe, use the link in your email or request a new one on the unsubscribe page.',
     footerUnsubscribe: 'Unsubscribe',
     subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
     subscribeConfirmed: 'Subscription confirmed. Welcome to the Faktum AI newsletter!',
@@ -231,14 +239,22 @@ export const ui = {
       'Open the link from your confirmation or welcome message. If you cannot find it, check your spam folder or subscribe again — a new link is sent after confirmation.',
     unsubscribeTitle: 'Unsubscribe',
     unsubscribeLead:
-      'You can unsubscribe using the link in your email or the button below if you opened this page from a message.',
+      'Unsubscribe requires a personal link for security — we cannot cancel a subscription from an email address alone.',
+    unsubscribeLeadWithToken:
+      'You opened this page from an email link. Confirm unsubscribe with the button below.',
     unsubscribeConfirmHint:
       'Press the button below to confirm. This applies to the email address that received our messages.',
     unsubscribeConfirm: 'Unsubscribe from the newsletter',
     unsubscribeMissingToken:
-      'Unsubscribing requires the personal link from your email.',
+      'No link handy? Enter your email and we will send a new unsubscribe link.',
     unsubscribeMissingTokenHelp:
-      'Open the “Unsubscribe” link from your latest newsletter or welcome message. If you cannot find it, check your spam folder. You can also email marko@faktum-ai.com for help.',
+      'You can also open “Unsubscribe” from your latest newsletter or welcome message. Check your spam folder.',
+    unsubscribeRequestEmailLabel: 'Email',
+    unsubscribeRequestSubmit: 'Send unsubscribe link',
+    unsubscribeRequestSuccess:
+      'If this address has an active subscription, we sent an unsubscribe link. Check your spam folder too.',
+    unsubscribeRequestEmailFailed: 'Enter a valid email address.',
+    unsubscribeRequestFailed: 'Could not send the link. Please try again.',
     unsubscribeFailed: 'Unsubscribe failed.',
     sourcesTitle: 'Sources',
     keyClaimsTitle: 'Key claims',

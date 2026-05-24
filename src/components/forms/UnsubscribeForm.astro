@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '../../i18n/config';
-import { subscribePath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
 interface Props {
@@ -15,20 +14,55 @@ const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/til
   class="unsubscribe-form container-site max-w-lg py-16"
   data-locale={locale}
   data-unsubscribed-path={unsubscribedPath}
+  data-lead-default={t(locale, 'unsubscribeLead')}
+  data-lead-with-token={t(locale, 'unsubscribeLeadWithToken')}
   data-msg-invalid={t(locale, 'subscribeInvalidToken')}
   data-msg-failed={t(locale, 'unsubscribeFailed')}
+  data-msg-request-success={t(locale, 'unsubscribeRequestSuccess')}
+  data-msg-request-email={t(locale, 'unsubscribeRequestEmailFailed')}
+  data-msg-request-failed={t(locale, 'unsubscribeRequestFailed')}
+  data-msg-email-send={t(locale, 'subscribeEmailSendFailed')}
 >
   <h1 class="font-sans text-3xl font-bold">{t(locale, 'unsubscribeTitle')}</h1>
-  <p class="mt-4 text-[var(--color-text-dim)]">{t(locale, 'unsubscribeLead')}</p>
+  <p class="unsubscribe-lead mt-4 text-[var(--color-text-dim)]">{t(locale, 'unsubscribeLead')}</p>
 
   <div class="unsubscribe-missing mt-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
     <p class="text-[var(--color-text)]">{t(locale, 'unsubscribeMissingToken')}</p>
     <p class="mt-3 text-sm text-[var(--color-text-dim)]">
       {t(locale, 'unsubscribeMissingTokenHelp')}
     </p>
-    <a href={subscribePath(locale)} class="btn-primary mt-5 inline-flex">
-      {t(locale, 'footerSubscribe')}
-    </a>
+
+    <form class="unsubscribe-request-form mt-6 space-y-4">
+      <div class="absolute -left-[9999px]" aria-hidden="true">
+        <label>
+          Leave empty
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
+      <div>
+        <label
+          class="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]"
+          for="unsubscribe-email"
+        >
+          {t(locale, 'unsubscribeRequestEmailLabel')}
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="unsubscribe-email"
+          required
+          autocomplete="email"
+          class="mt-2 w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2.5 text-[var(--color-text)]"
+        />
+      </div>
+      <p class="unsubscribe-request-msg hidden text-sm" aria-live="polite"></p>
+      <button
+        type="submit"
+        class="rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+      >
+        {t(locale, 'unsubscribeRequestSubmit')}
+      </button>
+    </form>
   </div>
 
   <div class="unsubscribe-with-token mt-8 hidden">
@@ -54,18 +88,77 @@ const unsubscribedPath = locale === 'en' ? '/en/subscribe/unsubscribed/' : '/til
     var missingEl = root.querySelector('.unsubscribe-missing');
     var withTokenEl = root.querySelector('.unsubscribe-with-token');
     var invalidEl = root.querySelector('.unsubscribe-invalid');
+    var leadEl = root.querySelector('.unsubscribe-lead');
     var btn = root.querySelector('.unsubscribe-btn');
     var msgEl = root.querySelector('.unsubscribe-msg');
+    var requestForm = root.querySelector('.unsubscribe-request-form');
+    var requestMsgEl = root.querySelector('.unsubscribe-request-msg');
     var unsubscribedPath = root.getAttribute('data-unsubscribed-path') || '/tilaa/peruutettu/';
     var invalidMsg = root.getAttribute('data-msg-invalid') || '';
     var failedMsg = root.getAttribute('data-msg-failed') || '';
+    var locale = root.getAttribute('data-locale') || 'fi';
 
-    if (!token) return;
+    if (token) {
+      if (leadEl) leadEl.textContent = root.getAttribute('data-lead-with-token') || leadEl.textContent;
+      if (missingEl) missingEl.classList.add('hidden');
+      if (withTokenEl) withTokenEl.classList.remove('hidden');
+    }
 
-    if (missingEl) missingEl.classList.add('hidden');
-    if (withTokenEl) withTokenEl.classList.remove('hidden');
+    if (requestForm) {
+      requestForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        var submitBtn = requestForm.querySelector('button[type="submit"]');
+        var emailInput = requestForm.querySelector('input[name="email"]');
+        var honeypot = requestForm.querySelector('input[name="website"]');
+        var email = emailInput && 'value' in emailInput ? String(emailInput.value).trim() : '';
 
-    if (!btn) return;
+        function showRequestMessage(text, isError) {
+          if (!requestMsgEl) return;
+          requestMsgEl.textContent = text;
+          requestMsgEl.classList.remove('hidden', 'text-cyan-400', 'text-red-400');
+          requestMsgEl.classList.add(isError ? 'text-red-400' : 'text-cyan-400');
+        }
+
+        if (!email || email.indexOf('@') < 1) {
+          showRequestMessage(root.getAttribute('data-msg-request-email') || '', true);
+          return;
+        }
+
+        if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = true;
+
+        try {
+          var response = await fetch('/api/unsubscribe-link', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: email,
+              locale: locale,
+              honeypot: honeypot && 'value' in honeypot ? honeypot.value : '',
+            }),
+          });
+          var data = await response.json();
+          if (!response.ok) {
+            var code = data && data.error ? data.error : 'generic';
+            if (code === 'invalid_email') {
+              showRequestMessage(root.getAttribute('data-msg-request-email') || '', true);
+            } else if (code === 'email_send_failed') {
+              showRequestMessage(root.getAttribute('data-msg-email-send') || '', true);
+            } else {
+              showRequestMessage(root.getAttribute('data-msg-request-failed') || '', true);
+            }
+            return;
+          }
+          showRequestMessage(root.getAttribute('data-msg-request-success') || '', false);
+          requestForm.reset();
+        } catch (e) {
+          showRequestMessage(root.getAttribute('data-msg-request-failed') || '', true);
+        } finally {
+          if (submitBtn && 'disabled' in submitBtn) submitBtn.disabled = false;
+        }
+      });
+    }
+
+    if (!token || !btn) return;
 
     btn.addEventListener('click', async function () {
       if (msgEl) {
