@@ -149,11 +149,29 @@ export async function unsubscribeSubscriber(db: D1Database, subscriberId: string
       `UPDATE subscribers SET
         status = 'unsubscribed',
         marketing_consent = 0,
+        primary_role = NULL,
+        secondary_roles_json = NULL,
+        interests_json = NULL,
         unsubscribed_at = ?,
         updated_at = ?
       WHERE id = ?`,
     )
     .bind(ts, ts, subscriberId)
+    .run();
+}
+
+export async function clearSubscriberPreferences(db: D1Database, subscriberId: string): Promise<void> {
+  const ts = nowMs();
+  await db
+    .prepare(
+      `UPDATE subscribers SET
+        primary_role = NULL,
+        secondary_roles_json = NULL,
+        interests_json = NULL,
+        updated_at = ?
+      WHERE id = ?`,
+    )
+    .bind(ts, subscriberId)
     .run();
 }
 

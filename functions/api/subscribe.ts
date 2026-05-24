@@ -1,5 +1,6 @@
 import { generateToken, hashIp, hashToken, truncateUserAgent } from '../lib/crypto';
 import {
+  clearSubscriberPreferences,
   createConfirmationToken,
   getSubscriberByEmail,
   insertSubscriber,
@@ -95,7 +96,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   } else {
     subscriberId = existing.id;
+    const wasUnsubscribed = existing.status === 'unsubscribed';
     await resetSubscriberPending(db, subscriberId, locale, preferredLanguage, sourceUrl);
+    if (wasUnsubscribed) {
+      await clearSubscriberPreferences(db, subscriberId);
+    }
     await logConsentEvent(db, {
       id: crypto.randomUUID(),
       subscriberId,

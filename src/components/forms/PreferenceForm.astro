@@ -24,7 +24,6 @@ const { locale } = Astro.props;
   data-msg-invalid={t(locale, 'subscribeInvalidToken')}
   data-msg-inactive={t(locale, 'preferencesInactive')}
   data-msg-inactive-help={t(locale, 'preferencesInactiveHelp')}
-  data-msg-loaded-note={t(locale, 'preferencesLoadedNote')}
   data-msg-saved={t(locale, 'preferencesSaved')}
   data-msg-saving={t(locale, 'preferencesSaving')}
   data-msg-save-failed={t(locale, 'preferencesSaveFailed')}
@@ -54,7 +53,7 @@ const { locale } = Astro.props;
 
   <div class="preference-content hidden">
     <p class="preference-email mt-4 text-sm text-[var(--color-text-dim)]"></p>
-    <p class="preference-loaded-note mt-1 hidden text-xs text-[var(--color-text-muted)]"></p>
+    <p class="preference-lead mt-2 text-sm text-[var(--color-text-muted)]">{t(locale, 'preferencesLead')}</p>
     <p class="preference-status mt-2 hidden text-sm font-medium" aria-live="polite"></p>
 
     <form class="preference-save-form mt-8 space-y-6">
@@ -136,12 +135,10 @@ const { locale } = Astro.props;
     var contentEl = root.querySelector('.preference-content');
     var form = root.querySelector('.preference-save-form');
     var emailEl = root.querySelector('.preference-email');
-    var loadedNoteEl = root.querySelector('.preference-loaded-note');
     var statusEl = root.querySelector('.preference-status');
     var saveBtn = root.querySelector('.preference-save-btn');
     var invalidMsg = root.getAttribute('data-msg-invalid') || '';
     var missingTitleMsg = root.getAttribute('data-msg-missing-title') || '';
-    var loadedNoteMsg = root.getAttribute('data-msg-loaded-note') || '';
     var savedMsg = root.getAttribute('data-msg-saved') || '';
     var savingMsg = root.getAttribute('data-msg-saving') || '';
     var saveFailedMsg = root.getAttribute('data-msg-save-failed') || '';
@@ -195,32 +192,8 @@ const { locale } = Astro.props;
       var prefs = loadData.preferences;
       if (emailEl) emailEl.textContent = prefs.email;
 
-      var hasSavedChoices =
-        !!prefs.primaryRole ||
-        (prefs.secondaryRoles && prefs.secondaryRoles.length > 0) ||
-        (prefs.interests && prefs.interests.length > 0);
-      if (loadedNoteEl && hasSavedChoices) {
-        loadedNoteEl.textContent = loadedNoteMsg;
-        loadedNoteEl.classList.remove('hidden');
-      }
-
-      var primary = form.querySelector('select[name="primaryRole"]');
-      if (primary && 'value' in primary) primary.value = prefs.primaryRole || '';
-
       var lang = form.querySelector('select[name="preferredLanguage"]');
       if (lang && 'value' in lang) lang.value = prefs.preferredLanguage || 'fi';
-
-      form.querySelectorAll('input[name="secondaryRoles"]').forEach(function (input) {
-        if ('checked' in input && 'value' in input) {
-          input.checked = (prefs.secondaryRoles || []).indexOf(input.value) >= 0;
-        }
-      });
-
-      form.querySelectorAll('input[name="interests"]').forEach(function (input) {
-        if ('checked' in input && 'value' in input) {
-          input.checked = (prefs.interests || []).indexOf(input.value) >= 0;
-        }
-      });
     } catch (e) {
       showMissingMessage(missingTitleMsg, invalidMsg);
       return;

@@ -95,6 +95,7 @@ export const ui = {
     subscribeInvalidToken: 'Linkki on vanhentunut tai virheellinen.',
     subscribeUnsubscribed: 'Tilaus on peruutettu.',
     preferencesTitle: 'Tilaajaprofiili',
+    preferencesLead: 'Valitse roolit ja kiinnostukset — lomake alkaa tyhjänä joka kerta.',
     preferencesPrimaryRole: 'Päärooli',
     preferencesSecondaryRoles: 'Muut roolit (valinnainen)',
     preferencesInterests: 'Kiinnostuksen kohteet',
@@ -105,7 +106,6 @@ export const ui = {
     preferencesInactive:
       'Uutiskirjeen tilaus on peruttu. Profiilia voi muokata vain aktiivisen tilauksen aikana.',
     preferencesInactiveHelp: 'Voit tilata uutiskirjeen uudelleen ja täydentää profiilisi sen jälkeen.',
-    preferencesLoadedNote: 'Näytetään aiemmin tallentamasi valinnat.',
     preferencesMissingToken:
       'Profiilin täydennys vaatii henkilökohtaisen linkin sähköpostistasi.',
     preferencesMissingTokenHelp:
@@ -229,6 +229,7 @@ export const ui = {
     subscribeInvalidToken: 'This link has expired or is invalid.',
     subscribeUnsubscribed: 'You have been unsubscribed.',
     preferencesTitle: 'Subscriber profile',
+    preferencesLead: 'Choose your roles and interests — the form starts empty each time.',
     preferencesPrimaryRole: 'Primary role',
     preferencesSecondaryRoles: 'Other roles (optional)',
     preferencesInterests: 'Interests',
@@ -239,7 +240,6 @@ export const ui = {
     preferencesInactive:
       'Your newsletter subscription is cancelled. You can only edit your profile while subscribed.',
     preferencesInactiveHelp: 'Subscribe again to update your profile.',
-    preferencesLoadedNote: 'Showing your previously saved choices.',
     preferencesMissingToken:
       'Completing your profile requires the personal link from your email.',
     preferencesMissingTokenHelp:
