@@ -113,12 +113,14 @@ const formId = `newsletter-${variant}-${locale}`;
         fi: {
           success: 'Tarkista sähköpostisi ja vahvista tilaus.',
           generic: 'Tilaus epäonnistui. Yritä uudelleen.',
+          emailSend: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
           email: 'Anna kelvollinen sähköpostiosoite.',
           consent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
         },
         en: {
           success: 'Check your email and confirm your subscription.',
           generic: 'Subscription failed. Please try again.',
+          emailSend: 'Could not send the confirmation email. Please try again shortly.',
           email: 'Enter a valid email address.',
           consent: 'Newsletter subscription requires consent.',
         },
@@ -168,6 +170,7 @@ const formId = `newsletter-${variant}-${locale}`;
           var code = data && data.error ? data.error : 'generic';
           if (code === 'invalid_email') showMessage(msg.email, true);
           else if (code === 'consent_required') showMessage(msg.consent, true);
+          else if (code === 'email_send_failed') showMessage(msg.emailSend, true);
           else showMessage(msg.generic, true);
           return;
         }

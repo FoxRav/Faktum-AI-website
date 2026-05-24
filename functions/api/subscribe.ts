@@ -118,14 +118,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     locale: emailLocale,
   });
 
-  context.waitUntil(
-    sendEmail(context.env, {
-      to: emailNormalized,
-      subject: template.subject,
-      html: template.html,
-      text: template.text,
-    }),
-  );
+  const sent = await sendEmail(context.env, {
+    to: emailNormalized,
+    subject: template.subject,
+    html: template.html,
+    text: template.text,
+  });
+
+  if (!sent) {
+    return jsonResponse({ ok: false, error: 'email_send_failed' }, 502);
+  }
 
   await logConsentEvent(db, {
     id: crypto.randomUUID(),
