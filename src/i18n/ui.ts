@@ -99,6 +99,7 @@ export const ui = {
     preferencesSecondaryRoles: 'Muut roolit (valinnainen)',
     preferencesInterests: 'Kiinnostuksen kohteet',
     preferencesSave: 'Tallenna',
+    preferencesSaving: 'Tallennetaan…',
     preferencesSaved: 'Profiili tallennettu.',
     preferencesSaveFailed: 'Tallennus epäonnistui.',
     preferencesMissingToken:
@@ -228,6 +229,7 @@ export const ui = {
     preferencesSecondaryRoles: 'Other roles (optional)',
     preferencesInterests: 'Interests',
     preferencesSave: 'Save',
+    preferencesSaving: 'Saving…',
     preferencesSaved: 'Profile saved.',
     preferencesSaveFailed: 'Save failed.',
     preferencesMissingToken:

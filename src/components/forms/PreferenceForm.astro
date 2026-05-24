@@ -21,7 +21,9 @@ const { locale } = Astro.props;
   data-locale={locale}
   data-msg-invalid={t(locale, 'subscribeInvalidToken')}
   data-msg-saved={t(locale, 'preferencesSaved')}
+  data-msg-saving={t(locale, 'preferencesSaving')}
   data-msg-save-failed={t(locale, 'preferencesSaveFailed')}
+  data-label-save={t(locale, 'preferencesSave')}
 >
   <h1 class="font-sans text-3xl font-bold">{t(locale, 'preferencesTitle')}</h1>
 
@@ -36,9 +38,10 @@ const { locale } = Astro.props;
   </div>
 
   <div class="preference-content hidden">
-    <p class="preference-status mt-4 text-sm text-[var(--color-text-muted)]" aria-live="polite"></p>
+    <p class="preference-email mt-4 text-sm text-[var(--color-text-dim)]"></p>
+    <p class="preference-status mt-2 hidden text-sm font-medium" aria-live="polite"></p>
 
-    <form class="mt-8 space-y-6">
+    <form class="preference-save-form mt-8 space-y-6">
       <div>
         <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
           {t(locale, 'preferencesPrimaryRole')}
@@ -98,7 +101,7 @@ const { locale } = Astro.props;
 
       <button
         type="submit"
-        class="rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-cyan-400"
+        class="preference-save-btn rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {t(locale, 'preferencesSave')}
       </button>
@@ -114,16 +117,29 @@ const { locale } = Astro.props;
     var token = new URLSearchParams(window.location.search).get('token') || '';
     var missingEl = root.querySelector('.preference-missing');
     var contentEl = root.querySelector('.preference-content');
-    var form = root.querySelector('form');
+    var form = root.querySelector('.preference-save-form');
+    var emailEl = root.querySelector('.preference-email');
     var statusEl = root.querySelector('.preference-status');
+    var saveBtn = root.querySelector('.preference-save-btn');
     var invalidMsg = root.getAttribute('data-msg-invalid') || '';
     var savedMsg = root.getAttribute('data-msg-saved') || '';
+    var savingMsg = root.getAttribute('data-msg-saving') || '';
     var saveFailedMsg = root.getAttribute('data-msg-save-failed') || '';
+    var saveLabel = root.getAttribute('data-label-save') || 'Tallenna';
 
     if (!token || !form || !contentEl) return;
 
     if (missingEl) missingEl.classList.add('hidden');
     contentEl.classList.remove('hidden');
+
+    function showStatus(text, kind) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.classList.remove('hidden', 'text-cyan-400', 'text-red-400', 'text-[var(--color-text-muted)]');
+      if (kind === 'success') statusEl.classList.add('text-cyan-400');
+      else if (kind === 'error') statusEl.classList.add('text-red-400');
+      else statusEl.classList.add('text-[var(--color-text-muted)]');
+    }
 
     try {
       var loadRes = await fetch('/api/preferences?token=' + encodeURIComponent(token));
@@ -131,7 +147,7 @@ const { locale } = Astro.props;
       if (!loadRes.ok || !loadData.preferences) throw new Error('load_failed');
 
       var prefs = loadData.preferences;
-      if (statusEl) statusEl.textContent = prefs.email;
+      if (emailEl) emailEl.textContent = prefs.email;
 
       var primary = form.querySelector('select[name="primaryRole"]');
       if (primary && 'value' in primary) primary.value = prefs.primaryRole || '';
@@ -162,6 +178,9 @@ const { locale } = Astro.props;
 
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
+      if (form.getAttribute('data-submitting') === 'true') return;
+      form.setAttribute('data-submitting', 'true');
+
       var secondaryRoles = [];
       form.querySelectorAll('input[name="secondaryRoles"]:checked').forEach(function (input) {
         if ('value' in input) secondaryRoles.push(input.value);
@@ -172,6 +191,12 @@ const { locale } = Astro.props;
       });
       var primaryRoleEl = form.querySelector('select[name="primaryRole"]');
       var preferredLanguageEl = form.querySelector('select[name="preferredLanguage"]');
+
+      if (saveBtn && 'disabled' in saveBtn) {
+        saveBtn.disabled = true;
+        saveBtn.textContent = savingMsg;
+      }
+      showStatus(savingMsg, 'pending');
 
       try {
         var saveRes = await fetch('/api/preferences', {
@@ -186,15 +211,17 @@ const { locale } = Astro.props;
               preferredLanguageEl && 'value' in preferredLanguageEl ? preferredLanguageEl.value : 'fi',
           }),
         });
-        if (!saveRes.ok) throw new Error('save_failed');
-        if (statusEl) {
-          statusEl.textContent = savedMsg;
-          statusEl.classList.remove('text-red-400');
-        }
+        var saveData = await saveRes.json();
+        if (!saveRes.ok || !saveData.ok) throw new Error('save_failed');
+        showStatus(savedMsg, 'success');
+        saveBtn && saveBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } catch (err) {
-        if (statusEl) {
-          statusEl.textContent = saveFailedMsg;
-          statusEl.classList.add('text-red-400');
+        showStatus(saveFailedMsg, 'error');
+      } finally {
+        form.removeAttribute('data-submitting');
+        if (saveBtn && 'disabled' in saveBtn) {
+          saveBtn.disabled = false;
+          saveBtn.textContent = saveLabel;
         }
       }
     });
