@@ -8,7 +8,7 @@ import { dataRequestPath } from '../../i18n/paths';
   description="Faktum AI privacy policy and subscriber registry processing information."
   path="/en/privacy/"
 >
-  <p><strong>Last updated:</strong> 2026-05-24 · version 2026-05-24-v1</p>
+  <p><strong>Last updated:</strong> 2026-05-24 · version 2026-05-24-v2</p>
 
   <h2>Controller</h2>
   <p>
@@ -52,31 +52,38 @@ import { dataRequestPath } from '../../i18n/paths';
 
   <h2>Processors</h2>
   <p>
-    Only the providers listed below process subscriber data (email, profile, consent log).
-    <strong>We do not store subscriber data on GitHub</strong> — GitHub is used for website source
-    code version control only and is not a personal-data processor.
+    We process subscriber data as the controller. To run the technical service, we use the
+    <strong>processors</strong> listed below — we do not sell, rent, or share the subscriber list with
+    third parties for marketing. Processors act only on behalf of Faktum AI under contract.
+  </p>
+  <p>
+    <strong>We do not store subscriber data on GitHub.</strong> GitHub is used for website source
+    code version control only.
   </p>
   <ul>
-    <li>Cloudflare, Inc. — hosting, D1 subscriber registry, KV, Pages Functions</li>
-    <li>Resend, Inc. — confirmation and management emails</li>
+    <li>Cloudflare, Inc. — hosting, D1 subscriber registry (EU), KV, Pages Functions</li>
+    <li>Resend, Inc. — confirmation and management emails (EU region, Ireland)</li>
     <li>Possible future ESP (Buttondown / MailerLite) — downstream copy only</li>
   </ul>
 
-  <h2>International transfers</h2>
+  <h2>Data location</h2>
   <p>
-    Processors may handle data outside the EU/EEA under DPAs and standard contractual clauses where
-    required.
+    The subscriber registry is stored in a Cloudflare D1 database in the EU. Email service Resend is
+    configured for the EU region (Ireland). We do not transfer subscriber data abroad for marketing
+    purposes. If a technical provider is based in the United States, processing relies on the
+    provider’s DPA and, where required, standard contractual clauses (SCC).
   </p>
 
   <h2>Unsubscribing</h2>
   <p>
-    You can unsubscribe at any time. The easiest way is to open the <strong>Unsubscribe</strong> link in
-    your latest newsletter or welcome email. The link is personal — for security reasons, we cannot
-    cancel a subscription without it.
+    You can unsubscribe at any time on our
+    <a href="/en/subscribe/unsubscribe/">unsubscribe page</a>. Confirmation requires a personal link
+    from your email — this prevents others from cancelling your subscription.
   </p>
   <p>
-    If you cannot find the message, check your spam folder. You can also open the
-    <a href="/en/subscribe/unsubscribe/">unsubscribe page</a> from your email link or contact
+    The easiest way: open the <strong>Unsubscribe</strong> link in your latest newsletter or welcome
+    email — it opens the unsubscribe page ready to confirm. If you cannot find the message, check
+    your spam folder. You can also contact
     <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a> for help.
   </p>
 

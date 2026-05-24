@@ -8,7 +8,7 @@ import { dataRequestPath } from '../i18n/paths';
   description="Faktum AI -sivuston tietosuojaseloste ja tilaajarekisterin käsittelyperusteet."
   path="/tietosuoja/"
 >
-  <p><strong>Viimeksi päivitetty:</strong> 2026-05-24 · versio 2026-05-24-v1</p>
+  <p><strong>Viimeksi päivitetty:</strong> 2026-05-24 · versio 2026-05-24-v2</p>
 
   <h2>Rekisterinpitäjä</h2>
   <p>
@@ -53,32 +53,41 @@ import { dataRequestPath } from '../i18n/paths';
 
   <h2>Käsittelijät</h2>
   <p>
-    Tilaajatietoja (sähköposti, profiili, suostumusloki) käsittelevät vain alla luetellut
-    palveluntarjoajat. <strong>Emme tallenna tilaajatietoja GitHubiin</strong> — GitHubia käytetään
-    ainoastaan verkkosivuston lähdekoodin versionhallintaan, eikä se ole henkilötietojen käsittelijä.
+    Tilaajatietoja käsittelemme itse rekisterinpitäjänä. Teknisen palvelun toteuttamiseksi käytämme
+    alla lueteltuja <strong>henkilötietojen käsittelijöitä</strong> — emme myy, vuokraa tai luovuta
+    tilaajalistaa kolmansille osapuolille markkinointiin. Käsittelijät toimivat vain Faktum AI:n
+    puolesta ja sopimuksellisesti.
+  </p>
+  <p>
+    <strong>Emme tallenna tilaajatietoja GitHubiin.</strong> GitHubia käytetään ainoastaan
+    verkkosivuston lähdekoodin versionhallintaan.
   </p>
   <ul>
-    <li>Cloudflare, Inc. — hosting, D1-tilaajarekisteri, Workers KV, Pages Functions</li>
-    <li>Resend, Inc. — vahvistus- ja hallintasähköpostit</li>
+    <li>Cloudflare, Inc. — hosting, D1-tilaajarekisteri (EU), Workers KV, Pages Functions</li>
+    <li>Resend, Inc. — vahvistus- ja hallintasähköpostit (EU-alue, Ireland)</li>
     <li>Mahdollinen ESP myöhemmin (Buttondown / MailerLite) — vain downstream-kopio</li>
   </ul>
 
-  <h2>Siirrot EU/ETA-alueen ulkopuolelle</h2>
+  <h2>Tietojen sijainti</h2>
   <p>
-    Palveluntarjoajat voivat käsitellä tietoja EU/ETA-alueen ulkopuolella. Siirrot perustuvat
-    palveluntarjoajien DPA-sopimuksiin ja tarvittaessa standardisopimuslausekkeisiin (SCC).
+    Tilaajarekisteri sijaitsee Cloudflare D1 -tietokannassa EU-alueella. Sähköpostipalvelu Resend
+    on konfiguroitu EU-alueelle (Ireland). Emme siirrä tilaajatietoja markkinointitarkoituksiin
+    EU/ETA-alueen ulkopuolelle. Mikäli tekninen palveluntarjoaja sijaitsee Yhdysvalloissa,
+    käsittely perustuu palveluntarjoajan tietosuojasopimukseen (DPA) ja tarvittaessa
+    komission vakiosopimuslausekkeisiin (SCC).
   </p>
 
   <h2>Tilauksen peruutus</h2>
   <p>
-    Voit perua uutiskirjeen tilauksen milloin tahansa. Helpoin tapa on avata viimeisimmästä
-    uutiskirjeestä tai tervetuloviestistä linkki <strong>Peru tilaus</strong>. Linkki on henkilökohtainen
-    — ilman sitä peruutus ei onnistu tietoturvasyistä.
+    Voit perua uutiskirjeen tilauksen milloin tahansa. Peruutus tehdään
+    <a href="/tilaa/peru/">tilauksen peruutussivulla</a>. Vahvistus edellyttää henkilökohtaista linkkiä, jonka saat sähköpostiviestissä — tämä estää
+    ulkopuolisia peruuttamasta tilaustasi.
   </p>
   <p>
-    Jos et löydä viestiä, tarkista roskapostikansio. Voit myös avata
-    <a href="/tilaa/peru/">tilauksen peruutussivun</a> suoraan sähköpostilinkistä tai pyytää apua
-    osoitteesta <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>.
+    Helpoin tapa: avaa viimeisimmästä uutiskirjeestä tai tervetuloviestistä linkki
+    <strong>Peru tilaus</strong> — se avaa peruutussivun valmiiksi vahvistettuna. Jos viestiä ei
+    löydy, tarkista roskapostikansio. Voit myös pyytää apua osoitteesta
+    <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>.
   </p>
 
   <h2>Rekisteröidyn oikeudet</h2>
