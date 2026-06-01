@@ -10,6 +10,7 @@ const locale = 'en' as const;
   title={t(locale, 'dataRequestTitle')}
   description="Request a copy or deletion of your subscriber data from Faktum AI."
   path={dataRequestPath(locale)}
+  noIndex={true}
 >
   <p>We will send a confirmation link to your email before processing the request.</p>
 

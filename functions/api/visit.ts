@@ -1,14 +1,6 @@
-const KV_KEY = 'global_visits';
+import { jsonResponse } from '../lib/http';
 
-function jsonResponse(body: Record<string, unknown>, status = 200): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      'content-type': 'application/json; charset=utf-8',
-      'cache-control': 'no-store',
-    },
-  });
-}
+const KV_KEY = 'global_visits';
 
 function getKvStore(env: Env): KVNamespace | undefined {
   return env.FAKTUM_VISITS;

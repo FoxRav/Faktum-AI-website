@@ -6,6 +6,10 @@ import { schemaLanguage } from './formatDate';
 const DEFAULT_SITE = 'https://www.faktum-ai.com';
 const DEFAULT_OG_IMAGE = '/images/brand/landing-hero.webp';
 
+function normalizeSite(site: string): string {
+  return site.replace(/\/+$/, '');
+}
+
 export interface SeoProps {
   title: string;
   description: string;
@@ -15,16 +19,18 @@ export interface SeoProps {
 }
 
 export function canonicalUrl(path: string, site = DEFAULT_SITE): string {
+  const normalizedSite = normalizeSite(site);
   const normalized = path.startsWith('/') ? path : `/${path}`;
-  return `${site}${normalized}`;
+  return `${normalizedSite}${normalized}`;
 }
 
 export function absoluteAssetUrl(
   assetPath: string | undefined,
   site = DEFAULT_SITE,
 ): string | undefined {
-  if (!assetPath) return `${site}${DEFAULT_OG_IMAGE}`;
-  return assetPath.startsWith('http') ? assetPath : `${site}${assetPath}`;
+  const normalizedSite = normalizeSite(site);
+  if (!assetPath) return `${normalizedSite}${DEFAULT_OG_IMAGE}`;
+  return assetPath.startsWith('http') ? assetPath : `${normalizedSite}${assetPath}`;
 }
 
 export function organizationJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SITE) {

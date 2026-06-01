@@ -1,4 +1,18 @@
-/** Paths excluded from @astrojs/sitemap (transactional, thin, or non-indexable). */
+/** Exact paths excluded from @astrojs/sitemap (index pages, thin pages). */
+const EXCLUDED_EXACT_PATHS = [
+  '/tilaa',
+  '/en/subscribe',
+  '/haastattelut',
+  '/en/interviews',
+  '/projektit',
+  '/en/projects',
+  '/mediakortti',
+  '/en/media-kit',
+  '/mainosta',
+  '/en/advertise',
+] as const;
+
+/** Prefix paths excluded from @astrojs/sitemap (transactional/non-indexable flows). */
 const EXCLUDED_PREFIXES = [
   '/tilaa/vahvista',
   '/tilaa/peruutettu',
@@ -11,18 +25,14 @@ const EXCLUDED_PREFIXES = [
   '/en/subscribe/preferences',
   '/tietosuoja/oma-tieto',
   '/en/privacy/your-data',
-  '/projektit',
-  '/en/projects',
-  '/haastattelut',
-  '/en/interviews',
-  '/mediakortti',
-  '/en/media-kit',
-  '/mainosta',
-  '/en/advertise',
 ] as const;
 
 export function shouldIncludeInSitemap(pageUrl: string): boolean {
   const pathname = new URL(pageUrl).pathname.replace(/\/$/, '') || '/';
+  if (EXCLUDED_EXACT_PATHS.includes(pathname as (typeof EXCLUDED_EXACT_PATHS)[number])) {
+    return false;
+  }
+
   return !EXCLUDED_PREFIXES.some((prefix) => {
     const normalized = prefix.replace(/\/$/, '');
     return pathname === normalized || pathname.startsWith(`${normalized}/`);
