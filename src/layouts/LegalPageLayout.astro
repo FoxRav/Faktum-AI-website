@@ -6,12 +6,18 @@ interface Props {
   title: string;
   description: string;
   path: string;
+  noIndex?: boolean;
 }
 
-const { title, description, path } = Astro.props;
+const { title, description, path, noIndex = false } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  robots={noIndex ? 'noindex, follow' : 'index, follow'}
+>
   <LegalProse title={title} description={description} path={path}>
     <slot />
   </LegalProse>

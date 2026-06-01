@@ -15,6 +15,7 @@ const articles = await getArticlesByCollection('interviews', locale);
   path="/en/interviews/"
   activeTab={categoryPath(locale, 'interviews')}
   locale={locale}
+  noIndex={articles.length === 0}
 >
   <ArticleFeed articles={articles} title="" emptyMessage={t(locale, 'emptyArticles')} />
 </ListingLayout>

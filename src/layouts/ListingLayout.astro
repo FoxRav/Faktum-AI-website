@@ -10,13 +10,19 @@ interface Props {
   path: string;
   activeTab: string;
   locale: Locale;
+  noIndex?: boolean;
 }
 
-const { title, description, path, activeTab, locale } = Astro.props;
+const { title, description, path, activeTab, locale, noIndex = false } = Astro.props;
 const feedTabs = getFeedTabs(locale);
 ---
 
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  robots={noIndex ? 'noindex, follow' : 'index, follow'}
+>
   <section class="container-site py-12">
     <h1 class="font-sans text-3xl font-bold sm:text-4xl">{title}</h1>
     <p class="mt-3 max-w-2xl text-[var(--color-text-dim)]">{description}</p>

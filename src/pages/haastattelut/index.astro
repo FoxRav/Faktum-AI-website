@@ -12,6 +12,7 @@ const articles = await getArticlesByCollection('interviews');
   path="/haastattelut/"
   activeTab="/haastattelut/"
   locale="fi"
+  noIndex={articles.length === 0}
 >
   <ArticleFeed articles={articles} title="" emptyMessage="Ei haastatteluja vielä julkaistu." />
 </ListingLayout>

@@ -16,6 +16,8 @@ interface Props {
   modifiedTime?: string;
   articleTags?: string[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** e.g. "noindex, follow" for 404 and thin pages */
+  robots?: string;
 }
 
 const {
@@ -28,6 +30,7 @@ const {
   modifiedTime,
   articleTags = [],
   jsonLd,
+  robots = 'index, follow',
 } = Astro.props;
 
 const locale = getLocaleFromPath(path);
@@ -52,6 +55,7 @@ const jsonLdItems = jsonLd
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="fi" href={alternateFi} />
     <link rel="alternate" hreflang="en" href={alternateEn} />

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLocaleFromPath, homePath } from '../i18n/paths';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const isEn = locale === 'en';
+---
+
+<BaseLayout
+  title={isEn ? 'Page not found' : 'Sivua ei löydy'}
+  description={isEn
+    ? 'The page you requested does not exist on Faktum AI.'
+    : 'Pyytämääsi sivua ei ole Faktum AI -sivustolla.'}
+  path={Astro.url.pathname}
+  robots="noindex, follow"
+>
+  <section class="container-site py-20 text-center">
+    <p class="text-sm font-semibold uppercase tracking-wider text-cyan-400">404</p>
+    <h1 class="mt-4 font-sans text-3xl font-bold sm:text-4xl">
+      {isEn ? 'Page not found' : 'Sivua ei löydy'}
+    </h1>
+    <p class="mx-auto mt-4 max-w-lg text-[var(--color-text-dim)]">
+      {isEn
+        ? 'The address may be wrong or the page has been removed.'
+        : 'Osoite voi olla virheellinen tai sivu on poistettu.'}
+    </p>
+    <a href={homePath(locale)} class="btn-primary mt-8 inline-flex">
+      {isEn ? 'Back to home' : 'Takaisin etusivulle'}
+    </a>
+  </section>
+</BaseLayout>
