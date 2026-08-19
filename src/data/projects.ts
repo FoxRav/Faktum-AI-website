@@ -138,10 +138,10 @@ export const projects: Project[] = [
         status: 'Saatavilla / käyttöönottoa valmistellaan',
         detail: {
           lead:
-            'SermoVox on reaaliaikainen monikielinen puheenkäännösjärjestelmä tilaisuuksiin. Järjestelmä muuntaa puhujan puheen tekstiksi ja välittää käännökset yleisölle lähes reaaliajansa.',
+            'SermoVox on reaaliaikainen monikielinen puheenkäännösjärjestelmä tilaisuuksiin. Järjestelmä muuntaa puhujan puheen tekstiksi ja välittää käännökset yleisölle lähes reaaliajassa.',
           commercialLead: 'SermoVox Local on saatavilla kertamaksullisena paikallisena ohjelmistotuotteena.',
           whatItIs:
-            'SermoVox on FaktumAI:n kehittämä paikallisesti toimiva puheentunnistus- ja käännösjärjestelmä. Se on suunniteltu tilanteisiin, joissa sama puhe täytyy välittää useilla kielellä yleisölle mahdollisimman pienellä viiveellä.\n\nNykyinen tuotantosuunta keskittyy suomenkielisen puheen tunnistamiseen ja sen välittämiseen englanniksi, ukrainaksi ja venäjäksi. Järjestelmä muodostaa yhtenäisen ketjun mikrofonista puheentunnistukseen, käännökseen ja yleisölle näytettävään tekstitykseen.',
+            'SermoVox on FaktumAI:n kehittämä paikallisesti toimiva puheentunnistus- ja käännösjärjestelmä. Se on suunniteltu tilanteisiin, joissa sama puhe täytyy välittää yleisölle useilla kielillä mahdollisimman pienellä viiveellä.\n\nNykyinen tuotantosuunta keskittyy suomenkielisen puheen tunnistamiseen ja sen välittämiseen englanniksi, ukrainaksi ja venäjäksi. Järjestelmä muodostaa yhtenäisen ketjun mikrofonista puheentunnistukseen, käännökseen ja yleisölle näytettävään tekstitykseen.',
           pricing: {
             title: 'Hinta ja lisenssi',
             price: '599 € + alv',
@@ -157,14 +157,14 @@ export const projects: Project[] = [
               'mikrofonin tai headsetin sekä näytön tai projektoriratkaisun toiminnan testaus',
               'operaattori- ja yleisönäkymän käyttöönotto',
               'peruskäyttöopastus',
-              'normaali käyttötuki arkisin sekä erikseen sovittavilla',
+              'normaali käyttötuki arkisin sekä muina aikoina erikseen sovittaessa',
             ],
             callout: 'Paikan päällä tehtävät käyttöönotot ovat tällä hetkellä saatavissa Etelä-Pohjanmaan alueella.',
           },
           problem:
-            'Monikielisissä tilaisuuksissa ammattitulkkaus voi olla kallista tai vaikeasti järjestettävää. Tavalliset kuluttajille tarkoitetut käännössovellukset eivät puolestaan ole suunniteltuja jatkuvaan puheeseen, operaattorin hallintaan ja suurelle näytölle välitettävään reaaliaikaiseen tekstitykseen.\n\nSermoVoxin tavoitteena on tarjota tähän tarkoitukseen kevyt, hallittava ja mahdollisimman pitkälle paikallisesti toimiva ratkaisu.',
+            'Monikielisissä tilaisuuksissa ammattitulkkaus voi olla kallista tai vaikeasti järjestettävää. Tavallisia kuluttajille tarkoitettuja käännössovelluksia ei puolestaan ole suunniteltu jatkuvan puheen käsittelyyn, operaattorin hallintaan ja suurelle näytölle välitettävään reaaliaikaiseen tekstitykseen.\n\nSermoVoxin tavoitteena on tarjota tähän tarkoitukseen kevyt, hallittava ja mahdollisimman pitkälle paikallisesti toimiva ratkaisu.',
           solution:
-            'Mikrofini → puheentunnistus → käännös → reaaliaikainen tiedonsiirto → operaattori- ja projektorinäkymä\n\nPuhujan ääni käsitellään paikallisesti. Puhe tunnistetaan, käännetään valituille kielille ja toimitetaan selaimessa toimivaan käyttöliittymään. Operaattori hallitsee järjestelmää omasta näkymästään ja yleisö näkee käännökset erillisessä projektori- tai näytönäkymässä.',
+            'Mikrofoni → puheentunnistus → käännös → reaaliaikainen tiedonsiirto → operaattori- ja projektorinäkymä\n\nPuhujan ääni käsitellään paikallisesti. Puhe tunnistetaan, käännetään valituille kielille ja toimitetaan selaimessa toimivaan käyttöliittymään. Operaattori hallitsee järjestelmää omasta näkymästään ja yleisö näkee käännökset erillisessä projektori- tai näytönäkymässä.',
           audience: [
             'seurakunnille ja monikielisille yhteisöille',
             'tapahtumiin ja seminaareihin',
@@ -187,7 +187,7 @@ export const projects: Project[] = [
           updates: {
             heading: 'Päivitykset',
             body: [
-              'SermoVoxiin voidaan toimittaa korjauksia ja yhteensopivuuspäivittäisiä tuotteen kehittyessä. Päivitysmodellia kehitetään edelleen, mutta pysyvä käyttöoikeus ei ole riippuvainen jatkuvasta tilauksesta.',
+              'SermoVoxiin voidaan toimittaa korjauksia ja yhteensopivuuspäivityksiä tuotteen kehittyessä. Päivitysmallia kehitetään edelleen, mutta pysyvä käyttöoikeus ei ole riippuvainen jatkuvasta tilauksesta.',
               'Merkittävät tulevat tuoteversiot tai kokonaan uudet palvelut eivät automaattisesti sisälly alkuperäiseen kertalisenssiin.',
             ],
           },
@@ -199,12 +199,12 @@ export const projects: Project[] = [
             ],
           },
           currentState:
-            'SermoVox on saatavilla. Ensimmäinen asiakaskäyttöönotto on sovittu, ja järjestelmän asentamista asiakkaan käyttöympäristöön valmistellaan. Nykyinen kehitys keskittyy käyttöönottoon viimeistelyyn, puheentunnistuksen viiveeseen, audiopolun toimintavarmuuteen ja tuotantokäyttöön sopivan laitekokoonpanon varmistamiseen.',
+            'SermoVox on saatavilla. Ensimmäinen asiakaskäyttöönotto on sovittu, ja järjestelmän asentamista asiakkaan käyttöympäristöön valmistellaan. Nykyinen kehitys keskittyy käyttöönoton viimeistelyyn, puheentunnistuksen viiveeseen, audiopolun toimintavarmuuteen ja tuotantokäyttöön sopivan laitekokoonpanon varmistamiseen.',
           nextStep:
-                        'Seuraava merkittävä vaihe on järjestelmän asentaminen ensimmäisen asiakkaan käyttöönottoon ja sen testaaminen aidossa tilaisuudessa. Käytetystä käyttöönotosta saatavasta kokemusta hyödyntämällä toimitusprosessia, käyttökokemusta ja tuotteen jatkokehitystä viimeistellen.',
+                        'Seuraava merkittävä vaihe on järjestelmän asentaminen ensimmäiselle asiakkaalle ja sen testaaminen aidossa tilaisuudessa. Ensimmäisestä käyttöönotosta saatavia kokemuksia hyödynnetään toimitusprosessin, käyttökokemuksen ja tuotteen jatkokehityksen viimeistelyssä.',
           organisationDeployment: {
             heading: 'Ratkaisut organisaatioille ja suurempiin käyttöönottoihin',
-            body: 'SermoVox Localin 599 € + alv -paketti on tarkoitettu yhden sovitun työaseman käyttöönottoon. Organisaatioille, jotka tarvitsevat useita työasemia, useita käyttöpaikkoja tai muuten laajemman kokonaisuuden, toimitus ja hinnoittelu suunnitellaan erikseen käyttötarpeen mukaan.\n\nSermoVox voidaan toteuttaa asiakkaan omassa paikallisessa IT-ympäristössä. Tällaisessa toteutuksessa puheentunnistus ja käännös voidaan käsitellä asiakkaan omalla laitteistolla ilman, että puhedataa tarvitsee lähettää ulkopuoliseen pilvikat. Tämä voi olla tärkeää organisaatioille, joilla on tavallista tiukemmat tietosuoja-, tietoturva- tai datan hallintavaatimukset.',
+            body: 'SermoVox Local -paketti, 599 € + alv, on tarkoitettu yhden sovitun työaseman käyttöönottoon. Organisaatioille, jotka tarvitsevat useita työasemia, useita käyttöpaikkoja tai muuten laajemman kokonaisuuden, toimitus ja hinnoittelu suunnitellaan erikseen käyttötarpeen mukaan.\n\nSermoVox voidaan toteuttaa asiakkaan omassa paikallisessa IT-ympäristössä. Tällaisessa toteutuksessa puheentunnistus ja käännös voidaan käsitellä asiakkaan omalla laitteistolla ilman, että puhedataa tarvitsee lähettää ulkopuoliseen pilvipalveluun. Tämä voi olla tärkeää organisaatioille, joilla on tavallista tiukemmat tietosuoja-, tietoturva- tai datanhallintavaatimukset.',
             items: [
               'useita SermoVox-työasemia',
               'useita käyttöpaikkoja',
@@ -218,7 +218,7 @@ export const projects: Project[] = [
             ],
             callout: {
               heading: 'Data asiakkaan hallinnassa',
-              body: 'Paikallisen SermoVox-toteutuksen keskeinen etu on mahdollisuus käsitellä puhe ja käännökset asiakkaan omassa ympäristössä. FaktumAI voi suunnitella toimitusmallin yhdessä asiakkaan IT- ja tietoturvavaatimusten kanssa.',
+              body: 'Paikallisen SermoVox-toteutuksen keskeinen etu on mahdollisuus käsitellä puhe ja käännökset asiakkaan omassa ympäristössä. FaktumAI voi suunnitella toimitusmallin yhdessä asiakkaan kanssa tämän IT- ja tietoturvavaatimusten mukaisesti.',
             },
             cta: {
               heading: 'Tarvitsetko useamman laitteen tai organisaatiokohtaisen toteutuksen?',
@@ -230,7 +230,7 @@ export const projects: Project[] = [
           cloudOption: {
             heading: 'SermoVox Cloud — tulevaisuuden vaihtoehto',
             body: [
-              'Paikallisen SermoVox Local -version rinnalle tutkitaan pilvipohjaista palvelumallia. Tavoitteena on tulevaisuudessa tarjota vaihtoehto myös asiakkaille, jotka haluavat käyttää SermoVoxia selaimessa tai pilvipalveluna ilman omaa paikallista AI-ympäristön ylläpitoa.',
+              'Paikallisen SermoVox Local -version rinnalle tutkitaan pilvipohjaista palvelumallia. Tavoitteena on tulevaisuudessa tarjota vaihtoehto myös asiakkaille, jotka haluavat käyttää SermoVoxia selaimessa tai pilvipalveluna ilman oman paikallisen AI-ympäristön ylläpitoa.',
               'SermoVox Cloud ei ole vielä julkaistu palvelu, eikä sille ole vahvistettua hinnoittelua tai julkaisuaikataulua.',
             ],
           },
@@ -387,7 +387,7 @@ export const projects: Project[] = [
             'ihmisille, jotka haluavat löytää uusia tuttavuuksia kevyesti ja nopeasti',
           ],
           technical:
-             'Party Buddy on Flutterilla toteutattu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja Yksityisviestintä toteutetaan päästä päähän salattuna.',
+             'Party Buddy on Flutterilla toteutattu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja yksityisviestintä toteutetaan päästä päähän salattuna.',
           currentState:
             'Party Buddyn keskeinen toiminnallisuus on rakennettu, ja projekti valmistautuu suljettuun käyttäjätestaukseen ennen Google Play -julkaisua. Testauksessa keskitytään käytettävyyteen, toimintavarmuuteen, tietojen automaattiseen poistumiseen, yksityisen viestinnän toimintaan ja todellisessa käytössä havaittaviin ongelmiin.',
           nextStep:
@@ -597,7 +597,7 @@ export const projects: Project[] = [
           problem:
             'Generatiivinen kielimalli ei ole itsessään luotettava oikeudellinen tietokanta. Oikeudellisessa käytössä pitää tietää, mihin lakiin, lainkohtaan ja ajankohtaan vastaus perustuu. Lisäksi lain sisältö muuttuu ajan myötä.\n\nRikoslaki SOTA pyrkii erottamaan toisistaan lähteen, haun ja AI:n tekemän tulkinnan. Lain sisältö muodostaa järjestelmän ensisijaisen tietokerroksen. AI voi toimia sen päällä, mutta se ei korvaa alkuperäistä oikeuslähdettä.',
           solution:
-            'Finlex-aineisto → aineiston tuonti ja normalisointi → historiallinen lakipeili → haku → lähdeviitteet → AI-avusteinen tulkinta\n\nFinlexistä saatava lainsäädäntöaineisto tuodaan omaan rakenteiseen tietokantaan. Aineiston versio- ja voimassaolotietoja käsitellään niin, että hakutulos voidaan yhdistää oikeaan lainkohtaan ja oikeaan ajalliseen tilanteeseen. Hakukerroksen päälle voidaan rakentaa AI-avusteiset toimintoja, jotka käyttävät järjestelmän omia lähteitä.',
+            'Finlex-aineisto → aineiston tuonti ja normalisointi → historiallinen lakipeili → haku → lähdeviitteet → AI-avusteinen tulkinta\n\nFinlexistä saatava lainsäädäntöaineisto tuodaan omaan rakenteiseen tietokantaan. Aineiston versio- ja voimassaolotietoja käsitellään niin, että hakutulos voidaan yhdistää oikeaan lainkohtaan ja oikeaan ajalliseen tilanteeseen. Hakukerroksen päälle voidaan rakentaa AI-avusteisia toimintoja, jotka käyttävät järjestelmän omia lähteitä.',
           audience: [
             'oikeudelliset ammattilaiset ja lakimiehet',
             'lainsäädäntöä tutkivat tutkijat ja oppilaitokset',
@@ -628,7 +628,7 @@ export const projects: Project[] = [
             ],
           },
           disclaimer:
-            'Rikoslaki SOTA on kehitysprojekti eikä tällä hetkellä tarjoa oikeudellista neuvontaa. Oikeudellisissa asioissa alkuperäisen lainsäädäntö ja muut viralliset oikeuslähteet ovat ensisijaisia.',
+            'Rikoslaki SOTA on kehitysprojekti eikä tällä hetkellä tarjoa oikeudellista neuvontaa. Oikeudellisissa asioissa alkuperäinen lainsäädäntö ja muut viralliset oikeuslähteet ovat ensisijaisia.',
           cta: {
             heading: 'Kiinnostuitko lakidatan, API:n tai AI-avusteisen oikeudellisen haun kehityksestä?',
             label: 'Ota yhteyttä',
@@ -707,9 +707,9 @@ export const projects: Project[] = [
           lead:
             'SM-LIIGA-GURU on dataan perustuva Liiga-otteluiden ennuste- ja analyysijärjestelmä, jonka tavoitteena on rakentaa otteluennusteet oman historiallisen ja ajantasaisen datakerroksen päälle.',
           whatItIs:
-            'Projektin perusajatus on yksinkertainen: ottelun lopputulasta ei kysytä yleiskäyttöiseltä kielimallilta, vaan ennuste rakennetaan järjestelmällisesti kerätystä Liiga-datasta ja mitattavista muuttujista.\n\nTavoitteena on muodostaa oma tietokanta, feature-engineering-kerros, ennustemallit ja järjestelmä, jolla ennusteita voidaan myös arvioida jälkikäteen.',
+            'Projektin perusajatus on yksinkertainen: ottelun lopputulosta ei kysytä yleiskäyttöiseltä kielimallilta, vaan ennuste rakennetaan järjestelmällisesti kerätystä Liiga-datasta ja mitattavista muuttujista.\n\nTavoitteena on muodostaa oma tietokanta, feature-engineering-kerros, ennustemallit ja järjestelmä, jolla ennusteita voidaan myös arvioida jälkikäteen.',
           problem:
-            'Yleiskäyttöinen AI voi kirjoittaa vakuuttavan analyysin ottelusta, mutta se ei itsessään takaa, että ennuste perustuu oikeaan, ajankohtaan mukaan saatavilla olleeseen dataan tai että ennusteen laatua voidaan mitata objektiivisesti.\n\nSM-LIIGA-GURUn tavoitteena on rakentaa ennusteprosessi, jossa käytetty data, mallin käyttämät muuttujat ja ennusteen syntyhetki voidaan jäljittää.',
+            'Yleiskäyttöinen AI voi kirjoittaa vakuuttavan analyysin ottelusta, mutta se ei itsessään takaa, että ennuste perustuu oikeaan, ajankohdan mukaan saatavilla olleeseen dataan tai että ennusteen laatua voidaan mitata objektiivisesti.\n\nSM-LIIGA-GURUn tavoitteena on rakentaa ennusteprosessi, jossa käytetty data, mallin käyttämät muuttujat ja ennusteen syntyhetki voidaan jäljittää.',
           solution:
             'Raakadata → normalisointi → PostgreSQL → feature-engineering → ennustemallit → ennusteen tallennus → ottelun tulos → jälkiarviointi\n\nJärjestelmässä pyritään yhdistämään historiallista ja mahdollisimman ajantasaista Liiga-dataa yhteen relaatiotietokantaan. Ennusteissa käytetään vain tietoa, joka oli oikeasti saatavilla ennen ennustettavan ottelun alkua.',
           audience: [
