@@ -2,7 +2,7 @@
 title: "Avoimen lähdekoodin mallit — luonnos uutisesta"
 description: "Paikkamerkki-uutinen avoimen lähdekoodin LLM-mallien kehityksestä. Status: luonnos."
 date: 2026-05-10
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Uutiset"
 tags:
   - avoin lähdekoodi

@@ -7,7 +7,7 @@ interface EmailPayload {
 
 export async function sendEmail(env: Env, payload: EmailPayload): Promise<boolean> {
   const apiKey = env.EMAIL_API_KEY;
-  const from = env.EMAIL_FROM ?? 'Faktum AI Briefing <briefing@faktum-ai.com>';
+  const from = env.EMAIL_FROM ?? 'FaktumAI Briefing <briefing@faktum-ai.com>';
 
   if (!apiKey) {
     console.error('email_send_skipped: EMAIL_API_KEY missing');

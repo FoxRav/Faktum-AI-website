@@ -37,13 +37,13 @@ export function organizationJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SI
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Faktum AI',
+    name: 'FaktumAI',
     url: site,
     logo: `${site}/favicon.svg`,
     description:
       locale === 'en'
-        ? 'Finnish AI news and analysis for IT professionals and builders.'
-        : 'Suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille ja AI-rakentajille.',
+        ? 'FaktumAI is a software house building its own products with AI agents and defined processes.'
+        : 'FaktumAI on ohjelmistotalo, joka rakentaa omia ohjelmistotuotteitaan AI-agenttien ja määriteltyjen prosessien avulla.',
     email: 'marko@faktum-ai.com',
   };
 }
@@ -52,14 +52,14 @@ export function websiteJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SITE) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Faktum AI',
+    name: 'FaktumAI',
     url: site,
     description:
       locale === 'en'
-        ? 'AI news, analysis, interview summaries and tool reviews.'
-        : 'Suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita.',
+        ? 'Software products, AI-assisted development, and technical project expertise.'
+        : 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
     inLanguage: locale === 'en' ? 'en' : 'fi-FI',
-    publisher: { '@type': 'Organization', name: 'Faktum AI', url: site },
+    publisher: { '@type': 'Organization', name: 'FaktumAI', url: site },
   };
 }
 
@@ -82,7 +82,7 @@ export function articleJsonLd(article: ArticleEntry, site = DEFAULT_SITE) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Faktum AI',
+      name: 'FaktumAI',
       url: site,
       logo: {
         '@type': 'ImageObject',
@@ -154,14 +154,14 @@ export function tagPageJsonLd(
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${tagLabel} · Faktum AI`,
+    name: `${tagLabel} · FaktumAI`,
     description:
       locale === 'en'
-        ? `Articles about ${tagLabel} — Faktum AI.`
-        : `Artikkelit aiheesta ${tagLabel} — Faktum AI.`,
+        ? `Articles about ${tagLabel} — FaktumAI.`
+        : `Artikkelit aiheesta ${tagLabel} — FaktumAI.`,
     url,
     inLanguage: schemaLanguage(locale),
-    isPartOf: { '@type': 'WebSite', name: 'Faktum AI', url: site },
+    isPartOf: { '@type': 'WebSite', name: 'FaktumAI', url: site },
   };
 }
 

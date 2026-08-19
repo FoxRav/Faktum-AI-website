@@ -27,7 +27,7 @@ const { tagLabel, tagSlug } = Astro.props;
 const articles = await getAllArticles();
 const tagged = getArticlesByTagSlug(articles, tagSlug);
 const label = findTagLabelBySlug(articles, tagSlug) ?? tagLabel;
-const description = `Faktum AI -artikkelit aiheesta ${label}: analyysit, uutiset ja työkaluarviot suomeksi.`;
+const description = `FaktumAI -artikkelit aiheesta ${label}: analyysit, uutiset ja työkaluarviot suomeksi.`;
 ---
 
 <BaseLayout

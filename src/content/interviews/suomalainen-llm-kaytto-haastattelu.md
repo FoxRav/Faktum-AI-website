@@ -2,7 +2,7 @@
 title: "Haastattelutiivistelmä: LLM-käyttö suomalaisessa ohjelmistotiimissä"
 description: "Anonymisoitu haastattelutiivistelmä suomalaisen ohjelmistoyrityksen AI-käytöstä. Esimerkkisisältö — ei oikeaa haastateltavaa."
 date: 2026-05-15
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Haastattelut"
 tags:
   - LLM

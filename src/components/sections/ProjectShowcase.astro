@@ -1,0 +1,53 @@
+---
+import type { Locale } from '../../i18n/config';
+import ProjectCard from '../cards/ProjectCard.astro';
+import { getProjects } from '../../data/projects';
+import { categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  limit?: number;
+  showAllLink?: boolean;
+}
+
+const { locale, limit, showAllLink = false } = Astro.props;
+const allProjects = getProjects();
+const projects = typeof limit === 'number' ? allProjects.slice(0, limit) : allProjects;
+const projectsHref = categoryPath(locale, 'projects');
+---
+
+<section class="container-site py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400/80">
+      {t(locale, 'projectsLabel')}
+    </p>
+    <h2 class="mt-3 font-sans text-2xl font-bold tracking-tight text-[var(--color-text)] sm:text-3xl">
+      {t(locale, 'projectsTitle')}
+    </h2>
+    <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">
+      {t(locale, 'projectsLead')}
+    </p>
+
+    {projects.length > 0 ? (
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard project={project} locale={locale} />
+        ))}
+      </div>
+    ) : (
+      <p class="mt-10 text-[var(--color-text-dim)]">{t(locale, 'emptyArticles')}</p>
+    )}
+
+    {showAllLink && (
+      <div class="mt-10">
+        <a
+          href={projectsHref}
+          class="inline-flex items-center gap-1 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
+        >
+          {locale === 'fi' ? 'Kaikki projektit' : 'All projects'} →
+        </a>
+      </div>
+    )}
+  </div>
+</section>

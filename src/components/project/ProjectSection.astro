@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  children?: any;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="mb-12 scroll-mt-20">
+  <h2 class="font-sans text-2xl font-bold tracking-tight text-[var(--color-text)] sm:text-3xl">
+    {title}
+  </h2>
+  <div class="mt-6 text-[var(--color-text-dim)]">
+    <slot />
+  </div>
+</section>

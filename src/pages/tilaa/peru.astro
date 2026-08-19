@@ -1,15 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import UnsubscribeForm from '../../components/forms/UnsubscribeForm.astro';
 import { subscribePath } from '../../i18n/paths';
 
 const locale = 'fi' as const;
 ---
 
 <BaseLayout
-  title="Peru tilaus"
-  description="Peru Faktum AI -uutiskirjeen tilaus."
-  path={subscribePath(locale, 'unsubscribe')}
+  title="Uutiskirje keskeytetty"
+  description="FaktumAI -uutiskirje on tilapäisesti keskeytetty. Ilmoitamme mahdollisesta uudelleen käynninnistä."
+  path={subscribePath(locale)}
+  robots="noindex, follow"
 >
-  <UnsubscribeForm locale={locale} />
+  <section class="container-site py-12 lg:py-16">
+    <div class="mx-auto max-w-2xl">
+      <h1 class="font-sans text-3xl font-bold sm:text-4xl">Uutiskirje keskeytetty</h1>
+      <p class="mt-4 text-[var(--color-text-dim)]">
+        FaktumAI -uutiskirje on tilapäisesti keskeytetty. Ilmoitamme mahdollisesta uudelleen käynninnistä.
+      </p>
+    </div>
+  </section>
 </BaseLayout>

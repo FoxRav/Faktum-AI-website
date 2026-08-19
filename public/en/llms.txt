@@ -1,4 +1,4 @@
-# Faktum AI
+# FaktumAI
 
 > Bilingual AI news and analysis site from Finland. This index describes the English edition. Finnish (default): https://www.faktum-ai.com/llms.txt
 
@@ -19,7 +19,7 @@
 
 ## Editorial line
 
-Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis. Articles share the same slug as the Finnish edition where both exist.
+Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as FaktumAI analysis. Articles share the same slug as the Finnish edition where both exist.
 
 ## Contact
 

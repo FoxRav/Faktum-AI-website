@@ -1,4 +1,4 @@
-# Faktum AI
+# FaktumAI
 
 Bilingual (FI/EN) AI news and analysis site: [www.faktum-ai.com](https://www.faktum-ai.com)
 

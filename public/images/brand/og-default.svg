@@ -6,6 +6,6 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
-  <text x="80" y="320" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="72" font-weight="700">Faktum AI</text>
-  <text x="80" y="400" fill="#aab1c4" font-family="system-ui,sans-serif" font-size="32">Suomenkielist‰ teko‰lyuutisointia</text>
+  <text x="80" y="320" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="72" font-weight="700">FaktumAI</text>
+  <text x="80" y="400" fill="#aab1c4" font-family="system-ui,sans-serif" font-size="32">Ohjelmistotuotteita, AI-avusteista kehityst√§</text>
 </svg>

@@ -1,9 +1,9 @@
 ---
-title: "Cursor and a solo builder: how Faktum AI was built with agents"
+title: "Cursor and a solo builder: how FaktumAI was built with agents"
 description: "Case study: bilingual AI publishing at www.faktum-ai.com — Astro, Cloudflare, and Cursor agents. One person directs; the work moves."
 date: 2026-05-12T16:00:00
 updated: 2026-05-20T22:08:24
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Tools"
 tags:
   - Cursor
@@ -15,7 +15,7 @@ status: published
 readingTime: "9 min"
 heroImage: "/images/articles/2026/05/2026-05-20-220824_cursor-ide-arvio-2026/hero5.webp"
 heroAlt: "Solo developer orchestrating a publishing site with an AI-assisted editor"
-heroCaption: "Illustration · Faktum AI"
+heroCaption: "Illustration · FaktumAI"
 needsFactCheck: false
 imageRequestsCompleted: true
 featured: false
@@ -30,7 +30,7 @@ sources:
     url: "https://developers.cloudflare.com/pages/"
     publisher: "Cloudflare"
 keyClaims:
-  - "Faktum AI is a bilingual publishing site run by one builder steering Cursor agents — no separate backend or editorial engineering team."
+  - "FaktumAI is a bilingual publishing site run by one builder steering Cursor agents — no separate backend or editorial engineering team."
   - "Stack: Astro 6, TypeScript, Tailwind 4, MDX, Cloudflare Pages + KV visit counter, GitHub deploy."
   - "Cursor works best as orchestrator when the repo has a clear handbook, a publishing path from raw material to production, and the same repeatable commands every session."
   - "The tool fits small operators who master basics: repo hygiene, successful builds, and content approval."
@@ -41,11 +41,11 @@ keyClaims:
 
 **Cursor** is an AI-assisted code editor (VS Code–based) where chat, Composer, and agents see full project context. It is not magic — it is an **orchestrator** when a human knows where the project should go.
 
-This is not a generic feature list. It is a **case study** of the project you are reading: **[Faktum AI](https://www.faktum-ai.com)** — a bilingual AI news and analysis site built and maintained by one person with Cursor. The site is small in scale but honest: articles, images, two languages, SEO, RSS, and production deploy. That is enough to show how productive the workflow can be once you internalise the tool’s role.
+This is not a generic feature list. It is a **case study** of the project you are reading: **[FaktumAI](https://www.faktum-ai.com)** — a bilingual AI news and analysis site built and maintained by one person with Cursor. The site is small in scale but honest: articles, images, two languages, SEO, RSS, and production deploy. That is enough to show how productive the workflow can be once you internalise the tool’s role.
 
-> **Faktum AI editorial note:** Based on our own usage. We do not officially represent Cursor — but this project is concrete evidence of why the tool deserves serious attention from small operators too.
+> **FaktumAI editorial note:** Based on our own usage. We do not officially represent Cursor — but this project is concrete evidence of why the tool deserves serious attention from small operators too.
 
-## What is Faktum AI?
+## What is FaktumAI?
 
 In short: a **Finnish-first AI publishing site** with English at `/en/`. Content spans four types:
 
@@ -87,7 +87,7 @@ All of this was built **step by step** with Cursor — not bought as a turnkey t
 
 ## Cursor as orchestrator — how work actually moves
 
-You could build the same project without Cursor — slower and lonelier. Faktum AI’s core value from the tool is not “write a line for me” but **managing whole context**:
+You could build the same project without Cursor — slower and lonelier. FaktumAI’s core value from the tool is not “write a line for me” but **managing whole context**:
 
 1. **Agent reads the repo** — `src/`, `content.config.ts`, layouts, i18n paths.
 2. **Agent reads the handbook** — publishing rules, frontmatter, bilingual workflow, commit discipline.
@@ -113,7 +113,7 @@ This split matters: **Cursor does not replace editorial judgment**. It replaces 
 
 ## Why this works for a small operator
 
-Three reasons Faktum AI is a good example — and why Cursor earns praise:
+Three reasons FaktumAI is a good example — and why Cursor earns praise:
 
 ### 1. The bar is low if you know the basics
 
@@ -128,7 +128,7 @@ With that in place, **almost any motivated builder** can orchestrate a similar p
 
 ### 2. The scale is right for learning
 
-Faktum AI is not a giant platform. It is a **small publishing site** that still runs for real on the web — its own address, two languages, and real articles. You learn:
+FaktumAI is not a giant platform. It is a **small publishing site** that still runs for real on the web — its own address, two languages, and real articles. You learn:
 
 - content modelling (collections)
 - i18n routing
@@ -139,7 +139,7 @@ Small project, **real production requirements** — exactly where Cursor fits be
 
 ### 3. Speed becomes motivation
 
-Before agent tools, building a comparable publishing service from an empty desk — own domain, two languages, production deploy — would be a **weeks-long project**. **The Faktum AI skeleton was built in a day.** A single article with the agent takes **about an hour**; most time is still text review. Once the foundation exists, publishing cadence is competitive advantage for small media.
+Before agent tools, building a comparable publishing service from an empty desk — own domain, two languages, production deploy — would be a **weeks-long project**. **The FaktumAI skeleton was built in a day.** A single article with the agent takes **about an hour**; most time is still text review. Once the foundation exists, publishing cadence is competitive advantage for small media.
 
 ## Limitations — honestly
 
@@ -154,10 +154,10 @@ A good tool surfaces limits faster — and leaves time to fix them.
 
 ## Conclusion: why Cursor deserves a seat at the table
 
-Faktum AI is evidence, not a promise: **one person can run bilingual AI publishing** on a modern stack when Cursor handles context, repetition, and the build path.
+FaktumAI is evidence, not a promise: **one person can run bilingual AI publishing** on a modern stack when Cursor handles context, repetition, and the build path.
 
 We are not claiming every project is this straightforward. We are claiming **the bar drops for small operators** — and the tool is mature enough for production when you steer it yourself, not when you expect it to know everything for you.
 
-If you build content, tools, or niche media alone or in a tiny team, Cursor is currently an **underrated edge**. Faktum AI is built on it — and you can see the result at the URL you are on.
+If you build content, tools, or niche media alone or in a tiny team, Cursor is currently an **underrated edge**. FaktumAI is built on it — and you can see the result at the URL you are on.
 
 *We hope to explore a more formal Cursor partnership in the future. This article explains why that would be a natural next step — not an ad, but documented experience.*

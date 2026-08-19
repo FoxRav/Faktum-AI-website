@@ -6,7 +6,6 @@ import KeyTakeaways from '../components/article/KeyTakeaways.astro';
 import SourceList from '../components/article/SourceList.astro';
 import RelatedArticles from '../components/article/RelatedArticles.astro';
 import ArticleAiBadge from '../components/article/ArticleAiBadge.astro';
-import NewsletterSignup from '../components/forms/NewsletterSignup.astro';
 import { formatDateTime } from '../utils/formatDate';
 import type { ArticleEntry } from '../utils/content';
 import { getCategoryHref, getCategoryLabel } from '../utils/content';
@@ -98,8 +97,6 @@ const categoryHref = getCategoryHref(article);
         {t(locale, 'factCheckNote')}
       </p>
     )}
-
-    <NewsletterSignup locale={locale} variant="articleEnd" sourceUrl={Astro.url.pathname} />
   </article>
 
   <div class="container-site pb-16">

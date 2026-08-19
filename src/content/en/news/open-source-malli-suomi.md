@@ -2,7 +2,7 @@
 title: "Open-source models — draft news item"
 description: "Placeholder news article on open-source LLM development. Status: draft."
 date: 2026-05-10
-author: "Faktum AI"
+author: "FaktumAI"
 category: "News"
 tags:
   - open source

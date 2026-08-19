@@ -6,7 +6,7 @@ const articleSchema = z.object({
   description: z.string(),
   date: z.coerce.date(),
   updated: z.coerce.date().optional(),
-  author: z.string().default('Faktum AI'),
+  author: z.string().default('FaktumAI'),
   category: z.string(),
   tags: z.array(z.string()).default([]),
   status: z.enum(['draft', 'published']).default('draft'),

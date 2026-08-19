@@ -1,0 +1,14 @@
+---
+interface Props {
+  text: string;
+  locale: 'fi' | 'en';
+}
+
+const { text } = Astro.props;
+---
+
+<section class="mb-12">
+  <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6 text-sm italic text-[var(--color-text-dim)]">
+    {text}
+  </div>
+</section>

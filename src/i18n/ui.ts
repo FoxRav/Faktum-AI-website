@@ -1,15 +1,13 @@
 import type { Locale } from './config';
-import { categoryPath, homePath, subscribePath } from './paths';
+import { categoryPath } from './paths';
 
 export const ui = {
   fi: {
-    siteTagline: 'Suomenkielinen AI-media',
-    heroTitle: 'Tekoälyuutisointia, analyysia ja käytännön rakentamista',
-    heroTitleAccent: 'analyysia',
+    siteTagline: 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
+    heroTitle: 'Ohjelmistotuotteita ja AI-avusteista kehitystä',
+    heroTitleAccent: 'kehitystä',
     heroLead:
-      'Faktum AI purkaa kansainväliset AI-kehitykset, raportit ja haastattelut suomalaiselle lukijalle — lähteitä kunnioittaen, hypeä välttäen.',
-    heroCtaNews: 'Uusimmat uutiset',
-    heroCtaAnalysis: 'Analyysit',
+      'FaktumAI on ohjelmistotalo, joka rakentaa omia ohjelmistotuotteitaan ja kaupallistettuja ratkaisujaan erittäin kevyen, AI-avusteisen tuotantomallin avulla. Taustamme ulottuu kone- ja tuotantotekniikkaan, teolliseen suunnitteluun sekä rakennus- ja saneeraushankkeiden projektinhallintaan.',
     navHome: 'Etusivu',
     navNews: 'Uutiset',
     navAnalysis: 'Analyysit',
@@ -23,10 +21,10 @@ export const ui = {
     latestFeed: 'Uusimmat julkaisut',
     featuredBadge: 'Päänosto',
     readArticle: 'Lue artikkeli',
-    whyTitle: 'Miksi Faktum AI?',
+    whyTitle: 'Miksi FaktumAI?',
     whyBody:
-      'Jokainen artikkeli lähtee lähteestä — raportista, haastattelusta tai uutisesta. Puramme siitä väitteet ja numerot, visualisoimme olennaisen ja kirjoitamme, mitä kehitys merkitsee suomalaiselle IT- ja AI-ammattilaiselle. Lähteet aina näkyvillä, ilman hypea.',
-    footerTagline: 'Suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamista.',
+      'FaktumAI on uuden ajan ohjelmistotalo, joka rakentaa omia ohjelmistotuotteitaan erittäin kevyellä kustannusrakenteella. AI-agentit tekevät suuren osan toteutus- ja analyysityöstä. Kehitystä ohjataan määritellyillä arkkitehtuuri-, testaus-, katselmointi-, dokumentoin- ja versionhallintaprosesseilla. Ihminen vastaa suunnasta, päätöksistä ja hyväksynnästä.',
+    footerTagline: 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
     footerContent: 'Sisältö',
     footerServices: 'Palvelut',
     footerRss: 'RSS-syöte',
@@ -47,14 +45,38 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'Faktum AI — Suomenkielistä tekoälyuutisointia ja analyysia',
+    homeMetaTitle: 'FaktumAI — ohjelmistotalo ja tekninen projektiosaaminen',
     homeMetaDescription:
-      'Faktum AI tuottaa suomenkielisiä AI-uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita IT-ammattilaisille ja AI-rakentajille.',
-    aboutTitle: 'Tietoa Faktum AI:sta',
+      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Rakennamme AI-avusteisia ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja.',
+    aboutTitle: 'Mikä FaktumAI on?',
     aboutMetaDescription:
-      'Faktum AI on suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille ja AI-rakentajille.',
+      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja.',
     listingAnalysis: 'Syvällisiä analyyseja AI-markkinoista, infrastruktuurista ja liiketoimintamalleista.',
-    listingNews: 'Suomenkieliset AI-uutiset ja tulkinnat kansainvälisistä kehityksistä.',
+    listingNews: 'FaktumAI:n uutiset, analyysit, haastattelut ja työkaluarviot uusimmissa ensin.',
+    landingEyebrow: 'FAKTUMAI',
+    landingHeading: 'Ohjelmistoja, teknologiaa ja projektiosaamista',
+    landingLead:
+      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Rakennamme AI-avusteisesti ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja kevyellä, prosessiohjatulla toimintamallilla.',
+    landingSupporting:
+      'Osaamisemme yhdistää ohjelmistokehityksen, kone- ja tuotantotekniikan sekä rakennus- ja saneeraushankkeiden projektinhallinnan.',
+    ctaProjects: 'Tutustu projekteihin',
+    ctaAbout: 'Tietoa FaktumAI:sta',
+    operatingTitle: 'Miten rakennamme',
+    operatingIntro:
+      'FaktumAI kehittää ohjelmistoja tietyillä prosesseilla. Arkkitehtuuri, testaus ja dokumentointi eivät ole muodollisuudet — ne ohjaavat agenttien työn ja pitävät kustannukset alhaisina.',
+    operatingAgents: 'Agentit tekevät suuren osan tutkimus-, analyysi- ja ohjelmistokehitystyöstä.',
+    operatingProcesses:
+      'Arkkitehtuuri, testaus, katselmointi, dokumentointi ja versionhallinta ohjaavat agenttien työtä.',
+    operatingLean:
+      'Pieni ihmistiimi ja AI-avusteinen tuotanto mahdollistavat erittäin kevyen kustannusrakenteen.',
+    projectsLabel: 'PROJEKTIT',
+    projectsTitle: 'Tuotteet ja tuotekehitys',
+    projectsLead:
+      'FaktumAI kehittää omia ohjelmistotuotteita ja kaupallistamiseen tähtääviä ratkaisuja kevyellä, AI-avusteisella tuotantomallilla. Projektit etenevät tutkimuksesta ja prototyypeistä pilotointiin ja tuotteistukseen.',
+    latestNewsTitle: 'Uusimmat uutiset',
+    allNews: 'Kaikki uutiset →',
+    aboutLead:
+      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja AI-avusteisella, kevyellä tuotantomallilla.',
     listingInterviews: 'Haastattelutiivistelmiä suomalaisesta ja kansainvälisestä AI-kentästä.',
     listingTools: 'AI-työkalujen arvioita ja käytännön näkökulmia rakentajille.',
     footerLegal: 'Lakiasiat',
@@ -63,22 +85,22 @@ export const ui = {
     footerEditorial: 'Toimitus & AI',
     footerSubscribe: 'Tilaa uutiskirje',
     footerContact: 'Yhteystiedot',
-    subscribeTitle: 'Faktum AI -uutiskirje',
+    subscribeTitle: 'FaktumAI -uutiskirje',
     subscribeLead:
-      'Tilaa Faktum AI -uutiskirje — lähetetään kerran viikossa. Viikon tärkeimmät AI-uutiset, työkalut ja analyysit ilman hypeä.',
+      'Tilaa FaktumAI -uutiskirje — lähetetään kerran viikossa. Viikon tärkeimmät AI-uutiset, työkalut ja analyysit ilman hypeä.',
     subscribeLeadProfessional:
       'Seuraa AI-markkinaa, työkaluja, regulaatiota ja avoimia malleja yhdestä paikasta — yhteenveto kerran viikossa.',
     subscribeLeadCitizen:
-      'Tekoäly muuttuu nopeasti. Faktum AI kokoaa tärkeimmät asiat ymmärrettävästi yhteen viikkouutiskirjeeseen.',
+      'Tekoäly muuttuu nopeasti. FaktumAI kokoaa tärkeimmät asiat ymmärrettävästi yhteen viikkouutiskirjeeseen.',
     subscribeArticleCta:
-      'Seuraa AI-markkinaa selkokielisesti ja lähteisiin perustuen. Tilaa viikoittainen Faktum AI -uutiskirje.',
+      'Seuraa AI-markkinaa selkokielisesti ja lähteisiin perustuen. Tilaa viikoittainen FaktumAI -uutiskirje.',
     subscribeEmailLabel: 'Sähköposti',
     subscribeLanguageLabel: 'Toivottu kieli',
     subscribeLanguageFi: 'Suomi',
     subscribeLanguageEn: 'English',
     subscribeLanguageBoth: 'Molemmat',
     subscribeConsentLabel:
-      'Haluan vastaanottaa Faktum AI -uutiskirjeen (kerran viikossa) ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.',
+      'Haluan vastaanottaa FaktumAI -uutiskirjeen (kerran viikossa) ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.',
     subscribeSubmit: 'Tilaa',
     subscribeSuccess:
       'Tarkista sähköpostisi ja vahvista tilaus. Jos viestiä ei näy muutaman minuutin kuluessa, katso myös roskapostikansio.',
@@ -90,7 +112,7 @@ export const ui = {
       'Tämä sähköpostiosoite on jo uutiskirjeen tilaajana. Peruutus: avaa viestin linkki tai pyydä uusi linkki peruutussivulta.',
     footerUnsubscribe: 'Peru tilaus',
     subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
-    subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa Faktum AI -uutiskirjeen tilaajaksi!',
+    subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa FaktumAI -uutiskirjeen tilaajaksi!',
     subscribeConfirmedManage: 'Täydennä profiilisi',
     subscribeInvalidToken: 'Linkki on vanhentunut tai virheellinen.',
     subscribeUnsubscribed: 'Tilaus on peruutettu. Tietosi on poistettu rekisteristä.',
@@ -131,20 +153,18 @@ export const ui = {
     keyTakeawaysDefault: 'Tärkeimmät nostot',
     draftBadge: 'Luonnos',
     factCheckNote:
-      'Faktum AI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.',
+      'FaktumAI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.',
     dataRequestTitle: 'Omat tiedot',
     dataRequestExport: 'Pyydä tietojen kopio',
     dataRequestDelete: 'Pyydä tietojen poisto',
     dataRequestSent: 'Tarkista sähköpostisi ja vahvista pyyntö.',
   },
   en: {
-    siteTagline: 'Finnish AI media — in English',
-    heroTitle: 'AI news, analysis, and builder-focused insight',
-    heroTitleAccent: 'analysis',
+    siteTagline: 'Software products, AI-assisted development, and technical project expertise.',
+    heroTitle: 'Software products and AI-assisted development',
+    heroTitleAccent: 'development',
     heroLead:
-      'Faktum AI breaks down international AI developments, reports, and interviews for a professional audience — source-backed, hype-free.',
-    heroCtaNews: 'Latest news',
-    heroCtaAnalysis: 'Analysis',
+      'FaktumAI is a software house that builds its own software products and commercially oriented solutions with a very lean, AI-assisted operating model. Our background spans mechanical and production engineering, industrial design, and construction and renovation project management.',
     navHome: 'Home',
     navNews: 'News',
     navAnalysis: 'Analysis',
@@ -158,10 +178,10 @@ export const ui = {
     latestFeed: 'Latest publications',
     featuredBadge: 'Featured',
     readArticle: 'Read article',
-    whyTitle: 'Why Faktum AI?',
+    whyTitle: 'Why FaktumAI?',
     whyBody:
-      'Every article starts from a source — a report, interview, or news story. We extract claims and numbers, visualize what matters, and explain what it means for IT and AI professionals. Sources always visible; no hype.',
-    footerTagline: 'AI news, analysis, and practical builder insight from Finland.',
+      'FaktumAI is a modern software house that builds its own software products with a very lean cost structure. AI agents carry out most of the implementation and analysis work. Development is guided by defined architecture, testing, review, documentation, and version-control processes. The human is responsible for direction, decisions, and approval.',
+    footerTagline: 'Software products, AI-assisted development, and technical project expertise.',
     footerContent: 'Content',
     footerServices: 'Services',
     footerRss: 'RSS feed',
@@ -181,38 +201,62 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'Faktum AI — AI news and analysis',
+    homeMetaTitle: 'FaktumAI — software house and technical project expertise',
     homeMetaDescription:
-      'Faktum AI publishes AI news, in-depth analysis, interview summaries, and tool reviews for IT professionals and builders.',
-    aboutTitle: 'About Faktum AI',
+      'FaktumAI is a modern software house and project management expert. We build AI-assisted software products, automation solutions, and technical projects.',
+    aboutTitle: 'What is FaktumAI?',
     aboutMetaDescription:
-      'Faktum AI is a Finnish AI news and analysis site for IT professionals, builders, and decision-makers.',
-    listingAnalysis: 'In-depth analysis of AI markets, infrastructure, and business models.',
-    listingNews: 'AI news and interpretation of international developments.',
+      'FaktumAI is a software house that builds its own software products and commercially oriented solutions with a very lean, AI-assisted operating model.',
+     listingAnalysis: 'In-depth analysis of AI markets, infrastructure, and business models.',
+    listingNews: 'FaktumAI news, analysis, interviews, and tool reviews — newest first.',
     listingInterviews: 'Interview summaries from the Finnish and global AI field.',
     listingTools: 'AI tool reviews and practical perspectives for builders.',
+    landingEyebrow: 'FAKTUMAI',
+    landingHeading: 'Software, technology, and project expertise',
+    landingLead:
+      'FaktumAI is a modern software house and project management expert. We build AI-assisted software products, automation solutions, and technical projects using a lean, process-driven operating model.',
+    landingSupporting:
+      'Our expertise spans software development, mechanical and production engineering, and construction and renovation project management.',
+    ctaProjects: 'View projects',
+    ctaAbout: 'About FaktumAI',
+    operatingTitle: 'How we build',
+    operatingIntro:
+      'At FaktumAI we develop software within defined processes. Architecture, testing, and documentation are not formalities — they steer what agents do and keep costs low.',
+    operatingAgents: 'Agents carry out most of the research, analysis, and software development work.',
+    operatingProcesses:
+      'Architecture, testing, review, documentation, and version control guide the work of the agents.',
+    operatingLean:
+      'A small human team with AI-assisted production enables a very lean cost structure.',
+    projectsLabel: 'PROJECTS',
+    projectsTitle: 'Products & product development',
+    projectsLead:
+      'FaktumAI develops its own software products and commercially oriented solutions using a lean, AI-assisted production model. Projects progress from research and prototyping through piloting and productization.',
+    latestNewsTitle: 'Latest news',
+    allNews: 'All news →',
+    aboutLead:
+      'FaktumAI is a modern software house that builds its own software products and commercially oriented solutions with a very lean, AI-assisted operating model. The site serves both as the home of FaktumAI products and as a publisher of AI news, analysis, and tool reviews.',
     footerLegal: 'Legal',
     footerPrivacy: 'Privacy',
     footerCookies: 'Cookies',
     footerEditorial: 'Editorial & AI',
     footerSubscribe: 'Newsletter',
     footerContact: 'Contact',
-    subscribeTitle: 'Faktum AI newsletter',
+    subscribeTitle: 'FaktumAI newsletter',
     subscribeLead:
-      'Subscribe to the Faktum AI newsletter — sent once a week. Key AI news, tools and analysis without hype.',
+      'Subscribe to the FaktumAI newsletter — sent once a week. Key AI news, tools and analysis without hype.',
     subscribeLeadProfessional:
       'Follow AI markets, tools, regulation and open models in one place.',
     subscribeLeadCitizen:
-      'AI moves fast. Faktum AI brings the essentials in plain language.',
+      'AI moves fast. FaktumAI brings the essentials in plain language.',
     subscribeArticleCta:
-      'Follow the AI market with source-backed clarity. Subscribe to the weekly Faktum AI newsletter.',
+      'Follow the AI market with source-backed clarity. Subscribe to the weekly FaktumAI newsletter.',
     subscribeEmailLabel: 'Email',
     subscribeLanguageLabel: 'Preferred language',
     subscribeLanguageFi: 'Finnish',
     subscribeLanguageEn: 'English',
     subscribeLanguageBoth: 'Both',
     subscribeConsentLabel:
-      'I want to receive the Faktum AI newsletter (once a week) and accept processing of my data as described in the privacy policy.',
+      'I want to receive the FaktumAI newsletter (once a week) and accept processing of my data as described in the privacy policy.',
     subscribeSubmit: 'Subscribe',
     subscribeSuccess:
       'Check your email and confirm your subscription. If it does not arrive within a few minutes, check your spam or junk folder.',
@@ -224,7 +268,7 @@ export const ui = {
       'This email address is already subscribed. To unsubscribe, use the link in your email or request a new one on the unsubscribe page.',
     footerUnsubscribe: 'Unsubscribe',
     subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
-    subscribeConfirmed: 'Subscription confirmed. Welcome to the Faktum AI newsletter!',
+    subscribeConfirmed: 'Subscription confirmed. Welcome to the FaktumAI newsletter!',
     subscribeConfirmedManage: 'Complete your profile',
     subscribeInvalidToken: 'This link has expired or is invalid.',
     subscribeUnsubscribed: 'You have been unsubscribed. Your data has been removed from our registry.',
@@ -265,7 +309,7 @@ export const ui = {
     keyTakeawaysDefault: 'Key takeaways',
     draftBadge: 'Draft',
     factCheckNote:
-      'Faktum AI note: This article is based on the listed sources. Points that could not be verified from an independent source are marked as uncertain.',
+      'FaktumAI note: This article is based on the listed sources. Points that could not be verified from an independent source are marked as uncertain.',
     dataRequestTitle: 'Your data',
     dataRequestExport: 'Request a copy of my data',
     dataRequestDelete: 'Request deletion of my data',
@@ -288,26 +332,16 @@ export interface NavItem {
 export function getNavItems(locale: Locale): NavItem[] {
   return [
     { href: categoryPath(locale, 'news'), label: t(locale, 'navNews') },
-    { href: categoryPath(locale, 'analysis'), label: t(locale, 'navAnalysis') },
-    { href: categoryPath(locale, 'tools'), label: t(locale, 'navTools') },
-    { href: categoryPath(locale, 'interviews'), label: t(locale, 'navInterviews') },
-    ...(locale === 'fi'
-      ? [{ href: categoryPath(locale, 'projects'), label: t(locale, 'navProjects') }]
-      : []),
+    { href: categoryPath(locale, 'projects'), label: t(locale, 'navProjects') },
     { href: categoryPath(locale, 'about'), label: t(locale, 'navAbout') },
-    {
-      href: subscribePath(locale),
-      label: t(locale, 'navSubscribe'),
-      highlight: true,
-    },
   ];
 }
 
 export function getFeedTabs(locale: Locale) {
+  const isFi = locale === 'fi';
   return [
-    { href: homePath(locale), label: t(locale, 'tabAll') },
-    { href: categoryPath(locale, 'news'), label: t(locale, 'navNews') },
-    { href: categoryPath(locale, 'analysis'), label: t(locale, 'navAnalysis') },
+    { href: categoryPath(locale, 'news'), label: t(locale, 'tabAll') },
+    { href: `${categoryPath(locale, 'news')}?filter=${isFi ? 'uutiset' : 'news'}`, label: t(locale, 'navNews') },
     { href: categoryPath(locale, 'interviews'), label: t(locale, 'navInterviews') },
     { href: categoryPath(locale, 'tools'), label: t(locale, 'navTools') },
   ];

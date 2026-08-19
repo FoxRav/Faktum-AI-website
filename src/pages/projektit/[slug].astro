@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectDetail from '../../components/project/ProjectDetail.astro';
+import { getProjects, getProjectBySlug, projectLocale, projectPath } from '../../data/projects';
+import { categoryPath } from '../../i18n/paths';
+import { organizationJsonLd, websiteJsonLd, breadcrumbJsonLd } from '../../utils/seo';
+
+const locale = 'fi' as const;
+
+export async function getStaticPaths() {
+  return getProjects().map((p) => ({ params: { slug: p.slug } }));
+}
+
+const slug = Astro.params.slug;
+const project = slug ? getProjectBySlug(slug) : undefined;
+
+if (!project) {
+  throw new Response('Project not found', { status: 404 });
+}
+
+const p = projectLocale(project, locale);
+const projectsHref = categoryPath(locale, 'projects');
+const canonical = projectPath(locale, project.slug);
+
+const seoTitle = `${p.title} · FaktumAI`;
+const seoDescription = p.detail.lead;
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  path={canonical}
+  ogImage={project.image?.src ?? '/images/brand/landing-hero.webp'}
+  jsonLd={[
+    organizationJsonLd('fi'),
+    websiteJsonLd('fi'),
+    breadcrumbJsonLd(
+      [
+        { name: 'Etusivu', path: '/' },
+        { name: 'Projektit', path: '/projektit/' },
+        { name: p.title, path: canonical },
+      ],
+    ),
+  ]}
+>
+  <div class="container-site py-16 sm:py-20 lg:py-24">
+    <ProjectDetail project={project} locale={locale} />
+  </div>
+</BaseLayout>

@@ -9,8 +9,9 @@ const error = Astro.url.searchParams.get('error');
 
 <BaseLayout
   title="Vahvista tilaus"
-  description="Vahvista Faktum AI -uutiskirjeen tilaus sähköpostilinkistä."
+  description="Vahvista FaktumAI -uutiskirjeen tilaus sähköpostilinkistä."
   path={subscribePath(locale, 'confirm')}
+  robots="noindex, follow"
 >
   <section class="container-site py-16 text-center">
     <h1 class="font-sans text-3xl font-bold">Vahvista tilaus</h1>

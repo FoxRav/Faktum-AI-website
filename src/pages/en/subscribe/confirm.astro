@@ -9,8 +9,9 @@ const error = Astro.url.searchParams.get('error');
 
 <BaseLayout
   title="Confirm subscription"
-  description="Confirm your Faktum AI newsletter subscription from your email link."
+  description="Confirm your FaktumAI newsletter subscription from your email link."
   path={subscribePath(locale, 'confirm')}
+  robots="noindex, follow"
 >
   <section class="container-site py-16 text-center">
     <h1 class="font-sans text-3xl font-bold">Confirm subscription</h1>

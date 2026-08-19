@@ -1,0 +1,34 @@
+---
+import type { Locale } from '../../i18n/config';
+import { categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const projectsHref = categoryPath(locale, 'projects');
+const aboutHref = categoryPath(locale, 'about');
+---
+
+<section class="container-site py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-3xl">
+    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400/80">
+      {t(locale, 'landingEyebrow')}
+    </p>
+    <h1 class="mt-6 font-sans text-4xl font-extrabold leading-[1.05] tracking-tight text-[var(--color-text)] sm:text-5xl lg:text-[3.5rem]">
+      {t(locale, 'landingHeading')}
+    </h1>
+    <p class="mt-6 max-w-2xl text-xl text-[var(--color-text-dim)]">
+      {t(locale, 'landingLead')}
+    </p>
+    <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">
+      {t(locale, 'landingSupporting')}
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href={projectsHref} class="btn-primary">{t(locale, 'ctaProjects')}</a>
+      <a href={aboutHref} class="btn-ghost">{t(locale, 'ctaAbout')}</a>
+    </div>
+  </div>
+</section>

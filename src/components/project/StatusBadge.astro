@@ -1,0 +1,11 @@
+---
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props;
+---
+
+<span class="inline-block text-xs font-semibold uppercase tracking-wider text-cyan-400">
+  {status}
+</span>

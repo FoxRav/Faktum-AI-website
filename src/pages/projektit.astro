@@ -1,18 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectShowcase from '../components/sections/ProjectShowcase.astro';
+import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
+
+const locale = 'fi' as const;
 ---
 
 <BaseLayout
-  title="Projektit"
-  description="Faktum AI -projektit ja Cursor-first-kehitys."
+  title="Projektit · FaktumAI"
+  description="FaktumAI:n ohjelmistotuotteet ja kehitysprojektit – prototyypit, pilotit ja tuotteistus."
   path="/projektit/"
-  robots="noindex, follow"
+  ogImage="/images/brand/landing-hero.webp"
+  jsonLd={[organizationJsonLd('fi'), websiteJsonLd('fi')]}
 >
-  <section class="container-site py-12 lg:py-16">
-    <h1 class="font-sans text-3xl font-bold sm:text-4xl">Projektit</h1>
-    <p class="mt-4 max-w-2xl text-[var(--color-text-dim)]">
-      Tähän osioon kootaan myöhemmin Faktum AI:n käytännön projektit, Cursor-first-kehitysesimerkit
-      ja avoimen lähdekoodin työt. Osio on valmistelussa.
-    </p>
-  </section>
+  <ProjectShowcase locale={locale} showAllLink={false} />
 </BaseLayout>

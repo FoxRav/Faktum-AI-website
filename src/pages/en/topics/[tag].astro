@@ -30,7 +30,7 @@ const { tagLabel, tagSlug } = Astro.props;
 const articles = await getAllArticles(locale);
 const tagged = getArticlesByTagSlug(articles, tagSlug);
 const label = findTagLabelBySlug(articles, tagSlug) ?? tagLabel;
-const description = `Faktum AI articles about ${label}.`;
+const description = `FaktumAI articles about ${label}.`;
 ---
 
 <BaseLayout

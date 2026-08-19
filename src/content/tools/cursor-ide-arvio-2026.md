@@ -1,9 +1,9 @@
 ---
-title: "Cursor ja yksi kehittäjä: miten Faktum AI rakennettiin agenttityökalulla"
+title: "Cursor ja yksi kehittäjä: miten FaktumAI rakennettiin agenttityökalulla"
 description: "Case study: kaksikielinen tekoälyjulkaisu www.faktum-ai.com — Astro, Cloudflare ja Cursor-agentit. Yksi ihminen ohjaa, työ etenee."
 date: 2026-05-12T16:00:00
 updated: 2026-05-20T22:08:24
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Työkalut"
 tags:
   - Cursor
@@ -15,7 +15,7 @@ status: published
 readingTime: "9 min"
 heroImage: "/images/articles/2026/05/2026-05-20-220824_cursor-ide-arvio-2026/hero5.webp"
 heroAlt: "Yksi kehittäjä orkestroi julkaisusivuston rakentamista AI-avusteisella editorilla"
-heroCaption: "Kuvitus · Faktum AI"
+heroCaption: "Kuvitus · FaktumAI"
 needsFactCheck: false
 imageRequestsCompleted: true
 featured: false
@@ -30,7 +30,7 @@ sources:
     url: "https://developers.cloudflare.com/pages/"
     publisher: "Cloudflare"
 keyClaims:
-  - "Faktum AI on kaksikielinen julkaisusivusto, jonka yksi kehittäjä ohjaa Cursor-agenttien avulla — ei erillistä backend- tai sisältötiimiä."
+  - "FaktumAI on kaksikielinen julkaisusivusto, jonka yksi kehittäjä ohjaa Cursor-agenttien avulla — ei erillistä backend- tai sisältötiimiä."
   - "Pinot: Astro 6, TypeScript, Tailwind 4, MDX, Cloudflare Pages + KV-kävijälaskuri, GitHub-deploy."
   - "Cursor toimii orkesterinjohtajana, kun repossa on selkeä ohjekirja, julkaisupolku raakamateriaalista tuotantoon ja samat toistettavat komennot joka sessiossa."
   - "Työkalu sopii erityisesti pienelle toimijalle, joka hallitsee perusasiat: repo, branch, buildin onnistuminen ja sisällön hyväksyntä."
@@ -41,11 +41,11 @@ keyClaims:
 
 **Cursor** on AI-avusteinen koodieditori (VS Code -pohjainen), jossa chat, Composer ja agentit näkevät koko projektikontekstin. Se ei ole taikatemppu — se on **orkesterinjohtaja**, kun ihminen tietää mihin suuntaan mennä.
 
-Tämä artikkeli ei ole geneerinen feature-lista. Se on **case study** projektista, jota luet juuri nyt: **[Faktum AI](https://www.faktum-ai.com)** — kaksikielinen tekoälyuutis- ja analyysisivusto, jota yksi ihminen rakentaa ja ylläpitää Cursorin avulla. Sivusto on pieni mittakaavassa, mutta rehellinen: siinä on artikkeleita, kuvia, kaksi kieltä, hakukoneoptimointi, RSS ja tuotantodeploy. Juuri se riittää näyttämään, miten tehokasta työskentely voi olla, kun sisäistää työkalun roolin.
+Tämä artikkeli ei ole geneerinen feature-lista. Se on **case study** projektista, jota luet juuri nyt: **[FaktumAI](https://www.faktum-ai.com)** — kaksikielinen tekoälyuutis- ja analyysisivusto, jota yksi ihminen rakentaa ja ylläpitää Cursorin avulla. Sivusto on pieni mittakaavassa, mutta rehellinen: siinä on artikkeleita, kuvia, kaksi kieltä, hakukoneoptimointi, RSS ja tuotantodeploy. Juuri se riittää näyttämään, miten tehokasta työskentely voi olla, kun sisäistää työkalun roolin.
 
-> **Faktum AI:n näkökulma:** Kirjoitus perustuu omaan käyttökokemukseen. Emme edusta Cursoria virallisesti — mutta projekti on konkreettinen esimerkki siitä, miksi työkalu ansaitsee vakavan huomion myös pieneltä toimijalta.
+> **FaktumAI:n näkökulma:** Kirjoitus perustuu omaan käyttökokemukseen. Emme edusta Cursoria virallisesti — mutta projekti on konkreettinen esimerkki siitä, miksi työkalu ansaitsee vakavan huomion myös pieneltä toimijalta.
 
-## Mitä Faktum AI on?
+## Mitä FaktumAI on?
 
 Lyhyesti: **suomenkielinen tekoälyjulkaisu**, jossa on myös englanninkielinen versio osoitteessa `/en/`. Sisältö jaetaan neljään tyyppiin:
 
@@ -87,7 +87,7 @@ Kaikki tämä on rakennettu **askel askeleelta** Cursorin kanssa — ei valmiina
 
 ## Cursor orkesterinjohtajana — miten työ oikeasti etenee
 
-Ilman Cursoria saman projektin tekeminen onnistuisi silti — mutta hitaammin ja yksinäisemmin. Cursorin ydinarvo Faktum AI:lle ei ole “kirjoita rivi puolestani”, vaan **koko kontekstin hallinta**:
+Ilman Cursoria saman projektin tekeminen onnistuisi silti — mutta hitaammin ja yksinäisemmin. Cursorin ydinarvo FaktumAI:lle ei ole “kirjoita rivi puolestani”, vaan **koko kontekstin hallinta**:
 
 1. **Agentti lukee repoa** — `src/`, `content.config.ts`, layoutit, i18n-polut.
 2. **Agentti lukee handbookin** — julkaisusäännöt, frontmatter, kaksikielisyys, commit-kuri.
@@ -113,7 +113,7 @@ Tämä jako on tärkeä: **Cursor ei korvaa toimitusta**. Se korvaa sen, ettei y
 
 ## Miksi tämä toimii pienelle toimijalle?
 
-Kolme syytä, miksi Faktum AI on hyvä esimerkki — ja miksi Cursor ansaitsee kiitosta:
+Kolme syytä, miksi FaktumAI on hyvä esimerkki — ja miksi Cursor ansaitsee kiitosta:
 
 ### 1. Kynnys on matala, jos perusasiat hallussa
 
@@ -128,7 +128,7 @@ Kun nämä ovat kunnossa, **lähes kuka tahansa motivoitunut tekijä** pystyy or
 
 ### 2. Skaala on oikea harjoitteluun
 
-Faktum AI ei ole jättiprojekti. Se on **pieni julkaisusivusto**, joka silti toimii oikeasti verkossa — omalla osoitteella, kahdella kielellä ja oikeilla artikkeleilla. Opit:
+FaktumAI ei ole jättiprojekti. Se on **pieni julkaisusivusto**, joka silti toimii oikeasti verkossa — omalla osoitteella, kahdella kielellä ja oikeilla artikkeleilla. Opit:
 
 - sisällön mallintamisen (collections)
 - i18n-reitityksen
@@ -139,7 +139,7 @@ Pieni projekti, **oikeat tuotantovaatimukset** — juuri siihen Cursor sopii eri
 
 ### 3. Nopeus muuttuu motivaatioksi
 
-Ennen agenttityökaluja samanlaisen julkaisupalvelun rakentaminen tyhjästä pöydästä — oma osoite, kaksi kieltä, julkaisu tuotantoon — olisi **viikkojen projekti**. **Faktum AI:n runko valmistui päivässä.** Yksittäinen artikkeli agentin avulla **noin tunnissa**; suurin osa ajasta on silti tekstien tarkistusta. Kun perusta on kasassa, julkaisutahti on kilpailuetu pienelle medialle.
+Ennen agenttityökaluja samanlaisen julkaisupalvelun rakentaminen tyhjästä pöydästä — oma osoite, kaksi kieltä, julkaisu tuotantoon — olisi **viikkojen projekti**. **FaktumAI:n runko valmistui päivässä.** Yksittäinen artikkeli agentin avulla **noin tunnissa**; suurin osa ajasta on silti tekstien tarkistusta. Kun perusta on kasassa, julkaisutahti on kilpailuetu pienelle medialle.
 
 ## Rajoitteet — rehellisesti
 
@@ -154,10 +154,10 @@ Hyvä työkalu tekee rajoitteet näkyviksi nopeammin — ja antaa aikaa korjata 
 
 ## Johtopäätös: miksi Cursor ansaitsee paikan pöydässä
 
-Faktum AI on todiste, ei lupaus: **yksi ihminen voi pyörittää kaksikielistä tekoälyjulkaisua** modernilla pinolla, kun Cursor hoitaa kontekstin, toistot ja build-putken.
+FaktumAI on todiste, ei lupaus: **yksi ihminen voi pyörittää kaksikielistä tekoälyjulkaisua** modernilla pinolla, kun Cursor hoitaa kontekstin, toistot ja build-putken.
 
 Emme väitä, että jokainen projekti on yhtä suoraviivainen. Väitämme, että **pienen toimijan kynnys laskee** — ja että työkalu on kypsä tuotantokäyttöön, kun ohjaat sitä itse etkä odota, että se tietää kaiken puolestasi.
 
-Jos rakennat sisältöä, työkaluja tai niche-medioita yksin tai pienellä tiimillä, Cursor on tällä hetkellä **vähän aliarvostettu kilpailuetu**. Faktum AI on rakennettu sen varaan — ja se näkyy osoitteessa, jossa olet nyt.
+Jos rakennat sisältöä, työkaluja tai niche-medioita yksin tai pienellä tiimillä, Cursor on tällä hetkellä **vähän aliarvostettu kilpailuetu**. FaktumAI on rakennettu sen varaan — ja se näkyy osoitteessa, jossa olet nyt.
 
 *Tulevaisuudessa toivomme Cursor-yhteistyötä virallisempaan suuntaan. Tämä artikkeli kertoo miksi se olisi luonteva jatkumo — ei mainos, vaan dokumentoitu kokemus.*

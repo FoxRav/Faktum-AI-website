@@ -115,3 +115,9 @@ export function getEnCollectionName(fiCollection: FiCollection): EnCollection {
 }
 
 export type { FiCollection };
+
+/** Articles that belong to the public "Uutiset" (news) filter: news + analysis. */
+export async function getNewsArticles(locale: Locale = 'fi'): Promise<ArticleEntry[]> {
+  const all = await getAllArticles(locale);
+  return all.filter((a) => a.collection === 'news' || a.collection === 'analysis');
+}

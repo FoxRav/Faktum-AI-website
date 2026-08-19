@@ -17,10 +17,9 @@ function isNavActive(href: string): boolean {
   <div class="container-site flex h-16 items-center gap-2 sm:gap-3">
     <a
       href={locale === 'fi' ? '/' : '/en/'}
-      class="flex shrink-0 items-center gap-2 font-semibold tracking-tight text-[var(--color-text)]"
+      class="flex shrink-0 items-center font-semibold tracking-tight text-[var(--color-text)]"
     >
-      <span class="text-cyan-400">Faktum</span>
-      <span class="text-[var(--color-text-dim)]">AI</span>
+      <span class="flex items-baseline"><span class="text-cyan-400">Faktum</span><span class="text-[var(--color-text-dim)]">AI</span></span>
     </a>
 
     <nav

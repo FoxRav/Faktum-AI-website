@@ -6,7 +6,7 @@ export async function GET(context: APIContext) {
   const articles = await getAllArticles();
 
   return rss({
-    title: 'Faktum AI',
+    title: 'FaktumAI',
     description:
       'Suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamista.',
     site: context.site ?? 'https://www.faktum-ai.com',

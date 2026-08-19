@@ -4,8 +4,6 @@ const EXCLUDED_EXACT_PATHS = [
   '/en/subscribe',
   '/haastattelut',
   '/en/interviews',
-  '/projektit',
-  '/en/projects',
   '/mediakortti',
   '/en/media-kit',
   '/mainosta',
@@ -15,6 +13,7 @@ const EXCLUDED_EXACT_PATHS = [
 /** Prefix paths excluded from @astrojs/sitemap (transactional/non-indexable flows). */
 const EXCLUDED_PREFIXES = [
   '/tilaa/vahvista',
+  '/tilaa/vahvistettu',
   '/tilaa/peruutettu',
   '/tilaa/peru',
   '/tilaa/asetukset',

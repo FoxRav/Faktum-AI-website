@@ -2,7 +2,7 @@
 title: "Interview summary: LLM use in a Finnish software team"
 description: "Anonymised interview summary of AI use at a Finnish software company. Sample content — not a real interviewee."
 date: 2026-05-15
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Interviews"
 tags:
   - LLM

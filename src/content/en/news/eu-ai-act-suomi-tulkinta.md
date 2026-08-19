@@ -3,7 +3,7 @@ title: "EU AI Act for small builders: five ways regulation hits hardest"
 description: "The EU AI Act is live. For a five-person Finnish dev shop, compliance is not abstract — it's billable hours, lost deals, and a playing field tilted toward giants."
 date: 2026-05-18T10:00:00
 updated: 2026-05-20T21:07:55
-author: "Faktum AI"
+author: "FaktumAI"
 category: "News"
 tags:
   - EU AI Act
@@ -15,7 +15,7 @@ status: published
 readingTime: "9 min"
 heroImage: "/images/articles/2026/05/2026-05-20-210755_eu-ai-act-suomi-tulkinta/hero4.webp"
 heroAlt: "Small software team under regulatory paperwork — EU AI Act news illustration"
-heroCaption: "Illustration · Faktum AI"
+heroCaption: "Illustration · FaktumAI"
 needsFactCheck: true
 imageRequestsCompleted: true
 featured: false
@@ -42,7 +42,7 @@ The **EU Artificial Intelligence Act** entered into force in 2024. Staggered dea
 
 On paper, the Act is risk-based and proportionate. In practice, for a **software designer or a small IT/AI studio in Finland**, it reads less like innovation policy and more like a **fixed cost line** — one that your US competitor does not carry when selling to San Francisco, and that a Chinese integrator does not worry about when the end customer is in Shenzhen.
 
-> **Faktum AI editorial note:** This is not legal advice. We map **competitive and operational reality** for builders — not a compliance checklist. Official interpretation belongs to Traficom and the EU AI Office.
+> **FaktumAI editorial note:** This is not legal advice. We map **competitive and operational reality** for builders — not a compliance checklist. Official interpretation belongs to Traficom and the EU AI Office.
 
 The Act divides AI into four tiers: **prohibited**, **high-risk** (heavy obligations on providers), **limited risk** (transparency, e.g. chatbots), and **minimal risk** (largely unregulated). Most day-to-day SaaS may stay minimal — until you touch recruitment scoring, credit decisions, public-benefit eligibility, or anything that **profiles individuals**. Then Annex III and Articles 8–17 arrive fast.
 

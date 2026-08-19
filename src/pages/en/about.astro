@@ -1,27 +1,95 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categoryPath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
+import { organizationJsonLd, websiteJsonLd } from '../../utils/seo';
 
 const locale = 'en' as const;
+const projectsHref = categoryPath(locale, 'projects');
 ---
 
 <BaseLayout
   title={t(locale, 'aboutTitle')}
   description={t(locale, 'aboutMetaDescription')}
   path="/en/about/"
+  jsonLd={[organizationJsonLd('en'), websiteJsonLd('en')]}
 >
   <section class="container-site py-12 lg:py-16">
-    <h1 class="font-sans text-3xl font-bold sm:text-4xl">{t(locale, 'aboutTitle')}</h1>
+    <h1 class="font-sans text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+      What is FaktumAI?
+    </h1>
     <div class="prose-faktum mt-8 max-w-3xl">
       <p>
-        Faktum AI publishes AI news, analysis, and practical perspectives for IT professionals,
-        builders, and decision-makers. The editorial line is journalistic and technical — no hype.
+        FaktumAI is a modern software house and project management expert. We develop our own software products,
+        automation solutions, and commercially oriented digital services using a lean, AI-assisted production model.
+        Our expertise is not limited to software or AI alone.
       </p>
-      <h2>Content</h2>
+
+      <h2>Background</h2>
       <p>
-        News, in-depth analysis, interview summaries, and tool reviews. English articles are added
-        over time; the main archive is also available in Finnish.
+        Our background spans mechanical and production engineering, industrial design, and construction and
+        renovation project management. We combine technical design, project management, and agent-assisted
+        software development into a single practical operating model.
       </p>
+
+      <h2>Website role</h2>
+      <p>
+        FaktumAI.com is primarily FaktumAI's company and product site. Alongside it, we publish AI news,
+        interviews, and tool reviews as well as analytical content included in the news section. The aim is to
+        make the rapidly evolving AI field understandable and practically useful.
+      </p>
+
+      <h2>Software products and digital products</h2>
+      <p>
+        We develop our own software products and commercially oriented solutions. Our projects progress from
+        research and prototyping through piloting and productization, and potentially into commercial use.
+      </p>
+      <p>
+        Our current projects include: <a href={projectsHref}>SermoVox</a>, Party Buddy, Shopify Sale Manager,
+        Rikoslaki SOTA, and SM-LIIGA-GURU.
+      </p>
+
+      <h2>Project management and technical expertise</h2>
+      <p>
+        Our expertise extends beyond software development. Our technical and project management expertise covers:
+      </p>
+      <ul>
+        <li>mechanical and production engineering</li>
+        <li>industrial design and technical implementation</li>
+        <li>project planning, coordination, and delivery</li>
+        <li>construction and renovation project management</li>
+      </ul>
+      <p>
+        FaktumAI's strength lies in combining broad technical background, project management, and AI-assisted
+        software development into a lean delivery model.
+      </p>
+
+      <h2>AI-assisted operating model</h2>
+      <p>
+        AI agents carry out a large share of the research, analysis, and software development work. The human
+        sets the goals, makes the key decisions, and approves the results. Development is guided by:
+      </p>
+      <ul>
+        <li>architecture and design</li>
+        <li>automated testing</li>
+        <li>code review and quality assurance</li>
+        <li>documentation</li>
+        <li>version control</li>
+        <li>staged approval and review processes</li>
+      </ul>
+
+      <h2>Projects and productization</h2>
+      <p>
+        Explore our products and development projects on the <a href={projectsHref}>projects page</a>.
+      </p>
+
+      <h2>AI news and other publications</h2>
+      <p>
+        FaktumAI.com also publishes AI news, interviews, and tool reviews. Analytical content is included in
+        the News section. Editorial activity supports FaktumAI's technical expertise and helps followers stay
+        on top of the rapidly evolving AI field without unnecessary hype.
+      </p>
+
       <h2>Contact</h2>
       <dl class="mt-4 space-y-3 text-[var(--color-text-dim)]">
         <div>

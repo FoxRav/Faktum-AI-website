@@ -1,0 +1,37 @@
+---
+import type { ProductionReference } from '../../data/projects';
+
+interface Props {
+  reference: ProductionReference;
+  locale: 'fi' | 'en';
+}
+
+const { reference, locale } = Astro.props;
+const isEn = locale === 'en';
+---
+
+<section class="mb-12">
+  <h2 class="font-sans text-2xl font-bold tracking-tight text-[var(--color-text)] sm:text-3xl">
+    {isEn ? 'In production' : 'Tuotantokäytössä'}
+  </h2>
+  <div class="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
+    <p class="text-[var(--color-text-dim)]">
+      {isEn ? 'Shopify Sale Manager is in production at' : 'Shopify Sale Manager on tuotantokäytössä'}
+      {' '}
+      <strong class="text-[var(--color-text)]">{reference.sourceName}</strong>.
+      {' '}
+      {!isEn && 'Ratkaisua on siis kehitetty todellisen verkkokaupan tarpeisiin eikä ainoastaan demonstraatioksi tai tekniseksi prototyypiksi.'}
+      {isEn && 'The solution was built for real e-commerce needs, not merely as a demo or technical prototype.'}
+    </p>
+    <p class="mt-4">
+      <a
+        href={reference.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300"
+      >
+        {reference.linkLabel} <span aria-hidden="true">↗</span>
+      </a>
+    </p>
+  </div>
+</section>

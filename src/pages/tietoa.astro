@@ -1,32 +1,83 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { categoryPath } from '../i18n/paths';
+import { t } from '../i18n/ui';
+import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
+
+const locale = 'fi' as const;
+const projectsHref = categoryPath(locale, 'projects');
 ---
 
 <BaseLayout
-  title="Tietoa Faktum AI:sta"
-  description="Faktum AI on suomenkielinen tekoälyuutis- ja analyysisivusto IT-ammattilaisille ja AI-rakentajille."
+  title="Mikä FaktumAI on?"
+  description={t(locale, 'aboutMetaDescription')}
   path="/tietoa/"
+  jsonLd={[organizationJsonLd('fi'), websiteJsonLd('fi')]}
 >
   <section class="container-site py-12 lg:py-16">
-    <h1 class="font-sans text-3xl font-bold sm:text-4xl">Tietoa Faktum AI:sta</h1>
+    <h1 class="font-sans text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
+      Mikä FaktumAI on?
+    </h1>
     <div class="prose-faktum mt-8 max-w-3xl">
       <p>
-        Faktum AI tuottaa suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamisen
-        näkökulmia. Kohderyhmänä ovat suomalaiset IT-ammattilaiset, yrittäjät, julkishallinnon
-        digitalisaatioihmiset, opiskelijat ja teknisesti kiinnostuneet lukijat.
+        FaktumAI on uuden ajan ohjelmistitalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja AI-avusteisella, kevyellä tuotantomallilla. Osaamisemme ei kuitenkaan rajoitu ohjelmistoihin tai tekoälyyn.
       </p>
-      <h2>Toimituksellinen linja</h2>
-      <ul>
-        <li>Journalistinen, tekninen ja lähteitä kunnioittava äänensävy</li>
-        <li>Ei hypea eikä markkinointimossia</li>
-        <li>Raakateksti muunnetaan aina toimituksellisesti ennen julkaisua</li>
-        <li>Väitteet, numerot ja epävarmuudet erotellaan selkeästi</li>
-      </ul>
-      <h2>Sisältötyypit</h2>
+
+      <h2>Taustamme</h2>
       <p>
-        Julkaisemme uutisia, analyyseja, haastattelutiivistelmiä ja työkaluarvioita. Uusimmat
-        julkaisut näkyvät etusivun feedissä ja omissa kategorioissaan.
+        Taustamme ulottuu kone- ja tuotantotekniikkaan, teolliseen suunnitteluun sekä rakennus- ja saneeraushankkeiden projektinhallintaan. Yhdistämme teknisen suunnittelun, projektijohtamisen ja agenttiohjatun ohjelmistokehityksen samaan käytännönläheiseen toimintamalliin.
       </p>
+
+      <h2>Sivuston rooli</h2>
+      <p>
+        FaktumAI.com on ensisijaisesti FaktumAI:n yritys- ja tuotesivusto. Sen rinnalla julkaisemme AI-uutisia, haastatteluja ja työkalusarvioita sekä uutisvirtaan sisältyviä analyysejä. Tavoitteena on tehdä nopeasti muuttuvasta tekoälykentästä ymmärrettävä ja käytännön kannalta hyödyllinen.
+      </p>
+
+      <h2>Ohjelmistot ja digitaaliset tuotteet</h2>
+      <p>
+        Kehitämme omia ohjelmistotuotteita ja kaupallistamiseen tähtääviä ratkaisuja. Projektimme etenevät tutkimuksesta ja prototyypeistä pilotointiin, tuotteistukseen ja mahdolliseen kaupalliseen käyttöön.
+      </p>
+      <p>
+        Tämänhetkisiä projektemme ovat <a href={projectsHref}>SermoVox</a>, Party Buddy, Shopify Sale Manager, Rikoslaki SOTA ja SM-LIIGA-GURU.
+      </p>
+
+      <h2>Projektinhallinta ja tekninen osaaminen</h2>
+      <p>
+        Osaamisemme ei rajoitu ohjelmistokehitykseen. Tekninen ja projektinhallinnallinen osaamisemme kattaa:
+      </p>
+      <ul>
+        <li>kone- ja tuotantotekniikan</li>
+        <li>teollisen suunnittelun ja teknisen toteutuksen</li>
+        <li>projektien suunnittelun, koordinoinnin ja läpiviennin</li>
+        <li>rakennus- ja saneeraushankkeiden projektinhallinnan</li>
+      </ul>
+      <p>
+        FaktumAI:n vahvuus on yhdistää laaja tekninen tausta, projektijohtaminen ja AI-avusteinen ohjelmistokehitys kevyeen toistusmalliin.
+      </p>
+
+      <h2>AI-avusteinen toimintamalli</h2>
+      <p>
+        AI-agentit tekevät suuren osan tutkimus-, analyysi- ja ohjelmistokehitystyöstä. Ihminen määrittää tavoitteet, tekee keskeiset päätökset ja hyväksyy lopputulokset. Kehitystä ohjaavat:
+      </p>
+      <ul>
+        <li>arkkitehtuuri ja suunnittelu</li>
+        <li>automatisoitu testaus</li>
+        <li>koodikatselmointi ja laadunvarmistus</li>
+        <li>dokumentointi</li>
+        <li>versionhallinta</li>
+        <li>vaiheittaiset hyväksyntä- ja tarkastusprosessit</li>
+      </ul>
+
+      <h2>Projektit ja tuotteistaminen</h2>
+      <p>
+        Tutustu tuotteisiin ja kehityshankkeisiin <a href={projectsHref}>Projektit-sivulla</a>.
+      </p>
+
+      <h2>AI-uutiset ja muut julkaisut</h2>
+      <p>
+        FaktumAI.comissa julkaistaan myös AI-uutisia, haastatteluja ja työkalusarvioita. Analyyttinen sisältö sisältyy Uutiset-osioon. Julkaisutoiminta tukee FaktumAI:n teknistä osaamista ja auttaa seuraamaan nopeasti muuttuvaa AI-kenttää ilman tarpeetonta hypeä.
+      </p>
+
       <h2>Yhteystiedot</h2>
       <dl class="mt-4 space-y-3 text-[var(--color-text-dim)]">
         <div>

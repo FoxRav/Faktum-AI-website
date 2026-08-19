@@ -8,8 +8,9 @@ const locale = 'en' as const;
 
 <BaseLayout
   title="Unsubscribed"
-  description="You have been unsubscribed from the Faktum AI newsletter."
+  description="You have been unsubscribed from the FaktumAI newsletter."
   path={subscribePath(locale, 'unsubscribed')}
+  robots="noindex, follow"
 >
   <section class="container-site py-16 text-center">
     <h1 class="font-sans text-3xl font-bold">{t(locale, 'subscribeUnsubscribed')}</h1>

@@ -34,7 +34,7 @@ const {
 } = Astro.props;
 
 const locale = getLocaleFromPath(path);
-const fullTitle = title.includes('Faktum AI') ? title : `${title} · Faktum AI`;
+const fullTitle = title.includes('FaktumAI') ? title : `${title} · FaktumAI`;
 const canonical = canonicalUrl(path);
 const alternateFi = canonicalUrl(translatePath(path, 'fi'));
 const alternateEn = canonicalUrl(translatePath(path, 'en'));
@@ -60,7 +60,7 @@ const jsonLdItems = jsonLd
     <link rel="alternate" hreflang="fi" href={alternateFi} />
     <link rel="alternate" hreflang="en" href={alternateEn} />
     <link rel="alternate" hreflang="x-default" href={alternateFi} />
-    <meta property="og:site_name" content="Faktum AI" />
+    <meta property="og:site_name" content="FaktumAI" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -80,7 +80,7 @@ const jsonLdItems = jsonLd
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <link rel="alternate" type="application/rss+xml" title="Faktum AI RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="FaktumAI RSS" href="/rss.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

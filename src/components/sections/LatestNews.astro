@@ -1,0 +1,42 @@
+---
+import type { Locale } from '../../i18n/config';
+import ArticleCard from '../cards/ArticleCard.astro';
+import { getArticlesByCollection } from '../../utils/content';
+import { categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  limit?: number;
+}
+
+const { locale, limit = 3 } = Astro.props;
+const articles = (await getArticlesByCollection('news', locale)).slice(0, limit);
+const newsHref = categoryPath(locale, 'news');
+---
+
+<section class="container-site py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="font-sans text-2xl font-bold tracking-tight text-[var(--color-text)] sm:text-3xl">
+        {t(locale, 'latestNewsTitle')}
+      </h2>
+      <a
+        href={newsHref}
+        class="inline-flex items-center gap-1 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
+      >
+        {t(locale, 'allNews')}
+      </a>
+    </div>
+
+    {articles.length > 0 ? (
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map((article) => (
+          <ArticleCard article={article} />
+        ))}
+      </div>
+    ) : (
+      <p class="mt-8 text-[var(--color-text-dim)]">{t(locale, 'emptyCategory')}</p>
+    )}
+  </div>
+</section>

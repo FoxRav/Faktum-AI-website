@@ -1,4 +1,4 @@
-# Faktum AI
+# FaktumAI
 
 > Kaksikielinen tekoälyuutis- ja analyysisivusto (suomi oletus, englanti /en/). IT-ammattilaisille, AI-rakentajille ja päätöksentekijöille.
 
@@ -33,7 +33,7 @@
 
 ## Editorial line
 
-Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as Faktum AI analysis. Same slugs in FI and EN where both exist.
+Journalistic, technical, source-backed. Not hype. Claims and uncertainty are separated. Raw third-party material is rewritten as FaktumAI analysis. Same slugs in FI and EN where both exist.
 
 ## Contact
 

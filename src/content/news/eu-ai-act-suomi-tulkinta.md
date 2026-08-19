@@ -3,7 +3,7 @@ title: "EU AI Act pk-yritykselle: viisi tapaa, joilla sääntely osuu kovimmin p
 description: "EU:n tekoälyasetus on voimassa. Viisihenkiselle suomalaiselle dev-toimistolle se ei ole abstrakti oikeusnormi vaan laskutettavia tunteja, menetettyjä diilejä ja kenttä, joka kallistuu jättiläisten puolelle."
 date: 2026-05-18T10:00:00
 updated: 2026-05-20T21:07:55
-author: "Faktum AI"
+author: "FaktumAI"
 category: "Uutiset"
 tags:
   - EU AI Act
@@ -15,7 +15,7 @@ status: published
 readingTime: "9 min"
 heroImage: "/images/articles/2026/05/2026-05-20-210755_eu-ai-act-suomi-tulkinta/hero4.webp"
 heroAlt: "Pieni ohjelmistotiimi sääntelypapereiden painon alla — EU AI Act -uutiskuvitus"
-heroCaption: "Kuvitus · Faktum AI"
+heroCaption: "Kuvitus · FaktumAI"
 needsFactCheck: true
 imageRequestsCompleted: true
 featured: false
@@ -42,7 +42,7 @@ keyClaims:
 
 Paperilla asetus on riskiperusteinen ja suhteellinen. Käytännössä **ohjelmistosuunnittelijalle tai pienelle IT/AI-toimistolle Suomessa** se ei kuulosta innovaatiopolitiikalta vaan **kiinteältä kustannusriviltä** — sellaiselta, jota yhdysvaltalainen kilpailija ei kanna myydessään San Franciscoon, eikä kiinalainen integraattori mieti, kun loppuasiakas on Shenzhenissä.
 
-> **Faktum AI:n toimituksellinen huomio:** Tämä ei ole oikeudellista neuvontaa. Kuvaamme **kilpailu- ja operatiivista todellisuutta** rakentajille — emme sääntelyn noudattamisen tarkistuslistaa (compliance checklist). Virallinen tulkinta kuuluu Traficomille ja EU:n AI Office -virastolle.
+> **FaktumAI:n toimituksellinen huomio:** Tämä ei ole oikeudellista neuvontaa. Kuvaamme **kilpailu- ja operatiivista todellisuutta** rakentajille — emme sääntelyn noudattamisen tarkistuslistaa (compliance checklist). Virallinen tulkinta kuuluu Traficomille ja EU:n AI Office -virastolle.
 
 Asetus jakaa tekoälyn neljään luokkaan: **kielletty**, **korkea riski** (raskaat velvoitteet tarjoajille), **rajattu riski** (läpinäkyvyys, esim. chatbotit) ja **minimaalinen riski** (minimal risk, käytännössä vapaampi). Suuri osa päivittäisestä pilvipalveluohjelmistosta (SaaS) voi pysyä minimaalisen riskin luokassa — kunnes kosket rekrytoinnin pisteytykseen, luottopäätöksiin, etuus- tai palvelukelpoisuuteen tai **henkilöiden profilointiin**. Silloin Annex III ja artiklat 8–17 tulevat nopeasti näkyviin.
 

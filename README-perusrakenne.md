@@ -1,8 +1,8 @@
-# Faktum AI — perusrakenne (yksinkertainen)
+# FaktumAI — perusrakenne (yksinkertainen)
 
 ## Mikä tämä on
 
-Faktum AI on kaksikielinen (FI/EN) AI-uutis- ja analyysisivusto.
+FaktumAI on kaksikielinen (FI/EN) AI-uutis- ja analyysisivusto.
 
 ## Tekninen perusta
 
