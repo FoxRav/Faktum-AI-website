@@ -34,7 +34,6 @@ export const ui = {
     emptyCategory: 'Ei julkaisuja tässä kategoriassa.',
     visitCounterLoading: 'Luettu …',
     visitCounterRead: 'Luettu {count} kertaa',
-    visitCounterFallback: 'Luettu useita kertoja',
     topicsTitle: 'Aiheet',
     topicsLead: 'Artikkelit ryhmiteltynä avainsanoihin.',
     topicsBack: '← Kaikki aiheet',
@@ -45,9 +44,9 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'FaktumAI — ohjelmistotalo ja tekninen projektiosaaminen',
+    homeMetaTitle: 'FaktumAI | Ohjelmistot, AI-avusteinen kehitys ja projektiosaaminen',
     homeMetaDescription:
-      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Rakennamme AI-avusteisia ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja.',
+      'FaktumAI kehittää ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja AI-avusteisella kehitysmallilla.',
     aboutTitle: 'Mikä FaktumAI on?',
     aboutMetaDescription:
       'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja.',
@@ -61,14 +60,27 @@ export const ui = {
       'Osaamisemme yhdistää ohjelmistokehityksen, kone- ja tuotantotekniikan sekä rakennus- ja saneeraushankkeiden projektinhallinnan.',
     ctaProjects: 'Tutustu projekteihin',
     ctaAbout: 'Tietoa FaktumAI:sta',
-    operatingTitle: 'Miten rakennamme',
+    operatingEyebrow: 'MITEN RAKENNAMME',
+    operatingHeading: 'Kevyt kehitysmalli, hallittu toteutus',
     operatingIntro:
-      'FaktumAI kehittää ohjelmistoja tietyillä prosesseilla. Arkkitehtuuri, testaus ja dokumentointi eivät ole muodollisuudet — ne ohjaavat agenttien työn ja pitävät kustannukset alhaisina.',
-    operatingAgents: 'Agentit tekevät suuren osan tutkimus-, analyysi- ja ohjelmistokehitystyöstä.',
-    operatingProcesses:
-      'Arkkitehtuuri, testaus, katselmointi, dokumentointi ja versionhallinta ohjaavat agenttien työtä.',
-    operatingLean:
-      'Pieni ihmistiimi ja AI-avusteinen tuotanto mahdollistavat erittäin kevyen kustannusrakenteen.',
+      'AI nopeuttaa ohjelmistokehitystä, mutta vastuu arkkitehtuurista, vaatimuksista, laadusta ja lopputuloksesta säilyy ihmisellä. FaktumAI yhdistää AI-avusteisen kehityksen perinteiseen tekniseen suunnitteluun ja projektinhallintaan.',
+    operatingCardProblemHeading: 'Ongelma ensin',
+    operatingCardProblemBody:
+      'Työ alkaa käyttötarpeesta ja ratkaistavasta ongelmasta. Teknologia valitaan vasta sen jälkeen, kun tiedetään mitä järjestelmän pitää tehdä ja kenelle se rakennetaan.',
+    operatingCardAiHeading: 'AI-avusteinen toteutus',
+    operatingCardAiBody:
+      'Käytämme AI-malleja ja agentteja suunnittelun, ohjelmistokehityksen, testauksen ja dokumentoinnin apuna. Ne nopeuttavat toteutusta, mutta eivät korvaa teknisiä päätöksiä tai laadunvarmistusta.',
+    operatingCardTestHeading: 'Testaa, mittaa, paranna',
+    operatingCardTestBody:
+      'Ensimmäinen toimiva versio rakennetaan mahdollisimman aikaisin. Sen jälkeen ratkaisu testataan, mitataan ja kehitetään todellisen käytön perusteella.',
+    mvpEyebrow: 'MVP-KEHITYS',
+    mvpHeading: 'Ideasta toimivaksi MVP:ksi muutamassa viikossa.',
+    mvpBody1:
+      'Onko sinulla ohjelmistoidea, sisäinen työkalu tai prosessi, joka pitäisi digitalisoida? FaktumAI rakentaa ensimmäisen toimivan version nopeasti AI-avusteisella kehitysmallilla ilman raskasta kehitysorganisaatiota.',
+    mvpBody2:
+      'MVP:n laajuus, aikataulu ja tekninen toteutus määritellään aina käyttötarpeen mukaan. Muutamassa viikossa valmistuva toteutus tarkoittaa rajattua ensimmäistä toimivaa versiota, ei valmista enterprise-järjestelmää.',
+    mvpCta: 'Keskustellaan projektista',
+    mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Ohjelmistoprojekti%20-%20MVP',
     projectsLabel: 'PROJEKTIT',
     projectsTitle: 'Tuotteet ja tuotekehitys',
     projectsLead:
@@ -191,7 +203,6 @@ export const ui = {
     emptyCategory: 'No articles in this category.',
     visitCounterLoading: 'Read …',
     visitCounterRead: 'Read {count} times',
-    visitCounterFallback: 'Read many times',
     topicsTitle: 'Topics',
     topicsLead: 'Articles grouped by keywords.',
     topicsBack: '← All topics',
@@ -201,9 +212,9 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'FaktumAI — software house and technical project expertise',
+    homeMetaTitle: 'FaktumAI | Software, AI-assisted development and project expertise',
     homeMetaDescription:
-      'FaktumAI is a modern software house and project management expert. We build AI-assisted software products, automation solutions, and technical projects.',
+      'FaktumAI develops software products, automation solutions and technical projects using an AI-assisted development model.',
     aboutTitle: 'What is FaktumAI?',
     aboutMetaDescription:
       'FaktumAI is a software house that builds its own software products and commercially oriented solutions with a very lean, AI-assisted operating model.',
@@ -212,21 +223,34 @@ export const ui = {
     listingInterviews: 'Interview summaries from the Finnish and global AI field.',
     listingTools: 'AI tool reviews and practical perspectives for builders.',
     landingEyebrow: 'FAKTUMAI',
-    landingHeading: 'Software, technology, and project expertise',
+    landingHeading: 'Software, technology and project expertise',
     landingLead:
-      'FaktumAI is a modern software house and project management expert. We build AI-assisted software products, automation solutions, and technical projects using a lean, process-driven operating model.',
+      'FaktumAI is a modern software company and project-management specialist. We build software products, automation solutions and technical projects with a lean, process-driven, AI-assisted operating model.',
     landingSupporting:
-      'Our expertise spans software development, mechanical and production engineering, and construction and renovation project management.',
-    ctaProjects: 'View projects',
+      'Our expertise combines software development, mechanical and production engineering, and project management for construction and renovation projects.',
+    ctaProjects: 'Explore our projects',
     ctaAbout: 'About FaktumAI',
-    operatingTitle: 'How we build',
+    operatingEyebrow: 'HOW WE BUILD',
+    operatingHeading: 'Lean development, controlled delivery',
     operatingIntro:
-      'At FaktumAI we develop software within defined processes. Architecture, testing, and documentation are not formalities — they steer what agents do and keep costs low.',
-    operatingAgents: 'Agents carry out most of the research, analysis, and software development work.',
-    operatingProcesses:
-      'Architecture, testing, review, documentation, and version control guide the work of the agents.',
-    operatingLean:
-      'A small human team with AI-assisted production enables a very lean cost structure.',
+      'AI can accelerate software development, but responsibility for architecture, requirements, quality and the final result remains with people. FaktumAI combines AI-assisted development with established engineering and project-management practices.',
+    operatingCardProblemHeading: 'Problem first',
+    operatingCardProblemBody:
+      'Work begins with the use case and the problem that needs to be solved. Technology is selected only after it is clear what the system must do and who it is being built for.',
+    operatingCardAiHeading: 'AI-assisted implementation',
+    operatingCardAiBody:
+      'We use AI models and agents to support design, software development, testing and documentation. They accelerate delivery, but they do not replace technical decisions or quality assurance.',
+    operatingCardTestHeading: 'Test, measure, improve',
+    operatingCardTestBody:
+      'The first working version is built as early as practical. The solution is then tested, measured and improved based on real use.',
+    mvpEyebrow: 'MVP DEVELOPMENT',
+    mvpHeading: 'From idea to a working MVP in a matter of weeks.',
+    mvpBody1:
+      'Have a software idea, internal tool or process that should be digitised? FaktumAI builds the first working version quickly using an AI-assisted development model without a heavy development organisation.',
+    mvpBody2:
+      'The scope, schedule and technical implementation of each MVP are defined according to the actual use case. Delivery in a matter of weeks refers to a focused first working version, not a finished enterprise system.',
+    mvpCta: 'Discuss your project',
+    mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Software%20project%20-%20MVP',
     projectsLabel: 'PROJECTS',
     projectsTitle: 'Products & product development',
     projectsLead:

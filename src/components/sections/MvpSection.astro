@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="container-site py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-3xl">
+    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400/80">
+      {t(locale, 'mvpEyebrow')}
+    </p>
+    <h2 class="mt-6 font-sans text-3xl font-extrabold leading-[1.05] tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-[2.5rem]">
+      {t(locale, 'mvpHeading')}
+    </h2>
+    <div class="mt-6 max-w-2xl space-y-4 text-lg text-[var(--color-text-dim)]">
+      <p>{t(locale, 'mvpBody1')}</p>
+      <p>{t(locale, 'mvpBody2')}</p>
+    </div>
+    <div class="mt-10">
+      <a href={t(locale, 'mvpCtaHref')} class="btn-primary">{t(locale, 'mvpCta')}</a>
+    </div>
+  </div>
+</section>

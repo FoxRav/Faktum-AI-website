@@ -14,9 +14,7 @@ const locale = Astro.props.locale ?? getLocaleFromPath(Astro.url.pathname);
   class="visit-counter text-center text-xs tracking-wide text-[var(--color-text-muted)]"
   aria-live="polite"
   data-locale={locale}
-  data-loading={t(locale, 'visitCounterLoading')}
   data-template={t(locale, 'visitCounterRead')}
-  data-fallback={t(locale, 'visitCounterFallback')}
 >
   {t(locale, 'visitCounterLoading')}
 </p>
@@ -27,8 +25,7 @@ const locale = Astro.props.locale ?? getLocaleFromPath(Astro.url.pathname);
     if (!el) return;
 
     var locale = el.getAttribute('data-locale') || 'fi';
-    var template = el.getAttribute('data-template') || 'Read {count} times';
-    var fallback = el.getAttribute('data-fallback') || 'Read many times';
+    var template = el.getAttribute('data-template') || 'Luettu {count} kertaa';
     var localeTag = locale === 'en' ? 'en-US' : 'fi-FI';
 
     try {
@@ -42,7 +39,7 @@ const locale = Astro.props.locale ?? getLocaleFromPath(Astro.url.pathname);
 
       el.textContent = template.replace('{count}', data.visits.toLocaleString(localeTag));
     } catch (err) {
-      el.textContent = fallback;
+      el.textContent = '';
     }
   }
 

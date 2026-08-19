@@ -1,5 +1,6 @@
 ---
 import type { NavItem } from '../../i18n/ui';
+import { getLocaleFromPath } from '../../i18n/paths';
 
 interface Props {
   nav: NavItem[];
@@ -7,6 +8,10 @@ interface Props {
 }
 
 const { nav, currentPath } = Astro.props;
+const locale = getLocaleFromPath(currentPath);
+const isEn = locale === 'en';
+const openLabel = isEn ? 'Open menu' : 'Avaa valikko';
+const navAriaLabel = isEn ? 'Mobile navigation' : 'Mobiilivalikko';
 
 function isNavActive(href: string): boolean {
   return currentPath === href || (href !== '/' && href !== '/en/' && currentPath.startsWith(href));
@@ -20,7 +25,7 @@ function isNavActive(href: string): boolean {
     class="rounded-lg border border-[var(--color-border)] p-2 text-[var(--color-text-dim)] hover:text-[var(--color-text)]"
     aria-expanded="false"
     aria-controls="mobile-nav"
-    aria-label="Avaa valikko"
+    aria-label={openLabel}
   >
     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -30,7 +35,7 @@ function isNavActive(href: string): boolean {
   <nav
     id="mobile-nav"
     class="absolute right-0 top-[calc(100%+0.5rem)] z-50 hidden w-56 flex-col gap-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-2 shadow-xl"
-    aria-label="Mobiilivalikko"
+    aria-label={navAriaLabel}
   >
     {nav.map((item) => {
       const active = isNavActive(item.href);

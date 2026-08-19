@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LandingHero from '../components/sections/LandingHero.astro';
+import MvpSection from '../components/sections/MvpSection.astro';
 import OperatingModel from '../components/sections/OperatingModel.astro';
 import ProjectShowcase from '../components/sections/ProjectShowcase.astro';
 import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
@@ -17,6 +18,7 @@ const locale = 'fi' as const;
   jsonLd={[organizationJsonLd('fi'), websiteJsonLd('fi')]}
 >
   <LandingHero locale={locale} />
+  <MvpSection locale={locale} />
   <OperatingModel locale={locale} />
   <ProjectShowcase locale={locale} showAllLink={true} />
 </BaseLayout>
