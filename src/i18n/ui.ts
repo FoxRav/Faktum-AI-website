@@ -181,7 +181,7 @@ export const ui = {
     whyTitle: 'Why FaktumAI?',
     whyBody:
       'FaktumAI is a modern software house that builds its own software products with a very lean cost structure. AI agents carry out most of the implementation and analysis work. Development is guided by defined architecture, testing, review, documentation, and version-control processes. The human is responsible for direction, decisions, and approval.',
-    footerTagline: 'Software products, AI-assisted development, and technical project expertise.',
+    footerTagline: 'Software products, AI-assisted development and technical project expertise.',
     footerContent: 'Content',
     footerServices: 'Services',
     footerRss: 'RSS feed',
@@ -230,7 +230,7 @@ export const ui = {
     projectsLabel: 'PROJECTS',
     projectsTitle: 'Products & product development',
     projectsLead:
-      'FaktumAI develops its own software products and commercially oriented solutions using a lean, AI-assisted production model. Projects progress from research and prototyping through piloting and productization.',
+      'FaktumAI develops its own software products and commercially oriented solutions using a lean, AI-assisted production model. Projects progress from research and prototyping through piloting and productisation.',
     latestNewsTitle: 'Latest news',
     allNews: 'All news →',
     aboutLead:

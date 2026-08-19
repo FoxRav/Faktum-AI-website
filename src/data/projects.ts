@@ -12,8 +12,8 @@ export interface ProjectImage {
 export interface ProjectCTA {
   heading: string;
   text?: string;
-  label: string;
-  href: string;
+  label?: string;
+  href?: string;
   variant?: 'primary' | 'secondary';
   contactText?: string;
 }
@@ -38,7 +38,7 @@ export interface ProjectDetail {
   callout?: {
     heading: string;
     body: string[];
-    cta: ProjectCTA;
+    cta?: ProjectCTA;
     contactText?: string;
   };
   productionReference?: ProductionReference;
@@ -245,60 +245,112 @@ export const projects: Project[] = [
       },
       en: {
         title: 'SermoVox',
-        description: 'Real-time multilingual speech translation.',
-        status: 'Available / preparing rollout',
+        description: 'Real-time multilingual speech translation system for live events.',
+        status: 'Available / deployment preparation',
         detail: {
           lead:
-            'SermoVox is a real-time speech recognition and translation system for multilingual events. The system converts a speaker\u2019s speech to text and delivers translations to the audience with near real-time latency.',
+            'SermoVox is a real-time multilingual speech translation system for live events. It converts a speaker\'s speech into text and delivers translations to the audience with minimal delay.',
+          commercialLead:
+            'SermoVox Local is available as a locally installed software product with a one-time licence fee.',
+          pricing: {
+            title: 'Price and licence',
+            price: '€599 + VAT',
+            license: 'Permanent one-time licence',
+            body: 'SermoVox Local is purchased with a one-time payment. The customer receives a permanent licence to the delivered local SermoVox software version on one agreed workstation. The delivered version does not require an ongoing monthly or annual subscription.',
+          },
+          pricingIncludes: {
+            title: 'What is included?',
+            bullets: [
+              'permanent licence for SermoVox Local on one agreed workstation',
+              'software installation and initial deployment',
+              'deployment of the required speech recognition and translation models',
+              'testing of the microphone or headset and display or projector setup',
+              'deployment of the operator and audience views',
+              'basic user guidance',
+              'standard user support on weekdays and by separate agreement',
+            ],
+            callout: 'On-site deployments are currently available in the South Ostrobothnia region of Finland.',
+          },
           whatItIs:
-            'SermoVox is a locally operable speech recognition and translation system built by FaktumAI. It is designed for situations where the same speech must be conveyed to an audience in multiple languages with as little delay as possible.\n\nThe current production focus is on recognizing Finnish speech and delivering it in English, Ukrainian, and Russian. The system forms a single chain from microphone to speech recognition, translation, and on-screen captions for the audience.',
+            'SermoVox is a locally operated speech recognition and translation system developed by FaktumAI. It is designed for situations where the same speech needs to be delivered to an audience in multiple languages with as little delay as possible.\n\nThe current production direction focuses on recognising Finnish speech and delivering translations in English, Ukrainian and Russian. The system creates one continuous pipeline from microphone input to speech recognition, translation and audience-facing subtitles.',
           problem:
-            'In multilingual events, professional interpreters can be expensive or difficult to arrange. Consumer translation apps, in turn, are not designed for continuous speech, operator control, or large-screen real-time captioning.\n\nSermoVox aims to provide a lightweight, controlled, and as-local-as-possible solution for this need.',
+            'Professional interpretation for multilingual events can be expensive or difficult to arrange. Consumer translation applications, on the other hand, are not designed for continuous speech, operator-controlled workflows and real-time subtitles shown on a large display.\n\nSermoVox is intended to provide a lightweight, manageable and primarily local solution for this use case.',
           solution:
-            'Microphone → Speech recognition → Translation → Real-time delivery → Operator & projector views\n\nThe speaker\u2019s audio is processed locally. Speech is recognized, translated into selected languages, and delivered to a browser-based interface. The operator controls the system from their own view, and the audience sees the translations in a separate projector or display view.',
+            'Microphone → speech recognition → translation → real-time data transfer → operator and audience views\n\nThe speaker\'s audio is processed locally. Speech is recognised, translated into the selected languages and delivered to a browser-based interface. The operator controls the system through a dedicated view, while the audience sees the translations through a separate projector or display view.',
           audience: [
             'churches and multilingual communities',
             'events and seminars',
             'associations',
-            'organizations needing multilingual communication',
-            'potentially municipalities and other public bodies later',
+            'organisations that need multilingual communication',
+            'municipalities and other public-sector organisations that need a locally controlled translation solution',
           ],
+          hardware: {
+            body: 'The computer, microphone or headset and any required display or projector hardware are not included in the €599 software price.\n\nSermoVox can be installed on a suitable customer-owned Windows computer. FaktumAI can define the required hardware configuration and assist with selecting suitable equipment before deployment.\n\nHardware requirements depend on the languages used, the speech recognition model and the required level of performance. The requirements are reviewed before delivery.',
+          },
           technical:
-            'The current SermoVox implementation uses GPU-accelerated speech recognition, local translation models, a FastAPI backend, and WebSocket-based real-time delivery. The UI consists of a separate operator view and a projector/display view for the audience.\n\nSystem design emphasizes local processing, low latency, reliability, and independence from external cloud services in production use.',
+            'The current SermoVox implementation uses GPU-accelerated speech recognition, local translation models, a FastAPI backend and WebSocket-based real-time data transfer. The user interface consists of a dedicated operator view and a separate audience-facing projector view.\n\nThe system is designed around local processing, low latency, operational reliability and reduced dependence on external cloud services during production use.',
+          licenseSection: {
+            heading: 'Permanent licence',
+            body: [
+              'SermoVox Local is delivered with a permanent one-time licence. The customer\'s right to use the delivered software version does not expire if the customer chooses not to purchase future versions or additional services.',
+              'Future major product versions, new paid features, additional languages or separate cloud services may be priced separately.',
+            ],
+          },
+          updates: {
+            heading: 'Updates',
+            body: [
+              'Corrections and compatibility updates may be provided as the product develops. The update model is still being refined, but the permanent licence does not depend on a recurring subscription.',
+              'Major future product versions or entirely new services are not automatically included in the original one-time licence.',
+            ],
+          },
+          support: {
+            heading: 'Support',
+            body: [
+              'Standard SermoVox user support is normally available on weekdays and at other times by separate agreement.',
+              'Standard support covers guidance related to normal software use. More extensive on-site work, hardware changes or other separately agreed services may be priced separately.',
+            ],
+          },
           currentState:
-            'SermoVox is available. A first customer has been agreed, and deployment at the customer\u2019s premises is being prepared. Current development focuses on speech recognition latency, audio-path reliability, and finalizing a production-ready hardware setup.',
+            'SermoVox is available. The first customer deployment has been agreed and preparation is underway for installation in the customer\'s environment. Current development focuses on deployment readiness, speech recognition latency, audio-path reliability and verification of a production-ready hardware configuration.',
           nextStep:
-            'The next significant step is installing the system at the customer\u2019s venue and testing it in a real event. Insights from this deployment will feed into productization and the planning of further use cases.',
+            'The next major step is to install SermoVox in the first customer\'s environment and test it in a real event. Experience from the deployment will be used to refine the delivery process, user experience and further product development.',
           organisationDeployment: {
             heading: 'Solutions for organisations and larger deployments',
-            body: 'The €599 + VAT SermoVox Local package covers deployment on one agreed workstation. Organisations requiring multiple workstations, multiple locations or a broader deployment can receive a separately designed and priced solution.\n\nSermoVox can be deployed inside the customer\u2019s own local IT environment. In such a deployment, speech recognition and translation can be processed on infrastructure controlled by the customer without requiring speech data to be sent to an external cloud service.',
+            body: 'The €599 + VAT SermoVox Local package is intended for deployment on one agreed workstation. For organisations requiring multiple workstations, multiple locations or a broader implementation, the scope and pricing are planned separately according to the customer\'s requirements.\n\nSermoVox can be deployed in the customer\'s own local IT environment. In such a deployment, speech recognition and translation can be processed on customer-controlled hardware without sending speech data to an external cloud service. This can be important for organisations with stricter requirements concerning privacy, security or control of data.',
             items: [
               'multiple SermoVox workstations',
               'multiple deployment locations',
-              'centralised rollout',
+              'centrally coordinated deployment',
               'customer-owned hardware',
-              'custom device configurations',
-              'local or customer-controlled server environments',
-              'support service scope',
-              'customer-specific language and environment requirements',
+              'customer-specific hardware configuration',
+              'local or customer-controlled server environment',
+              'customer-specific support arrangements',
+              'customer-specific language and operating-environment requirements',
               'potential future cloud or hybrid deployment',
             ],
             callout: {
-              heading: 'Data under the customer\'s control',
-              body: 'The central benefit of a local SermoVox deployment is the ability to process speech and translations within the customer\u2019s own environment. FaktumAI can design the delivery model together with the customer\u2019s IT and security requirements.',
+              heading: 'Data under customer control',
+              body: 'A key advantage of a local SermoVox deployment is the ability to process speech and translations within the customer\'s own environment. FaktumAI can design the deployment model together with the customer according to its IT and information-security requirements.',
             },
             cta: {
-              heading: 'Need multiple devices or an organisation-level deployment?',
-              text: 'Larger SermoVox deployments are planned according to the customer\u2019s usage needs, number of devices, languages, and security requirements.',
-              label: 'Request a solution for your organisation',
-              href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20-%20organisaatioratkaisu',
+              heading: 'Need multiple devices or an organisation-specific deployment?',
+              text: 'Larger SermoVox deployments are planned according to the customer\'s use case, number of devices, languages and security requirements.',
+              label: 'Discuss an organisation deployment',
+              href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20-%20organisation%20deployment',
             },
+          },
+          cloudOption: {
+            heading: 'SermoVox Cloud — future option',
+            body: [
+              'Alongside the locally installed SermoVox Local product, FaktumAI is investigating a cloud-based service model. The long-term goal is to provide an alternative for customers that want to use SermoVox as a browser-based or cloud service without maintaining their own local AI environment.',
+              'SermoVox Cloud has not been released and currently has no confirmed pricing or launch schedule.',
+            ],
           },
           cta: {
             heading: 'Need real-time multilingual translation?',
-            text: 'SermoVox Local is available as a one-off on-premises solution. We will go through your use case, required languages, hardware, and the right deployment model together.\n\n€599 + VAT',
-            label: 'Inquire about SermoVox',
-            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20-%20on-premises',
+            text: 'SermoVox Local is available as a locally installed solution with a one-time licence fee. We can review the use case, required languages, hardware and suitable deployment model together.\n\nSermoVox Local €599 + VAT',
+            label: 'Ask about SermoVox',
+            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20Local%20-%20deployment',
             contactText: 'marko@Faktum-AI.com',
           },
         },
@@ -376,53 +428,58 @@ export const projects: Project[] = [
       },
       en: {
         title: 'Party Buddy',
-        description: 'Local event and meetup platform.',
-        status: 'Closed beta / preparing release',
+        description: 'Mobile application for finding company in the same city when going out, attending an event or meeting new people.',
+        status: 'Closed testing / release preparation',
         detail: {
           lead:
-            'Party Buddy is a mobile app for people who want to find company from the same city when they are heading out, to an event, or otherwise looking to meet new people.',
+            'Party Buddy is a mobile application for people who want to find company in the same city when they are going out, attending an event or simply looking to meet new people.',
           whatItIs:
-            'Party Buddy is built around one simple idea: who else is out right now?\n\nThe service is not meant to become another general-purpose social network. Party Buddy focuses on short-term encounters and making it easy to find other people in the same city, form a connection, and agree on a meetup.',
+            'Party Buddy is built around a simple question: who else is going out right now?\n\nThe goal is not to create another general-purpose social network. Party Buddy focuses on short-term encounters: finding other people in the same city, establishing mutual contact and arranging to meet.',
           problem:
-            'Existing social platforms are often built around long-lived profiles, follower networks, and continuous content publishing. They handle poorly the simple situation where a user wants to go out today but does not know who else is around.\n\nParty Buddy aims to make this as simple as possible.',
+            'Most social media services are built around persistent profiles, follower networks and continuous content publishing. They do not solve a simple situation particularly well: someone wants to go out today but does not know who else is available.\n\nParty Buddy is designed to make that situation as simple as possible.',
           solution:
-            'Announce you are out → Find others → Send an invite → The other user accepts → Chat and meet up\n\nThe user creates a profile and can announce they are out. Other users can be found and invited to connect. A chat opens once the contact is accepted.',
+            'Say you\'re going out → find others → send an invitation → invitation accepted → chat and meet\n\nThe user creates a temporary profile and can indicate that they are going out. Other users can be discovered and an invitation can be sent to establish contact. Private conversation becomes available only after the other user accepts the connection.',
           audience: [
-            'people looking for company to go out for the evening',
-            'people heading to events',
-            'users new to a city',
-            'people who want to make new acquaintances easily and quickly',
+            'people looking for company for a night out',
+            'people attending events',
+            'people visiting or living in a new city',
+            'people who want a lightweight way to meet new acquaintances',
           ],
           technical:
-            'Party Buddy is a mobile app built with Flutter and a Supabase-backed architecture. The service uses a relational database, real-time functionality, and access control.\n\nThe architecture is designed for temporary user data. User data lifetime is managed by automatic deletion processes, and the security of private messaging is reinforced with end-to-end encryption.',
+            'Party Buddy is a Flutter mobile application with a Supabase backend. The service uses a relational database, real-time functionality and access-control mechanisms.\n\nThe architecture is designed around temporary user data. Automated deletion processes manage the lifecycle of user information, and private messaging is implemented with end-to-end encryption.',
           currentState:
-            'The core functionality of Party Buddy is built and the project is moving into a closed user test. The goal is to collect feedback from real users on usability, features, and any issues before releasing to Google Play.',
+            'The core Party Buddy functionality has been built, and the project is preparing for closed user testing before publication on Google Play. Testing will focus on usability, reliability, automatic data deletion, private messaging and issues observed in real-world use.',
           nextStep:
-            'The next phase is a closed beta with real users. Based on the feedback, we will fix identified issues, finalize the user experience, and prepare the app for Google Play release.',
+            'The next step is closed testing with real users. Findings from testing will be used to fix issues, refine the user experience and prepare the application for publication on Google Play.',
           privacy: {
-            heading: 'Privacy as a design starting point',
+            heading: 'Privacy by design',
+            intro: [
+              'Party Buddy is designed for temporary use rather than permanent social-media profiles. Users are not asked to provide an email address, password or other conventional login credential. The service model is not based on collecting long-lived login information or permanent user profiles.',
+              'User data stored by Party Buddy is automatically deleted 24 hours after the session begins unless the user deletes the data earlier. Users can therefore remove their own data before the automatic retention period ends.',
+              'Private messaging is implemented with end-to-end encryption. The goal is to keep the contents of private messages under the control of the participants in the conversation.',
+            ],
             deletionHeading: 'Why only 24 hours?',
             deletionBody: [
-              'All Party Buddy user accounts, messages, and match records are automatically deleted 24 hours after creation. The service has no persistent accounts and no long-lived profile data. This means no person — not even Marko at FaktumAI — can retrieve old messages or see who was ever online.',
-              'The 24-hour window is set as short as possible while still covering all real-use situations observed in testing: evening outings, concerts, cultural events, and casual meetups. This ensures there is no room for user data to accumulate.',
+              'Party Buddy is designed for temporary situations. The purpose is not to build a permanent user history, but to help people find company when they are going out. When the immediate use case ends, the need to retain the associated service data also ends.',
+              'The short retention period reduces the amount of personal data accumulated by the service and supports Party Buddy\'s model as a lightweight, situational social service.',
             ],
-            nonTraditionalHeading: 'Party Buddy is not a traditional social service',
+            nonTraditionalHeading: 'Party Buddy is not a traditional social network',
             nonTraditionalBody: [
-              'Traditional social platforms are built around long-lived profiles, follower networks, and continuous content publishing. Party Buddy takes the opposite direction: no persistent profile data is stored, and there is no follower feature at all.',
-              'User accounts are temporary, messages are end-to-end encrypted, and all data on the service is deleted 24 hours after creation. This means identity is not a persistent handle — it is a short-lived window during which a user can be online and interact with others.',
+              'Party Buddy differs from traditional social media because it is not intended to build long-term user histories, follower networks or permanent records of user activity.',
+              'Its value comes from the immediate situation: who is available now, who might want to connect and whether both people want to start a conversation.',
             ],
           },
           callout: {
             heading: 'We are looking for Party Buddy testers',
             body: [
-              'Party Buddy is approaching the closed beta phase before Google Play release. We are looking for users to try the app in real-life situations and give feedback on usability, features, and any issues. The goal is to finalize the app before a wider release.',
-              'No technical experience is required to participate as a tester. What matters is using the app normally and reporting what works, what feels unclear, and what should be improved.',
-              'The test also evaluates automatic data deletion, the privacy model, and the functionality of end-to-end encrypted messaging in practice.',
+              'Party Buddy is approaching the testing stage before its Google Play release. We are looking for users to try the application in realistic use and provide feedback on usability, functionality and any problems they encounter.',
+              'No technical expertise is required. The most useful contribution is simply to use the application normally and report what works, what feels unclear and what should be improved.',
+              'Testing will also evaluate automatic data deletion, the privacy model and private messaging in practice.',
             ],
             cta: {
-              heading: 'Apply as a tester',
-              label: 'Apply as a tester',
-              href: 'mailto:marko@Faktum-AI.com?subject=Party%20Buddy%20-%20haluan%20testaajaksi',
+              heading: 'Apply to become a tester',
+              label: 'Apply to become a tester',
+              href: 'mailto:marko@Faktum-AI.com?subject=Party%20Buddy%20-%20tester',
             },
             contactText: 'marko@Faktum-AI.com',
           },
@@ -480,38 +537,39 @@ export const projects: Project[] = [
       },
       en: {
         title: 'Shopify Sale Manager',
-        description: 'Shopify store sales management and automation solution.',
-        status: 'Live / productization',
+        description: 'Shopify store sale pricing management and automation tool.',
+        status: 'In production / productisation',
         detail: {
           lead:
-            'Shopify Sale Manager is a tool built for managing discount sales in Shopify stores. It helps automate price handling and reduces manual price maintenance.',
+            'Shopify Sale Manager is a tool developed for managing sale pricing in Shopify stores. It automates parts of promotional price management and reduces repetitive manual price maintenance.',
           whatItIs:
-            'Shopify Sale Manager originated from a practical e-commerce need: managing discount sales must be fast, controlled, and safe even when a store has many products and variants.\n\nThe goal of the solution is to make campaign and discount-price management more systematic and reduce repetitive manual work in the Shopify store.',
+            'Shopify Sale Manager originated from a practical e-commerce requirement: managing a sale must remain fast, controlled and reliable even when a store contains large numbers of products and product variants. The goal is to make campaign and promotional price management more systematic and reduce repetitive manual work inside the Shopify store.',
           problem:
-            'Managing discount sales in a web store quickly becomes cumbersome when there are many products, variants, and different price tiers. Manual price changes increase workload and the risk of errors.\n\nShopify Sale Manager aims to centralize this work into one controlled process.',
+            'Managing sale prices becomes increasingly laborious when an online store contains many products, product variants and price levels. Updating prices manually increases workload and the risk of errors.\n\nShopify Sale Manager centralises sale-price management into one controlled process.',
           solution:
-            'The merchant manages discount-sale-related products and prices in the Shopify environment using Sale Manager. The tool automates repetitive price-management tasks and reduces the need to make the same changes manually per product.',
+            'The merchant manages products and prices related to a sale through Sale Manager within the Shopify environment. The tool automates repetitive price-management steps and reduces the need to perform the same changes manually for each product or variant.',
           audience: [
-            'Shopify store owners',
-            'stores with many products or variants',
-            'stores running recurring campaigns',
-            'operators who want to reduce manual price management',
+            'Shopify merchants',
+            'online stores with large numbers of products or product variants',
+            'stores that run recurring sales campaigns',
+            'businesses that want to reduce manual price management',
           ],
           technical:
-            'Shopify Sale Manager is built for the Shopify environment and leverages the application and admin APIs Shopify provides. The implementation aims to stay as close to the Shopify platform as possible and minimize unnecessary separate infrastructure.',
-          currentState:
-            'Shopify Sale Manager is live in production and is being further developed toward a productized solution. Real production usage gives development a genuine environment in which the tool\u2019s operation and usability can be evaluated within actual store processes.',
-          nextStep:
-            'The next phase is finalizing based on production experience, improving overall usability, and evaluating the next steps related to Shopify distribution.',
-          cta: {
-            heading: 'Do you need more efficient discount-sales management for your Shopify store?',
-            label: 'Get in touch',
-            href: 'mailto:marko@Faktum-AI.com?subject=Shopify%20Sale%20Manager',
-          },
+            'Shopify Sale Manager is built for the Shopify environment and uses Shopify\'s application and administration interfaces. The implementation is designed to stay as close to the Shopify platform as possible and minimise unnecessary separate infrastructure.',
           productionReference: {
-            sourceName: 'H&J Pirttinen',
+            sourceName: 'H&J Pirttinen\'s online store',
             sourceUrl: 'https://pirttinen.fi/',
-            linkLabel: 'View the store →',
+            linkLabel: 'Visit the online store →',
+          },
+          currentState:
+            'Shopify Sale Manager is in production use and continues to be developed toward a more broadly productised solution. The current deployment provides a real operating environment in which functionality, usability and development needs can be evaluated within actual e-commerce processes.',
+          nextStep:
+            'The next step is to refine the product based on production experience, improve its general applicability and evaluate the next stages of Shopify distribution.',
+          cta: {
+            heading: 'Need more efficient sale-price management for your Shopify store?',
+            text: 'If your store contains many products, product variants or recurring sales campaigns, we can assess whether Shopify Sale Manager could also fit your use case.',
+            label: 'Contact us',
+            href: 'mailto:marko@Faktum-AI.com?subject=Shopify%20Sale%20Manager',
           },
         },
       },
@@ -580,53 +638,53 @@ export const projects: Project[] = [
       },
       en: {
         title: 'Rikoslaki SOTA',
-        description: 'Source-based search and analysis system for the Finnish criminal code.',
-        status: 'Research & product development',
+        description: 'Source-grounded search, browsing and analysis system for Finnish legislation.',
+        status: 'Research and development',
         detail: {
           lead:
-            'Rikoslaki SOTA is a source-based search, browsing, and analysis system for Finnish legislation. Its first restricted scope is the Finnish criminal code.',
+            'Rikoslaki SOTA is a source-grounded search, browsing and analysis system for Finnish legislation. Its first limited dataset is the Finnish Criminal Code.',
           whatItIs:
-            'The project aims to build its own structured and historical legal knowledge base from the Finlex corpus, queryable deterministically and citable back to the original legal sources.\n\nThe criminal code is the project\u2019s first restricted scope. The long-term goal is a historical search engine for all of Finnish legislation and a legal data mirror.',
+            'The project aims to build a structured and historical legal-data layer from Finlex material that can be searched deterministically and whose results can be traced back to the original legal sources.\n\nThe Criminal Code is the project\'s first limited dataset. The long-term goal is a historical search engine and local data mirror covering Finnish legislation more broadly.',
           problem:
-            'A general-purpose language model is not by itself a reliable legal database. In legal use, you need to know which law, which section, and which point in time a conclusion is based on. In addition, legal content changes over time.\n\nRikoslaki SOTA separates the source, the search, and the AI interpretation. The law is the system\u2019s authoritative database; AI can operate on top of it, but it does not replace the original source.',
+            'A generative language model is not, by itself, a reliable legal database. In legal use, it must be possible to determine which law, provision and point in time an answer is based on. Legislation also changes over time.\n\nRikoslaki SOTA is designed to separate the source material, retrieval process and AI-generated interpretation. The legislation itself forms the system\'s primary information layer. AI can operate on top of that layer, but it does not replace the original legal source.',
           solution:
-            'Finlex corpus → ingest and normalization → historical legal database → search/retrieval → source citations → AI-assisted interpretation\n\nLegislative data from Finlex is brought into its own structured database. Version and validity data are handled so that a search result can be tied to the correct legal section and point in time. Search results can then be supplemented with AI-based methods.',
+            'Finlex material → ingestion and normalisation → historical legal-data mirror → search → source references → AI-assisted interpretation\n\nLegislative material obtained from Finlex is ingested into a structured database. Version and validity information is handled so that search results can be associated with the correct legal provision and the correct point in time. AI-assisted functions can then be built on top of this retrieval layer using the system\'s own source material.',
           audience: [
             'legal professionals and lawyers',
-            'researchers and students of legislation',
-            'publishers and authorities needing precise sources',
+            'researchers and educational institutions working with legislation',
+            'publishers and public authorities requiring precise source references',
             'developers building legal applications',
           ],
           technical:
-            'The project architecture emphasizes deterministic search, temporal correctness, and citable sources. PostgreSQL is the foundation for the structured legal data, and the retrieval layer is built primarily source-based. Semantic and AI-based methods can be used as supplementary layers, but they must not replace the canonical source.',
+            'The architecture emphasises deterministic retrieval, temporal correctness and verifiable source references. PostgreSQL forms the foundation of the structured legal-data layer, and the retrieval system is designed to remain source-grounded.\n\nLexical retrieval and result fusion may later be complemented by semantic search methods. AI-based methods operate as additional layers, but they are not allowed to replace the original legal source.',
           currentState:
-            'Rikoslaki SOTA is in research and product development. The criminal-code browser, ingest, and retrieval architecture have been built and tested, but the system is not marketed as a finished legal advisory service.',
+            'Rikoslaki SOTA is in research and development. The Criminal Code browser, ingestion pipeline and retrieval architecture have already been developed and tested, but the system is not marketed as a finished legal advisory service.',
           nextStep:
-            'The next step is expanding data collection and the relational database, building point-in-time features, and defining the first baseline models. Only then will we evaluate how much more advanced models and AI-assisted context improve the search.',
-          cta: {
-            heading: 'Interested in legal data, APIs, or AI-assisted legal search development?',
-            label: 'Get in touch',
-            href: 'mailto:marko@Faktum-AI.com?subject=Rikoslaki%20SOTA',
-          },
+            'The next step is to expand the Finlex data mirror, strengthen the ingestion process and temporal version management, and continue measuring retrieval quality. The architecture is also being developed so that additional areas of Finnish legislation can later be added alongside the Criminal Code.',
           vision: {
-            heading: 'From the criminal code to all of Finnish legislation',
+            heading: 'From the Criminal Code to Finnish legislation',
             body: [
-              'The criminal code is the project\u2019s first restricted scope. The long-term goal is to build a historical search engine for all of Finnish law from Finlex data: a system from which you can search both current and past versions of legislation that were in force at any given time.',
-              'On top of this database we can later build a source-based legal assistant bot and an API through which legal data and search functions can be offered to other applications.',
+              'The Criminal Code is the project\'s first limited legal corpus. The long-term objective is to build a historical search engine for Finnish legislation using Finlex data, allowing users to search both current legislation and legislation that was in force at earlier points in time.',
+              'This data layer could later support a source-grounded legal assistant and an API through which legal data and retrieval functions could be made available to other applications.',
             ],
           },
           commercialization: {
-            heading: 'Commercialization possibilities',
-            body: 'The project also explores building an API service on top of the database. This is a future commercialization direction, not a currently published service.',
+            heading: 'Commercialisation possibilities',
+            body: 'The project is investigating the possibility of productising an API service on top of the legal-data layer. This is a potential future commercial direction, not a currently released service.',
             items: [
-              'source-based legal assistant bot',
-              'historical legal search service',
-              'legal data search API',
+              'source-grounded legal assistant',
+              'historical legislation search service',
+              'legal-data search API',
               'integrations with other legal services',
             ],
           },
           disclaimer:
-            'Rikoslaki SOTA is a development project and does not currently provide legal advice. In legal matters the original legislation and other official legal sources are primary.',
+            'Rikoslaki SOTA is a development project and does not currently provide legal advice. In legal matters, original legislation and other official legal sources remain authoritative.',
+          cta: {
+            heading: 'Interested in legal data, APIs or AI-assisted legal retrieval?',
+            label: 'Contact us',
+            href: 'mailto:marko@Faktum-AI.com?subject=Rikoslaki%20SOTA',
+          },
         },
       },
     },
@@ -690,48 +748,51 @@ export const projects: Project[] = [
       },
       en: {
         title: 'SM-LIIGA-GURU',
-        description: 'Data-driven prediction and analysis system for Finnish Liiga ice hockey games.',
+        description: 'Data-driven prediction and analysis system for Finnish Liiga ice hockey.',
         status: 'Research and development',
         detail: {
           lead:
-            'SM-LIIGA-GURU is a data-driven prediction and analysis system for Liiga games, whose goal is to build match forecasts on top of its own historical and current data layer.',
+            'SM-LIIGA-GURU is a data-driven prediction and analysis system for Finnish Liiga ice hockey. Its goal is to build match predictions on top of its own historical and current data layer.',
           whatItIs:
-            'The core idea of the project is simple: the final result of a match is not asked of a general-purpose language model, but the forecast is built systematically from collected Liiga data and measurable variables.\n\nThe goal is to form its own database, feature engine, prediction models and system with which predictions can also be evaluated retrospectively.',
+            'The project\'s core idea is simple: instead of asking a general-purpose language model who will win a match, the prediction is built systematically from collected Liiga data and measurable variables.\n\nThe goal is to create a dedicated database, feature-engineering layer, prediction models and an evaluation system that allows each prediction to be assessed retrospectively.',
           problem:
-            'General-purpose AI can write a convincing analysis of a match, but it does not by itself guarantee that the forecast is based on correct, time-valid data, or that the quality of the forecast can be measured objectively.\n\nSM-LIIGA-GURU aims to build a forecasting process in which the data, the variables used by the model and the time the forecast was made can be traced.',
+            'A general-purpose AI can produce a convincing match analysis, but that does not guarantee that the prediction is based on correct information that was actually available before the match, or that its predictive quality can be measured objectively.\n\nSM-LIIGA-GURU is designed around a prediction process in which the source data, model features and prediction timestamp can be traced.',
           solution:
-            'Raw data → normalization → PostgreSQL → feature engine → prediction models → prediction snapshot → match result → post-evaluation\n\nThe system aims to combine historical and as-up-to-date-as-possible Liiga data into a single relational database. Forecasts must only use information that was genuinely available before the start of the predicted match.',
+            'Raw data → normalisation → PostgreSQL → feature engineering → prediction models → prediction snapshot → match result → retrospective evaluation\n\nThe system is intended to combine historical and up-to-date Liiga data in a relational database. A prediction may use only information that was available before the start of the match being predicted.',
           audience: [
-            'those interested in Liiga analytics',
-            'users familiar with data and data sources',
-            'projects building match analysis tools',
+            'users interested in Liiga analysis',
+            'people interested in data-driven and model-based sports analysis',
+            'developers and researchers building sports-data analysis systems',
+            'users who want to understand what a match prediction is based on',
           ],
           technical:
-            'SM-LIIGA-GURU uses a PostgreSQL database where Liiga data is normalized and stored. A feature engine transforms raw data into model-ready inputs, and a chronological validation process ensures forecasts are never trained on data that became available after the predicted match.',
+            'The SM-LIIGA-GURU data layer is based on a PostgreSQL relational database into which Liiga data is normalised and stored. The system builds pre-match features from available information, which are then used by prediction models to produce match-specific assessments.\n\nOne of the project\'s most important principles is temporal correctness: a historical model must not be trained or tested using information that became available only after the match being predicted. Model evaluation is therefore performed chronologically.',
           currentState:
-            'SM-LIIGA-GURU is in research and product development. Work focuses first on building the data foundation, sources, data model, feature engineering, and validation methodology.\n\nThe project does not publish forecast accuracy or win-rate claims until they can be demonstrated through controlled historical testing and a continuously running forecast follow-up.',
+            'SM-LIIGA-GURU is in research and development. Current work focuses first on the data foundation, data sources, data model, feature engineering and validation methodology.\n\nNo claims about prediction accuracy or winning performance will be published until they can be demonstrated through controlled historical testing and later through genuinely forward-looking prediction tracking.',
           nextStep:
-            'The next step is expanding data collection and the relational database, building point-in-time features, and defining the first baseline models. Only after that will we evaluate how much more advanced models and AI-assisted context improve the forecast.',
-          cta: {
-            heading: 'Follow the development of SM-LIIGA-GURU',
-            text: 'The project is still in the research phase. Results are published only when they can be measured and reproduced.',
-            label: 'Get in touch',
-            href: 'mailto:marko@Faktum-AI.com?subject=SM-LIIGA-GURU',
-          },
+            'The next step is to expand data collection and the relational database, build temporally correct features and define the first baseline models. Only after that will more advanced models and AI-assisted contextual information be evaluated for their contribution to predictive performance.',
           data: [
             'match history',
             'team performance',
             'player data',
             'goaltender data',
             'match events',
-            'lineups and other information available before the match',
+            'line-ups and other information available before the match',
           ],
           dataPrinciple:
-            'The system aims to combine historical and as-up-to-date-as-possible Liiga data into a single relational database. Forecasts must only use information that was genuinely available before the start of the predicted match.',
+            'The system is intended to combine historical and up-to-date Liiga data in one relational database. Predictions must use only information that was genuinely available before the start of the match being predicted.',
           aiRole:
-            'Language models can later be used, for example, to interpret news, lineup changes, and other text-based context, as well as to explain forecasts. An LLM is not, however, the system\u2019s canonical data source nor a substitute for numerical match forecasts.',
-          disclaimer:
-            'SM-LIIGA-GURU is in research and product development. The project does not present forecasts as betting advice, nor is it a gambling product. Results are published only when they can be measured and reproduced.',
+            'Language models may later be used to interpret news, line-up changes and other text-based context, and to help explain predictions. An LLM is not, however, the system\'s primary data source or a replacement for the numerical prediction model.',
+          callout: {
+            heading: 'SM-LIIGA-GURU is in research and development',
+            body: [
+              'Results will be published only when the system can be evaluated in a measurable and reproducible manner.',
+            ],
+          },
+          cta: {
+            heading: 'Follow the development of SM-LIIGA-GURU',
+            text: 'The project is still in the research phase. Results will be published only when the system can be evaluated in a measurable and reproducible manner.',
+          },
         },
       },
     },

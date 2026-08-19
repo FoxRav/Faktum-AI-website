@@ -56,7 +56,7 @@ export function websiteJsonLd(locale: 'fi' | 'en' = 'fi', site = DEFAULT_SITE) {
     url: site,
     description:
       locale === 'en'
-        ? 'Software products, AI-assisted development, and technical project expertise.'
+        ? 'Software products, AI-assisted development and technical project expertise.'
         : 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
     inLanguage: locale === 'en' ? 'en' : 'fi-FI',
     publisher: { '@type': 'Organization', name: 'FaktumAI', url: site },

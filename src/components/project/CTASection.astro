@@ -26,22 +26,24 @@ const variant = cta.variant ?? 'primary';
         {cta.contactText}
       </p>
     )}
-    <div class="mt-6">
-      {variant === 'secondary' ? (
-        <a
-          href={cta.href}
-          class="inline-block rounded-lg border border-[var(--color-border)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-dim)] transition hover:border-cyan-500/40 hover:text-[var(--color-text)]"
-        >
-          {cta.label}
-        </a>
-      ) : (
-        <a
-          href={cta.href}
-          class="inline-block rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] transition hover:bg-cyan-400"
-        >
-          {cta.label}
-        </a>
-      )}
-    </div>
+    {cta.label && (
+      <div class="mt-6">
+        {variant === 'secondary' ? (
+          <a
+            href={cta.href}
+            class="inline-block rounded-lg border border-[var(--color-border)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-dim)] transition hover:border-cyan-500/40 hover:text-[var(--color-text)]"
+          >
+            {cta.label}
+          </a>
+        ) : (
+          <a
+            href={cta.href}
+            class="inline-block rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] transition hover:bg-cyan-400"
+          >
+            {cta.label}
+          </a>
+        )}
+      </div>
+    )}
   </div>
 </section>

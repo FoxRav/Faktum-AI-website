@@ -20,14 +20,16 @@ const isEn = locale === 'en';
         <p>{para}</p>
       ))}
     </div>
-    <div class="mt-6">
-      <a
-        href={callout.cta.href}
-        class="inline-block rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] transition hover:bg-cyan-400"
-      >
-        {callout.cta.label}
-      </a>
-    </div>
+    {callout.cta && callout.cta.href && (
+      <div class="mt-6">
+        <a
+          href={callout.cta.href}
+          class="inline-block rounded-lg bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] transition hover:bg-cyan-400"
+        >
+          {callout.cta.label}
+        </a>
+      </div>
+    )}
     {callout.contactText && (
       <p class="mt-3 text-sm text-[var(--color-text-dim)]">
         <a

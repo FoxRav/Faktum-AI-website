@@ -16,12 +16,11 @@ const isEn = locale === 'en';
   </h2>
   <div class="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
     <p class="text-[var(--color-text-dim)]">
-      {isEn ? 'Shopify Sale Manager is in production at' : 'Shopify Sale Manager on tuotantokäytössä'}
+      {isEn ? 'Shopify Sale Manager is in production use in' : 'Shopify Sale Manager on tuotantokäytössä'}
       {' '}
-      <strong class="text-[var(--color-text)]">{reference.sourceName}</strong>.
-      {' '}
-      {!isEn && 'Ratkaisua on siis kehitetty todellisen verkkokaupan tarpeisiin eikä ainoastaan demonstraatioksi tai tekniseksi prototyypiksi.'}
-      {isEn && 'The solution was built for real e-commerce needs, not merely as a demo or technical prototype.'}
+      <strong class="text-[var(--color-text)]">{reference.sourceName}</strong>
+      {isEn && '. The solution has therefore been developed around the requirements of a real e-commerce operation rather than solely as a demonstration or technical prototype.'}
+      {!isEn && '. Ratkaisua on siis kehitetty todellisen verkkokaupan tarpeisiin eikä ainoastaan demonstraatioksi tai tekniseksi prototyypiksi.'}
     </p>
     <p class="mt-4">
       <a

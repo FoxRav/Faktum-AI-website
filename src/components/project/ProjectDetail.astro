@@ -73,12 +73,15 @@ const orgBodyHtml = detail.organisationDeployment
           {p.title}
         </h1>
         <p class="mt-4 max-w-2xl text-lg text-[var(--color-text-dim)]">{detail.lead}</p>
+        {detail.commercialLead && (
+          <p class="mt-2 max-w-2xl text-sm font-semibold text-cyan-400">{detail.commercialLead}</p>
+        )}
       </div>
     </div>
   </header>
 
   <div class="prose-faktum mx-auto mt-12 max-w-3xl">
-    <ProjectSection title={isEn ? 'What it is' : 'Mikä se on?'}>
+    <ProjectSection title={isEn ? 'What is it?' : 'Mikä se on?'}>
       <div set:html={whatItIsHtml}></div>
     </ProjectSection>
 
@@ -103,7 +106,7 @@ const orgBodyHtml = detail.organisationDeployment
       </ProjectSection>
     )}
 
-    <ProjectSection title={isEn ? 'Problem solved' : 'Mitä ongelmaa ratkaistaan?'}>
+    <ProjectSection title={isEn ? 'What problem does it solve?' : 'Mitä ongelmaa ratkaistaan?'}>
       <div set:html={problemHtml}></div>
     </ProjectSection>
 
@@ -153,7 +156,7 @@ const orgBodyHtml = detail.organisationDeployment
       </ProjectSection>
     )}
 
-    <ProjectSection title={isEn ? 'Technical approach' : 'Tekninen toteutus'}>
+    <ProjectSection title={isEn ? 'Technical implementation' : 'Tekninen toteutus'}>
       <div set:html={technicalHtml}></div>
     </ProjectSection>
 
@@ -188,7 +191,7 @@ const orgBodyHtml = detail.organisationDeployment
       />
     )}
 
-    <ProjectSection title={isEn ? 'Current state' : 'Nykytila'}>
+    <ProjectSection title={isEn ? 'Current status' : 'Nykytila'}>
       <div set:html={currentStateHtml}></div>
     </ProjectSection>
 
