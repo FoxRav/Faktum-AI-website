@@ -1,21 +1,21 @@
 ---
 import ListingLayout from '../../layouts/ListingLayout.astro';
 import ArticleFeed from '../../components/sections/ArticleFeed.astro';
-import { getAllArticles, getNewsArticles } from '../../utils/content';
+import { getAllArticles } from '../../utils/content';
 import { t } from '../../i18n/ui';
 
 const locale = 'fi' as const;
-const filter = new URL(Astro.request.url).searchParams.get('filter');
-const showNewsOnly = filter === 'uutiset';
-const articles = showNewsOnly ? await getNewsArticles(locale) : await getAllArticles(locale);
+const articles = await getAllArticles(locale);
 ---
 
 <ListingLayout
   title="Uutiset"
   description={t(locale, 'listingNews')}
   path="/uutiset/"
-  activeTab={showNewsOnly ? '/uutiset/?filter=uutiset' : '/uutiset/'}
+  activeTab="/uutiset/"
   locale="fi"
+  filterable
+  activeFilter="all"
 >
   <ArticleFeed articles={articles} title="" emptyMessage="Ei julkaistuja artikkeleita vielä." />
 </ListingLayout>

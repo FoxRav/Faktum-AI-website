@@ -1,21 +1,21 @@
 ---
 import ListingLayout from '../../../layouts/ListingLayout.astro';
 import ArticleFeed from '../../../components/sections/ArticleFeed.astro';
-import { getAllArticles, getNewsArticles } from '../../../utils/content';
+import { getAllArticles } from '../../../utils/content';
 import { t } from '../../../i18n/ui';
 
 const locale = 'en' as const;
-const filter = new URL(Astro.request.url).searchParams.get('filter');
-const showNewsOnly = filter === 'news';
-const articles = showNewsOnly ? await getNewsArticles(locale) : await getAllArticles(locale);
+const articles = await getAllArticles(locale);
 ---
 
 <ListingLayout
   title={t(locale, 'navNews')}
   description={t(locale, 'listingNews')}
   path="/en/news/"
-  activeTab={showNewsOnly ? '/en/news/?filter=news' : '/en/news/'}
+  activeTab="/en/news/"
   locale={locale}
+  filterable
+  activeFilter="all"
 >
   <ArticleFeed articles={articles} title="" emptyMessage={t(locale, 'emptyArticles')} />
 </ListingLayout>

@@ -17,7 +17,7 @@ const categoryLabel = getCategoryLabel(article);
 const categoryHref = getCategoryHref(article);
 ---
 
-<article class="card group flex flex-col overflow-hidden">
+<article class="card group flex flex-col overflow-hidden" data-category={article.collection}>
   {article.data.heroImage && (
     <a href={url} class="block aspect-video overflow-hidden bg-[var(--color-bg-soft)]">
       <img

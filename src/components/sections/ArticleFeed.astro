@@ -20,7 +20,7 @@ const {
     <h2 class="mb-8 font-sans text-2xl font-bold text-[var(--color-text)]">{title}</h2>
   )}
   {articles.length > 0 ? (
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-feed>
       {articles.map((article) => (
         <ArticleCard article={article} />
       ))}

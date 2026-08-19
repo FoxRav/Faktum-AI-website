@@ -51,7 +51,7 @@ export const ui = {
     aboutMetaDescription:
       'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja.',
     listingAnalysis: 'Syvällisiä analyyseja AI-markkinoista, infrastruktuurista ja liiketoimintamalleista.',
-    listingNews: 'FaktumAI:n uutiset, analyysit, haastattelut ja työkaluarviot uusimmissa ensin.',
+    listingNews: 'FaktumAI:n uutiset, analyysit, haastattelut ja työkaluarviot – uusimmat ensin.',
     landingEyebrow: 'FAKTUMAI',
     landingHeading: 'Ohjelmistoja, teknologiaa ja projektiosaamista',
     landingLead:
@@ -376,9 +376,9 @@ export function getNavItems(locale: Locale): NavItem[] {
 export function getFeedTabs(locale: Locale) {
   const isFi = locale === 'fi';
   return [
-    { href: categoryPath(locale, 'news'), label: t(locale, 'tabAll') },
-    { href: `${categoryPath(locale, 'news')}?filter=${isFi ? 'uutiset' : 'news'}`, label: t(locale, 'navNews') },
-    { href: categoryPath(locale, 'interviews'), label: t(locale, 'navInterviews') },
-    { href: categoryPath(locale, 'tools'), label: t(locale, 'navTools') },
+    { href: categoryPath(locale, 'news'), label: t(locale, 'tabAll'), filter: 'all' },
+    { href: `${categoryPath(locale, 'news')}?filter=${isFi ? 'uutiset' : 'news'}`, label: t(locale, 'navNews'), filter: isFi ? 'uutiset' : 'news' },
+    { href: categoryPath(locale, 'interviews'), label: t(locale, 'navInterviews'), filter: 'interviews' },
+    { href: categoryPath(locale, 'tools'), label: t(locale, 'navTools'), filter: 'tools' },
   ];
 }
