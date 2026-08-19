@@ -387,7 +387,7 @@ export const projects: Project[] = [
             'ihmisille, jotka haluavat löytää uusia tuttavuuksia kevyesti ja nopeasti',
           ],
           technical:
-             'Party Buddy on Flutterilla toteutattu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja yksityisviestintä toteutetaan päästä päähän salattuna.',
+             'Party Buddy on Flutterilla toteutettu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja yksityisviestintä toteutetaan päästä päähän salattuna.',
           currentState:
             'Party Buddyn keskeinen toiminnallisuus on rakennettu, ja projekti valmistautuu suljettuun käyttäjätestaukseen ennen Google Play -julkaisua. Testauksessa keskitytään käytettävyyteen, toimintavarmuuteen, tietojen automaattiseen poistumiseen, yksityisen viestinnän toimintaan ja todellisessa käytössä havaittaviin ongelmiin.',
           nextStep:
@@ -414,7 +414,7 @@ export const projects: Project[] = [
             heading: 'Haemme Party Buddylle testaajia',
             body: [
               'Party Buddy lähestyy Google Play -julkaisun testausvaihetta. Haemme käyttäjiä kokeilemaan sovellusta aidossa käyttötilanteessa ja antamaan palautetta käytettävyydestä, toiminnasta ja mahdollisista ongelmista. Testauksen tavoitteena on viimeistellä sovellus ennen laajempaa julkaisua.',
-              'Testaajaksi osallistuminen ei edellytä teknistä osaamista. Tärkeintä on käyttää sovellusta normaalisti ja kertoa, mikä toimii, mikä tuntuu epäselvältä ja mitä pitäisi parantaa.',
+              'Testaajana toimiminen ei edellytä teknistä osaamista. Tärkeintä on käyttää sovellusta normaalisti ja kertoa, mikä toimii, mikä tuntuu epäselvältä ja mitä pitäisi parantaa.',
               'Testauksessa arvioidaan myös tietojen automaattista poistumista, yksityisyysmallia ja viestinnän toimivuutta käytännössä.',
             ],
             cta: {
@@ -619,7 +619,7 @@ export const projects: Project[] = [
           },
           commercialization: {
             heading: 'Kaupallistamismahdollisuudet',
-            body: 'Projektissa tutkitaan mahdollisuutta tuottaa tietokerroksen päälle myös API-palvelu. Tämä on tulevaisuuden kaupallistamissuunta, ei tällä hetkellä julkaistu palvelu.',
+            body: 'Projektissa tutkitaan mahdollisuutta tuotteistaa tietokerroksen päälle myös API-palvelu. Tämä on tulevaisuuden kaupallistamissuunta, ei tällä hetkellä julkaistu palvelu.',
             items: [
               'lähdepohjainen lakimiesbotti',
               'lainsäädännön historiallinen hakupalvelu',
@@ -709,7 +709,7 @@ export const projects: Project[] = [
           whatItIs:
             'Projektin perusajatus on yksinkertainen: ottelun lopputulosta ei kysytä yleiskäyttöiseltä kielimallilta, vaan ennuste rakennetaan järjestelmällisesti kerätystä Liiga-datasta ja mitattavista muuttujista.\n\nTavoitteena on muodostaa oma tietokanta, feature-engineering-kerros, ennustemallit ja järjestelmä, jolla ennusteita voidaan myös arvioida jälkikäteen.',
           problem:
-            'Yleiskäyttöinen AI voi kirjoittaa vakuuttavan analyysin ottelusta, mutta se ei itsessään takaa, että ennuste perustuu oikeaan, ajankohdan mukaan saatavilla olleeseen dataan tai että ennusteen laatua voidaan mitata objektiivisesti.\n\nSM-LIIGA-GURUn tavoitteena on rakentaa ennusteprosessi, jossa käytetty data, mallin käyttämät muuttujat ja ennusteen syntyhetki voidaan jäljittää.',
+            'Yleiskäyttöinen AI voi kirjoittaa vakuuttavan analyysin ottelusta, mutta se ei itsessään takaa, että ennuste perustuu oikeaan, kyseisenä ajankohtana saatavilla olleeseen dataan tai että ennusteen laatua voidaan mitata objektiivisesti.\n\nSM-LIIGA-GURUn tavoitteena on rakentaa ennusteprosessi, jossa käytetty data, mallin käyttämät muuttujat ja ennusteen syntyhetki voidaan jäljittää.',
           solution:
             'Raakadata → normalisointi → PostgreSQL → feature-engineering → ennustemallit → ennusteen tallennus → ottelun tulos → jälkiarviointi\n\nJärjestelmässä pyritään yhdistämään historiallista ja mahdollisimman ajantasaista Liiga-dataa yhteen relaatiotietokantaan. Ennusteissa käytetään vain tietoa, joka oli oikeasti saatavilla ennen ennustettavan ottelun alkua.',
           audience: [
@@ -721,7 +721,7 @@ export const projects: Project[] = [
           technical:
             'SM-LIIGA-GURUn tietokerroksen perustana toimii PostgreSQL-relaatiotietokanta, johon Liiga-data normalisoidaan ja tallennetaan. Järjestelmässä rakennetaan ottelua edeltävästä tiedosta johdettuja ominaisuuksia, joiden avulla ennustemallit muodostavat ottelukohtaisia arvioita.\n\nYksi projektin tärkeimmistä periaatteista on ajallinen oikeellisuus: historiallista mallia ei saa kouluttaa tai testata tiedolla, joka tuli saataville vasta ennustettavan ottelun jälkeen. Mallien arviointi tehdään siksi kronologisesti.',
           currentState:
-            'SM-LIIGA-GURU on tutkimus- ja tuotekehitysvaiheessa. Työ keskittyy ensin dataperustaan, lähteiden, tietomallin, feature-engineeringin ja validointimenetelmän rakentamiseen.\n\nProjektista ei julkaista ennustetarkkuus- tai voittoväitteitä ennen kuin ne voidaan osoittaa kontrolloidulla historiallisella testauksella ja myöhemmin aidosti eteenpäin kulkevalla ennusteseurannalla.',
+            'SM-LIIGA-GURU on tutkimus- ja tuotekehitysvaiheessa. Työ keskittyy ensin dataperustan, tietomallin, feature-engineeringin ja validointimenetelmän rakentamiseen sekä lähteiden kartoittamiseen.\n\nProjektista ei julkaista ennustetarkkuus- tai voittoväitteitä ennen kuin ne voidaan osoittaa kontrolloidulla historiallisella testauksella ja myöhemmin aidosti eteenpäin kulkevalla ennusteseurannalla.',
           nextStep:
              'Seuraava vaihe on datankeräimen ja relaatiotietokannan laajentaminen, ajallisesti oikeiden ominaisuuksien rakentaminen sekä ensimmäisten baseline-mallien määrittäminen. Vasta tämän jälkeen arvioidaan, kuinka paljon kehittyneemmät mallit ja AI-avusteinen konteksti parantavat ennustetta.',
           cta: {
