@@ -10,9 +10,9 @@ const enHref = translatePath(pathname, 'en');
 
 <div
   class="flex items-center gap-1 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-0.5"
-  role="navigation"
-  aria-label="Language"
->
+   role="navigation"
+   aria-label={t(currentLocale, 'langSwitcherAriaLabel')}
+ >
   <a
     href={fiHref}
     hreflang="fi"

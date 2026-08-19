@@ -1,4 +1,7 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { t } from '../../i18n/ui';
+
 interface Tab {
   href: string;
   label: string;
@@ -7,12 +10,13 @@ interface Tab {
 interface Props {
   tabs: Tab[];
   activeHref: string;
+  locale?: Locale;
 }
 
-const { tabs, activeHref } = Astro.props;
+const { tabs, activeHref, locale = 'fi' } = Astro.props;
 ---
 
-<nav class="container-site border-b border-[var(--color-border)]" aria-label="Sisältövälilehdet">
+<nav class="container-site border-b border-[var(--color-border)]" aria-label={t(locale, 'categoriesAriaLabel')}>
   <ul class="flex gap-1 overflow-x-auto pb-px [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
     {tabs.map((tab) => {
       const active = tab.href === activeHref;

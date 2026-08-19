@@ -164,7 +164,7 @@ export const projects: Project[] = [
           problem:
             'Monikielisissä tilaisuuksissa ammattitulkkaus voi olla kallista tai vaikeasti järjestettävää. Tavalliset kuluttajille tarkoitetut käännössovellukset eivät puolestaan ole suunniteltuja jatkuvaan puheeseen, operaattorin hallintaan ja suurelle näytölle välitettävään reaaliaikaiseen tekstitykseen.\n\nSermoVoxin tavoitteena on tarjota tähän tarkoitukseen kevyt, hallittava ja mahdollisimman pitkälle paikallisesti toimiva ratkaisu.',
           solution:
-            'Mikrofomi → puheentunnistus → käännös → reaaliaikainen tiedonsiirto → operaattori- ja projektorinäkymä\n\nPuhujan ääni käsitellään paikallisesti. Puhe tunnistetaan, käännetään valituille kielille ja toimitetaan selaimessa toimivaan käyttöliittymään. Operaattori hallitsee järjestelmää omasta näkymästään ja yleisö näkee käännökset erillisessä projektori- tai näytönäkymässä.',
+            'Mikrofini → puheentunnistus → käännös → reaaliaikainen tiedonsiirto → operaattori- ja projektorinäkymä\n\nPuhujan ääni käsitellään paikallisesti. Puhe tunnistetaan, käännetään valituille kielille ja toimitetaan selaimessa toimivaan käyttöliittymään. Operaattori hallitsee järjestelmää omasta näkymästään ja yleisö näkee käännökset erillisessä projektori- tai näytönäkymässä.',
           audience: [
             'seurakunnille ja monikielisille yhteisöille',
             'tapahtumiin ja seminaareihin',
@@ -238,7 +238,7 @@ export const projects: Project[] = [
             heading: 'Tarvitsetko reaaliaikaista monikielistä käännöstä?',
             text: 'SermoVox Local on saatavilla kertamaksullisena paikallisena ratkaisuna. Käydään yhdessä läpi käyttötarve, tarvittavat kielet, laitteisto ja sopiva käyttöönottomalli.\n\nSermoVox Local 599 € + alv',
             label: 'Kysy SermoVox-ratkaisusta',
-            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20Local%20-%20käyttöönotto',
+            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20Local%20-%20k%C3%A4ytt%C3%B6%C3%B6notto',
             contactText: 'marko@Faktum-AI.com',
           },
         },
@@ -379,7 +379,7 @@ export const projects: Project[] = [
           problem:
             'Nykyiset sosiaalisen median palvelut perustuvat usein pitkäikäisiin profiileihin, seuraajaverkostoihin ja jatkuvaan sisällön julkaisemiseen. Ne eivät ratkaise kovin hyvin yksinkertaista tilannetta: käyttäjä haluaisi tänään lähteä ulos, mutta ei tiedä, kuka muu on liikkeellä.\n\nParty Buddy pyrkii tekemään tästä tilanteesta mahdollisimman yksinkertaisen.',
           solution:
-            'Ilmoita olemasi liikkeellä → löydä muita → lähetä kutsu → toinen käyttäjä hyväksyy → keskustelu ja tapaaminen\n\nKäyttäjä luo väliaikaisen profiilin ja voi ilmoittaa olevansa liikkeellä. Palvelussa voidaan löytää muita käyttäjiä ja lähettää kutsu yhteyden muodostamiseksi. Keskinusken avautuu vasta, kun toinen käyttäjä on hyväksynyt kontaktin.',
+            'Ilmoita olevasi liikkeellä → löydä muita → lähetä kutsu → toinen käyttäjä hyväksyy → keskustelu ja tapaaminen\n\nKäyttäjä luo väliaikaisen profiilin ja voi ilmoittaa olevansa liikkeellä. Palvelussa voidaan löytää muita käyttäjiä ja lähettää kutsu yhteyden muodostamiseksi. Keskustelu avautuu vasta, kun toinen käyttäjä on hyväksynyt kontaktin.',
           audience: [
             'ihmisille, jotka etsivät seuraa illanviettoon',
             'tapahtumiin lähteville',
@@ -387,7 +387,7 @@ export const projects: Project[] = [
             'ihmisille, jotka haluavat löytää uusia tuttavuuksia kevyesti ja nopeasti',
           ],
           technical:
-            'Party Buddy on Flutterilla toteutattu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja päästä päähän salattu viestintä toteutetaan päästä päähän salattuna.',
+             'Party Buddy on Flutterilla toteutattu mobiilisovellus, jonka backend perustuu Supabaseen. Palvelussa hyödynnetään relaatiotietokantaa, reaaliaikaisia toimintoja ja käyttöoikeuksien hallintaa.\n\nArkkitehtuuri on suunniteltu väliaikaiselle käyttäjädatalle. Käyttäjätietojen elinkaarta hallitaan automaattisilla poistoprosesseilla, ja Yksityisviestintä toteutetaan päästä päähän salattuna.',
           currentState:
             'Party Buddyn keskeinen toiminnallisuus on rakennettu, ja projekti valmistautuu suljettuun käyttäjätestaukseen ennen Google Play -julkaisua. Testauksessa keskitytään käytettävyyteen, toimintavarmuuteen, tietojen automaattiseen poistumiseen, yksityisen viestinnän toimintaan ja todellisessa käytössä havaittaviin ongelmiin.',
           nextStep:
@@ -395,8 +395,8 @@ export const projects: Project[] = [
           privacy: {
             heading: 'Yksityisyys suunnittelun lähtökohtana',
             intro: [
-              'Party Buddy on suunniteltu hetkelliseen käyttöön eikä pysyväksi sosiaalisen median profiiliksi. Käyttäjältä ei pyydetä sähköpostiosoitetta, salasana tai muuta perinteistä kirjautumistunnusta. Palvelun toimintamalli ei perustu pitkäikäisten kirjautumistietojen tai käyttäjäprofiilien keräämiseen.',
-              'Party Buddyyn tallennetut käyttäjätiedot poistetaan automaattisesti 24 tunnin kuluttua käytöistunnon alkamisesta, ellei käyttäjä poista tietoja jo sitä ennen. Käyttäjä voi siis poistaa omat tietonsa myös itse ennen automaattisen säilytysajan päättymistä.',
+              'Party Buddy on suunniteltu hetkelliseen käyttöön eikä pysyväksi sosiaalisen median profiiliksi. Käyttäjältä ei pyydetä sähköpostiosoitetta, salasanaa tai muuta perinteistä kirjautumistunnusta. Palvelun toimintamalli ei perustu pitkäikäisten kirjautumistietojen tai käyttäjäprofiilien keräämiseen.',
+              'Party Buddyyn tallennetut käyttäjätiedot poistetaan automaattisesti 24 tunnin kuluttua käyttöistunnon alkamisesta, ellei käyttäjä poista tietoja jo sitä ennen. Käyttäjä voi siis poistaa omat tietonsa myös itse ennen automaattisen säilytysajan päättymistä.',
               'Yksityisviestintä toteutetaan päästä päähän salattuna. Tavoitteena on, että viestien sisältö pysyy keskustelun osapuolten hallinnassa.',
             ],
             deletionHeading: 'Miksi vain 24 tuntia?',
@@ -505,13 +505,13 @@ export const projects: Project[] = [
           lead:
             'Shopify Sale Manager on Shopify-verkkokaupan alennusmyyntien hallintaan kehitetty työkalu, joka automatisoi tarjoushintojen käsittelyä ja vähentää manuaalista hintojen ylläpitoa.',
           whatItIs:
-            'Shopify Sale Manager syntyi käytännön verkkokauppatarpeesta: alennusmyyntien hallinnan pitää olla nopeaa, hallittavaa ja turvallista myös silloin, kun verkkokaupassa on paljon tuotteita ja tuotevariantteja.\n\nRatkaisun tavoitteena on tehdä kampanjojen ja tarjoushintojen hallinnasta järjestelmällisemmaksi ja vähentää Shopify-kaupassa tehtävää toistuvaa manuaalista työtä.',
+             'Shopify Sale Manager syntyi käytännön verkkokauppatarpeesta: alennusmyyntien hallinnan pitää olla nopeaa, hallittavaa ja turvallista myös silloin, kun verkkokaupassa on paljon tuotteita ja tuotevariantteja.\n\nRatkaisun tavoitteena on tehdä kampanjojen ja tarjoushintojen hallinnosta järjestelmällisempää ja vähentää Shopify-kaupassa tehtävää toistuvaa manuaalista työtä.',
           problem:
             'Verkkokaupan alennusmyyntien hallinta muuttuu nopeasti työlääksi, kun tuotteita, tuotevariantteja ja eri hintatasoja on paljon. Hintojen muuttaminen käsin kasvattaa työmäärää ja lisää virheiden riskiä.\n\nShopify Sale Manager keskittää alennusmyyntien hinnanhallintaa yhteen hallittavaan prosessiin.',
           solution:
             'Kauppias hallitsee alennusmyyntiin liittyviä tuotteita ja hintoja Shopify-ympäristössä Sale Managerin avulla. Työkalu automatisoi toistuvia hinnanhallinnan vaiheita ja vähentää tarvetta tehdä samoja muutoksia käsin tuote tai variantti kerrallaan.',
           audience: [
-            'Shopify-verkkokaupille',
+            'Shopify-verkkokaupoille',
             'verkkokaupoille, joilla on paljon tuotteita tai tuotevariantteja',
             'toistuvia kampanjoita järjestäville verkkokaupoille',
             'toimijoille, jotka haluavat vähentää manuaalista hinnanhallintaa',
@@ -723,7 +723,7 @@ export const projects: Project[] = [
           currentState:
             'SM-LIIGA-GURU on tutkimus- ja tuotekehitysvaiheessa. Työ keskittyy ensin dataperustaan, lähteiden, tietomallin, feature-engineeringin ja validointimenetelmän rakentamiseen.\n\nProjektista ei julkaista ennustetarkkuus- tai voittoväitteitä ennen kuin ne voidaan osoittaa kontrolloidulla historiallisella testauksella ja myöhemmin aidosti eteenpäin kulkevalla ennusteseurannalla.',
           nextStep:
-            'Seuraava vaihe on datankeräännin ja relaatiotietokannan laajentaminen, ajallisesti oikeiden ominaisuuksien rakentaminen sekä ensimmäisten baseline-mallien määrittäminen. Vasta tämän jälkeen arvioidaan, kuinka paljon kehittyneemmät mallit ja AI-avusteinen konteksti parantavat ennustetta.',
+             'Seuraava vaihe on datankeräimen ja relaatiotietokannan laajentaminen, ajallisesti oikeiden ominaisuuksien rakentaminen sekä ensimmäisten baseline-mallien määrittäminen. Vasta tämän jälkeen arvioidaan, kuinka paljon kehittyneemmät mallit ja AI-avusteinen konteksti parantavat ennustetta.',
           cta: {
             heading: 'Seuraa SM-LIIGA-GURUn kehitystä',
             text: 'Projekti on vielä tutkimusvaiheessa. Tuloksia julkaistaan vasta, kun järjestelmää voidaan arvioida mitattavasti ja toistettavasti.',

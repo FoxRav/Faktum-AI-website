@@ -3,6 +3,7 @@ import type { Locale } from '../../i18n/config';
 import type { Project, ProjectDetail } from '../../data/projects';
 import { projectLocale } from '../../data/projects';
 import { categoryPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
 import ProjectSection from './ProjectSection.astro';
 import ProductionReference from './ProductionReference.astro';
 import Callout from './Callout.astro';
@@ -21,7 +22,7 @@ const projectsHref = categoryPath(locale, 'projects');
 const isEn = locale === 'en';
 
 function toHtml(value: string): string {
-  return value.replace(/\n\n/g, '</p><p>');
+  return `<p>${value.replace(/\n\n/g, '</p><p>')}</p>`;
 }
 
 const whatItIsHtml = toHtml(detail.whatItIs);
@@ -31,14 +32,14 @@ const technicalHtml = toHtml(detail.technical);
 const currentStateHtml = toHtml(detail.currentState);
 const nextStepHtml = toHtml(detail.nextStep);
 const aiRoleHtml = detail.aiRole ? toHtml(detail.aiRole) : '';
-const orgBodyHtml = detail.organisationDeployment
-  ? detail.organisationDeployment.body.replace(/\n\n/g, '</p><p>')
-  : '';
+  const orgBodyHtml = detail.organisationDeployment
+    ? toHtml(detail.organisationDeployment.body)
+    : '';
 ---
 
 <article class="w-full">
   <header class="mx-auto max-w-5xl">
-    <nav aria-label="Breadcrumbs" class="mb-6 text-sm">
+    <nav aria-label={t(locale, 'breadcrumbAriaLabel')} class="mb-6 text-sm">
       <a href={projectsHref} class="text-cyan-400 hover:text-cyan-300">
         {isEn ? '← Projects' : '← Projektit'}
       </a>

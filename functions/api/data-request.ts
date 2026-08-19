@@ -6,6 +6,7 @@ import {
   deleteSubscriberCompletely,
   getPendingDataRequest,
   getSubscriberByEmail,
+  getValidToken,
   logConsentEvent,
   markTokenUsed,
   subscriberExportPayload,
@@ -108,6 +109,13 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   const tokenHash = await hashToken(token, context.env.TOKEN_SECRET);
+
+  const validToken = await getValidToken(db, tokenHash, 'data_request');
+
+  if (!validToken) {
+    return redirectResponse(`${baseSite}${donePath}?error=invalid_token`);
+  }
+
   const pending = await getPendingDataRequest(db, tokenHash);
 
   if (!pending) {
@@ -118,18 +126,21 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     ? await getSubscriberByEmail(db, pending.email_normalized)
     : null;
 
-  await markTokenUsed(db, tokenHash);
-  await completeDataRequest(db, pending.id);
-
   if (pending.request_type === 'delete' && pending.subscriber_id && subscriber) {
     await deleteSubscriberCompletely(db, pending.subscriber_id, subscriber.email_normalized);
+    await markTokenUsed(db, tokenHash);
+    await completeDataRequest(db, pending.id);
     return redirectResponse(`${baseSite}${donePath}?result=deleted`);
   }
 
   if (subscriber && pending.request_type === 'export') {
     const payload = subscriberExportPayload(subscriber);
+    await markTokenUsed(db, tokenHash);
+    await completeDataRequest(db, pending.id);
     return jsonResponse({ ok: true, data: payload });
   }
 
+  await markTokenUsed(db, tokenHash);
+  await completeDataRequest(db, pending.id);
   return redirectResponse(`${baseSite}${donePath}?result=export_sent`);
 };

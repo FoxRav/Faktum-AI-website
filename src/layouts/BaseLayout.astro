@@ -80,7 +80,9 @@ const jsonLdItems = jsonLd
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <link rel="alternate" type="application/rss+xml" title="FaktumAI RSS" href="/rss.xml" />
+    {locale === 'fi' && (
+      <link rel="alternate" type="application/rss+xml" title="FaktumAI RSS" href="/rss.xml" />
+    )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

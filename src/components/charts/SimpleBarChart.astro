@@ -1,4 +1,8 @@
 ---
+import type { Locale } from '../../i18n/config';
+import { getLocaleFromPath } from '../../i18n/paths';
+import { t } from '../../i18n/ui';
+
 interface DataPoint {
   label: string;
   value: number;
@@ -10,15 +14,18 @@ interface Props {
   unit?: string;
   scaleMax?: number;
   compact?: boolean;
+  locale?: Locale;
 }
 
 const PLOT_HEIGHT_PX = 120;
 const LABEL_ROW_PX = 28;
 
-const { data, title, unit = '', scaleMax: scaleMaxProp, compact = true } = Astro.props;
+const { data, title, unit = '', scaleMax: scaleMaxProp, compact = true, locale: localeProp } = Astro.props;
+const locale = localeProp ?? getLocaleFromPath(Astro.url.pathname);
+const numberLocale = locale === 'en' ? 'en-GB' : 'fi-FI';
 
 function formatValue(value: number): string {
-  return value.toLocaleString('fi-FI', { maximumFractionDigits: 2 });
+  return value.toLocaleString(numberLocale, { maximumFractionDigits: 2 });
 }
 
 function niceScaleMax(maxVal: number): number {
@@ -60,7 +67,7 @@ const peakIndex = data.reduce(
     <div
       class="chart-panel"
       role="img"
-      aria-label={title ? `${title}${unit ? ` (${unit})` : ''}` : 'Pylväskaavio'}
+       aria-label={title ? `${title}${unit ? ` (${unit})` : ''}` : t(locale, 'barChartFallback')}
       style={`--chart-plot-h: ${PLOT_HEIGHT_PX}px; --chart-label-h: ${LABEL_ROW_PX}px`}
     >
       <div class="chart-body">

@@ -170,6 +170,12 @@ export const ui = {
     dataRequestExport: 'Pyydä tietojen kopio',
     dataRequestDelete: 'Pyydä tietojen poisto',
     dataRequestSent: 'Tarkista sähköpostisi ja vahvista pyyntö.',
+    navAriaLabel: 'Päänavigaatio',
+    langSwitcherAriaLabel: 'Kieli',
+    categoriesAriaLabel: 'Sisältövälilehdet',
+    tagListAriaLabel: 'Aihet',
+    breadcrumbAriaLabel: 'Murupolku',
+    barChartFallback: 'Pylväskaavio',
   },
   en: {
     siteTagline: 'Software products, AI-assisted development, and technical project expertise.',
@@ -338,6 +344,12 @@ export const ui = {
     dataRequestExport: 'Request a copy of my data',
     dataRequestDelete: 'Request deletion of my data',
     dataRequestSent: 'Check your email and confirm the request.',
+    navAriaLabel: 'Main navigation',
+    langSwitcherAriaLabel: 'Language',
+    categoriesAriaLabel: 'Content tabs',
+    tagListAriaLabel: 'Topics',
+    breadcrumbAriaLabel: 'Breadcrumbs',
+    barChartFallback: 'Bar chart',
   },
 } as const;
 

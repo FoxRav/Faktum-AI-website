@@ -50,7 +50,14 @@ export type StaticPageKey = keyof typeof staticPageSegments.fi;
 
 const staticPagePairs: Record<string, { fi: string; en: string }> = {
   subscribe: { fi: '/tilaa/', en: '/en/subscribe/' },
+  subscribeConfirm: { fi: '/tilaa/vahvista/', en: '/en/subscribe/confirm/' },
+  subscribeConfirmed: { fi: '/tilaa/vahvistettu/', en: '/en/subscribe/confirmed/' },
+  subscribePreferences: { fi: '/tilaa/asetukset/', en: '/en/subscribe/preferences/' },
+  subscribeUnsubscribe: { fi: '/tilaa/peru/', en: '/en/subscribe/unsubscribe/' },
+  subscribeUnsubscribed: { fi: '/tilaa/peruutettu/', en: '/en/subscribe/unsubscribed/' },
   privacy: { fi: '/tietosuoja/', en: '/en/privacy/' },
+  privacyYourData: { fi: '/tietosuoja/oma-tieto/', en: '/en/privacy/your-data/' },
+  privacyYourDataDone: { fi: '/tietosuoja/oma-tieto/valmis/', en: '/en/privacy/your-data/done/' },
   cookies: { fi: '/evasteet/', en: '/en/cookies/' },
   editorial: { fi: '/toimitus/', en: '/en/editorial/' },
   advertise: { fi: '/mainosta/', en: '/en/advertise/' },
@@ -76,12 +83,6 @@ function translateStaticPath(path: string, target: Locale): string | null {
   for (const pair of Object.values(staticPagePairs)) {
     if (path === pair.fi) return target === 'en' ? pair.en : pair.fi;
     if (path === pair.en) return target === 'fi' ? pair.fi : pair.en;
-    if (path.startsWith('/tilaa/') && target === 'en') {
-      return path.replace('/tilaa/', '/en/subscribe/');
-    }
-    if (path.startsWith('/en/subscribe/') && target === 'fi') {
-      return path.replace('/en/subscribe/', '/tilaa/');
-    }
   }
   return null;
 }
