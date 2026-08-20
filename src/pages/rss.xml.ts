@@ -7,8 +7,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: 'FaktumAI',
-    description:
-      'Suomenkielistä tekoälyuutisointia, analyysia ja käytännön AI-rakentamista.',
+    description: 'FaktumAI:n uutiset, analyysit, haastattelut ja työkaluarviot.',
     site: context.site ?? 'https://www.faktum-ai.com',
     items: articles.map((article) => ({
       title: article.data.title,

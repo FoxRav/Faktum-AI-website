@@ -1,6 +1,6 @@
 # FaktumAI
 
-> Bilingual AI news and analysis site from Finland. This index describes the English edition. Finnish (default): https://www.faktum-ai.com/llms.txt
+> Bilingual website focused on software products, AI-assisted development, technical project expertise, and a content section covering news, analysis, interviews and tool reviews. Finnish is the default language and English content is available under /en/.
 
 ## Site (English)
 
@@ -9,6 +9,13 @@
 - Sitemap: https://www.faktum-ai.com/sitemap-index.xml
 - Topics: https://www.faktum-ai.com/en/topics/
 - Finnish edition: https://www.faktum-ai.com/
+
+## Important areas (English)
+
+- Home: https://www.faktum-ai.com/en/
+- News: https://www.faktum-ai.com/en/news/
+- Projects: https://www.faktum-ai.com/en/projects/
+- About: https://www.faktum-ai.com/en/about/
 
 ## Content types
 

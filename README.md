@@ -1,6 +1,6 @@
 # FaktumAI
 
-Bilingual (FI/EN) AI news and analysis site: [www.faktum-ai.com](https://www.faktum-ai.com)
+FaktumAI is a bilingual website for software products, AI-assisted development, technical project expertise, and editorial content including news, analysis, interviews, and tool reviews: [www.faktum-ai.com](https://www.faktum-ai.com)
 
 ## Stack
 
