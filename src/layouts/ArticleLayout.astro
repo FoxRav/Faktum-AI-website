@@ -25,6 +25,12 @@ const { data } = article;
 const locale = article.locale;
 const categoryLabel = getCategoryLabel(article);
 const categoryHref = getCategoryHref(article);
+
+const isGenericOg = !data.heroImage;
+const ogImage = data.heroImage ?? DEFAULT_OG_IMAGE;
+const ogImageWidth = isGenericOg ? 1200 : undefined;
+const ogImageHeight = isGenericOg ? 630 : undefined;
+const ogImageAlt = data.heroAlt ?? data.title;
 ---
 
 <BaseLayout
@@ -32,7 +38,10 @@ const categoryHref = getCategoryHref(article);
   description={data.description}
   path={Astro.url.pathname}
   ogType="article"
-  ogImage={data.heroImage ?? DEFAULT_OG_IMAGE}
+  ogImage={ogImage}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
+  ogImageAlt={ogImageAlt}
   publishedTime={formatDateTimeISO(data.date)}
   modifiedTime={formatDateTimeISO(data.updated ?? data.date)}
   articleTags={data.tags}

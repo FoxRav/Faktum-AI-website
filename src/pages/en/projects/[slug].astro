@@ -24,13 +24,21 @@ const canonical = projectPath(locale, project.slug);
 
 const seoTitle = `${p.title} · FaktumAI`;
 const seoDescription = p.detail.lead;
+
+const ogImage = project.image?.src ?? '/images/brand/faktumai-og-2026-08.webp';
+const ogImageWidth = project.image ? undefined : 1200;
+const ogImageHeight = project.image ? undefined : 630;
+const ogImageAlt = p.title;
 ---
 
 <BaseLayout
   title={seoTitle}
   description={seoDescription}
   path={canonical}
-  ogImage={project.image?.src ?? '/images/brand/landing-hero.webp'}
+  ogImage={ogImage}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
+  ogImageAlt={ogImageAlt}
   jsonLd={[
     organizationJsonLd('en'),
     websiteJsonLd('en'),

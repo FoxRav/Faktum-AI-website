@@ -4,7 +4,7 @@ import { getTagUrl } from './tags';
 import { schemaLanguage } from './formatDate';
 
 const DEFAULT_SITE = 'https://www.faktum-ai.com';
-const DEFAULT_OG_IMAGE = '/images/brand/landing-hero.webp';
+const DEFAULT_OG_IMAGE = '/images/brand/faktumai-og-2026-08.webp';
 
 function normalizeSite(site: string): string {
   return site.replace(/\/+$/, '');
