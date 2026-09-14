@@ -1,6 +1,5 @@
 ---
 import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
-import { dataRequestPath } from '../../i18n/paths';
 ---
 
 <LegalPageLayout
@@ -17,62 +16,35 @@ import { dataRequestPath } from '../../i18n/paths';
     <a href="https://www.faktum-ai.com">https://www.faktum-ai.com</a>
   </p>
 
-  <h2>2. Personal data we process</h2>
-  <p>
-    FaktumAI processes personal data only when a user contacts FaktumAI by email
-    or uses the personal-data request function.
-  </p>
-  <p>Data may include:</p>
-  <ul>
-    <li>name and email address if provided in an enquiry</li>
-    <li>contents of the enquiry</li>
-    <li>email address and verification token for a data request</li>
-    <li>a hash derived from the IP address and a truncated browser user-agent for secure processing of data requests</li>
-  </ul>
-  <p>
-    The site's visitor counter stores only the total number of page views and
-    does not store visitor personal data.
-  </p>
+  <h2>2. Personal data processed</h2>
+  <p>FaktumAI processes personal data when a person contacts FaktumAI.</p>
+  <p>This data may include their name, email address and the contents of their enquiry.</p>
 
   <h2>3. Purpose and legal basis</h2>
-  <p>Data is processed to:</p>
-  <ul>
-    <li>respond to enquiries and handle steps related to a potential customer relationship</li>
-    <li>fulfil data subject rights</li>
-    <li>protect the website and data-request functions</li>
-  </ul>
+  <p>Data is processed to respond to enquiries and handle steps related to a potential customer relationship.</p>
   <p>
     Depending on the situation, processing is based on steps prior to entering
-    into a contract, legitimate interests, or a legal obligation under Article 6 GDPR.
+    into a contract or the controller's legitimate interests.
   </p>
 
   <h2>4. Recipients and transfers</h2>
+  <p>Data may be processed using technical services used by FaktumAI only as necessary to handle the enquiry.</p>
   <p>
-    Personal data may be processed using technical hosting, database and email
-    services used by FaktumAI where necessary to provide the service.
-  </p>
-  <p>
-    Where personal data is processed outside the European Economic Area,
-    transfers are carried out using safeguards required by applicable data
-    protection law.
+    Any transfers of personal data outside the European Economic Area
+    are carried out in accordance with applicable data protection law.
   </p>
 
   <h2>5. Retention</h2>
   <p>
-    Personal data is retained only for as long as necessary for the purpose
-    for which it was collected or as required by law.
+    Data is retained only for as long as necessary to handle the enquiry or
+    a potential customer relationship, or as required by law.
   </p>
 
   <h2>6. Your rights</h2>
+  <p>You have rights concerning your personal data under applicable data protection law.</p>
   <p>
-    Under applicable data protection law, you may have the right to access,
-    rectify or erase your personal data and, depending on the circumstances,
-    to restrict or object to processing and to data portability.
+    Privacy enquiries and requests to exercise your data subject rights:
+    <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
   </p>
-  <p>Data requests: <a href={dataRequestPath('en')}>Your data page</a></p>
-  <p>
-    You also have the right to lodge a complaint with the competent data
-    protection supervisory authority.
-  </p>
-  <p>Contact: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p>You have the right to lodge a complaint with the Office of the Data Protection Ombudsman in Finland.</p>
 </LegalPageLayout>

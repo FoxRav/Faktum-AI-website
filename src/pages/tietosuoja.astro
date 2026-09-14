@@ -1,6 +1,5 @@
 ---
 import LegalPageLayout from '../layouts/LegalPageLayout.astro';
-import { dataRequestPath } from '../i18n/paths';
 ---
 
 <LegalPageLayout
@@ -17,60 +16,41 @@ import { dataRequestPath } from '../i18n/paths';
     <a href="https://www.faktum-ai.com">https://www.faktum-ai.com</a>
   </p>
 
-  <h2>2. Mitä henkilötietoja käsittelemme</h2>
-  <p>
-    FaktumAI käsittelee henkilötietoja vain silloin, kun käyttäjä ottaa yhteyttä
-    sähköpostitse tai käyttää henkilötietoja koskevaa tietopyyntötoimintoa.
-  </p>
-  <p>Käsiteltäviä tietoja voivat olla:</p>
-  <ul>
-    <li>nimi ja sähköpostiosoite, jos käyttäjä antaa ne yhteydenotossa</li>
-    <li>yhteydenoton sisältö</li>
-    <li>tietopyynnössä sähköpostiosoite ja vahvistustunnus</li>
-    <li>tietopyynnön turvallista käsittelyä varten IP-osoitteesta muodostettu tiiviste ja lyhennetty selaintunniste</li>
-  </ul>
-  <p>
-    Sivuston kävijälaskuri tallentaa vain sivulatausten kokonaismäärän eikä tallenna
-    kävijän henkilötietoja.
-  </p>
+  <h2>2. Käsiteltävät henkilötiedot</h2>
+  <p>FaktumAI käsittelee henkilötietoja silloin, kun henkilö ottaa yhteyttä FaktumAI:hin.</p>
+  <p>Käsiteltäviä tietoja voivat olla nimi, sähköpostiosoite ja yhteydenoton sisältö.</p>
 
   <h2>3. Käsittelyn tarkoitus ja oikeusperuste</h2>
-  <p>Tietoja käsitellään:</p>
-  <ul>
-    <li>yhteydenottoihin vastaamiseksi ja mahdolliseen asiakassuhteeseen liittyvien toimien hoitamiseksi</li>
-    <li>rekisteröidyn tietosuojaoikeuksien toteuttamiseksi</li>
-    <li>sivuston ja tietopyyntötoimintojen turvallisuuden varmistamiseksi</li>
-  </ul>
   <p>
-    Käsittely perustuu tilanteen mukaan sopimusta edeltäviin toimenpiteisiin,
-    rekisterinpitäjän oikeutettuun etuun tai lakisääteiseen velvoitteeseen
-    (GDPR 6 artikla).
+    Tietoja käsitellään yhteydenottoihin vastaamiseksi ja mahdolliseen
+    asiakassuhteeseen liittyvien toimien hoitamiseksi.
+  </p>
+  <p>
+    Käsittely perustuu tilanteen mukaan sopimusta edeltäviin toimenpiteisiin
+    tai rekisterinpitäjän oikeutettuun etuun.
   </p>
 
   <h2>4. Tietojen vastaanottajat ja siirrot</h2>
   <p>
-    Henkilötietoja voidaan käsitellä FaktumAI:n käyttämissä teknisissä hosting-,
-    tietokanta- ja sähköpostipalveluissa siinä määrin kuin palvelun toteuttaminen
-    sitä edellyttää.
+    Tietoja voidaan käsitellä FaktumAI:n käyttämissä teknisissä palveluissa
+    vain siinä määrin kuin yhteydenoton käsittely sitä edellyttää.
   </p>
   <p>
-    Jos henkilötietoja käsitellään Euroopan talousalueen ulkopuolella, siirrot
-    toteutetaan sovellettavan tietosuojalainsäädännön edellyttämillä suojatoimilla.
+    Mahdolliset henkilötietojen siirrot Euroopan talousalueen ulkopuolelle
+    toteutetaan sovellettavan tietosuojalainsäädännön mukaisesti.
   </p>
 
   <h2>5. Säilytysaika</h2>
   <p>
-    Henkilötietoja säilytetään vain niin kauan kuin niitä tarvitaan siihen
-    tarkoitukseen, jota varten ne on kerätty, tai niin kauan kuin laki edellyttää.
+    Tietoja säilytetään vain niin kauan kuin niitä tarvitaan yhteydenoton tai
+    mahdollisen asiakassuhteen hoitamiseksi tai kuin laki edellyttää.
   </p>
 
   <h2>6. Rekisteröidyn oikeudet</h2>
+  <p>Rekisteröidyllä on sovellettavan tietosuojalainsäädännön mukaiset oikeudet henkilötietoihinsa.</p>
   <p>
-    Rekisteröidyllä on sovellettavan tietosuojalainsäädännön mukaisesti oikeus
-    tarkastaa, oikaista ja poistaa henkilötietojaan sekä tilanteesta riippuen
-    rajoittaa tai vastustaa niiden käsittelyä ja saada tietonsa siirretyksi.
+    Tietosuoja-asiat ja rekisteröidyn oikeuksia koskevat pyynnöt:
+    <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
   </p>
-  <p>Tietopyynnöt: <a href={dataRequestPath('fi')}>Omat tiedot -sivu</a></p>
-  <p>Rekisteröidyllä on myös oikeus tehdä valitus Tietosuojavaltuutetun toimistolle.</p>
-  <p>Yhteydenotot: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p>Rekisteröidyllä on oikeus tehdä valitus Tietosuojavaltuutetun toimistolle.</p>
 </LegalPageLayout>

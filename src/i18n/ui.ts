@@ -15,7 +15,6 @@ export const ui = {
     navInterviews: 'Haastattelut',
     navProjects: 'Projektit',
     navAbout: 'Tietoa',
-    navSubscribe: 'Tilaa',
     navTopics: 'Aiheet',
     tabAll: 'Kaikki',
     latestFeed: 'Uusimmat julkaisut',
@@ -80,7 +79,6 @@ export const ui = {
     mvpBody2:
       'Laajuus, aikataulu ja teknologia määritellään käyttötarpeen mukaan. Tavoite on toimiva MVP ilman raskasta kehitysorganisaatiota.',
     mvpCta: 'Keskustellaan projektista',
-    mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Ohjelmistoprojekti%20-%20MVP',
     projectsLabel: 'PROJEKTIT',
     projectsTitle: 'Tuotteet ja toteutukset',
     projectsLead:
@@ -95,81 +93,13 @@ export const ui = {
     footerPrivacy: 'Tietosuoja',
     footerCookies: 'Evästeet',
     footerEditorial: 'Toimitus & AI',
-    footerSubscribe: 'Uutiskirje lopetettu',
     footerContact: 'Yhteystiedot',
-    subscribeTitle: 'Uutiskirje lopetettu',
-    subscribeLead:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeLeadProfessional:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeLeadCitizen:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeArticleCta:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeEmailLabel: 'Sähköposti',
-    subscribeLanguageLabel: 'Toivottu kieli',
-    subscribeLanguageFi: 'Suomi',
-    subscribeLanguageEn: 'English',
-    subscribeLanguageBoth: 'Molemmat',
-    subscribeConsentLabel:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeSubmit: 'Tilaa',
-    subscribeSuccess:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeErrorGeneric: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeErrorEmail: 'Anna kelvollinen sähköpostiosoite.',
-    subscribeErrorConsent: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeEmailSendFailed: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
-    subscribeAlreadyActive:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    footerUnsubscribe: 'Peru tilaus',
-    subscribeConfirmPending: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeConfirmed: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    subscribeConfirmedManage: 'Uutiskirje lopetettu',
-    subscribeInvalidToken: 'Linkki on vanhentunut tai virheellinen.',
-    subscribeUnsubscribed: 'Tilaus on peruutettu. Tietosi on poistettu rekisteristä.',
-    preferencesTitle: 'Tilaajaprofiili',
-    preferencesLead: 'Valitse roolit ja kiinnostukset — lomake alkaa tyhjänä joka kerta.',
-    preferencesPrimaryRole: 'Päärooli',
-    preferencesSecondaryRoles: 'Muut roolit (valinnainen)',
-    preferencesInterests: 'Kiinnostuksen kohteet',
-    preferencesSave: 'Tallenna',
-    preferencesSaving: 'Tallennetaan…',
-    preferencesSaved: 'Profiili tallennettu.',
-    preferencesSaveFailed: 'Tallennus epäonnistui.',
-    preferencesInactive:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    preferencesInactiveHelp: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    preferencesMissingToken:
-      'Profiilin täydennys vaatii henkilökohtaisen linkin sähköpostistasi.',
-    preferencesMissingTokenHelp:
-      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
-    unsubscribeTitle: 'Poista vanhat tilaajatiedot',
-    unsubscribeLead:
-      'Uutiskirje on lopetettu. Vanhojen tilaajatietojen poisto vahvistetaan henkilökohtaisella linkillä.',
-    unsubscribeLeadWithToken: 'Vahvista painikkeella.',
-    unsubscribeConfirm: 'Poista tilaajatietoni',
-    unsubscribeMissingToken:
-      'Eikö sinulla ole linkkiä? Syötä sähköpostiosoitteesi — lähetämme uuden peruutuslinkin.',
-    unsubscribeMissingTokenHelp:
-      'Voit myös avata linkin ”Peru tilaus” viimeisimmästä uutiskirjeestä tai tervetuloviestistä. Tarkista roskapostikansio.',
-    unsubscribeRequestEmailLabel: 'Sähköposti',
-    unsubscribeRequestSubmit: 'Lähetä peruutuslinkki',
-    unsubscribeRequestSuccess:
-      'Jos osoitteella on poistettavia tilaajatietoja, lähetimme peruutuslinkin. Tarkista myös roskapostikansio.',
-    unsubscribeRequestEmailFailed: 'Anna kelvollinen sähköpostiosoite.',
-    unsubscribeRequestFailed: 'Linkin lähetys epäonnistui. Yritä uudelleen.',
-    unsubscribeFailed: 'Peruutus epäonnistui.',
     sourcesTitle: 'Lähteet',
     keyClaimsTitle: 'Keskeiset väitteet',
     keyTakeawaysDefault: 'Tärkeimmät nostot',
     draftBadge: 'Luonnos',
     factCheckNote:
       'FaktumAI huomio: Tämä artikkeli perustuu listattuihin lähteisiin. Kohdat, joita ei ole voitu vahvistaa riippumattomasta lähteestä, on merkitty epävarmoiksi.',
-    dataRequestTitle: 'Omat tiedot',
-    dataRequestExport: 'Pyydä tietojen kopio',
-    dataRequestDelete: 'Pyydä tietojen poisto',
-    dataRequestSent: 'Tarkista sähköpostisi ja vahvista pyyntö.',
     navAriaLabel: 'Päänavigaatio',
     langSwitcherAriaLabel: 'Kieli',
     categoriesAriaLabel: 'Sisältövälilehdet',
@@ -190,7 +120,6 @@ export const ui = {
     navInterviews: 'Interviews',
     navProjects: 'Projects',
     navAbout: 'About',
-    navSubscribe: 'Subscribe',
     navTopics: 'Topics',
     tabAll: 'All',
     latestFeed: 'Latest publications',
@@ -256,7 +185,6 @@ export const ui = {
     mvpBody2:
       'Scope, schedule and technology are defined by the actual use case. The goal is a working MVP without a heavy development organisation.',
     mvpCta: 'Discuss your project',
-    mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Software%20project%20-%20MVP',
     projectsLabel: 'PROJECTS',
     projectsTitle: 'Products & implementations',
     projectsLead:
@@ -269,81 +197,13 @@ export const ui = {
     footerPrivacy: 'Privacy',
     footerCookies: 'Cookies',
     footerEditorial: 'Editorial & AI',
-    footerSubscribe: 'Newsletter discontinued',
     footerContact: 'Contact',
-    subscribeTitle: 'Newsletter discontinued',
-    subscribeLead:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeLeadProfessional:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeLeadCitizen:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeArticleCta:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeEmailLabel: 'Email',
-    subscribeLanguageLabel: 'Preferred language',
-    subscribeLanguageFi: 'Finnish',
-    subscribeLanguageEn: 'English',
-    subscribeLanguageBoth: 'Both',
-    subscribeConsentLabel:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeSubmit: 'Subscribe',
-    subscribeSuccess:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeErrorGeneric: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeErrorEmail: 'Enter a valid email address.',
-    subscribeErrorConsent: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeEmailSendFailed: 'Could not send the confirmation email. Please try again shortly.',
-    subscribeAlreadyActive:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    footerUnsubscribe: 'Unsubscribe',
-    subscribeConfirmPending: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeConfirmed: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    subscribeConfirmedManage: 'Newsletter discontinued',
-    subscribeInvalidToken: 'This link has expired or is invalid.',
-    subscribeUnsubscribed: 'You have been unsubscribed. Your data has been removed from our registry.',
-    preferencesTitle: 'Subscriber profile',
-    preferencesLead: 'Choose your roles and interests — the form starts empty each time.',
-    preferencesPrimaryRole: 'Primary role',
-    preferencesSecondaryRoles: 'Other roles (optional)',
-    preferencesInterests: 'Interests',
-    preferencesSave: 'Save',
-    preferencesSaving: 'Saving…',
-    preferencesSaved: 'Profile saved.',
-    preferencesSaveFailed: 'Save failed.',
-    preferencesInactive:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    preferencesInactiveHelp: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    preferencesMissingToken:
-      'Completing your profile requires the personal link from your email.',
-    preferencesMissingTokenHelp:
-      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
-    unsubscribeTitle: 'Remove legacy subscriber data',
-    unsubscribeLead:
-      'The newsletter has been discontinued. A personal link is required to confirm removal of legacy subscriber data.',
-    unsubscribeLeadWithToken: 'Press the button to confirm.',
-    unsubscribeConfirm: 'Remove my subscriber data',
-    unsubscribeMissingToken:
-      'No link handy? Enter your email and we will send a new unsubscribe link.',
-    unsubscribeMissingTokenHelp:
-      'You can also open “Unsubscribe” from your latest newsletter or welcome message. Check your spam folder.',
-    unsubscribeRequestEmailLabel: 'Email',
-    unsubscribeRequestSubmit: 'Send unsubscribe link',
-    unsubscribeRequestSuccess:
-      'If this address has subscriber data eligible for removal, we sent an unsubscribe link. Check your spam folder too.',
-    unsubscribeRequestEmailFailed: 'Enter a valid email address.',
-    unsubscribeRequestFailed: 'Could not send the link. Please try again.',
-    unsubscribeFailed: 'Unsubscribe failed.',
     sourcesTitle: 'Sources',
     keyClaimsTitle: 'Key claims',
     keyTakeawaysDefault: 'Key takeaways',
     draftBadge: 'Draft',
     factCheckNote:
       'FaktumAI note: This article is based on the listed sources. Points that could not be verified from an independent source are marked as uncertain.',
-    dataRequestTitle: 'Your data',
-    dataRequestExport: 'Request a copy of my data',
-    dataRequestDelete: 'Request deletion of my data',
-    dataRequestSent: 'Check your email and confirm the request.',
     navAriaLabel: 'Main navigation',
     langSwitcherAriaLabel: 'Language',
     categoriesAriaLabel: 'Content tabs',

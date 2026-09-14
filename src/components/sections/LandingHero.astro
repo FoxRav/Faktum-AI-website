@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../../i18n/config';
-import { categoryPath } from '../../i18n/paths';
+import { categoryPath, contactPath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const projectsHref = categoryPath(locale, 'projects');
-const projectContactHref = t(locale, 'mvpCtaHref');
+const projectContactHref = contactPath(locale);
 ---
 
 <section class="container-site py-16 sm:py-20 lg:py-24">

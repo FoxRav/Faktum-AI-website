@@ -1,14 +1,14 @@
 ---
+import { contactPath } from '../../i18n/paths';
 import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
 ---
 
 <LegalPageLayout
   title="Media kit"
-  description="FaktumAI audience and channel overview."
+  description="Information about FaktumAI for commercial partnerships."
   path="/en/media-kit/"
   noIndex
 >
-  <p><strong>Phase 1.5 — draft</strong></p>
-  <p>Media kit will be updated as the subscriber base grows. Aggregated figures come from the D1 registry.</p>
-  <p><a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p>For commercial partnerships and information about FaktumAI, please contact us.</p>
+  <p><a href={contactPath('en')}>Contact</a></p>
 </LegalPageLayout>

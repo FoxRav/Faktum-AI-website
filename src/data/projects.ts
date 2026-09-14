@@ -1,5 +1,5 @@
 import type { Locale } from '../i18n/config';
-import { categoryPath } from '../i18n/paths';
+import { categoryPath, contactPath } from '../i18n/paths';
 
 export type ProjectStatus = 'pilot' | 'development' | 'research' | 'live';
 
@@ -224,7 +224,7 @@ export const projects: Project[] = [
               heading: 'Tarvitsetko useamman laitteen tai organisaatiokohtaisen toteutuksen?',
               text: 'Laajemmat SermoVox-toimitukset suunnitellaan asiakkaan käyttötarpeen, laitemäärän, kielten ja tietoturvavaatimusten mukaan.',
               label: 'Pyydä ratkaisu organisaatiollesi',
-              href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20-%20organisaatioratkaisu',
+              href: contactPath('fi'),
             },
           },
           cloudOption: {
@@ -238,7 +238,7 @@ export const projects: Project[] = [
             heading: 'Tarvitsetko reaaliaikaista monikielistä käännöstä?',
             text: 'SermoVox Local on saatavilla kertamaksullisena paikallisena ratkaisuna. Käydään yhdessä läpi käyttötarve, tarvittavat kielet, laitteisto ja sopiva käyttöönottomalli.\n\nSermoVox Local 599 € + alv',
             label: 'Kysy SermoVox-ratkaisusta',
-            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20Local%20-%20k%C3%A4ytt%C3%B6%C3%B6notto',
+            href: contactPath('fi'),
             contactText: 'marko@Faktum-AI.com',
           },
         },
@@ -336,7 +336,7 @@ export const projects: Project[] = [
               heading: 'Need multiple devices or an organisation-specific deployment?',
               text: 'Larger SermoVox deployments are planned according to the customer\'s use case, number of devices, languages and security requirements.',
               label: 'Discuss an organisation deployment',
-              href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20-%20organisation%20deployment',
+              href: contactPath('en'),
             },
           },
           cloudOption: {
@@ -350,7 +350,7 @@ export const projects: Project[] = [
             heading: 'Need real-time multilingual translation?',
             text: 'SermoVox Local is available as a locally installed solution with a one-time licence fee. We can review the use case, required languages, hardware and suitable deployment model together.\n\nSermoVox Local €599 + VAT',
             label: 'Ask about SermoVox',
-            href: 'mailto:marko@Faktum-AI.com?subject=SermoVox%20Local%20-%20deployment',
+            href: contactPath('en'),
             contactText: 'marko@Faktum-AI.com',
           },
         },
@@ -420,7 +420,7 @@ export const projects: Project[] = [
             cta: {
               heading: 'Hae testaajaksi',
               label: 'Hae testaajaksi',
-              href: 'mailto:marko@Faktum-AI.com?subject=Party%20Buddy%20-%20haluan%20testaajaksi',
+              href: contactPath('fi'),
             },
             contactText: 'marko@Faktum-AI.com',
           },
@@ -479,7 +479,7 @@ export const projects: Project[] = [
             cta: {
               heading: 'Apply to become a tester',
               label: 'Apply to become a tester',
-              href: 'mailto:marko@Faktum-AI.com?subject=Party%20Buddy%20-%20tester',
+              href: contactPath('en'),
             },
             contactText: 'marko@Faktum-AI.com',
           },
@@ -526,7 +526,7 @@ export const projects: Project[] = [
             heading: 'Tarvitsetko Shopify-kauppaasi tehokkaampaa alennusmyyntien hallintaa?',
             text: 'Jos verkkokaupassasi on paljon tuotteita, tuotevariantteja tai toistuvia kampanjoita, voidaan selvittää, soveltuuko Shopify Sale Manager myös sinun käyttöösi.',
             label: 'Ota yhteyttä',
-            href: 'mailto:marko@Faktum-AI.com?subject=Shopify%20Sale%20Manager',
+            href: contactPath('fi'),
           },
           productionReference: {
             sourceName: 'H&J Pirttisen verkkokaupassa',
@@ -569,7 +569,7 @@ export const projects: Project[] = [
             heading: 'Need more efficient sale-price management for your Shopify store?',
             text: 'If your store contains many products, product variants or recurring sales campaigns, we can assess whether Shopify Sale Manager could also fit your use case.',
             label: 'Contact us',
-            href: 'mailto:marko@Faktum-AI.com?subject=Shopify%20Sale%20Manager',
+            href: contactPath('en'),
           },
         },
       },
@@ -632,7 +632,7 @@ export const projects: Project[] = [
           cta: {
             heading: 'Kiinnostuitko lakidatan, API:n tai AI-avusteisen oikeudellisen haun kehityksestä?',
             label: 'Ota yhteyttä',
-            href: 'mailto:marko@Faktum-AI.com?subject=Rikoslaki%20SOTA',
+            href: contactPath('fi'),
           },
         },
       },
@@ -683,7 +683,7 @@ export const projects: Project[] = [
           cta: {
             heading: 'Interested in legal data, APIs or AI-assisted legal retrieval?',
             label: 'Contact us',
-            href: 'mailto:marko@Faktum-AI.com?subject=Rikoslaki%20SOTA',
+            href: contactPath('en'),
           },
         },
       },
@@ -728,7 +728,7 @@ export const projects: Project[] = [
             heading: 'Seuraa SM-LIIGA-GURUn kehitystä',
             text: 'Projekti on vielä tutkimusvaiheessa. Tuloksia julkaistaan vasta, kun järjestelmää voidaan arvioida mitattavasti ja toistettavasti.',
             label: 'Ota yhteyttä',
-            href: 'mailto:marko@Faktum-AI.com?subject=SM-LIIGA-GURU',
+            href: contactPath('fi'),
           },
           data: [
             'otteluhistoria',

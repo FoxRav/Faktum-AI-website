@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { categoryPath } from '../i18n/paths';
+import { categoryPath, contactPath } from '../i18n/paths';
 import { t } from '../i18n/ui';
 import { organizationJsonLd, websiteJsonLd } from '../utils/seo';
 
@@ -59,7 +59,7 @@ const projectsHref = categoryPath(locale, 'projects');
             Ohjelmistoprojekteihin, yhteistyöhön ja FaktumAI:n tuotteisiin liittyvissä asioissa ota yhteyttä
           </dt>
           <dd class="mt-1">
-            <a href="mailto:marko@Faktum-AI.com">marko@Faktum-AI.com</a>
+            <a href={contactPath('fi')}>Yhteystiedot</a>
           </dd>
         </div>
       </dl>

@@ -1,4 +1,5 @@
 ---
+import { contactPath } from '../i18n/paths';
 import LegalPageLayout from '../layouts/LegalPageLayout.astro';
 ---
 
@@ -40,5 +41,5 @@ import LegalPageLayout from '../layouts/LegalPageLayout.astro';
   </p>
 
   <h2>Yhteystiedot</h2>
-  <p><a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p><a href={contactPath('fi')}>Yhteystiedot</a></p>
 </LegalPageLayout>

@@ -1,4 +1,5 @@
 ---
+import { contactPath } from '../../i18n/paths';
 import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
 ---
 
@@ -16,5 +17,5 @@ import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
     We do not disclose personal data to advertisers or commercial partners for marketing purposes.
   </p>
   <h2>Contact</h2>
-  <p><a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p><a href={contactPath('en')}>Contact</a></p>
 </LegalPageLayout>

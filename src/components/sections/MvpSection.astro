@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../../i18n/config';
+import { contactPath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
 interface Props {
@@ -22,7 +23,7 @@ const { locale } = Astro.props;
       <p>{t(locale, 'mvpBody2')}</p>
     </div>
     <div class="mt-10">
-      <a href={t(locale, 'mvpCtaHref')} class="btn-primary">{t(locale, 'mvpCta')}</a>
+      <a href={contactPath(locale)} class="btn-primary">{t(locale, 'mvpCta')}</a>
     </div>
   </div>
 </section>

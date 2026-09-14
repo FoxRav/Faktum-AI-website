@@ -1,4 +1,5 @@
 ---
+import { contactPath } from '../../i18n/paths';
 import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
 ---
 
@@ -36,5 +37,5 @@ import LegalPageLayout from '../../layouts/LegalPageLayout.astro';
   <p>    Errors are corrected in the article by updating the timestamp where necessary. Significant corrections may be communicated separately.</p>
 
   <h2>Contact</h2>
-  <p><a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p><a href={contactPath('en')}>Contact</a></p>
 </LegalPageLayout>

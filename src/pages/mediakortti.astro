@@ -1,14 +1,14 @@
 ---
+import { contactPath } from '../i18n/paths';
 import LegalPageLayout from '../layouts/LegalPageLayout.astro';
 ---
 
 <LegalPageLayout
   title="Mediakortti"
-  description="FaktumAI -median yleisö- ja kanavatiedot."
+  description="Tietoa FaktumAI:sta kaupallista yhteistyötä varten."
   path="/mediakortti/"
   noIndex
 >
-  <p><strong>Phase 1.5 — luonnos</strong></p>
-  <p>Mediakortti päivitetään, kun tilaajakanta on kasvanut. Aggregoidut luvut tulevat D1-rekisteristä.</p>
-  <p><a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p>Ota yhteyttä, jos tarvitset tietoa FaktumAI:sta kaupallista yhteistyötä varten.</p>
+  <p><a href={contactPath('fi')}>Yhteystiedot</a></p>
 </LegalPageLayout>

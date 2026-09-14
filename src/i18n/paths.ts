@@ -26,7 +26,7 @@ export const categorySegments = {
 /** Static pages outside content collections. */
 export const staticPageSegments = {
   fi: {
-    subscribe: 'tilaa',
+    contact: 'yhteystiedot',
     privacy: 'tietosuoja',
     cookies: 'evasteet',
     editorial: 'toimitus',
@@ -35,7 +35,7 @@ export const staticPageSegments = {
     support: 'tue',
   },
   en: {
-    subscribe: 'subscribe',
+    contact: 'contact',
     privacy: 'privacy',
     cookies: 'cookies',
     editorial: 'editorial',
@@ -49,15 +49,8 @@ export type CategoryKey = keyof typeof categorySegments.fi;
 export type StaticPageKey = keyof typeof staticPageSegments.fi;
 
 const staticPagePairs: Record<string, { fi: string; en: string }> = {
-  subscribe: { fi: '/tilaa/', en: '/en/subscribe/' },
-  subscribeConfirm: { fi: '/tilaa/vahvista/', en: '/en/subscribe/confirm/' },
-  subscribeConfirmed: { fi: '/tilaa/vahvistettu/', en: '/en/subscribe/confirmed/' },
-  subscribePreferences: { fi: '/tilaa/asetukset/', en: '/en/subscribe/preferences/' },
-  subscribeUnsubscribe: { fi: '/tilaa/peru/', en: '/en/subscribe/unsubscribe/' },
-  subscribeUnsubscribed: { fi: '/tilaa/peruutettu/', en: '/en/subscribe/unsubscribed/' },
+  contact: { fi: '/yhteystiedot/', en: '/en/contact/' },
   privacy: { fi: '/tietosuoja/', en: '/en/privacy/' },
-  privacyYourData: { fi: '/tietosuoja/oma-tieto/', en: '/en/privacy/your-data/' },
-  privacyYourDataDone: { fi: '/tietosuoja/oma-tieto/valmis/', en: '/en/privacy/your-data/done/' },
   cookies: { fi: '/evasteet/', en: '/en/cookies/' },
   editorial: { fi: '/toimitus/', en: '/en/editorial/' },
   advertise: { fi: '/mainosta/', en: '/en/advertise/' },
@@ -144,37 +137,6 @@ export function staticPath(locale: Locale, key: StaticPageKey): string {
   return locale === defaultLocale ? `/${seg}/` : `/en/${seg}/`;
 }
 
-export type SubscribeSubpage =
-  | 'index'
-  | 'confirm'
-  | 'confirmed'
-  | 'preferences'
-  | 'unsubscribe'
-  | 'unsubscribed';
-
-const subscribeSubpaths: Record<Locale, Record<SubscribeSubpage, string>> = {
-  fi: {
-    index: '/tilaa/',
-    confirm: '/tilaa/vahvista/',
-    confirmed: '/tilaa/vahvistettu/',
-    preferences: '/tilaa/asetukset/',
-    unsubscribe: '/tilaa/peru/',
-    unsubscribed: '/tilaa/peruutettu/',
-  },
-  en: {
-    index: '/en/subscribe/',
-    confirm: '/en/subscribe/confirm/',
-    confirmed: '/en/subscribe/confirmed/',
-    preferences: '/en/subscribe/preferences/',
-    unsubscribe: '/en/subscribe/unsubscribe/',
-    unsubscribed: '/en/subscribe/unsubscribed/',
-  },
-};
-
-export function subscribePath(locale: Locale, sub: SubscribeSubpage = 'index'): string {
-  return subscribeSubpaths[locale][sub];
-}
-
 export function privacyPath(locale: Locale): string {
   return staticPath(locale, 'privacy');
 }
@@ -187,6 +149,6 @@ export function editorialPath(locale: Locale): string {
   return staticPath(locale, 'editorial');
 }
 
-export function dataRequestPath(locale: Locale): string {
-  return locale === 'fi' ? '/tietosuoja/oma-tieto/' : '/en/privacy/your-data/';
+export function contactPath(locale: Locale): string {
+  return staticPath(locale, 'contact');
 }

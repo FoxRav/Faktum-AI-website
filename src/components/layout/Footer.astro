@@ -2,6 +2,7 @@
 import VisitCounter from '../VisitCounter.astro';
 import {
   categoryPath,
+  contactPath,
   cookiesPath,
   editorialPath,
   getLocaleFromPath,
@@ -71,7 +72,7 @@ const newsHref = categoryPath(locale, 'news');
           </a>
         </li>
         <li>
-          <a href="mailto:marko@faktum-ai.com" class="text-[var(--color-text-dim)] hover:text-cyan-400">
+          <a href={contactPath(locale)} class="text-[var(--color-text-dim)] hover:text-cyan-400">
             {t(locale, 'footerContact')}
           </a>
         </li>
