@@ -78,7 +78,7 @@ export const ui = {
       'Ohjelmistoidean, sisäisen työkalun tai digitalisoitavan prosessin pohjalta voidaan nopeasti rajata ensimmäinen toimiva versio.',
     mvpBody2:
       'Laajuus, aikataulu ja teknologia määritellään käyttötarpeen mukaan. Tavoite on toimiva MVP ilman raskasta kehitysorganisaatiota.',
-    mvpCta: 'Keskustellaan projektista',
+    mvpCta: 'Kerro projektistasi',
     projectsLabel: 'PROJEKTIT',
     projectsTitle: 'Tuotteet ja toteutukset',
     projectsLead:
@@ -184,7 +184,7 @@ export const ui = {
       'We can quickly define the scope of a first working version based on a software idea, internal tool or process to be digitised.',
     mvpBody2:
       'Scope, schedule and technology are defined by the actual use case. The goal is a working MVP without a heavy development organisation.',
-    mvpCta: 'Discuss your project',
+    mvpCta: 'Tell us about your project',
     projectsLabel: 'PROJECTS',
     projectsTitle: 'Products & implementations',
     projectsLead:

@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../../i18n/config';
-import { categoryPath, contactPath } from '../../i18n/paths';
+import { contactPath } from '../../i18n/paths';
 import { t } from '../../i18n/ui';
 
 interface Props {
@@ -8,11 +8,10 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const projectsHref = categoryPath(locale, 'projects');
 const projectContactHref = contactPath(locale);
 ---
 
-<section class="container-site py-16 sm:py-20 lg:py-24">
+<section class="container-site pt-16 pb-8 sm:pt-20 sm:pb-10 lg:pt-24 lg:pb-12">
   <div class="mx-auto max-w-3xl">
     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400/80">
       {t(locale, 'landingEyebrow')}
@@ -28,7 +27,6 @@ const projectContactHref = contactPath(locale);
     </p>
     <div class="mt-10 flex flex-wrap gap-3">
       <a href={projectContactHref} class="btn-primary">{t(locale, 'mvpCta')}</a>
-      <a href={projectsHref} class="btn-ghost">{t(locale, 'ctaProjects')}</a>
     </div>
   </div>
 </section>
