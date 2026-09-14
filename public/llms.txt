@@ -1,6 +1,6 @@
 # FaktumAI
 
-> Kaksikielinen sivusto ohjelmistotuotteista, AI-avusteisesta kehityksestä, teknisestä projektiosaamisesta sekä uutisista, analyyseista, haastatteluista ja työkaluarvioista. Suomenkielinen sisältö on oletuksena, englanninkielinen sisältö polussa /en/.
+> Kaksikielinen sivusto ohjelmistotuotteista, automaatiosta ja AI-avusteisesta ohjelmistokehityksestä sekä uutisista, analyyseista, haastatteluista ja työkaluarvioista. Suomenkielinen sisältö on oletuksena, englanninkielinen sisältö polussa /en/.
 
 ## Site (Finnish)
 

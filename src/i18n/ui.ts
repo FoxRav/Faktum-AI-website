@@ -3,7 +3,7 @@ import { categoryPath } from './paths';
 
 export const ui = {
   fi: {
-    siteTagline: 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
+    siteTagline: 'Ohjelmistotuotteita, automaatiota ja AI-avusteista ohjelmistokehitystä.',
     heroTitle: 'Ohjelmistotuotteita ja AI-avusteista kehitystä',
     heroTitleAccent: 'kehitystä',
     heroLead:
@@ -23,8 +23,8 @@ export const ui = {
     readArticle: 'Lue artikkeli',
     whyTitle: 'Miksi FaktumAI?',
     whyBody:
-      'FaktumAI on uuden ajan ohjelmistotalo, joka rakentaa omia ohjelmistotuotteitaan erittäin kevyellä kustannusrakenteella. AI-agentit tekevät suuren osan toteutus- ja analyysityöstä. Kehitystä ohjataan määritellyillä arkkitehtuuri-, testaus-, katselmointi-, dokumentoin- ja versionhallintaprosesseilla. Ihminen vastaa suunnasta, päätöksistä ja hyväksynnästä.',
-    footerTagline: 'Ohjelmistotuotteita, AI-avusteista kehitystä ja teknistä projektiosaamista.',
+      'FaktumAI on uuden ajan ohjelmistotalo, joka rakentaa omia ohjelmistotuotteitaan erittäin kevyellä kustannusrakenteella. AI-agentit tekevät suuren osan toteutus- ja analyysityöstä. Kehitystä ohjataan määritellyillä arkkitehtuuri-, testaus-, katselmointi-, dokumentointi- ja versionhallintaprosesseilla. Ihminen vastaa suunnasta, päätöksistä ja hyväksynnästä.',
+    footerTagline: 'Ohjelmistotuotteita, automaatiota ja AI-avusteista ohjelmistokehitystä.',
     footerContent: 'Sisältö',
     footerServices: 'Palvelut',
     footerRss: 'RSS-syöte',
@@ -44,88 +44,88 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'FaktumAI | Ohjelmistot, AI-avusteinen kehitys ja projektiosaaminen',
+    homeMetaTitle: 'FaktumAI | Ohjelmistotuotteet, automaatio ja AI-avusteinen kehitys',
     homeMetaDescription:
-      'FaktumAI kehittää ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja AI-avusteisella kehitysmallilla.',
+      'FaktumAI suunnittelee ja toteuttaa ohjelmistotuotteita, automaatioratkaisuja ja digitaalisia ratkaisuja AI-avusteisesti.',
     aboutTitle: 'Mikä FaktumAI on?',
     aboutMetaDescription:
-      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja.',
+      'FaktumAI on ohjelmistotuotteita ja automaatioratkaisuja kehittävä ohjelmistotalo. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja.',
     listingAnalysis: 'Syvällisiä analyyseja AI-markkinoista, infrastruktuurista ja liiketoimintamalleista.',
     listingNews: 'FaktumAI:n uutiset, analyysit, haastattelut ja työkaluarviot – uusimmat ensin.',
     landingEyebrow: 'FAKTUMAI',
-    landingHeading: 'Ohjelmistoja, teknologiaa ja projektiosaamista',
+    landingHeading: 'Ohjelmistotuotteita, automaatiota ja AI-avusteista kehitystä',
     landingLead:
-      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Rakennamme AI-avusteisesti ohjelmistotuotteita, automaatioratkaisuja ja teknisiä projekteja kevyellä, prosessiohjatulla toimintamallilla.',
+      'FaktumAI suunnittelee ja toteuttaa ohjelmistotuotteita, automaatioratkaisuja ja asiakaskohtaisia digitaalisia ratkaisuja.',
     landingSupporting:
-      'Osaamisemme yhdistää ohjelmistokehityksen, kone- ja tuotantotekniikan sekä rakennus- ja saneeraushankkeiden projektinhallinnan.',
-    ctaProjects: 'Tutustu projekteihin',
+      'Taustamme yhdistää ohjelmistokehityksen, insinööriosaamisen ja teknisen projektinhallinnan.',
+    ctaProjects: 'Katso projektit',
     ctaAbout: 'Tietoa FaktumAI:sta',
     operatingEyebrow: 'MITEN RAKENNAMME',
     operatingHeading: 'Kevyt kehitysmalli, hallittu toteutus',
     operatingIntro:
-      'AI nopeuttaa ohjelmistokehitystä, mutta vastuu arkkitehtuurista, vaatimuksista, laadusta ja lopputuloksesta säilyy ihmisellä. FaktumAI yhdistää AI-avusteisen kehityksen perinteiseen tekniseen suunnitteluun ja projektinhallintaan.',
+      'AI nopeuttaa toteutusta. Arkkitehtuuri, vaatimukset, testaus ja hyväksyntä pidetään hallittuina.',
     operatingCardProblemHeading: 'Ongelma ensin',
     operatingCardProblemBody:
-      'Työ alkaa käyttötarpeesta ja ratkaistavasta ongelmasta. Teknologia valitaan vasta sen jälkeen, kun tiedetään mitä järjestelmän pitää tehdä ja kenelle se rakennetaan.',
+      'Määritämme käyttötarpeen ja vaatimukset ennen teknologiapäätöksiä.',
     operatingCardAiHeading: 'AI-avusteinen toteutus',
     operatingCardAiBody:
-      'Käytämme AI-malleja ja agentteja suunnittelun, ohjelmistokehityksen, testauksen ja dokumentoinnin apuna. Ne nopeuttavat toteutusta, mutta eivät korvaa teknisiä päätöksiä tai laadunvarmistusta.',
+      'AI-malleja ja agentteja käytetään suunnittelun, ohjelmistokehityksen, testauksen ja dokumentoinnin apuna.',
     operatingCardTestHeading: 'Testaa, mittaa, paranna',
     operatingCardTestBody:
-      'Ensimmäinen toimiva versio rakennetaan mahdollisimman aikaisin. Sen jälkeen ratkaisu testataan, mitataan ja kehitetään todellisen käytön perusteella.',
+      'Ensimmäinen toimiva versio tehdään aikaisin ja sitä kehitetään testitulosten ja käytön perusteella.',
     mvpEyebrow: 'MVP-KEHITYS',
-    mvpHeading: 'Ideasta toimivaksi MVP:ksi muutamassa viikossa.',
+    mvpHeading: 'Ideasta toimivaksi MVP:ksi',
     mvpBody1:
-      'Onko sinulla ohjelmistoidea, sisäinen työkalu tai prosessi, joka pitäisi digitalisoida? FaktumAI rakentaa ensimmäisen toimivan version nopeasti AI-avusteisella kehitysmallilla ilman raskasta kehitysorganisaatiota.',
+      'Ohjelmistoidean, sisäisen työkalun tai digitalisoitavan prosessin pohjalta voidaan nopeasti rajata ensimmäinen toimiva versio.',
     mvpBody2:
-      'MVP:n laajuus, aikataulu ja tekninen toteutus määritellään aina käyttötarpeen mukaan. Muutamassa viikossa valmistuva toteutus tarkoittaa rajattua ensimmäistä toimivaa versiota, ei valmista enterprise-järjestelmää.',
+      'Laajuus, aikataulu ja teknologia määritellään käyttötarpeen mukaan. Tavoite on toimiva MVP ilman raskasta kehitysorganisaatiota.',
     mvpCta: 'Keskustellaan projektista',
     mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Ohjelmistoprojekti%20-%20MVP',
     projectsLabel: 'PROJEKTIT',
-    projectsTitle: 'Tuotteet ja tuotekehitys',
+    projectsTitle: 'Tuotteet ja toteutukset',
     projectsLead:
-      'FaktumAI kehittää omia ohjelmistotuotteita ja kaupallistamiseen tähtääviä ratkaisuja kevyellä, AI-avusteisella tuotantomallilla. Projektit etenevät tutkimuksesta ja prototyypeistä pilotointiin ja tuotteistukseen.',
+      'FaktumAI:n tuotteet ja toteutukset näyttävät käytännössä, mitä rakennamme: paikallista AI:ta, mobiilisovelluksia, verkkokauppa-automaatiota sekä data- ja hakujärjestelmiä.',
     latestNewsTitle: 'Uusimmat uutiset',
     allNews: 'Kaikki uutiset →',
     aboutLead:
-      'FaktumAI on uuden ajan ohjelmistotalo ja projektinhallinnan asiantuntija. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja AI-avusteisella, kevyellä tuotantomallilla.',
+      'FaktumAI on ohjelmistotuotteita ja automaatioratkaisuja kehittävä ohjelmistotalo. Kehitämme omia ohjelmistotuotteita, automaatioratkaisuja ja kaupallistamiseen tähtääviä digitaalisia palveluja AI-avusteisella, kevyellä tuotantomallilla.',
     listingInterviews: 'Haastattelutiivistelmiä suomalaisesta ja kansainvälisestä AI-kentästä.',
     listingTools: 'AI-työkalujen arvioita ja käytännön näkökulmia rakentajille.',
     footerLegal: 'Lakiasiat',
     footerPrivacy: 'Tietosuoja',
     footerCookies: 'Evästeet',
     footerEditorial: 'Toimitus & AI',
-    footerSubscribe: 'Tilaa uutiskirje',
+    footerSubscribe: 'Uutiskirje lopetettu',
     footerContact: 'Yhteystiedot',
-    subscribeTitle: 'FaktumAI -uutiskirje',
+    subscribeTitle: 'Uutiskirje lopetettu',
     subscribeLead:
-      'Tilaa FaktumAI -uutiskirje — lähetetään kerran viikossa. Viikon tärkeimmät AI-uutiset, työkalut ja analyysit ilman hypeä.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeLeadProfessional:
-      'Seuraa AI-markkinaa, työkaluja, regulaatiota ja avoimia malleja yhdestä paikasta — yhteenveto kerran viikossa.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeLeadCitizen:
-      'Tekoäly muuttuu nopeasti. FaktumAI kokoaa tärkeimmät asiat ymmärrettävästi yhteen viikkouutiskirjeeseen.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeArticleCta:
-      'Seuraa AI-markkinaa selkokielisesti ja lähteisiin perustuen. Tilaa viikoittainen FaktumAI -uutiskirje.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeEmailLabel: 'Sähköposti',
     subscribeLanguageLabel: 'Toivottu kieli',
     subscribeLanguageFi: 'Suomi',
     subscribeLanguageEn: 'English',
     subscribeLanguageBoth: 'Molemmat',
     subscribeConsentLabel:
-      'Haluan vastaanottaa FaktumAI -uutiskirjeen (kerran viikossa) ja hyväksyn tietojeni käsittelyn tietosuojaselosteen mukaisesti.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeSubmit: 'Tilaa',
     subscribeSuccess:
-      'Tarkista sähköpostisi ja vahvista tilaus. Jos viestiä ei näy muutaman minuutin kuluessa, katso myös roskapostikansio.',
-    subscribeErrorGeneric: 'Tilaus epäonnistui. Yritä uudelleen.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
+    subscribeErrorGeneric: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeErrorEmail: 'Anna kelvollinen sähköpostiosoite.',
-    subscribeErrorConsent: 'Uutiskirjeen tilaus vaatii suostumuksen.',
+    subscribeErrorConsent: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     subscribeEmailSendFailed: 'Sähköpostin lähetys epäonnistui. Yritä hetken päästä uudelleen.',
     subscribeAlreadyActive:
-      'Tämä sähköpostiosoite on jo uutiskirjeen tilaajana. Peruutus: avaa viestin linkki tai pyydä uusi linkki peruutussivulta.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     footerUnsubscribe: 'Peru tilaus',
-    subscribeConfirmPending: 'Vahvista tilaus sähköpostiisi tulleella linkillä.',
-    subscribeConfirmed: 'Tilaus vahvistettu. Tervetuloa FaktumAI -uutiskirjeen tilaajaksi!',
-    subscribeConfirmedManage: 'Täydennä profiilisi',
+    subscribeConfirmPending: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
+    subscribeConfirmed: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
+    subscribeConfirmedManage: 'Uutiskirje lopetettu',
     subscribeInvalidToken: 'Linkki on vanhentunut tai virheellinen.',
     subscribeUnsubscribed: 'Tilaus on peruutettu. Tietosi on poistettu rekisteristä.',
     preferencesTitle: 'Tilaajaprofiili',
@@ -138,17 +138,17 @@ export const ui = {
     preferencesSaved: 'Profiili tallennettu.',
     preferencesSaveFailed: 'Tallennus epäonnistui.',
     preferencesInactive:
-      'Uutiskirjeen tilaus on peruttu. Profiilia voi muokata vain aktiivisen tilauksen aikana.',
-    preferencesInactiveHelp: 'Voit tilata uutiskirjeen uudelleen ja täydentää profiilisi sen jälkeen.',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
+    preferencesInactiveHelp: 'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
     preferencesMissingToken:
       'Profiilin täydennys vaatii henkilökohtaisen linkin sähköpostistasi.',
     preferencesMissingTokenHelp:
-      'Avaa linkki vahvistus- tai tervetuloviestistäsi. Jos et löydä viestiä, tarkista roskapostikansio tai tilaa uutiskirje uudelleen — uusi linkki lähetetään vahvistuksen jälkeen.',
-    unsubscribeTitle: 'Peru tilaus',
+      'FaktumAI ei tarjoa uutiskirjettä. Vanhoihin tilaajatietoihin liittyvät pyynnöt voi tehdä Omat tiedot -sivulla.',
+    unsubscribeTitle: 'Poista vanhat tilaajatiedot',
     unsubscribeLead:
-      'Peruutus vahvistetaan henkilökohtaisella linkillä — turvallisuussyistä emme peru tilauksia pelkällä sähköpostiosoitteella.',
+      'Uutiskirje on lopetettu. Vanhojen tilaajatietojen poisto vahvistetaan henkilökohtaisella linkillä.',
     unsubscribeLeadWithToken: 'Vahvista painikkeella.',
-    unsubscribeConfirm: 'Peru uutiskirjeen tilaus',
+    unsubscribeConfirm: 'Poista tilaajatietoni',
     unsubscribeMissingToken:
       'Eikö sinulla ole linkkiä? Syötä sähköpostiosoitteesi — lähetämme uuden peruutuslinkin.',
     unsubscribeMissingTokenHelp:
@@ -156,7 +156,7 @@ export const ui = {
     unsubscribeRequestEmailLabel: 'Sähköposti',
     unsubscribeRequestSubmit: 'Lähetä peruutuslinkki',
     unsubscribeRequestSuccess:
-      'Jos osoitteella on aktiivinen tilaus, lähetimme peruutuslinkin. Tarkista myös roskapostikansio.',
+      'Jos osoitteella on poistettavia tilaajatietoja, lähetimme peruutuslinkin. Tarkista myös roskapostikansio.',
     unsubscribeRequestEmailFailed: 'Anna kelvollinen sähköpostiosoite.',
     unsubscribeRequestFailed: 'Linkin lähetys epäonnistui. Yritä uudelleen.',
     unsubscribeFailed: 'Peruutus epäonnistui.',
@@ -173,12 +173,12 @@ export const ui = {
     navAriaLabel: 'Päänavigaatio',
     langSwitcherAriaLabel: 'Kieli',
     categoriesAriaLabel: 'Sisältövälilehdet',
-    tagListAriaLabel: 'Aihet',
+    tagListAriaLabel: 'Aiheet',
     breadcrumbAriaLabel: 'Murupolku',
     barChartFallback: 'Pylväskaavio',
   },
   en: {
-    siteTagline: 'Software products, AI-assisted development, and technical project expertise.',
+    siteTagline: 'Software products, automation and AI-assisted software development.',
     heroTitle: 'Software products and AI-assisted development',
     heroTitleAccent: 'development',
     heroLead:
@@ -199,7 +199,7 @@ export const ui = {
     whyTitle: 'Why FaktumAI?',
     whyBody:
       'FaktumAI is a modern software house that builds its own software products with a very lean cost structure. AI agents carry out most of the implementation and analysis work. Development is guided by defined architecture, testing, review, documentation, and version-control processes. The human is responsible for direction, decisions, and approval.',
-    footerTagline: 'Software products, AI-assisted development and technical project expertise.',
+    footerTagline: 'Software products, automation and AI-assisted software development.',
     footerContent: 'Content',
     footerServices: 'Services',
     footerRss: 'RSS feed',
@@ -218,9 +218,9 @@ export const ui = {
     switchToEn: 'Switch to English',
     langFi: 'Suomi',
     langEn: 'English',
-    homeMetaTitle: 'FaktumAI | Software, AI-assisted development and project expertise',
+    homeMetaTitle: 'FaktumAI | Software products, automation and AI-assisted development',
     homeMetaDescription:
-      'FaktumAI develops software products, automation solutions and technical projects using an AI-assisted development model.',
+      'FaktumAI designs and builds software products, automation solutions and custom digital systems with AI-assisted development.',
     aboutTitle: 'What is FaktumAI?',
     aboutMetaDescription:
       'FaktumAI is a software house that builds its own software products and commercially oriented solutions with a very lean, AI-assisted operating model.',
@@ -229,38 +229,38 @@ export const ui = {
     listingInterviews: 'Interview summaries from the Finnish and global AI field.',
     listingTools: 'AI tool reviews and practical perspectives for builders.',
     landingEyebrow: 'FAKTUMAI',
-    landingHeading: 'Software, technology and project expertise',
+    landingHeading: 'Software products, automation and AI-assisted development',
     landingLead:
-      'FaktumAI is a modern software company and project-management specialist. We build software products, automation solutions and technical projects with a lean, process-driven, AI-assisted operating model.',
+      'FaktumAI designs and builds software products, automation solutions and custom digital systems.',
     landingSupporting:
-      'Our expertise combines software development, mechanical and production engineering, and project management for construction and renovation projects.',
-    ctaProjects: 'Explore our projects',
+      'Our background combines software development, engineering and technical project management.',
+    ctaProjects: 'View projects',
     ctaAbout: 'About FaktumAI',
     operatingEyebrow: 'HOW WE BUILD',
     operatingHeading: 'Lean development, controlled delivery',
     operatingIntro:
-      'AI can accelerate software development, but responsibility for architecture, requirements, quality and the final result remains with people. FaktumAI combines AI-assisted development with established engineering and project-management practices.',
+      'AI accelerates implementation while architecture, requirements, testing and approval remain controlled.',
     operatingCardProblemHeading: 'Problem first',
     operatingCardProblemBody:
-      'Work begins with the use case and the problem that needs to be solved. Technology is selected only after it is clear what the system must do and who it is being built for.',
+      'We define the use case and requirements before making technology decisions.',
     operatingCardAiHeading: 'AI-assisted implementation',
     operatingCardAiBody:
-      'We use AI models and agents to support design, software development, testing and documentation. They accelerate delivery, but they do not replace technical decisions or quality assurance.',
+      'AI models and agents support design, software development, testing and documentation.',
     operatingCardTestHeading: 'Test, measure, improve',
     operatingCardTestBody:
-      'The first working version is built as early as practical. The solution is then tested, measured and improved based on real use.',
+      'A working first version is built early and improved using test results and real use.',
     mvpEyebrow: 'MVP DEVELOPMENT',
-    mvpHeading: 'From idea to a working MVP in a matter of weeks.',
+    mvpHeading: 'From idea to a working MVP',
     mvpBody1:
-      'Have a software idea, internal tool or process that should be digitised? FaktumAI builds the first working version quickly using an AI-assisted development model without a heavy development organisation.',
+      'We can quickly define the scope of a first working version based on a software idea, internal tool or process to be digitised.',
     mvpBody2:
-      'The scope, schedule and technical implementation of each MVP are defined according to the actual use case. Delivery in a matter of weeks refers to a focused first working version, not a finished enterprise system.',
+      'Scope, schedule and technology are defined by the actual use case. The goal is a working MVP without a heavy development organisation.',
     mvpCta: 'Discuss your project',
     mvpCtaHref: 'mailto:marko@Faktum-AI.com?subject=Software%20project%20-%20MVP',
     projectsLabel: 'PROJECTS',
-    projectsTitle: 'Products & product development',
+    projectsTitle: 'Products & implementations',
     projectsLead:
-      'FaktumAI develops its own software products and commercially oriented solutions using a lean, AI-assisted production model. Projects progress from research and prototyping through piloting and productisation.',
+      'FaktumAI products and implementations show what we build in practice: local AI, mobile applications, e-commerce automation, and data and search systems.',
     latestNewsTitle: 'Latest news',
     allNews: 'All news →',
     aboutLead:
@@ -269,37 +269,37 @@ export const ui = {
     footerPrivacy: 'Privacy',
     footerCookies: 'Cookies',
     footerEditorial: 'Editorial & AI',
-    footerSubscribe: 'Newsletter',
+    footerSubscribe: 'Newsletter discontinued',
     footerContact: 'Contact',
-    subscribeTitle: 'FaktumAI newsletter',
+    subscribeTitle: 'Newsletter discontinued',
     subscribeLead:
-      'Subscribe to the FaktumAI newsletter — sent once a week. Key AI news, tools and analysis without hype.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeLeadProfessional:
-      'Follow AI markets, tools, regulation and open models in one place.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeLeadCitizen:
-      'AI moves fast. FaktumAI brings the essentials in plain language.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeArticleCta:
-      'Follow the AI market with source-backed clarity. Subscribe to the weekly FaktumAI newsletter.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeEmailLabel: 'Email',
     subscribeLanguageLabel: 'Preferred language',
     subscribeLanguageFi: 'Finnish',
     subscribeLanguageEn: 'English',
     subscribeLanguageBoth: 'Both',
     subscribeConsentLabel:
-      'I want to receive the FaktumAI newsletter (once a week) and accept processing of my data as described in the privacy policy.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeSubmit: 'Subscribe',
     subscribeSuccess:
-      'Check your email and confirm your subscription. If it does not arrive within a few minutes, check your spam or junk folder.',
-    subscribeErrorGeneric: 'Subscription failed. Please try again.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
+    subscribeErrorGeneric: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeErrorEmail: 'Enter a valid email address.',
-    subscribeErrorConsent: 'Newsletter subscription requires consent.',
+    subscribeErrorConsent: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     subscribeEmailSendFailed: 'Could not send the confirmation email. Please try again shortly.',
     subscribeAlreadyActive:
-      'This email address is already subscribed. To unsubscribe, use the link in your email or request a new one on the unsubscribe page.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     footerUnsubscribe: 'Unsubscribe',
-    subscribeConfirmPending: 'Confirm your subscription using the link we sent by email.',
-    subscribeConfirmed: 'Subscription confirmed. Welcome to the FaktumAI newsletter!',
-    subscribeConfirmedManage: 'Complete your profile',
+    subscribeConfirmPending: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
+    subscribeConfirmed: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
+    subscribeConfirmedManage: 'Newsletter discontinued',
     subscribeInvalidToken: 'This link has expired or is invalid.',
     subscribeUnsubscribed: 'You have been unsubscribed. Your data has been removed from our registry.',
     preferencesTitle: 'Subscriber profile',
@@ -312,17 +312,17 @@ export const ui = {
     preferencesSaved: 'Profile saved.',
     preferencesSaveFailed: 'Save failed.',
     preferencesInactive:
-      'Your newsletter subscription is cancelled. You can only edit your profile while subscribed.',
-    preferencesInactiveHelp: 'Subscribe again to update your profile.',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
+    preferencesInactiveHelp: 'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
     preferencesMissingToken:
       'Completing your profile requires the personal link from your email.',
     preferencesMissingTokenHelp:
-      'Open the link from your confirmation or welcome message. If you cannot find it, check your spam folder or subscribe again — a new link is sent after confirmation.',
-    unsubscribeTitle: 'Unsubscribe',
+      'FaktumAI no longer offers a newsletter. Use the Your data page for requests concerning legacy subscriber data.',
+    unsubscribeTitle: 'Remove legacy subscriber data',
     unsubscribeLead:
-      'Unsubscribe requires a personal link for security — we cannot cancel a subscription from an email address alone.',
+      'The newsletter has been discontinued. A personal link is required to confirm removal of legacy subscriber data.',
     unsubscribeLeadWithToken: 'Press the button to confirm.',
-    unsubscribeConfirm: 'Unsubscribe from the newsletter',
+    unsubscribeConfirm: 'Remove my subscriber data',
     unsubscribeMissingToken:
       'No link handy? Enter your email and we will send a new unsubscribe link.',
     unsubscribeMissingTokenHelp:
@@ -330,7 +330,7 @@ export const ui = {
     unsubscribeRequestEmailLabel: 'Email',
     unsubscribeRequestSubmit: 'Send unsubscribe link',
     unsubscribeRequestSuccess:
-      'If this address has an active subscription, we sent an unsubscribe link. Check your spam folder too.',
+      'If this address has subscriber data eligible for removal, we sent an unsubscribe link. Check your spam folder too.',
     unsubscribeRequestEmailFailed: 'Enter a valid email address.',
     unsubscribeRequestFailed: 'Could not send the link. Please try again.',
     unsubscribeFailed: 'Unsubscribe failed.',

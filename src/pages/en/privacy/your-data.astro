@@ -53,21 +53,21 @@ const locale = 'en' as const;
     var locale = form.getAttribute('data-locale') || 'en';
     var msg = document.getElementById('data-request-msg');
 
-    form.addEventListener('click', async function (event) {
-      var target = event.target;
-      if (!target || target.tagName !== 'BUTTON') return;
+    form.addEventListener('submit', async function (event) {
+      var target = event.submitter;
       event.preventDefault();
-      var requestType = target.getAttribute('data-type') || 'export';
+      var requestType = target ? target.getAttribute('data-type') || 'export' : 'export';
       var emailInput = form.querySelector('input[name="email"]');
       var email = emailInput && 'value' in emailInput ? String(emailInput.value).trim() : '';
       if (!email) return;
 
       try {
-        await fetch('/api/data-request', {
+        var res = await fetch('/api/data-request', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email, requestType: requestType, locale: locale }),
         });
+        if (!res.ok) throw new Error('data_request_failed');
         if (msg) msg.textContent = 'Check your email and confirm the request.';
       } catch (e) {
         if (msg) msg.textContent = 'Request failed.';

@@ -1,17 +1,27 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { t } from '../../../../i18n/ui';
-
-const locale = 'en' as const;
-const result = Astro.url.searchParams.get('result');
-const error = Astro.url.searchParams.get('error');
 ---
 
-<BaseLayout title="Request processed" description="Data request processed." path="/en/privacy/your-data/done/">
+<BaseLayout title="Data request status" description="Data request status." path="/en/privacy/your-data/done/" robots="noindex, follow">
   <section class="container-site py-16 text-center">
-    <h1 class="font-sans text-3xl font-bold">Request processed</h1>
-    {error && <p class="mt-4 text-red-400">{t(locale, 'subscribeInvalidToken')}</p>}
-    {result === 'deleted' && <p class="mt-4 text-[var(--color-text-dim)]">Your data has been deleted.</p>}
-    {result === 'export_sent' && <p class="mt-4 text-[var(--color-text-dim)]">Export completed.</p>}
+    <h1 class="font-sans text-3xl font-bold">Data request status</h1>
+    <p id="request-result" class="mt-4 text-[var(--color-text-dim)]"
+      data-error="The request could not be verified. The link may be invalid or expired." data-deleted="Your data has been deleted." data-processed="The request has been processed.">Open the verification link sent to your email.</p>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var message = document.getElementById('request-result');
+    if (!message) return;
+    if (params.has('error')) {
+      message.textContent = message.getAttribute('data-error');
+      message.classList.add('text-red-400');
+    } else if (params.get('result') === 'deleted') {
+      message.textContent = message.getAttribute('data-deleted');
+    } else if (params.get('result') === 'export_sent') {
+      message.textContent = message.getAttribute('data-processed');
+    }
+  })();
+</script>

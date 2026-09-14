@@ -1,87 +1,27 @@
 import { siteUrl } from './send';
 
-interface ConfirmTemplateInput {
-  confirmUrl: string;
-  privacyUrl: string;
-  locale: 'fi' | 'en';
-}
-
-export function confirmEmail(input: ConfirmTemplateInput): {
-  subject: string;
-  html: string;
-  text: string;
-} {
-  if (input.locale === 'en') {
-    return {
-      subject: 'Confirm your FaktumAI newsletter subscription',
-      html: `<p>Thanks for subscribing to the <strong>FaktumAI newsletter</strong>.</p>
-<p>The newsletter is sent about once a week.</p>
-<p><a href="${input.confirmUrl}">Confirm your email address</a> to start receiving it.</p>
-<p>This link expires in 48 hours. If you did not subscribe, you can ignore this message.</p>
-<p><a href="${input.privacyUrl}">Privacy policy</a></p>`,
-      text: `Confirm your FaktumAI newsletter subscription: ${input.confirmUrl}\nPrivacy: ${input.privacyUrl}`,
-    };
-  }
-
-  return {
-    subject: 'Vahvista FaktumAI -uutiskirjeen tilaus',
-    html: `<p>Kiitos <strong>FaktumAI -uutiskirjeen</strong> tilaamisesta.</p>
-<p>Uutiskirje lähetetään noin kerran viikossa.</p>
-<p><a href="${input.confirmUrl}">Vahvista sähköpostiosoitteesi</a>, jotta voimme aloittaa lähetykset.</p>
-<p>Linkki vanhenee 48 tunnissa. Jos et tilannut uutiskirjettä, voit jättää viestin huomiotta.</p>
-<p><a href="${input.privacyUrl}">Tietosuojaseloste</a></p>`,
-    text: `Vahvista FaktumAI -uutiskirjeen tilaus: ${input.confirmUrl}\nTietosuoja: ${input.privacyUrl}`,
-  };
-}
-
-export function welcomeEmail(
-  locale: 'fi' | 'en',
-  manageUrl: string,
-  unsubscribeUrl: string,
-): { subject: string; html: string; text: string } {
-  if (locale === 'en') {
-    return {
-      subject: 'Welcome to the FaktumAI newsletter',
-      html: `<p>Your subscription is confirmed. Welcome to the <strong>FaktumAI newsletter</strong>.</p>
-<p>We send the newsletter about once a week.</p>
-<p><a href="${manageUrl}">Complete your profile</a> — tell us your role and interests so we can tailor content.</p>
-<p><a href="${unsubscribeUrl}">Unsubscribe</a></p>`,
-      text: `Welcome to the FaktumAI newsletter.\nManage preferences: ${manageUrl}\nUnsubscribe: ${unsubscribeUrl}`,
-    };
-  }
-
-  return {
-    subject: 'Tervetuloa FaktumAI -uutiskirjeen tilaajaksi',
-    html: `<p>Tilauksesi on vahvistettu. Tervetuloa <strong>FaktumAI -uutiskirjeen</strong> tilaajaksi.</p>
-<p>Lähetämme uutiskirjeen noin kerran viikossa.</p>
-<p><a href="${manageUrl}">Täydennä profiilisi</a> — kerro roolisi ja kiinnostuksesi, jotta voimme kohdentaa sisältöä.</p>
-<p><a href="${unsubscribeUrl}">Peru tilaus</a></p>`,
-    text: `Tervetuloa FaktumAI -uutiskirjeen tilaajaksi.\nHallitse asetuksia: ${manageUrl}\nPeru tilaus: ${unsubscribeUrl}`,
-  };
-}
-
 export function dataRequestEmail(
   locale: 'fi' | 'en',
   verifyUrl: string,
   requestType: 'export' | 'delete',
 ): { subject: string; html: string; text: string } {
-  const actionFi = requestType === 'export' ? 'tietojen saanti' : 'tietojen poisto';
+  const actionFi = requestType === 'export' ? 'tietojen kopiointia' : 'tietojen poistoa';
   const actionEn = requestType === 'export' ? 'data export' : 'data deletion';
 
   if (locale === 'en') {
     return {
       subject: `Verify your ${actionEn} request — FaktumAI`,
-      html: `<p>We received a request to ${actionEn} for your subscriber data.</p>
+      html: `<p>We received a ${actionEn} request for your subscriber data.</p>
 <p><a href="${verifyUrl}">Verify this request</a>. The link expires in 48 hours.</p>`,
       text: `Verify your ${actionEn} request: ${verifyUrl}`,
     };
   }
 
   return {
-    subject: `Vahvista ${actionFi} -pyyntö — FaktumAI`,
-    html: `<p>Olemme vastaanottaneet pyynnön tilaajatietojesi ${actionFi}a varten.</p>
+    subject: `Vahvista ${actionFi} koskeva pyyntö — FaktumAI`,
+    html: `<p>Olemme vastaanottaneet pyynnön ${actionFi} varten.</p>
 <p><a href="${verifyUrl}">Vahvista pyyntö</a>. Linkki vanhenee 48 tunnissa.</p>`,
-    text: `Vahvista ${actionFi}-pyyntö: ${verifyUrl}`,
+    text: `Vahvista ${actionFi} koskeva pyyntö: ${verifyUrl}`,
   };
 }
 
@@ -107,7 +47,7 @@ export function unsubscribeLinkEmail(input: {
     return {
       subject: 'Unsubscribe from the FaktumAI newsletter',
       html: `<p>You requested to unsubscribe from the <strong>FaktumAI newsletter</strong>.</p>
-<p><a href="${input.unsubscribeUrl}">Open the unsubscribe page</a> and confirm to stop receiving emails.</p>
+<p><a href="${input.unsubscribeUrl}">Open the unsubscribe page</a> and confirm removal of your legacy subscriber data.</p>
 <p>If you did not request this, you can ignore this message. The link expires in 90 days.</p>`,
       text: `Unsubscribe from the FaktumAI newsletter: ${input.unsubscribeUrl}`,
     };
@@ -116,7 +56,7 @@ export function unsubscribeLinkEmail(input: {
   return {
     subject: 'Peru FaktumAI -uutiskirjeen tilaus',
     html: `<p>Olet pyytänyt FaktumAI -uutiskirjeen tilauksen perumista.</p>
-<p><a href="${input.unsubscribeUrl}">Avaa peruutussivu</a> ja vahvista, jotta lähetykset päättyvät.</p>
+<p><a href="${input.unsubscribeUrl}">Avaa peruutussivu</a> ja vahvista vanhojen tilaajatietojesi poisto.</p>
 <p>Jos et pyytänyt tätä, voit jättää viestin huomiotta. Linkki vanhenee 90 päivässä.</p>`,
     text: `Peru FaktumAI -uutiskirjeen tilaus: ${input.unsubscribeUrl}`,
   };
@@ -126,6 +66,6 @@ export function buildPrivacyUrl(env: Env, locale: 'fi' | 'en'): string {
   return locale === 'en' ? `${siteUrl(env)}/en/privacy/` : `${siteUrl(env)}/tietosuoja/`;
 }
 
-export function buildDataRequestVerifyUrl(env: Env, token: string): string {
-  return `${siteUrl(env)}/api/data-request?token=${encodeURIComponent(token)}`;
+export function buildDataRequestVerifyUrl(env: Env, token: string, locale: 'fi' | 'en' = 'fi'): string {
+  return `${siteUrl(env)}/api/data-request?token=${encodeURIComponent(token)}&locale=${locale}`;
 }

@@ -65,7 +65,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   await createConfirmationToken(db, tokenHash, subscriber.id, 'data_request');
 
-  const template = dataRequestEmail(locale, buildDataRequestVerifyUrl(context.env, rawToken), requestType);
+  const template = dataRequestEmail(locale, buildDataRequestVerifyUrl(context.env, rawToken, locale), requestType);
 
   context.waitUntil(
     sendEmail(context.env, {

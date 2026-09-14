@@ -1,22 +1,10 @@
-import { generateToken, hashToken } from '../lib/crypto';
-import {
-  activateSubscriber,
-  createConfirmationToken,
-  getSubscriberById,
-  getValidToken,
-  logConsentEvent,
-  markTokenUsed,
-} from '../lib/db';
+import { hashToken } from '../lib/crypto';
+import { getSubscriberById, getValidToken } from '../lib/db';
 import { redirectResponse } from '../lib/http';
-import { sendEmail, siteUrl } from '../email/send';
-import {
-  buildManageUrl,
-  buildUnsubscribeUrl,
-  welcomeEmail,
-} from '../email/templates';
+import { siteUrl } from '../email/send';
 
 function confirmedPath(locale: string): string {
-  return locale === 'en' ? '/en/subscribe/confirmed/' : '/tilaa/vahvistettu/';
+  return locale === 'en' ? '/en/subscribe/?error=newsletter_discontinued' : '/tilaa/?error=newsletter_discontinued';
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -45,42 +33,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   const locale = subscriber.locale === 'en' ? 'en' : 'fi';
-  const emailLocale = locale;
-
-  await markTokenUsed(db, tokenHash);
-  await activateSubscriber(db, subscriber.id);
-
-  await logConsentEvent(db, {
-    id: crypto.randomUUID(),
-    subscriberId: subscriber.id,
-    eventType: 'confirmed',
-    legalBasis: 'consent',
-  });
-
-  const manageRaw = generateToken();
-  const manageHash = await hashToken(manageRaw, context.env.TOKEN_SECRET);
-  await createConfirmationToken(db, manageHash, subscriber.id, 'manage');
-
-  const unsubRaw = generateToken();
-  const unsubHash = await hashToken(unsubRaw, context.env.TOKEN_SECRET);
-  await createConfirmationToken(db, unsubHash, subscriber.id, 'unsubscribe');
-
-  const welcome = welcomeEmail(
-    emailLocale,
-    buildManageUrl(context.env, emailLocale, manageRaw),
-    buildUnsubscribeUrl(context.env, emailLocale, unsubRaw),
-  );
-
-  const welcomeSent = await sendEmail(context.env, {
-    to: subscriber.email_normalized,
-    subject: welcome.subject,
-    html: welcome.html,
-    text: welcome.text,
-  });
-
-  if (!welcomeSent) {
-    console.error('welcome_email_send_failed', subscriber.id);
-  }
 
   return redirectResponse(`${baseSite}${confirmedPath(locale)}`);
 };

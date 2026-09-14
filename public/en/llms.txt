@@ -1,6 +1,6 @@
 # FaktumAI
 
-> Bilingual website focused on software products, AI-assisted development, technical project expertise, and a content section covering news, analysis, interviews and tool reviews. Finnish is the default language and English content is available under /en/.
+> Bilingual website focused on software products, automation and AI-assisted software development, with a content section covering news, analysis, interviews and tool reviews. Finnish is the default language and English content is available under /en/.
 
 ## Site (English)
 

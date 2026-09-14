@@ -17,11 +17,11 @@ const locale = 'fi' as const;
   ogImage="/images/brand/faktumai-og-2026-08.webp"
   ogImageWidth={1200}
   ogImageHeight={630}
-  ogImageAlt="FaktumAI – Ohjelmistot, AI-avusteinen kehitys ja projektiosaaminen"
+  ogImageAlt="FaktumAI – Ohjelmistotuotteet, automaatio ja AI-avusteinen kehitys"
   jsonLd={[organizationJsonLd('fi'), websiteJsonLd('fi')]}
 >
   <LandingHero locale={locale} />
+  <ProjectShowcase locale={locale} limit={3} showAllLink={true} />
   <MvpSection locale={locale} />
   <OperatingModel locale={locale} />
-  <ProjectShowcase locale={locale} showAllLink={true} />
 </BaseLayout>

@@ -1,4 +1,5 @@
 ---
+import UnsubscribeForm from '../../../components/forms/UnsubscribeForm.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { subscribePath } from '../../../i18n/paths';
 
@@ -7,7 +8,7 @@ const locale = 'en' as const;
 
 <BaseLayout
   title="Newsletter discontinued"
-  description="The FaktumAI newsletter is temporarily discontinued. We will announce if it relaunches."
+  description="FaktumAI no longer offers a newsletter. News and other editorial content remain available in the News section."
   path={subscribePath(locale, 'unsubscribe')}
   robots="noindex, follow"
 >
@@ -15,8 +16,12 @@ const locale = 'en' as const;
     <div class="mx-auto max-w-2xl">
       <h1 class="font-sans text-3xl font-bold sm:text-4xl">Newsletter discontinued</h1>
       <p class="mt-4 text-[var(--color-text-dim)]">
-        The FaktumAI newsletter is temporarily discontinued. We will announce if it relaunches.
+        FaktumAI no longer offers a newsletter. News, analysis, interviews and tool reviews remain available in the News section.
+      </p>
+      <p class="mt-6">
+        <a href="/en/news/" class="text-cyan-400 hover:text-cyan-300 font-semibold">Go to News</a>
       </p>
     </div>
   </section>
+  <UnsubscribeForm locale={locale} />
 </BaseLayout>

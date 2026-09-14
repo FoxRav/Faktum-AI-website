@@ -5,95 +5,85 @@ import { dataRequestPath } from '../../i18n/paths';
 
 <LegalPageLayout
   title="Privacy policy"
-  description="FaktumAI privacy policy and subscriber registry processing information."
+  description="FaktumAI website privacy policy."
   path="/en/privacy/"
 >
-  <p><strong>Last updated:</strong> 2026-08-20 · version 2026-08-20-v3</p>
+  <p><strong>Last updated: 2026-09-14 · version 2026-09-14-v4</strong></p>
 
   <h2>Controller</h2>
   <p>
      <strong>Marko Virta / FaktumAI</strong><br />
-     Email: <a href="mailto:marko@Faktum-AI.com">marko@Faktum-AI.com</a><br />
-    Website: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+      Email: <a href="mailto:marko@Faktum-AI.com">marko@Faktum-AI.com</a><br />
+     Website: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
   </p>
 
   <h2>Purposes</h2>
   <ul>
-    <li>Implementing any newsletter or subscriber messaging and managing the existing subscriber registry</li>
-    <li>Managing subscriber profiles (role, interests, language)</li>
-    <li>Double opt-in confirmation and subscription management</li>
-    <li>Fulfilling data subject rights (export, deletion)</li>
-    <li>Aggregated audience statistics for sponsorship (no personal sales)</li>
+    <li>Delivering the website, technical maintenance and security</li>
+    <li>Replying to inquiries and related customer communication</li>
+    <li>Fulfilling data subject rights</li>
   </ul>
+
+  <h2>Website usage</h2>
+  <p>
+    FaktumAI does not use user accounts, a newsletter, or an analytics service. The site's visitor
+    counter stores only a global page-view count in Cloudflare KV. FaktumAI does not store IP
+    addresses, user identifiers, or cookies in connection with the visitor counter.
+  </p>
+  <p>
+    Cloudflare operates the site's hosting and CDN and may process technical request data in order
+    to deliver the service and protect it.
+  </p>
+
+  <h2>Enquiries</h2>
+  <p>
+    When you contact us by email, we process the information you provide in order to reply and to
+    manage any potential customer relationship. Data is retained only for as long as necessary to
+    handle the matter or as required by applicable obligations.
+  </p>
+
+  <h2>Former newsletter</h2>
+  <p>
+    The FaktumAI newsletter has been discontinued. No new subscriptions or subscriber profiles are collected. Any data previously collected for the subscriber registry is
+    processed only for legacy data management, deletion, and the exercise of data subject rights
+    during the transition period.
+  </p>
+  <p>
+    Technical functions related to legacy subscriber management may be retained during the
+    transition period, but they are not used to collect new subscriptions or to send the newsletter.
+  </p>
+
+  <p>Legacy management and data requests process email addresses and verification tokens. Data requests also create an audit log in D1 containing a hashed IP address and a truncated browser user-agent string.</p>
 
   <h2>Legal bases</h2>
   <ul>
-    <li><strong>Newsletter:</strong> consent (GDPR Art. 6(1)(a))</li>
-    <li><strong>Transactional emails:</strong> service delivery</li>
-    <li><strong>Consent audit log:</strong> legitimate interest / compliance evidence</li>
+    <li>Website technical operation and security: legitimate interest (GDPR 6(1)(f))</li>
+    <li>Enquiries: steps prior to entering into a contract or legitimate interest (GDPR 6(1)(b)/(f))</li>
+    <li>Fulfilling data subject rights: legal obligation (GDPR 6(1)(c))</li>
   </ul>
 
-  <h2>Data collected</h2>
-  <ul>
-    <li>Email address</li>
-    <li>Language preference (fi / en / both)</li>
-    <li>Optional role and interest selections</li>
-    <li>Signup source URL</li>
-    <li>Consent version and timestamp</li>
-    <li>Technical audit metadata (hashed IP, truncated user agent)</li>
-  </ul>
-
-  <h2>Retention</h2>
-  <ul>
-    <li>Active subscribers: until unsubscribe</li>
-    <li>Confirmed unsubscribe: subscriber row and related data removed from D1 immediately</li>
-    <li>Separate deletion request: via <a href={dataRequestPath('en')}>your data page</a> if needed</li>
-  </ul>
-
-  <h2>Processors</h2>
+  <h2>Service providers</h2>
   <p>
-    We process subscriber data as the controller. To run the technical service, we use the
-    <strong>processors</strong> listed below — we do not sell, rent, or share the subscriber list with
-    third parties for marketing. Processors act only on behalf of FaktumAI under contract.
+    Cloudflare, Inc. — hosting, CDN, Workers KV, Pages Functions and the D1 database for legacy subscriber data
   </p>
   <p>
-    <strong>We do not store subscriber data on GitHub.</strong> GitHub is used for website source
-    code version control only.
-  </p>
-  <ul>
-    <li>Cloudflare, Inc. — hosting, D1 subscriber registry (EU), KV, Pages Functions</li>
-    <li>Resend, Inc. — confirmation and management emails (EU region, Ireland)</li>
-    <li>Possible future ESP (Buttondown / MailerLite) — downstream copy only</li>
-  </ul>
-
-  <h2>Data location</h2>
-  <p>
-    The subscriber registry is stored in a Cloudflare D1 database in the EU. Email service Resend is
-    configured for the EU region (Ireland). We do not transfer subscriber data abroad for marketing
-    purposes. If a technical provider is based in the United States, processing relies on the
-    provider’s DPA and, where required, standard contractual clauses (SCC).
-  </p>
-
-  <h2>Unsubscribing</h2>
-  <p>
-    You can unsubscribe at any time on our
-    <a href="/en/subscribe/unsubscribe/">unsubscribe page</a>. Confirmation requires a personal link
-    from your email — this prevents others from cancelling your subscription. After confirmed
-    unsubscribe, your email address and profile data are removed from the subscriber registry automatically.
+    Google Fonts — the site loads fonts from Google's service, so the user's browser connects to Google
   </p>
   <p>
-    The easiest way: open the <strong>Unsubscribe</strong> link in your latest newsletter or welcome
-    email — it opens the unsubscribe page ready to confirm. If you cannot find the message, check
-    your spam folder. You can also contact
-    <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a> for help.
+    Resend, Inc. — may be used during the transition period only to send legacy subscriber management and data-request messages
   </p>
 
-  <h2>Your rights</h2>
-  <p>You may access, rectify, erase, port, and withdraw consent for your data.</p>
-  <ul>
-    <li>Data requests: <a href={dataRequestPath('en')}>your data page</a></li>
-  </ul>
+  <h2>Data subject rights</h2>
+  <p>
+    You have the right, under the applicable data protection legislation, to access, rectify,
+    erase, or port your personal data, and to exercise your other data subject rights.
+  </p>
+  <p>
+    Data requests: <a href={dataRequestPath('en')}>your data page</a>
+  </p>
 
   <h2>Contact</h2>
-  <p>Privacy enquiries: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
+  <p>
+    Privacy enquiries: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
+  </p>
 </LegalPageLayout>
