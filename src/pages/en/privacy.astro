@@ -8,82 +8,71 @@ import { dataRequestPath } from '../../i18n/paths';
   description="FaktumAI website privacy policy."
   path="/en/privacy/"
 >
-  <p><strong>Last updated: 2026-09-14 · version 2026-09-14-v4</strong></p>
+  <p><strong>Last updated:</strong> 14 September 2026</p>
 
-  <h2>Controller</h2>
+  <h2>1. Controller</h2>
   <p>
-     <strong>Marko Virta / FaktumAI</strong><br />
-      Email: <a href="mailto:marko@Faktum-AI.com">marko@Faktum-AI.com</a><br />
-     Website: <a href="https://www.faktum-ai.com">www.faktum-ai.com</a>
+    Marko Virta / FaktumAI<br />
+    <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a><br />
+    <a href="https://www.faktum-ai.com">https://www.faktum-ai.com</a>
   </p>
 
-  <h2>Purposes</h2>
+  <h2>2. Personal data we process</h2>
+  <p>
+    FaktumAI processes personal data only when a user contacts FaktumAI by email
+    or uses the personal-data request function.
+  </p>
+  <p>Data may include:</p>
   <ul>
-    <li>Delivering the website, technical maintenance and security</li>
-    <li>Replying to inquiries and related customer communication</li>
-    <li>Fulfilling data subject rights</li>
+    <li>name and email address if provided in an enquiry</li>
+    <li>contents of the enquiry</li>
+    <li>email address and verification token for a data request</li>
+    <li>a hash derived from the IP address and a truncated browser user-agent for secure processing of data requests</li>
   </ul>
-
-  <h2>Website usage</h2>
   <p>
-    FaktumAI does not use user accounts, a newsletter, or an analytics service. The site's visitor
-    counter stores only a global page-view count in Cloudflare KV. FaktumAI does not store IP
-    addresses, user identifiers, or cookies in connection with the visitor counter.
-  </p>
-  <p>
-    Cloudflare operates the site's hosting and CDN and may process technical request data in order
-    to deliver the service and protect it.
+    The site's visitor counter stores only the total number of page views and
+    does not store visitor personal data.
   </p>
 
-  <h2>Enquiries</h2>
-  <p>
-    When you contact us by email, we process the information you provide in order to reply and to
-    manage any potential customer relationship. Data is retained only for as long as necessary to
-    handle the matter or as required by applicable obligations.
-  </p>
-
-  <h2>Former newsletter</h2>
-  <p>
-    The FaktumAI newsletter has been discontinued. No new subscriptions or subscriber profiles are collected. Any data previously collected for the subscriber registry is
-    processed only for legacy data management, deletion, and the exercise of data subject rights
-    during the transition period.
-  </p>
-  <p>
-    Technical functions related to legacy subscriber management may be retained during the
-    transition period, but they are not used to collect new subscriptions or to send the newsletter.
-  </p>
-
-  <p>Legacy management and data requests process email addresses and verification tokens. Data requests also create an audit log in D1 containing a hashed IP address and a truncated browser user-agent string.</p>
-
-  <h2>Legal bases</h2>
+  <h2>3. Purpose and legal basis</h2>
+  <p>Data is processed to:</p>
   <ul>
-    <li>Website technical operation and security: legitimate interest (GDPR 6(1)(f))</li>
-    <li>Enquiries: steps prior to entering into a contract or legitimate interest (GDPR 6(1)(b)/(f))</li>
-    <li>Fulfilling data subject rights: legal obligation (GDPR 6(1)(c))</li>
+    <li>respond to enquiries and handle steps related to a potential customer relationship</li>
+    <li>fulfil data subject rights</li>
+    <li>protect the website and data-request functions</li>
   </ul>
-
-  <h2>Service providers</h2>
   <p>
-    Cloudflare, Inc. — hosting, CDN, Workers KV, Pages Functions and the D1 database for legacy subscriber data
-  </p>
-  <p>
-    Google Fonts — the site loads fonts from Google's service, so the user's browser connects to Google
-  </p>
-  <p>
-    Resend, Inc. — may be used during the transition period only to send legacy subscriber management and data-request messages
+    Depending on the situation, processing is based on steps prior to entering
+    into a contract, legitimate interests, or a legal obligation under Article 6 GDPR.
   </p>
 
-  <h2>Data subject rights</h2>
+  <h2>4. Recipients and transfers</h2>
   <p>
-    You have the right, under the applicable data protection legislation, to access, rectify,
-    erase, or port your personal data, and to exercise your other data subject rights.
+    Personal data may be processed using technical hosting, database and email
+    services used by FaktumAI where necessary to provide the service.
   </p>
   <p>
-    Data requests: <a href={dataRequestPath('en')}>your data page</a>
+    Where personal data is processed outside the European Economic Area,
+    transfers are carried out using safeguards required by applicable data
+    protection law.
   </p>
 
-  <h2>Contact</h2>
+  <h2>5. Retention</h2>
   <p>
-    Privacy enquiries: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a>
+    Personal data is retained only for as long as necessary for the purpose
+    for which it was collected or as required by law.
   </p>
+
+  <h2>6. Your rights</h2>
+  <p>
+    Under applicable data protection law, you may have the right to access,
+    rectify or erase your personal data and, depending on the circumstances,
+    to restrict or object to processing and to data portability.
+  </p>
+  <p>Data requests: <a href={dataRequestPath('en')}>Your data page</a></p>
+  <p>
+    You also have the right to lodge a complaint with the competent data
+    protection supervisory authority.
+  </p>
+  <p>Contact: <a href="mailto:marko@faktum-ai.com">marko@faktum-ai.com</a></p>
 </LegalPageLayout>
